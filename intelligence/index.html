@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Labora Collective Intelligence — Labora Rounds and Special Reports. Ten-domain weekly intelligence on women's health from a practicing OB-GYN.">
+<title>Intelligence — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso:     #362511; --espresso-mid: #4A3218;
+  --body-text:    #2C1A0E; --muted:        #8A7060;
+  --copper:       #D48662; --copper-light: #E8A882;
+  --blush:        #EABAB0; --blush-light:  #F5DDD9;
+  --rose:         #E7817F; --rose-light:   #FAEAEA;
+  --teal:         #1D6B78; --teal-light:   #E0F2F4;
+  --forest:       #2E5240; --forest-light: #E4EFE8;
+  --gold:         #9E7D0A; --gold-light:   #F5EDCC;
+  --bg-warm:      #F7F3EE; --bg-open:      #FBF5FF; --white:#FFFFFF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; color-scheme:light only; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg-warm); color:var(--body-text); line-height:1.8; -webkit-font-smoothing:antialiased; }
+
+/* ── NAV ── */
+.nav { background:var(--espresso); border-bottom:1px solid rgba(255,255,255,0.06); position:sticky; top:0; z-index:100; }
+.nav-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-breadcrumb { font-size:0.54rem; color:rgba(251,245,255,0.18); letter-spacing:0.1em; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem; }
+.nav-breadcrumb a { color:rgba(251,245,255,0.28); text-decoration:none; transition:color 0.15s; }
+.nav-breadcrumb a:hover { color:var(--copper); }
+.nav-breadcrumb .sep { opacity:0.3; }
+.nav-links { display:flex; align-items:center; gap:1.75rem; list-style:none; }
+.nav-links li a { font-size:0.62rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(251,245,255,0.38); text-decoration:none; transition:color 0.15s; }
+.nav-links li a:hover { color:var(--copper); }
+.nav-links li a.active { color:var(--gold-light); }
+.nav-cta { display:inline-block; background:var(--gold-light); color:var(--espresso); padding:0.36rem 1rem; font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); transition:background 0.15s; }
+.nav-cta:hover { background:var(--copper-light); }
+
+/* ── HEADER ── */
+.header { background:var(--espresso); border-bottom:3px solid var(--gold); overflow:hidden; position:relative; }
+.header::after {
+  content:'';
+  position:absolute;
+  right:-60px; top:-40px;
+  width:380px; height:380px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(158,125,10,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.header-inner { max-width:1100px; margin:0 auto; padding:3.75rem 2rem 3.25rem; position:relative; }
+.header-logo { margin-bottom:2rem; }
+.header-super { font-size:0.5rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:rgba(251,245,255,0.2); display:block; margin-bottom:0.65rem; }
+.header-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.4rem); font-weight:300; line-height:1.06; color:var(--bg-open); letter-spacing:-0.01em; margin-bottom:0.75rem; }
+.header-deck { font-size:0.96rem; line-height:1.82; color:rgba(251,245,255,0.4); max-width:620px; margin-bottom:2.25rem; }
+
+/* Stat strip */
+.stat-strip { display:flex; align-items:stretch; gap:1px; background:rgba(255,255,255,0.06); max-width:600px; }
+.stat-cell { background:rgba(255,255,255,0.03); padding:0.85rem 1.5rem; flex:1; }
+.stat-cell .stat-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; color:var(--gold-light); line-height:1; display:block; opacity:0.7; margin-bottom:0.15rem; }
+.stat-cell .stat-label { font-size:0.52rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(251,245,255,0.25); display:block; }
+
+/* ── WHAT IS INTELLIGENCE ── */
+.intel-explainer { background:var(--espresso-mid); border-bottom:1px solid rgba(255,255,255,0.05); }
+.ie-inner { max-width:1100px; margin:0 auto; padding:3rem 2rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:2.5rem; }
+.ie-item {}
+.ie-item .item-num { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; color:var(--gold); opacity:0.35; display:block; line-height:1; margin-bottom:0.5rem; }
+.ie-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; color:var(--bg-open); margin-bottom:0.45rem; line-height:1.2; }
+.ie-item p { font-size:0.83rem; color:rgba(251,245,255,0.32); line-height:1.65; }
+
+/* ── WHAT'S IN THE INTELLIGENCE LAYER ── */
+.products { padding:4rem 2rem; background:var(--bg-warm); }
+.products-inner { max-width:1100px; margin:0 auto; }
+.section-label { font-size:0.52rem; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; display:block; margin-bottom:0.5rem; }
+.section-hed { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:300; color:var(--espresso); margin:0.4rem 0 2.5rem; line-height:1.15; }
+
+/* Labora Rounds feature card */
+.lr-card { background:var(--espresso); border:none; padding:3rem; margin-bottom:2px; display:grid; grid-template-columns:1fr 340px; gap:3.5rem; align-items:start; }
+.lr-card .lrc-label { font-size:0.5rem; font-weight:700; letter-spacing:0.26em; text-transform:uppercase; color:rgba(251,245,255,0.22); display:block; margin-bottom:0.65rem; }
+.lr-card h3 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3.5vw,2.3rem); font-weight:300; color:var(--bg-open); margin-bottom:0.5rem; line-height:1.1; }
+.lr-card .lrc-sub { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:rgba(200,175,90,0.6); margin-bottom:1.25rem; }
+.lr-card p { font-size:0.9rem; color:rgba(251,245,255,0.4); line-height:1.8; margin-bottom:1.5rem; }
+.btn-lr { display:inline-block; background:var(--gold-light); color:var(--espresso); padding:0.75rem 2rem; font-size:0.64rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); transition:background 0.15s; }
+.btn-lr:hover { background:var(--copper-light); }
+
+/* Ten-domain mini list in card right */
+.domain-mini { display:flex; flex-direction:column; gap:1px; }
+.dm-row { background:rgba(255,255,255,0.04); padding:0.65rem 0.85rem; display:flex; gap:0.85rem; align-items:baseline; text-decoration:none; transition:background 0.15s; }
+.dm-row:hover { background:rgba(255,255,255,0.08); }
+.dm-num { font-family:'Cormorant Garamond',serif; font-size:0.8rem; color:rgba(255,255,255,0.18); flex-shrink:0; width:1.5rem; }
+.dm-name { font-size:0.78rem; color:rgba(251,245,255,0.45); line-height:1.2; flex:1; }
+.dm-row:hover .dm-name { color:var(--gold-light); }
+.dm-tag { font-size:0.42rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:0.1rem 0.35rem; flex-shrink:0; }
+.t-c { background:rgba(29,107,120,0.3); color:var(--teal-light); }
+.t-p { background:rgba(231,129,127,0.2); color:var(--rose-light); }
+.t-e { background:rgba(46,82,64,0.3); color:var(--forest-light); }
+.t-g { background:rgba(158,125,10,0.2); color:var(--gold-light); }
+.t-s { background:rgba(138,112,96,0.2); color:rgba(251,245,255,0.4); }
+
+/* Special Reports card */
+.sr-card { background:var(--white); border:1px solid var(--blush-light); padding:2.5rem; margin-bottom:2px; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+.sr-card .src-label { font-size:0.5rem; font-weight:700; letter-spacing:0.26em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:0.65rem; }
+.sr-card h3 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,1.9rem); font-weight:300; color:var(--espresso); margin-bottom:0.5rem; line-height:1.1; }
+.sr-card .src-sub { font-family:'Cormorant Garamond',serif; font-size:0.95rem; font-style:italic; color:var(--muted); margin-bottom:1rem; }
+.sr-card p { font-size:0.9rem; color:var(--muted); line-height:1.78; margin-bottom:1.25rem; }
+.btn-sr { display:inline-block; background:var(--espresso); color:var(--bg-open); padding:0.72rem 1.75rem; font-size:0.62rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition:background 0.15s; }
+.btn-sr:hover { background:var(--copper); }
+
+/* Domain category blocks */
+.sr-categories { display:flex; flex-direction:column; gap:2px; }
+.src-cat { padding:0.75rem 1rem; display:flex; align-items:center; gap:0.75rem; }
+.src-cat-count { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; line-height:1; flex-shrink:0; opacity:0.7; }
+.src-cat-info h4 { font-size:0.78rem; color:var(--body-text); margin-bottom:0.1rem; font-weight:500; }
+.src-cat-info span { font-size:0.68rem; color:var(--muted); }
+.cat-clinical  { background:var(--teal-light);   border-left:3px solid var(--teal);   }
+.cat-clinical .src-cat-count { color:var(--teal); }
+.cat-political { background:var(--rose-light);   border-left:3px solid var(--rose);   }
+.cat-political .src-cat-count { color:var(--rose); }
+.cat-economic  { background:var(--forest-light); border-left:3px solid var(--forest); }
+.cat-economic .src-cat-count { color:var(--forest); }
+.cat-policy    { background:var(--gold-light);   border-left:3px solid var(--gold);   }
+.cat-policy .src-cat-count { color:var(--gold); }
+.cat-social    { background:var(--blush-light);  border-left:3px solid var(--blush);  }
+.cat-social .src-cat-count { color:var(--muted); }
+
+/* ── INTELLIGENCE vs NEWSLETTER ── */
+.intel-vs { background:var(--espresso); padding:3.5rem 2rem; }
+.iv-inner { max-width:1100px; margin:0 auto; }
+.iv-label { font-size:0.52rem; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:rgba(251,245,255,0.22); display:block; margin-bottom:0.5rem; }
+.iv-hed { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,1.9rem); font-weight:300; color:var(--bg-open); margin-bottom:1.75rem; line-height:1.15; }
+.iv-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; background:rgba(255,255,255,0.06); }
+.iv-cell { background:rgba(255,255,255,0.03); padding:2rem; }
+.iv-cell-label { font-size:0.5rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:0.65rem; }
+.iv-cell-label.gold { color:var(--gold-light); opacity:0.7; }
+.iv-cell-label.copper { color:var(--copper); }
+.iv-cell h4 { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--bg-open); margin-bottom:0.65rem; line-height:1.2; }
+.iv-cell p { font-size:0.85rem; color:rgba(251,245,255,0.35); line-height:1.68; margin-bottom:1rem; }
+.iv-cell a { font-size:0.6rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:1px; transition:color 0.15s; }
+.iv-cell a.gold { color:var(--gold-light); }
+.iv-cell a.copper { color:var(--copper); }
+.iv-cell a:hover { opacity:0.7; }
+
+/* ── CTA BLOCK ── */
+.cta-block { background:var(--gold-light); border-top:2px solid var(--gold); padding:3rem 2rem; }
+.cta-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+.cta-inner h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,1.8rem); font-weight:300; color:var(--espresso); line-height:1.2; }
+.cta-inner p { font-size:0.88rem; color:var(--muted); margin-top:0.35rem; max-width:500px; line-height:1.6; }
+.cta-actions { display:flex; gap:0.85rem; flex-wrap:wrap; align-items:center; flex-shrink:0; }
+.btn-join { display:inline-block; background:var(--espresso); color:var(--bg-open); padding:0.78rem 2rem; font-size:0.64rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:background 0.15s; }
+.btn-join:hover { background:var(--copper); }
+.btn-free { font-size:0.62rem; color:var(--espresso); letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px; opacity:0.6; transition:opacity 0.15s; }
+.btn-free:hover { opacity:1; }
+
+/* ── ATTRIBUTION / FOOTER ── */
+.attribution { background:var(--bg-warm); padding:2.75rem 2rem 2.25rem; text-align:center; border-top:1px solid var(--blush-light); }
+.attribution-logos { display:flex; align-items:center; justify-content:center; gap:1.5rem; margin-bottom:0.75rem; }
+.attr-dot { width:4px; height:4px; border-radius:50%; background:var(--blush); flex-shrink:0; }
+.attr-source { font-size:0.56rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.attr-rule { height:1px; background:var(--blush-light); margin:1.5rem 0; }
+.attr-cols { display:grid; grid-template-columns:1fr 1px 1fr; text-align:left; max-width:580px; margin:0 auto; }
+.attr-divider { background:var(--blush-light); }
+.attr-col { padding:0 2rem; }
+.attr-col:first-child { padding-left:0; }
+.attr-col:last-child  { padding-right:0; }
+.attr-col p { font-size:0.76rem; line-height:1.65; color:var(--muted); }
+.attr-col p strong { color:var(--body-text); font-weight:500; }
+.attr-links { display:flex; align-items:center; justify-content:center; gap:1.25rem; margin-top:1.75rem; }
+.attr-links a { font-size:0.7rem; color:var(--copper); text-decoration:none; transition:color 0.15s; }
+.attr-links a:hover { color:var(--espresso); }
+.attr-links .dot { color:var(--blush); font-size:0.5rem; }
+.closer { background:var(--espresso); padding:0.85rem 2rem; text-align:center; }
+.closer p { font-size:0.56rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:rgba(251,245,255,0.32); }
+
+@media (max-width:1000px) {
+  .lr-card { grid-template-columns:1fr; }
+  .sr-card { grid-template-columns:1fr; }
+  .iv-grid { grid-template-columns:1fr; }
+}
+@media (max-width:900px) {
+  .ie-inner { grid-template-columns:1fr; gap:2rem; }
+  .nav-links { display:none; }
+  .cta-inner { flex-direction:column; align-items:flex-start; }
+}
+@media (max-width:640px) {
+  .header-inner, .products, .intel-vs, .cta-block { padding-left:1.25rem; padding-right:1.25rem; }
+  .stat-strip { flex-direction:column; }
+  .attr-cols { grid-template-columns:1fr; }
+  .attr-divider { display:none; }
+  .attr-col { padding:0.65rem 0; border-bottom:1px solid var(--blush-light); }
+  .attr-col:last-child { border-bottom:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/"><img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective"></a>
+    </div>
+    <div class="nav-breadcrumb">
+      <a href="/">Home</a><span class="sep">›</span>Intelligence
+    </div>
+    <ul class="nav-links">
+      <li><a href="/newsletters/">Newsletters</a></li>
+      <li><a href="/intelligence/" class="active">Intelligence</a></li>
+      <li><a href="/intelligence/labora-rounds/">Labora Rounds</a></li>
+      <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+      <li><a href="/join" class="nav-cta">Join →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective" style="height:44px;width:auto;">
+    </div>
+    <span class="header-super">Labora Collective · Intelligence Division</span>
+    <h1 class="header-title">Intelligence</h1>
+    <p class="header-deck">The intelligence layer is where Labora Collective goes beyond the newsletter. Ten-domain weekly analysis, eleven special reports, and a structured archive — built for the practitioners, researchers, advocates, and policymakers who need more than a summary.</p>
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <span class="stat-num">10</span>
+        <span class="stat-label">Domains Covered</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">11</span>
+        <span class="stat-label">Special Reports</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">52×</span>
+        <span class="stat-label">Annual Reports</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- WHAT IS INTELLIGENCE -->
+<div class="intel-explainer">
+  <div class="ie-inner">
+    <div class="ie-item">
+      <span class="item-num">I</span>
+      <h3>Not a newsletter. An intelligence architecture.</h3>
+      <p>The newsletters are the public face. The Intelligence layer is the engine — structured, multi-domain analysis that goes deeper than any single publication cycle and is designed to be used, not just read.</p>
+    </div>
+    <div class="ie-item">
+      <span class="item-num">II</span>
+      <h3>Ten domains. Swept every week.</h3>
+      <p>Medical, political, economic, policy, innovation, menopause, social systems, political systems, administration, immigration, and clinical practice. The same domains, every week, so you can track change over time and not just capture snapshots.</p>
+    </div>
+    <div class="ie-item">
+      <span class="item-num">III</span>
+      <h3>Built for translation, not just reading.</h3>
+      <p>Every report is structured so the same document serves a department chair, a campaign researcher, and a patient trying to understand what's happening to her care. The evidence doesn't change — the translation layers do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+  <div class="products-inner">
+    <span class="section-label" style="color:var(--gold);">Intelligence Products</span>
+    <h2 class="section-hed">Two products. One public. One for members.</h2>
+
+    <!-- LABORA ROUNDS -->
+    <div class="lr-card">
+      <div>
+        <span class="lrc-label">Weekly · Member Intelligence · Labora Luminary</span>
+        <h3>Labora Rounds</h3>
+        <p class="lrc-sub">Ten-domain weekly intelligence sweep</p>
+        <p>Every Monday, Labora Rounds delivers a complete intelligence sweep across all ten domains — what moved clinically, politically, economically, and in the policy infrastructure in the past seven days. Not a summary. A structured analysis. Delivered to Labora Luminary members every Monday alongside Signal Monday.</p>
+        <a href="/intelligence/labora-rounds/" class="btn-lr">View Labora Rounds →</a>
+      </div>
+      <div>
+        <div class="domain-mini">
+          <a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html" class="dm-row">
+            <span class="dm-num">01</span><span class="dm-name">Medical &amp; Clinical</span><span class="dm-tag t-c">Clinical</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html" class="dm-row">
+            <span class="dm-num">02</span><span class="dm-name">Political &amp; Legal</span><span class="dm-tag t-p">Political</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-03-economic.html" class="dm-row">
+            <span class="dm-num">03</span><span class="dm-name">Economic Analysis</span><span class="dm-tag t-e">Economic</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-04-health-policy.html" class="dm-row">
+            <span class="dm-num">04</span><span class="dm-name">Health Policy</span><span class="dm-tag t-g">Policy</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-05-innovation-funding.html" class="dm-row">
+            <span class="dm-num">05</span><span class="dm-name">Innovation &amp; Funding</span><span class="dm-tag t-c">Clinical</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-06-menopause.html" class="dm-row">
+            <span class="dm-num">06</span><span class="dm-name">Menopause</span><span class="dm-tag t-c">Clinical</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-07-social-systems.html" class="dm-row">
+            <span class="dm-num">07</span><span class="dm-name">Social Systems</span><span class="dm-tag t-s">Social</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-08-political-systems.html" class="dm-row">
+            <span class="dm-num">08</span><span class="dm-name">Political Systems</span><span class="dm-tag t-p">Political</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-09-trump-admin.html" class="dm-row">
+            <span class="dm-num">09</span><span class="dm-name">Trump Administration</span><span class="dm-tag t-p">Political</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-10-immigration-rj.html" class="dm-row">
+            <span class="dm-num">10</span><span class="dm-name">Immigration &amp; RJ</span><span class="dm-tag t-s">Social</span>
+          </a>
+          <a href="/intelligence/labora-rounds/special-reports/domain-11-clinical-practice.html" class="dm-row">
+            <span class="dm-num">11</span><span class="dm-name">Clinical Practice Intel</span><span class="dm-tag t-c">Practice</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIAL REPORTS -->
+    <div class="sr-card">
+      <div>
+        <span class="src-label">Public · No Paywall · Foundation Layer</span>
+        <h3>Special Reports</h3>
+        <p class="src-sub">Mid-2025 through Early 2026 · Eleven Domains</p>
+        <p>The first public release of Labora Collective Intelligence. Eleven domain reports covering everything that shaped women's health from mid-2025 through early 2026. Physician-authored, evidence-grounded, no paywall. The foundation layer is free.</p>
+        <a href="/intelligence/labora-rounds/special-reports/" class="btn-sr">Access Special Reports →</a>
+      </div>
+      <div class="sr-categories">
+        <div class="src-cat cat-clinical">
+          <span class="src-cat-count">4</span>
+          <div class="src-cat-info"><h4>Clinical Domains</h4><span>Medical · Innovation · Menopause · Practice</span></div>
+        </div>
+        <div class="src-cat cat-political">
+          <span class="src-cat-count">3</span>
+          <div class="src-cat-info"><h4>Political Domains</h4><span>Legal · Systems · Administration</span></div>
+        </div>
+        <div class="src-cat cat-economic">
+          <span class="src-cat-count">1</span>
+          <div class="src-cat-info"><h4>Economic Domain</h4><span>Economic Analysis</span></div>
+        </div>
+        <div class="src-cat cat-policy">
+          <span class="src-cat-count">1</span>
+          <div class="src-cat-info"><h4>Policy Domain</h4><span>Health Policy Cross-Cutting</span></div>
+        </div>
+        <div class="src-cat cat-social">
+          <span class="src-cat-count">2</span>
+          <div class="src-cat-info"><h4>Social Domains</h4><span>Social Systems · Immigration &amp; RJ</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTELLIGENCE vs NEWSLETTERS -->
+<section class="intel-vs">
+  <div class="iv-inner">
+    <span class="iv-label">How They Work Together</span>
+    <h2 class="iv-hed">The newsletters and the intelligence layer are designed to be read together.</h2>
+    <div class="iv-grid">
+      <div class="iv-cell">
+        <span class="iv-cell-label copper">The Newsletters</span>
+        <h4>What's happening right now</h4>
+        <p>Signal Monday and Signal Wednesday are weekly publications — accessible, current, actionable. They surface what moved in the last seven days and tell you what it means for patients and providers. The Briefing goes deeper, three times a week. All are written to be read in one sitting.</p>
+        <a href="/newsletters/" class="copper">Browse newsletters →</a>
+      </div>
+      <div class="iv-cell">
+        <span class="iv-cell-label gold">The Intelligence Layer</span>
+        <h4>The deep archive and pattern recognition</h4>
+        <p>Labora Rounds and the Special Reports are the structure underneath. They allow you to track how a domain has evolved over months — not just what happened this week. The Special Reports are the foundation. Labora Rounds is the continuing weekly sweep for members who need the full picture.</p>
+        <a href="/intelligence/labora-rounds/" class="gold">Explore Labora Rounds →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-inner">
+    <div>
+      <h2>Weekly Labora Rounds are available to Labora Luminary members.</h2>
+      <p>The Special Reports are public and free. The weekly ten-domain intelligence sweep is the member tier. Join to access the full intelligence layer.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="/join" class="btn-join">Become a Member →</a>
+      <a href="/intelligence/labora-rounds/special-reports/" class="btn-free">Access free reports</a>
+    </div>
+  </div>
+</div>
+
+<!-- ATTRIBUTION -->
+<div class="attribution">
+  <div class="attribution-logos">
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:38px;width:auto;">
+    <div class="attr-dot"></div>
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:34px;width:auto;opacity:0.65;">
+  </div>
+  <p class="attr-source">Intelligence · Labora Collective · A Diosa Ara Initiative</p>
+  <div class="attr-rule"></div>
+  <div class="attr-cols">
+    <div class="attr-col"><p><strong>Labora Collective Intelligence</strong> is published by the <strong>Labora Collective</strong>, a <strong>Diosa Ara</strong> initiative.</p></div>
+    <div class="attr-divider"></div>
+    <div class="attr-col"><p><strong>Diosa Ara</strong> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health.</p></div>
+  </div>
+  <div class="attr-rule"></div>
+  <div class="attr-links">
+    <a href="/">laboracollective.com</a><span class="dot">·</span>
+    <a href="/newsletters/">Newsletters</a><span class="dot">·</span>
+    <a href="/intelligence/labora-rounds/">Labora Rounds</a><span class="dot">·</span>
+    <a href="https://diosara.com">diosara.com</a>
+  </div>
+</div>
+<div class="closer"><p>Labora Collective · A Diosa Ara Initiative</p></div>
+
+</body>
+</html>

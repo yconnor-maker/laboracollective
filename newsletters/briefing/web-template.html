@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Labora Briefing — Intelligence for the Week Ahead</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   LC DESIGN SYSTEM — v2
+   BRIEFING FRIDAY — cream background, copper leads, serious register
+   ============================================================ */
+
+:root {
+  --espresso:       #362511;
+  --espresso-mid:   #4A3218;
+  --body-text:      #2C1A0E;
+  --muted:          #8A7060;
+  --copper:         #D48662;
+  --copper-light:   #E8A882;
+  --blush:          #EABAB0;
+  --blush-light:    #F5DDD9;
+  --rose:           #E7817F;
+  --rose-light:     #FAEAEA;
+  --teal:           #1D6B78;
+  --teal-light:     #E0F2F4;
+  --forest:         #2E5240;
+  --forest-light:   #E4EFE8;
+  --gold:           #9E7D0A;
+  --gold-light:     #F5EDCC;
+  --bg-warm:        #F7F3EE;
+  --bg-open:        #FBF5FF;
+  --white:          #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light only; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-warm);
+  color: var(--body-text);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER — masthead format, no pill tag ── */
+.header {
+  background: var(--espresso);
+  padding: 0;
+}
+.header-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 0;
+}
+
+.lc-logo {
+  display: flex; align-items: center; gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.masthead {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.75rem 0 2rem;
+}
+.masthead-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.56rem; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(251,245,255,0.32); margin-bottom: 0.75rem;
+}
+.pub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-weight: 300; line-height: 1.0;
+  color: var(--bg-open);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+.pub-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic;
+  color: rgba(251,245,255,0.45);
+  margin-bottom: 2rem;
+}
+
+/* Three-pillar accent bar */
+.pillar-bar {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+}
+.pillar-bar div { padding: 0.45rem 0.85rem; }
+.pillar-bar div:nth-child(1) { background: var(--copper); }
+.pillar-bar div:nth-child(2) { background: var(--rose); }
+.pillar-bar div:nth-child(3) { background: var(--espresso-mid); border-left: 1px solid rgba(255,255,255,0.1); }
+.pillar-bar span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--white);
+}
+.pillar-bar div:nth-child(3) span { color: rgba(251,245,255,0.45); }
+
+.issue-line {
+  padding: 0.75rem 0 0;
+  display: flex; gap: 1.25rem; align-items: center;
+  padding-bottom: 1.25rem;
+}
+.issue-line span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.56rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(251,245,255,0.22);
+}
+.issue-line .dot { color: var(--copper); }
+
+/* ── BODY ── */
+.body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 2rem 0;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.54rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  display: block; margin-bottom: 0.85rem;
+}
+.label-copper { color: var(--copper); }
+.label-rose   { color: var(--rose); }
+.label-muted  { color: var(--muted); }
+
+/* ── INTELLIGENCE LEAD ── */
+.intel-lead {
+  padding: 3rem 0 2.5rem;
+  border-bottom: 1px solid var(--blush-light);
+}
+.intel-lead .lead-hed {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 400; line-height: 1.15;
+  color: var(--espresso); margin-bottom: 1.25rem;
+}
+.intel-lead p {
+  font-size: 0.97rem; line-height: 1.85;
+  color: var(--body-text); margin-bottom: 0.9rem;
+}
+.intel-lead p:last-child { margin-bottom: 0; }
+
+/* ── PILLAR SECTIONS ── */
+.pillar {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--blush-light);
+}
+.pillar:last-of-type { border-bottom: none; }
+
+.pillar-hed {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 400; line-height: 1.2;
+  color: var(--espresso); margin: 0.5rem 0 1.25rem;
+}
+
+.pillar-story {
+  margin-bottom: 1.5rem; padding-bottom: 1.5rem;
+  border-bottom: 1px dotted var(--blush);
+}
+.pillar-story:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.story-hed {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--espresso); margin-bottom: 0.5rem;
+}
+.pillar-story p {
+  font-size: 0.93rem; line-height: 1.78;
+  margin-bottom: 0.5rem;
+}
+.story-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--copper); text-decoration: none;
+  border-bottom: 1px solid var(--blush); padding-bottom: 1px;
+  transition: color 0.15s;
+}
+.story-link:hover { color: var(--espresso); }
+
+/* ── STAT CALLOUT ── */
+.stat-callout {
+  display: flex; gap: 1.5rem;
+  background: var(--blush-light);
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+  align-items: flex-start;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem; font-weight: 300;
+  color: var(--copper); line-height: 1; flex-shrink: 0;
+}
+.stat-desc {
+  font-size: 0.88rem; line-height: 1.65;
+  color: var(--body-text); padding-top: 0.2rem;
+}
+
+/* ── IN YOUR DISTRICT ── */
+.district-block {
+  border: 1px solid var(--copper);
+  background: var(--white);
+  padding: 1.75rem; margin: 2rem 0;
+}
+.district-block .section-label { color: var(--copper); }
+.district-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--espresso); margin: 0.4rem 0 0.85rem;
+}
+.district-block p { font-size: 0.93rem; line-height: 1.78; }
+
+/* ── FORWARD LOOK ── */
+.forward-block {
+  background: var(--espresso);
+  padding: 2.5rem; margin: 2.5rem 0;
+}
+.forward-block .section-label { color: var(--copper); margin-bottom: 1.5rem; }
+.forward-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 300; color: var(--bg-open);
+  margin-bottom: 1.75rem; line-height: 1.2;
+}
+.forward-row {
+  display: flex; gap: 1.25rem;
+  padding: 1rem 0; margin-bottom: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.forward-row:last-child { border-bottom: none; }
+.forward-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem; font-weight: 700;
+  color: var(--copper); letter-spacing: 0.1em;
+  text-transform: uppercase; flex: 0 0 5rem;
+  padding-top: 0.15rem;
+}
+.forward-item {
+  font-size: 0.93rem;
+  color: rgba(251,245,255,0.78); line-height: 1.65;
+}
+
+/* ── MEMBERS ── */
+.members-block {
+  border: 1px solid var(--blush);
+  padding: 2rem; margin: 0 0 2rem;
+  background: var(--white);
+}
+.members-block .section-label { color: var(--rose); }
+.members-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--espresso); margin: 0.4rem 0 0.85rem;
+}
+.members-block p {
+  font-size: 0.93rem; line-height: 1.78; margin-bottom: 0.75rem;
+}
+.members-cta {
+  display: inline-block;
+  background: var(--espresso); color: var(--bg-open);
+  padding: 0.6rem 1.4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; margin-top: 0.4rem;
+  transition: background 0.15s;
+}
+.members-cta:hover { background: var(--copper); }
+
+/* ── CTA BLOCK ── */
+.cta-block {
+  background: var(--espresso);
+  padding: 3rem 2rem; text-align: center;
+}
+.cta-block p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem; color: rgba(251,245,255,0.7);
+  letter-spacing: 0.02em; margin-bottom: 1.5rem; line-height: 1.6;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--gold-light); color: var(--espresso);
+  padding: 0.85rem 2.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid var(--gold);
+  transition: background 0.15s;
+}
+.cta-btn:hover { background: var(--copper-light); }
+
+/* ── ATTRIBUTION ── */
+.attribution {
+  background: var(--bg-warm);
+  padding: 3rem 2rem 2.5rem; text-align: center;
+}
+.attribution-logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; margin-bottom: 0.85rem;
+}
+.attr-dot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--blush); flex-shrink: 0;
+}
+.attr-source {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem; color: var(--muted);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.attr-rule { height: 1px; background: var(--blush-light); margin: 1.5rem 0; }
+.attr-cols {
+  display: grid; grid-template-columns: 1fr 1px 1fr;
+  text-align: left; max-width: 600px; margin: 0 auto;
+}
+.attr-divider { background: var(--blush-light); }
+.attr-col { padding: 0 2rem; }
+.attr-col:first-child { padding-left: 0; }
+.attr-col:last-child { padding-right: 0; }
+.attr-col p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; line-height: 1.65; color: var(--muted);
+}
+.attr-col p strong { color: var(--body-text); font-weight: 500; }
+.attr-links {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.25rem; margin-top: 2rem;
+}
+.attr-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem; color: var(--copper);
+  text-decoration: none; letter-spacing: 0.05em;
+  transition: color 0.15s;
+}
+.attr-links a:hover { color: var(--espresso); }
+.attr-links .dot { color: var(--blush); font-size: 0.5rem; }
+
+/* ── FINAL CLOSER ── */
+.closer {
+  background: var(--espresso);
+  padding: 1rem 2rem; text-align: center;
+}
+.closer p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem; font-weight: 500;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(251,245,255,0.35);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--bg-warm);
+  border-top: 1px solid var(--blush-light);
+  padding: 1.5rem 2rem; text-align: center;
+}
+footer p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; color: var(--muted);
+  letter-spacing: 0.08em; margin-top: 0.4rem; line-height: 1.7;
+}
+footer a { color: var(--copper); text-decoration: none; }
+footer a:hover { color: var(--espresso); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .header-inner, .body { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .forward-block, .cta-block { padding: 1.75rem 1.25rem; }
+  .stat-callout { flex-direction: column; gap: 0.75rem; }
+  .stat-num { font-size: 2rem; }
+  .attr-cols { grid-template-columns: 1fr; }
+  .attr-divider { display: none; }
+  .attr-col { padding: 0.75rem 0; border-bottom: 1px solid var(--blush-light); }
+  .attr-col:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="header">
+  <div class="header-inner">
+    <div class="lc-logo">
+      <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective" style="height:56px;width:auto;display:block;">
+    </div>
+    <div class="masthead">
+      <div class="masthead-eyebrow">Issue [#] &nbsp;·&nbsp; [Month Day, Year] &nbsp;·&nbsp; Friday</div>
+      <h1 class="pub-title">The Labora<br>Briefing</h1>
+      <p class="pub-subtitle">Intelligence on women's health, policy &amp; power — for the week ahead</p>
+    </div>
+    <div class="pillar-bar">
+      <div><span>Clinical</span></div>
+      <div><span>Political</span></div>
+      <div><span>Infrastructure</span></div>
+    </div>
+    <div class="issue-line">
+      <span>laboracollective.com</span>
+      <span class="dot">·</span>
+      <span>A Diosa Ara Initiative</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══ BODY ══ -->
+<div class="body">
+
+  <!-- INTELLIGENCE LEAD -->
+  <div class="intel-lead">
+    <span class="section-label label-copper">This Week's Intelligence</span>
+    <h2 class="lead-hed">[Lead headline — the most important story of the week, under 15 words]</h2>
+    <p>[Opening paragraph — 3–5 sentences. The synthesis. What does this week's intelligence, taken together, tell us? Written in YC's voice — analytical, confident, clinical in precision but accessible. What is the pattern?]</p>
+    <p>[Second paragraph — what this means going into next week. What should practitioners, patients, and advocates be watching?]</p>
+  </div>
+
+  <!-- PILLAR 1: CLINICAL -->
+  <div class="pillar">
+    <span class="section-label label-copper">Clinical</span>
+    <h2 class="pillar-hed">[Clinical pillar headline — the frame for this week's clinical intelligence]</h2>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Clinical story 1 headline]</div>
+      <p>[2–3 sentences. What happened, what it means clinically, why it matters now.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Clinical story 2 headline]</div>
+      <p>[2–3 sentences.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+
+    <div class="stat-callout">
+      <div class="stat-num">[#]</div>
+      <div class="stat-desc">[Stat context — what does this number mean, why is it relevant this week. 2–3 sentences.]</div>
+    </div>
+  </div>
+
+  <!-- PILLAR 2: POLITICAL -->
+  <div class="pillar">
+    <span class="section-label label-rose">Political</span>
+    <h2 class="pillar-hed">[Political pillar headline]</h2>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Political story 1 headline]</div>
+      <p>[2–3 sentences. What policy moved, what case was filed, what vote happened.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Political story 2 headline]</div>
+      <p>[2–3 sentences.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+
+    <div class="district-block">
+      <span class="section-label label-copper">In Your District</span>
+      <h3>[State-level or local political story this week]</h3>
+      <p>[2–3 sentences on what is happening at the state or local level that Briefing readers need to know. Which state is leading? Which is lagging? What vote is coming?]</p>
+    </div>
+  </div>
+
+  <!-- PILLAR 3: INFRASTRUCTURE -->
+  <div class="pillar">
+    <span class="section-label label-muted">Infrastructure</span>
+    <h2 class="pillar-hed">[Infrastructure pillar headline — funding, workforce, systems]</h2>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Infrastructure story 1 headline]</div>
+      <p>[2–3 sentences. A funding cut, workforce shift, system change, or resource gap.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+
+    <div class="pillar-story">
+      <div class="story-hed">[Infrastructure story 2 headline]</div>
+      <p>[2–3 sentences.]</p>
+      <a href="#" class="story-link">Full report →</a>
+    </div>
+  </div>
+
+  <!-- FORWARD LOOK -->
+  <div class="forward-block">
+    <span class="section-label">Forward Look</span>
+    <h2>Week of [Next Week Date] — What to Watch</h2>
+    <div class="forward-row">
+      <div class="forward-date">[Day]</div>
+      <div class="forward-item">[What to watch — a ruling expected, a deadline, a hearing, a publication date]</div>
+    </div>
+    <div class="forward-row">
+      <div class="forward-date">[Day]</div>
+      <div class="forward-item">[What to watch]</div>
+    </div>
+    <div class="forward-row">
+      <div class="forward-date">[Day]</div>
+      <div class="forward-item">[What to watch]</div>
+    </div>
+    <div class="forward-row">
+      <div class="forward-date">[Day]</div>
+      <div class="forward-item">[What to watch]</div>
+    </div>
+  </div>
+
+  <!-- MEMBERS -->
+  <div class="members-block">
+    <span class="section-label">Inside Labora This Week</span>
+    <h3>[Members-only content teaser headline]</h3>
+    <p>[2–3 sentences describing what Diosa Insiders and Labora Luminaries received this week — which Special Report dropped, which deep dive went out, what's in the pipeline.]</p>
+    <a href="https://laboracollective.com/join" class="members-cta">Become a Member →</a>
+  </div>
+
+</div><!-- /body -->
+
+<!-- ══ CTA BLOCK ══ -->
+<div class="cta-block">
+  <p>The Labora Briefing is your Friday intelligence layer — clinical, political, and infrastructure in one read.<br>
+  <span style="opacity:0.55;font-size:0.85rem;">Want the full depth? Labora Rounds delivers ten-domain weekly reports — every Monday morning.</span></p>
+  <a href="https://laboracollective.com/join" class="cta-btn">Become a Member →</a>
+</div>
+
+<!-- ══ ATTRIBUTION ══ -->
+<div class="attribution">
+  <div class="attribution-logos">
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:40px;width:auto;">
+    <div class="attr-dot"></div>
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:36px;width:auto;opacity:0.65;">
+  </div>
+
+  <p class="attr-source">The Labora Briefing &nbsp;·&nbsp; Weekly Intelligence &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+
+  <div class="attr-rule"></div>
+
+  <div class="attr-cols">
+    <div class="attr-col">
+      <p><strong>The Labora Briefing</strong> is a publication of the <strong>Labora Collective</strong><br>
+      Labora Collective is a <strong>Diosa Ara</strong> initiative</p>
+    </div>
+    <div class="attr-divider"></div>
+    <div class="attr-col">
+      <p><strong>Diosa Ara</strong> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health.</p>
+    </div>
+  </div>
+
+  <div class="attr-rule"></div>
+
+  <div class="attr-links">
+    <a href="https://laboracollective.com">laboracollective.com</a>
+    <span class="dot">·</span>
+    <a href="https://diosara.com">diosara.com</a>
+  </div>
+</div>
+
+<!-- ══ FINAL CLOSER ══ -->
+<div class="closer">
+  <p>Labora Collective &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>You received this because you subscribed to The Labora Briefing.</p>
+  <p><a href="{{manage_preferences_url}}">Manage preferences</a> &nbsp;·&nbsp; <a href="{{unsubscribe_url}}">Unsubscribe</a> &nbsp;·&nbsp; <a href="https://laboracollective.com">laboracollective.com</a></p>
+</footer>
+
+</body>
+</html>

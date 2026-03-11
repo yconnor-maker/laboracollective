@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>Domain 02: Political & Legal Intelligence | Labora Collective Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{--espresso:#362511;--espresso-mid:#4A3218;--copper:#D48662;--blush:#EABAB0;--blush-light:#F5DDD9;--rose:#E7817F;--rose-light:#FAEAEA;--lavender:#FBF5FF;--white:#FFFFFF;--muted:#8A7060;--body-text:#2C1A0E;  --teal:           #1D6B78;
+  --teal-light:     #E0F2F4;
+  --forest:         #2E5240;
+  --forest-light:   #E4EFE8;
+  --gold:           #9E7D0A;
+  --gold-light:     #F5EDCC;
+  --bg-warm:        #F7F3EE;
+  --bg-open:        #FBF5FF;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;color-scheme:light only;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:var(--body-text);font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+.header{background:var(--espresso);padding:3rem 2rem 2.5rem;border-bottom:3px solid var(--copper);}
+.hi{max-width:860px;margin:0 auto;}
+.lc-logo{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;}
+.lc-mark{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--copper);}
+.lc-word{font-family:Arial,sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(251,245,255,0.45);line-height:1.5;}
+.dtag{font-family:Arial,sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem;}
+.rtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:300;line-height:1.08;color:var(--lavender);margin-bottom:0.75rem;}
+.rtitle em{font-style:italic;color:var(--blush);}
+.hrule{height:1px;margin:1.5rem 0;background:linear-gradient(to right,var(--copper),transparent);}
+.rmeta{font-family:Arial,sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(251,245,255,0.35);}
+.body{max-width:860px;margin:0 auto;padding:0 2rem 6rem;}
+.sblock{background:var(--blush-light);border-left:4px solid var(--rose);padding:2.5rem;margin:3rem 0;}
+.blabel{font-family:Arial,sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--rose);margin-bottom:1.25rem;}
+.stext{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--espresso);line-height:1.45;margin-bottom:1.5rem;}
+.stext strong{font-style:normal;font-weight:600;}
+.contra{font-size:0.95rem;padding:0.85rem 1.1rem;margin-bottom:1.5rem;background:rgba(231,129,127,0.1);border-left:2px solid var(--rose);}
+.impl{list-style:none;}
+.impl li{font-size:0.93rem;padding:0.5rem 0 0.5rem 1.5rem;position:relative;border-bottom:1px solid rgba(231,129,127,0.15);}
+.impl li:last-child{border-bottom:none;}
+.impl li::before{content:'→';position:absolute;left:0;color:var(--rose);}
+.slabel{font-family:Arial,sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper);display:block;margin:3.5rem 0 1rem;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:400;line-height:1.2;color:var(--espresso);margin-bottom:1.25rem;}
+p{margin-bottom:1.25rem;font-size:1rem;line-height:1.8;}
+.lead{font-size:1.12rem;}
+.pq{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.85rem);font-weight:300;font-style:italic;color:var(--rose);line-height:1.35;padding:2rem 0;margin:2.5rem 0;border-top:2px solid var(--copper);border-bottom:1px solid var(--blush);}
+.cb{padding:1.4rem 1.7rem;margin:2rem 0;border-left:4px solid;background:var(--white);}
+.cbl{font-family:Arial,sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.65rem;display:block;}
+.cb p{margin-bottom:0;font-size:0.93rem;line-height:1.65;}
+.cc{border-color:var(--rose);}.cc .cbl{color:var(--rose);}
+.ca{border-color:var(--copper);}.ca .cbl{color:var(--copper);}
+.cp{border-color:var(--espresso);}.cp .cbl{color:var(--espresso);}
+.cg{border-color:var(--blush);background:var(--blush-light);}.cg .cbl{color:var(--muted);}
+.cal{border-color:var(--rose);background:var(--rose-light);}.cal .cbl{color:var(--rose);}
+.cd{border-color:var(--copper);background:var(--bg-warm);}.cd .cbl{color:var(--copper);}
+.vb{background:var(--white);padding:2.25rem;margin:2.5rem 0;border-top:3px solid var(--copper);}
+.vt{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--espresso);margin-bottom:0.35rem;}
+.vs{font-family:Arial,sans-serif;font-size:0.62rem;color:var(--muted);letter-spacing:0.05em;margin-bottom:1.5rem;}
+.vc{font-family:Arial,sans-serif;font-size:0.75rem;color:var(--body-text);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--blush);line-height:1.55;}
+.br{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.8rem;}
+.bl{font-family:Arial,sans-serif;font-size:0.7rem;color:var(--body-text);width:220px;flex-shrink:0;line-height:1.3;}
+.bt{flex:1;height:22px;background:var(--blush-light);overflow:hidden;}
+.bf{height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.bf.e{background:var(--espresso);}.bf.c{background:var(--copper);}.bf.r{background:var(--rose);}
+.bv{font-family:Arial,sans-serif;font-size:0.62rem;font-weight:700;color:white;white-space:nowrap;}
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+.sb{background:var(--bg-warm);padding:1.25rem;text-align:center;border-top:3px solid var(--copper);}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--rose);line-height:1;margin-bottom:0.4rem;}
+.sl{font-family:Arial,sans-serif;font-size:0.62rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;line-height:1.45;}
+.tl{margin:1.5rem 0;}
+.ti{display:flex;gap:1.25rem;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--blush);}
+.ti:last-child{border-bottom:none;}
+.td{font-family:Arial,sans-serif;font-size:0.65rem;font-weight:700;color:var(--copper);text-transform:uppercase;letter-spacing:0.1em;width:80px;flex-shrink:0;padding-top:0.15rem;}
+.tc{font-family:Arial,sans-serif;font-size:0.8rem;line-height:1.5;color:var(--body-text);}
+.tc strong{color:var(--espresso);}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0;}
+.ch{font-family:Arial,sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.5rem 1rem;margin-bottom:0.5rem;}
+.ch.pro{background:var(--espresso);color:var(--lavender);}
+.ch.res{background:var(--rose);color:var(--white);}
+.sc{padding:0.9rem 1rem;background:var(--white);margin-bottom:0.5rem;border-left:3px solid;}
+.sc.pro{border-color:var(--espresso);}.sc.res{border-color:var(--rose);}
+.sn2{font-family:Arial,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--espresso);margin-bottom:0.3rem;}
+.sd{font-family:Arial,sans-serif;font-size:0.78rem;color:var(--muted);line-height:1.4;}
+.fw{background:var(--espresso);padding:3rem 2.5rem;margin:3.5rem 0;}
+.fw .slabel{color:var(--copper);margin-top:0;}
+.fw h2{color:var(--lavender);}
+.fi{padding:1.25rem 0;border-bottom:1px solid rgba(251,245,255,0.1);}
+.fi:last-child{border-bottom:none;}
+.ft{font-family:Arial,sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--copper);margin-bottom:0.5rem;display:block;}
+.fi p{color:rgba(251,245,255,0.8);font-size:0.95rem;margin-bottom:0;}
+footer{background:var(--espresso-mid);border-top:3px solid var(--copper);padding:2.5rem 2rem;text-align:center;font-family:Arial,sans-serif;font-size:0.7rem;color:rgba(251,245,255,0.4);letter-spacing:0.08em;}
+.fm{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--lavender);margin-bottom:0.5rem;}
+.fm span{color:var(--copper);}
+footer a{color:var(--copper);text-decoration:none;}
+@media(max-width:680px){.header,.body{padding-left:1.25rem;padding-right:1.25rem;}.sgrid,.sr{grid-template-columns:1fr;}.bl{width:120px;}.fw{padding:2rem 1.25rem;}.sblock{padding:1.75rem 1.25rem;}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="hi">
+    <div class="lc-logo"><img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective" style="height:52px;width:auto;display:block;"></div>
+    <div class="dtag">Domain 02 — Political &amp; Legal Intelligence Synthesis</div>
+    <h1 class="rtitle">The Courts Are the Last Line of Defense.<br><em>And They Are Being Reshaped by the Same Hand That Reaches Through Them.</em></h1>
+    <div class="hrule"></div>
+    <div class="rmeta">Special Report &nbsp;·&nbsp; Mid-2025 through Early 2026 &nbsp;·&nbsp; Labora Rounds</div>
+  </div>
+</header>
+
+<div class="body">
+  <div class="sblock">
+    <div class="blabel">Signal · Contradiction · Immediate Implications</div>
+    <div class="stext"><strong>The Signal:</strong> A federal court in Texas vacated HIPAA protections for reproductive health data — and the administration chose not to appeal. A woman who drove to New Mexico for a legal abortion now has no federal privacy protection for that medical record if her home state comes looking. The floor we assumed was structural has been removed.</div>
+    <div class="contra"><strong>The Contradiction:</strong> Courts are simultaneously the last institutional check on executive overreach and increasingly unreliable as the judiciary is reshaped by the administration whose actions require checking. The rule of law is being invoked to dismantle the rules that protected it.</div>
+    <div class="blabel" style="margin-bottom:0.5rem;">What This Means Right Now</div>
+    <ul class="impl">
+      <li>210 people have been criminally charged for pregnancy outcomes since Dobbs. 31 of those charges are for miscarriages or stillbirths. The prosecution of pregnancy loss is not hypothetical — it is current, documented practice.</li>
+      <li>The Comstock Act of 1873 has been resurrected as a live federal tool. If the DOJ acts on its own memo, it bans medication abortion by mail without a single new vote in Congress.</li>
+      <li>The Supreme Court's Medina v. Planned Parenthood ruling — expected Spring 2026 — could authorize every state to cut Medicaid funding to any abortion provider, collapsing clinic access for 2.4 million low-income patients nationwide.</li>
+    </ul>
+  </div>
+
+  <span class="slabel">Opening</span>
+  <h2>The Legal Architecture of Women's Bodily Autonomy Is Being Dismantled from Multiple Directions at Once</h2>
+  <p class="lead">A lawyer in Missouri who has a miscarriage is charged with a crime. A physician in Idaho waits for a patient's condition to become imminently life-threatening before intervening — because the law gives her no other choice and the criminal exposure is real. A reproductive health database in Texas issues subpoenas for medical records across state lines. These are not worst-case scenarios. They are documented events in the period covered by this report.</p>
+  <p>Understanding the current legal landscape requires holding two things at once: first, the tools being deployed are a mix of old (Comstock Act, pre-Roe statutes), resurrected (feticide laws, privacy vacatur), and newly constructed (OBBBA Medicaid provisions, Title X administrative decapitation); second, the institutional mechanisms supposed to check this — the courts, HHS enforcement, the DOJ — have been captured, hollowed out, or deliberately redirected.</p>
+  <p>What follows is a systematic account of where things stand, what changed in this period, and what the next 90 days require.</p>
+
+  <div class="pq">"The prosecution of pregnancy loss is not a slippery slope. It is the current, documented reality for 31 people charged with crimes after a miscarriage or stillbirth since Dobbs. The slope has already been descended."</div>
+
+  <span class="slabel">Federal Legal Architecture</span>
+  <h2>HIPAA Vacated. Comstock Revived. The Federal Floor Is Gone.</h2>
+  <p>The most consequential federal legal development of this period is <em>Purl v. HHS</em>. A federal district court in Texas vacated the HHS rule extending HIPAA protections to reproductive health information — specifically the provision preventing covered entities from disclosing reproductive health records to state authorities investigating out-of-state abortions. The administration chose not to appeal. The rule is gone.</p>
+  <p>What this means in practice: a patient in Texas who traveled to New Mexico for a legal abortion no longer has federal protection against her provider being compelled to produce those records in response to a state subpoena. State law now governs — which means patients in ban states are governed by ban-state law even when they access care elsewhere.</p>
+
+  <div class="cb cal">
+    <span class="cbl">⚠ Critical Alert</span>
+    <p><strong>Purl v. HHS is in effect now.</strong> If you practice in a shield law state (New York, California, Massachusetts, Colorado, Illinois), your state protection still applies — but you must document your data privacy policy explicitly. If you are in a state without a shield law, you have no federal floor. Know what your EHR system does when served with an out-of-state subpoena. If you do not know, find out this week.</p>
+  </div>
+
+  <p>The second major development is the formal resurrection of the Comstock Act as an active legal tool. The DOJ issued a memo asserting Comstock Act applicability to mifepristone and misoprostol by mail, effectively threatening to ban medication abortion through the postal service without new legislation. The memo has not been enforced yet. Its existence is the threat — and every telehealth medication abortion provider is making legal decisions in its shadow.</p>
+
+  <div class="cb cp">
+    <span class="cbl">Practice Change</span>
+    <p>If your practice uses mail-order pharmacy or telehealth medication abortion, your legal exposure changed with the Comstock memo. State shield laws in protective states offer provider protection — but they do not protect the federal prosecution of the pharmacy or the mail carrier. Follow evolving guidance from ACOG, your state medical association, and your malpractice carrier. Do not operate on 2023 legal frameworks. They are outdated.</p>
+  </div>
+
+  <div class="cb cd">
+    <span class="cbl">In Your District</span>
+    <p>If the Comstock Act is enforced against medication abortion by mail, the estimated 20+ states protecting abortion access through telehealth lose that access pathway immediately — without a single legislative vote. In rural districts where the nearest in-person provider is 100+ miles away, mail-order medication abortion is not a convenience. It is the only access point. Comstock enforcement eliminates it with no debate and no constituency to lobby in time to stop it.</p>
+  </div>
+
+  <span class="slabel">Title X &amp; Medicaid</span>
+  <h2>The Administrative Kill Shot: Defunding Without Legislation</h2>
+  <p>Title X — the federal family planning program — has been gutted by administrative action, not repeal. The Office of Population Affairs, the HHS division that administers Title X grants, has been reduced to a single officer. This is a deliberate strategy: eliminate the operational infrastructure so grants cannot be renewed, technical assistance cannot be provided, and the program atrophies from inside. The result is a projected 55% revenue loss for Title X grantees — clinics providing contraception, STI testing, cancer screening, and pregnancy testing to 4 million low-income patients annually.</p>
+
+  <div class="cb ca">
+    <span class="cbl">Access Note</span>
+    <p>Title X patients are disproportionately uninsured, low-income, and rural. They are patients at community health centers, county health departments, rural clinics — providers who depend on Title X reimbursement to operate at all. When the OPA cannot function, those providers cut services or close. There is no private sector equivalent positioned to absorb 4 million low-income patients losing their only source of family planning care.</p>
+  </div>
+
+  <p><em>Medina v. Planned Parenthood South Atlantic</em> is currently before the Supreme Court. The question: whether states can exclude qualified providers from Medicaid solely because they offer abortion. If the Court rules against the right to choose providers, every state can immediately cut abortion providers from Medicaid networks — regardless of what other services those providers offer.</p>
+
+  <div class="cb cd">
+    <span class="cbl">In Your District</span>
+    <p>Planned Parenthood serves approximately 2.4 million Medicaid patients annually for services unrelated to abortion — contraception, STI testing, cancer screening, wellness exams. In states where Planned Parenthood is the only accessible Medicaid provider for miles, losing Medicaid reimbursement means clinic closure. The patients who lose access are not wealthy women with alternatives. They are the constituents carrying the highest burden of unmet healthcare need in every district where this plays out.</p>
+  </div>
+
+  <span class="slabel">Criminal Prosecution</span>
+  <h2>210 Charges. 31 for Miscarriage or Stillbirth. This Is the Enforcement Environment.</h2>
+  <p>Since Dobbs, Pregnancy Justice has documented 210 criminal charges in connection with pregnancy outcomes. Thirty-one involve miscarriages or stillbirths — not elective abortions, but pregnancy losses. The population being prosecuted is predominantly low-income Black women in states with near-total bans, charged under fetal homicide statutes, feticide laws, and child endangerment provisions.</p>
+  <p>The prosecution mechanism requires no law specifically targeting abortion. It requires a creative prosecutor, a broad fetal personhood statute, and a patient who had a bad outcome — regardless of cause. In states where drug use during pregnancy triggers criminal charges, any substance in a toxicology screen becomes evidence. In states where fetal homicide laws extend to early pregnancy, a documented miscarriage can be the basis for a homicide investigation.</p>
+
+  <div class="cb cc">
+    <span class="cbl">🔬 Clinical Gem</span>
+    <p>Miscarriage occurs in 10–20% of known pregnancies. Stillbirth affects approximately 1 in 160. Both are common, medically complex events with multiple causes — many impossible to distinguish from induced termination on clinical examination alone. In ban states, your documentation of an incomplete abortion presentation is potentially a legal document. Document the clinical presentation. Document what is not known. Document the differential. This is the current standard of care in the current legal environment.</p>
+  </div>
+
+  <div class="cb cg">
+    <span class="cbl">The Gap</span>
+    <p>There is no comprehensive federal database of pregnancy-related prosecutions. The 210 number comes from Pregnancy Justice doing manual tracking — not the CDC, the DOJ, or any government entity. The administration eliminated CDC reproductive health data programs that would have surfaced this pattern systematically. The data about criminal prosecution of pregnancy loss is not being collected by the agencies responsible for collecting it.</p>
+  </div>
+
+  <!-- VIZ BLOCKS -->
+  <div class="vb">
+    <div class="vt">Criminal Prosecution Tracker: Pregnancy Outcomes Since Dobbs</div>
+    <div class="vs">Pregnancy Justice · Gender Equity Policy Institute · 2025</div>
+    <div class="br"><div class="bl">Total criminal charges documented</div><div class="bt"><div class="bf e" style="width:100%"><span class="bv">210 total</span></div></div></div>
+    <div class="br"><div class="bl">For miscarriage or stillbirth</div><div class="bt"><div class="bf r" style="width:15%"><span class="bv">31</span></div></div></div>
+    <div class="br"><div class="bl">States with documented charges</div><div class="bt"><div class="bf c" style="width:52%"><span class="bv">26 states</span></div></div></div>
+    <div class="br"><div class="bl">Charges against women of color (est.)</div><div class="bt"><div class="bf r" style="width:74%"><span class="bv">~74%</span></div></div></div>
+    <div class="vc">The 31 charges for miscarriage or stillbirth represent the prosecution of pregnancy loss itself — not elective termination. The racial composition reflects the broader pattern: women most likely to face criminal prosecution are Black, low-income, in states where Medicaid is the primary payer and public defenders are under-resourced. Source: Pregnancy Justice Criminal Case Tracker, 2025.</div>
+  </div>
+
+  <div class="vb">
+    <div class="vt">Key Legal Actions: Mid-2025 to Early 2026</div>
+    <div class="vs">Federal court records · SCOTUS docket · Labora Rounds Legal Tracker · 2025</div>
+    <div class="tl">
+      <div class="ti"><div class="td">Oct 2025</div><div class="tc"><strong>Purl v. HHS (TX):</strong> HIPAA reproductive health privacy rule vacated. HHS does not appeal. Federal privacy floor for reproductive health records removed.</div></div>
+      <div class="ti"><div class="td">Nov 2025</div><div class="tc"><strong>Texas v. Bruck (NY):</strong> Federal court upholds New York shield law protecting providers who mail abortion medication to patients in ban states. Shield law architecture validated.</div></div>
+      <div class="ti"><div class="td">Nov 2025</div><div class="tc"><strong>Missouri Amendment 3:</strong> Constitutional abortion protection to viability passes by ballot initiative. Access restoration requires litigation but the legal foundation is now locked.</div></div>
+      <div class="ti"><div class="td">Jan 2026</div><div class="tc"><strong>Medina v. Planned Parenthood:</strong> SCOTUS oral arguments. Decision expected Spring 2026. Could authorize states to exclude abortion providers from Medicaid entirely.</div></div>
+      <div class="ti"><div class="td">Ongoing</div><div class="tc"><strong>Comstock Act threat:</strong> DOJ memo asserting applicability to abortion medication by mail remains active. No enforcement yet. Treated as live threat by every telehealth abortion provider in the country.</div></div>
+    </div>
+    <div class="vc">2025–2026 is the most consequential legal period for reproductive rights since Roe. Every item in this timeline either created new legal risk, resolved existing risk, or established precedent governing the next decade of litigation. Source: Labora Rounds Legal Intelligence Tracker.</div>
+  </div>
+
+  <div class="vb">
+    <div class="vt">Expanding Targets: IVF and Gender-Affirming Care</div>
+    <div class="vs">State legislative databases · ACLU · Lambda Legal · 2025</div>
+    <div class="sr">
+      <div class="sb"><div class="sn">15</div><div class="sl">States with active legislation restricting IVF or embryo personhood provisions</div></div>
+      <div class="sb"><div class="sn">24</div><div class="sl">States with active or passed restrictions on gender-affirming care for minors</div></div>
+      <div class="sb"><div class="sn">210</div><div class="sl">Criminal charges since Dobbs — the enforcement template being exported to new targets</div></div>
+    </div>
+    <div class="vc">The same legal architecture used to prosecute pregnancy loss is being adapted for IVF (embryo personhood provisions) and gender-affirming care (criminal investigation of parents and providers). These are not separate fights. They are the same legal theory applied iteratively. The Alabama Supreme Court 2024 frozen embryo ruling is the leading IVF precedent. Source: State legislative databases, 2025.</div>
+  </div>
+
+  <!-- STATE GRID -->
+  <span class="slabel">State Divergence</span>
+  <h2>Where the Law Protects and Where It Prosecutes</h2>
+  <div class="sgrid">
+    <div>
+      <div class="ch pro">Protective States</div>
+      <div class="sc pro"><div class="sn2">New York</div><div class="sd">Shield law upheld in Texas v. Bruck. Providers can mail abortion medication to ban-state patients. AG actively defending shield law architecture.</div></div>
+      <div class="sc pro"><div class="sn2">California</div><div class="sd">Comprehensive shield law + $140M Title X backfill. Explicit ban on cooperation with out-of-state abortion investigations. Medical board protections for providers.</div></div>
+      <div class="sc pro"><div class="sn2">Missouri</div><div class="sd">Amendment 3 passed. Constitutional abortion protection to viability. Enforcement requires court action but the legal foundation is locked by ballot.</div></div>
+      <div class="sc pro"><div class="sn2">Massachusetts</div><div class="sd">ROE Act + comprehensive shield law. Governor Healey signed expanded doula coverage through 12 months postpartum and CPM licensing legislation.</div></div>
+    </div>
+    <div>
+      <div class="ch res">Restrictive States</div>
+      <div class="sc res"><div class="sn2">Idaho</div><div class="sd">No health exception to life-of-mother ban. Providers report waiting for active sepsis before treating ectopic pregnancies. Standard obstetric care carries felony exposure.</div></div>
+      <div class="sc res"><div class="sn2">Texas</div><div class="sd">Purl v. HHS gave Texas legal architecture to subpoena out-of-state abortion records. Active investigation of out-of-state travel for abortion documented and ongoing.</div></div>
+      <div class="sc res"><div class="sn2">Wisconsin</div><div class="sd">1849 feticide statute under active review for deployment. Providers have reduced elective gynecological procedures to minimize criminal exposure.</div></div>
+      <div class="sc res"><div class="sn2">Arizona</div><div class="sd">15-week ban in effect. 1864 near-total ban's status contested. Ongoing litigation producing practice uncertainty — providers cannot reliably counsel patients on current legality.</div></div>
+    </div>
+  </div>
+
+  <!-- FORWARD LOOK -->
+  <div class="fw">
+    <span class="slabel">Forward Look — Next 90 Days</span>
+    <h2>The Decisions That Will Define the Decade</h2>
+    <div class="fi">
+      <span class="ft">⚡ Watch Immediately</span>
+      <p><strong>Medina v. Planned Parenthood — SCOTUS Decision (Spring 2026):</strong> The most consequential reproductive rights ruling since Dobbs. If states can exclude abortion providers from Medicaid, every Medicaid-dependent patient in a restrictive state loses their provider for all services. Watch the decision date. Legal actions begin within 24 hours of publication.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">⚡ Watch Immediately</span>
+      <p><strong>Comstock Act Enforcement Signal:</strong> The DOJ memo is a loaded threat. Watch for any administrative signal — changes in USPS guidance, any federal case against a pharmacy or mail service. The moment enforcement begins, every telehealth medication abortion service faces a federal criminal exposure question it cannot answer quickly enough.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Action Required</span>
+      <p><strong>Update Patient Privacy Protocols Now:</strong> Purl v. HHS is in effect. If your practice does not have a documented policy on responding to out-of-state subpoenas for reproductive health records, you need one immediately. Your malpractice carrier's 2024 guidance may be insufficient. Seek updated state medical association guidance from after November 2025.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Action Required</span>
+      <p><strong>Know Your Shield Law:</strong> If you practice in a shield law state, know exactly what it covers. Texas v. Bruck validated New York's architecture — but shield laws are not uniform. They differ on provider protection, patient protection, and services covered. Know your state's specific law before you need it under emergency conditions.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Plan For</span>
+      <p><strong>IVF Legal Exposure — 2026:</strong> Fifteen states have active embryo personhood legislation creating direct legal exposure for IVF clinics. The Alabama 2024 frozen embryo ruling is the leading precedent. IVF providers in these states operate under conditions that could change with a single court decision. Informed consent for IVF patients now includes legal risk — to the clinic, to the embryos, and to the patient.</p>
+    </div>
+  </div>
+
+  <span class="slabel">The Frame Going Forward</span>
+  <h2>The Scaffold Is Being Built Faster Than It Can Be Dismantled</h2>
+  <p>The legal architecture being constructed against reproductive rights has structural logic: each piece reinforces the next. HIPAA vacatur enables state surveillance. State surveillance enables prosecution. Prosecution enables criminalization norms. Changed clinical behavior harms patients. The harm becomes evidence that reproductive healthcare is dangerous — which justifies the next restriction.</p>
+  <p>Understanding this is not pessimism. It is the prerequisite for interrupting it. Texas v. Bruck showed that shield law architecture can hold. Missouri's Amendment 3 showed that constitutional protection can be secured by ballot initiative even in hostile legislative environments. The Pregnancy Justice prosecution tracker showed that naming and counting the harm matters — because data that doesn't exist can't be acted on.</p>
+  <p><em>The women being prosecuted for miscarriages are not abstractions. They came through someone's clinic, cared for by someone who didn't know that the documentation they created would become evidence in a criminal case. Knowing that is what changes practice. Know it.</em></p>
+
+</div>
+
+<!-- ══ CTA BLOCK ══ -->
+<div style="background:#362511;padding:2.5rem 2rem;text-align:center;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.92rem;color:rgba(251,245,255,0.7);margin-bottom:1.25rem;line-height:1.6;">Labora Rounds delivers ten-domain weekly intelligence — every Monday morning.<br>
+  <span style="opacity:0.55;font-size:0.83rem;">This Special Report is part of the Labora Rounds intelligence layer, available to Labora Collective members.</span></p>
+  <a href="https://laboracollective.com/join" style="display:inline-block;background:#F5EDCC;color:#362511;padding:0.8rem 2.25rem;font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;border:1px solid #9E7D0A;">Become a Member →</a>
+</div>
+
+<!-- ══ ATTRIBUTION ══ -->
+<div style="background:#F7F3EE;padding:2.75rem 2rem 2.25rem;text-align:center;">
+  <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:0.75rem;">
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:38px;width:auto;">
+    <div style="width:4px;height:4px;border-radius:50%;background:#EABAB0;flex-shrink:0;"></div>
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:34px;width:auto;opacity:0.65;">
+  </div>
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.56rem;color:#8A7060;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0;">Labora Rounds Special Report &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+  <div style="height:1px;background:#F5DDD9;margin:1.5rem 0;"></div>
+  <div style="display:grid;grid-template-columns:1fr 1px 1fr;max-width:580px;margin:0 auto;text-align:left;">
+    <div style="padding-right:2rem;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:0.76rem;line-height:1.65;color:#8A7060;"><strong style="color:#2C1A0E;font-weight:500;">Labora Rounds</strong> is a publication of the <strong style="color:#2C1A0E;font-weight:500;">Labora Collective</strong><br>Labora Collective is a <strong style="color:#2C1A0E;font-weight:500;">Diosa Ara</strong> initiative</p>
+    </div>
+    <div style="background:#F5DDD9;"></div>
+    <div style="padding-left:2rem;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:0.76rem;line-height:1.65;color:#8A7060;"><strong style="color:#2C1A0E;font-weight:500;">Diosa Ara</strong> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health.</p>
+    </div>
+  </div>
+  <div style="height:1px;background:#F5DDD9;margin:1.5rem 0;"></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:1.25rem;">
+    <a href="https://laboracollective.com" style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:#D48662;text-decoration:none;letter-spacing:0.05em;">laboracollective.com</a>
+    <span style="color:#EABAB0;font-size:0.5rem;">·</span>
+    <a href="https://diosara.com" style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:#D48662;text-decoration:none;letter-spacing:0.05em;">diosara.com</a>
+  </div>
+</div>
+
+<!-- ══ FINAL CLOSER ══ -->
+<div style="background:#362511;padding:0.85rem 2rem;text-align:center;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:rgba(251,245,255,0.32);">Labora Collective &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer style="background:#F7F3EE;border-top:1px solid #F5DDD9;padding:1.25rem 2rem;text-align:center;">
+  <p style="font-family:'DM Sans',sans-serif;font-size:0.58rem;color:#8A7060;letter-spacing:0.08em;line-height:1.7;">This report is for informational and educational purposes. &nbsp;·&nbsp; Domain 02: Political & Legal &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+</footer>
+<script>
+const bars=document.querySelectorAll('.bf');
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const w=e.target.style.width;e.target.style.width='0%';requestAnimationFrame(()=>{setTimeout(()=>{e.target.style.width=w;},50);});io.unobserve(e.target);}});},{threshold:0.3});
+bars.forEach(b=>{const w=b.style.width;b.style.width='0%';io.observe(b);});
+</script>
+</body>
+</html>

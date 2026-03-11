@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Physician-led intelligence on women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.">
+<title>Labora Collective — Physician-Led Intelligence for Women's Health</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   LABORA COLLECTIVE — Homepage
+   laboracollective.com/index.html
+   LC Design System v2
+   ============================================================ */
+
+:root {
+  --espresso:       #362511;
+  --espresso-mid:   #4A3218;
+  --body-text:      #2C1A0E;
+  --muted:          #8A7060;
+  --copper:         #D48662;
+  --copper-light:   #E8A882;
+  --blush:          #EABAB0;
+  --blush-light:    #F5DDD9;
+  --rose:           #E7817F;
+  --rose-light:     #FAEAEA;
+  --teal:           #1D6B78;
+  --teal-light:     #E0F2F4;
+  --forest:         #2E5240;
+  --forest-light:   #E4EFE8;
+  --gold:           #9E7D0A;
+  --gold-light:     #F5EDCC;
+  --bg-warm:        #F7F3EE;
+  --bg-open:        #FBF5FF;
+  --white:          #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light only; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-warm);
+  color: var(--body-text);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────────
+   NAV
+───────────────────────────────────────────── */
+.nav {
+  background: var(--espresso);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 2rem;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-logo img { height: 36px; width: auto; display: block; }
+.nav-links {
+  display: flex; align-items: center; gap: 2rem;
+  list-style: none;
+}
+.nav-links li a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.66rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(251,245,255,0.45); text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links li a:hover { color: var(--copper); }
+.nav-cta {
+  display: inline-block;
+  background: var(--copper); color: var(--white);
+  padding: 0.4rem 1.1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.nav-cta:hover { background: var(--copper-light); color: var(--espresso); }
+
+/* ─────────────────────────────────────────────
+   HERO MASTHEAD
+───────────────────────────────────────────── */
+.hero {
+  background: var(--espresso);
+  border-bottom: 4px solid var(--copper);
+  overflow: hidden; position: relative;
+}
+
+/* Subtle texture layer */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 80px,
+    rgba(212,134,98,0.02) 80px,
+    rgba(212,134,98,0.02) 81px
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 5rem 2rem 4.5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem; align-items: start;
+}
+
+.hero-left {}
+
+.hero-overline {
+  display: flex; align-items: center; gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+.hero-overline span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.54rem; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(251,245,255,0.25);
+}
+.hero-overline .dot { color: var(--copper); }
+
+.hero-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 300; line-height: 1.04;
+  color: var(--bg-open);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+.hero-headline em {
+  font-style: italic; color: var(--copper);
+}
+
+.hero-deck {
+  font-size: 1rem; line-height: 1.75;
+  color: rgba(251,245,255,0.5);
+  max-width: 520px; margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--gold-light); color: var(--espresso);
+  padding: 0.85rem 2.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  text-decoration: none; border: 1px solid var(--gold);
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--copper-light); }
+.btn-ghost {
+  display: inline-block;
+  color: rgba(251,245,255,0.4);
+  padding: 0.85rem 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.66rem; font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: color 0.15s, border-color 0.15s;
+}
+.btn-ghost:hover { color: var(--copper); border-color: var(--copper); }
+
+/* Hero right — publication schedule strip */
+.hero-right {}
+.pub-schedule {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+.pub-schedule-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pub-schedule-header span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(251,245,255,0.2);
+}
+.pub-row {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.pub-row:last-child { border-bottom: none; }
+.pub-day {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  flex: 0 0 52px; padding-top: 0.12rem;
+}
+.pub-day.copper { color: var(--copper); }
+.pub-day.rose   { color: var(--rose); }
+.pub-day.gold   { color: var(--gold-light); }
+.pub-info {}
+.pub-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-weight: 400;
+  color: var(--bg-open); line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+.pub-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem; color: rgba(251,245,255,0.3);
+  line-height: 1.4;
+}
+
+/* Hero stats strip */
+.hero-stats {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.5rem 2rem;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; gap: 3rem; flex-wrap: wrap;
+}
+.stat-item { }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 300;
+  color: var(--copper); line-height: 1;
+  display: block;
+}
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; color: rgba(251,245,255,0.25);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────────
+   WHAT THIS IS — editorial mission statement
+───────────────────────────────────────────── */
+.mission {
+  padding: 5rem 2rem;
+  max-width: 820px; margin: 0 auto; text-align: center;
+}
+.mission-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--copper); display: block; margin-bottom: 1.5rem;
+}
+.mission-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
+  font-weight: 300; line-height: 1.15;
+  color: var(--espresso); margin-bottom: 1.5rem;
+}
+.mission-body {
+  font-size: 1rem; line-height: 1.85;
+  color: var(--muted); margin-bottom: 0.85rem;
+}
+.mission-body strong { color: var(--body-text); font-weight: 500; }
+
+/* ─────────────────────────────────────────────
+   PUBLICATIONS — three-column cards
+───────────────────────────────────────────── */
+.publications {
+  background: var(--espresso-mid);
+  padding: 4rem 2rem;
+}
+.publications-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  display: block; margin-bottom: 0.65rem;
+}
+.section-hed {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 300; color: var(--bg-open);
+  margin-bottom: 2.75rem; line-height: 1.15;
+}
+
+.pub-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.06);
+}
+.pub-card {
+  background: rgba(255,255,255,0.03);
+  padding: 2.25rem 2rem;
+  display: flex; flex-direction: column;
+  transition: background 0.2s;
+}
+.pub-card:hover { background: rgba(255,255,255,0.06); }
+
+.card-accent {
+  height: 3px; width: 48px; margin-bottom: 1.75rem;
+}
+.card-accent.copper { background: var(--copper); }
+.card-accent.rose   { background: var(--rose); }
+.card-accent.gold   { background: var(--gold); }
+
+.card-day {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.card-day.copper { color: var(--copper); }
+.card-day.rose   { color: var(--rose); }
+.card-day.gold   { color: rgba(212,180,100,0.7); }
+
+.card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--bg-open); line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.card-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.88rem; font-style: italic;
+  color: rgba(251,245,255,0.35); margin-bottom: 1.25rem;
+}
+.card-desc {
+  font-size: 0.88rem; line-height: 1.72;
+  color: rgba(251,245,255,0.45); flex: 1;
+  margin-bottom: 1.75rem;
+}
+.card-link {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; padding-bottom: 2px;
+  border-bottom: 1px solid;
+  transition: opacity 0.15s;
+  align-self: flex-start;
+}
+.card-link.copper { color: var(--copper); border-color: rgba(212,134,98,0.3); }
+.card-link.rose   { color: var(--rose);   border-color: rgba(231,129,127,0.3); }
+.card-link.gold   { color: var(--gold-light); border-color: rgba(255,200,100,0.2); }
+.card-link:hover  { opacity: 0.7; }
+
+/* ─────────────────────────────────────────────
+   LABORA ROUNDS — intelligence product feature
+───────────────────────────────────────────── */
+.rounds-feature {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--blush-light);
+}
+.rounds-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+.rounds-left .section-label { color: var(--copper); }
+.rounds-left h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 300; line-height: 1.12;
+  color: var(--espresso); margin: 0.5rem 0 1.5rem;
+}
+.rounds-left p {
+  font-size: 0.96rem; line-height: 1.85;
+  color: var(--muted); margin-bottom: 0.85rem;
+}
+.rounds-left p strong { color: var(--body-text); font-weight: 500; }
+.rounds-left .btn-rounds {
+  display: inline-block; margin-top: 1rem;
+  background: var(--espresso); color: var(--bg-open);
+  padding: 0.82rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; transition: background 0.15s;
+}
+.rounds-left .btn-rounds:hover { background: var(--copper); }
+
+/* Domain grid — right column */
+.domain-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--blush-light);
+  border: 1px solid var(--blush-light);
+}
+.domain-cell {
+  background: var(--bg-warm);
+  padding: 1.1rem 1rem;
+  transition: background 0.15s;
+}
+.domain-cell:hover { background: var(--white); }
+.domain-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.46rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--blush); display: block; margin-bottom: 0.25rem;
+}
+.domain-cell h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--body-text); line-height: 1.3;
+}
+.domain-cell a {
+  text-decoration: none; color: inherit; display: block;
+}
+.domain-cell a:hover h4 { color: var(--copper); }
+
+/* ─────────────────────────────────────────────
+   DR. CONNOR — founder strip
+───────────────────────────────────────────── */
+.founder {
+  background: var(--espresso);
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.founder-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 3.5rem; align-items: center;
+}
+.founder-portrait {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(212,134,98,0.3);
+  overflow: hidden; flex-shrink: 0;
+  background: var(--espresso-mid);
+  display: flex; align-items: center; justify-content: center;
+}
+.founder-portrait img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.founder-portrait .portrait-placeholder {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; color: var(--copper); font-weight: 300;
+}
+.founder-content .section-label { color: var(--copper); }
+.founder-content blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic; font-weight: 300;
+  color: var(--bg-open); line-height: 1.35;
+  margin: 0.5rem 0 1.25rem;
+  border-left: 3px solid var(--copper);
+  padding-left: 1.5rem;
+}
+.founder-bio {
+  font-size: 0.88rem; line-height: 1.72;
+  color: rgba(251,245,255,0.4);
+}
+.founder-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; font-weight: 500;
+  color: rgba(251,245,255,0.65); margin-top: 0.85rem;
+  letter-spacing: 0.02em;
+}
+.founder-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem; color: rgba(251,245,255,0.25);
+  letter-spacing: 0.06em; margin-top: 0.2rem;
+}
+
+/* ─────────────────────────────────────────────
+   MEMBERSHIP TIERS
+───────────────────────────────────────────── */
+.membership {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--blush-light);
+}
+.membership-inner { max-width: 1100px; margin: 0 auto; }
+.membership .section-label { color: var(--copper); }
+.membership h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 300; color: var(--espresso);
+  margin: 0.4rem 0 2.75rem; line-height: 1.15;
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--blush-light);
+  border: 1px solid var(--blush-light);
+}
+.tier {
+  background: var(--white);
+  padding: 2.25rem 2rem;
+  display: flex; flex-direction: column;
+}
+.tier-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 0.5rem;
+}
+.tier-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 400;
+  color: var(--espresso); margin-bottom: 0.25rem;
+}
+.tier-price {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.tier-features {
+  list-style: none; padding: 0; margin: 0 0 1.75rem; flex: 1;
+}
+.tier-features li {
+  display: flex; gap: 0.6rem; align-items: flex-start;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--blush-light);
+  font-size: 0.85rem; line-height: 1.5; color: var(--body-text);
+}
+.tier-features li:last-child { border-bottom: none; }
+.tier-features li::before {
+  content: '→'; color: var(--copper); flex-shrink: 0;
+}
+.tier-features li.dim {
+  color: var(--muted); font-style: italic;
+}
+.tier-features li.dim::before { color: var(--blush); content: '—'; }
+.tier-btn {
+  display: block; text-align: center;
+  padding: 0.72rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; transition: background 0.15s, color 0.15s;
+}
+.tier-btn.outline {
+  border: 1px solid var(--blush);
+  color: var(--muted); background: transparent;
+}
+.tier-btn.outline:hover { border-color: var(--copper); color: var(--copper); }
+.tier-btn.filled {
+  background: var(--espresso); color: var(--bg-open); border: none;
+}
+.tier-btn.filled:hover { background: var(--copper); }
+.tier-btn.featured {
+  background: var(--gold-light); color: var(--espresso);
+  border: 1px solid var(--gold);
+}
+.tier-btn.featured:hover { background: var(--copper-light); }
+
+.tier.highlight {
+  background: var(--blush-light);
+  position: relative;
+}
+.tier-badge {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  background: var(--rose); color: var(--white);
+  padding: 0.2rem 0.55rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.46rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────────
+   DIOSA ARA — parent org strip
+───────────────────────────────────────────── */
+.da-strip {
+  background: var(--espresso-mid);
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.da-strip-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 3rem;
+  flex-wrap: wrap;
+}
+.da-logo { flex-shrink: 0; }
+.da-logo img { height: 44px; width: auto; }
+.da-divider {
+  width: 1px; height: 60px; background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.da-text {}
+.da-text p {
+  font-size: 0.88rem; line-height: 1.72;
+  color: rgba(251,245,255,0.38);
+}
+.da-text p strong { color: rgba(251,245,255,0.65); font-weight: 500; }
+.da-text a {
+  color: var(--copper); text-decoration: none;
+  transition: color 0.15s;
+}
+.da-text a:hover { color: var(--copper-light); }
+
+/* ─────────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────────── */
+.site-footer {
+  background: var(--espresso);
+  padding: 3.5rem 2rem 2rem;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 2rem;
+}
+.footer-brand img { height: 44px; width: auto; margin-bottom: 1rem; display: block; }
+.footer-brand p {
+  font-size: 0.82rem; line-height: 1.72;
+  color: rgba(251,245,255,0.28);
+}
+.footer-col h5 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(251,245,255,0.22); margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { padding: 0.3rem 0; }
+.footer-col ul li a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem; color: rgba(251,245,255,0.35);
+  text-decoration: none; transition: color 0.15s;
+}
+.footer-col ul li a:hover { color: var(--copper); }
+
+.footer-bottom {
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.56rem; color: rgba(251,245,255,0.2);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.footer-bottom a {
+  color: rgba(251,245,255,0.2); text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-bottom a:hover { color: var(--copper); }
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pub-cards { grid-template-columns: 1fr; }
+  .rounds-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .founder-inner { grid-template-columns: 1fr; text-align: center; }
+  .founder-portrait { margin: 0 auto; }
+  .founder-content blockquote { border-left: none; padding-left: 0; }
+  .tier-grid { grid-template-columns: 1fr; }
+  .tier.highlight { order: -1; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+}
+@media (max-width: 640px) {
+  .hero-inner { padding: 3.5rem 1.25rem 3rem; }
+  .mission, .publications, .rounds-feature, .membership, .founder { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .hero-stats { padding: 1.25rem; gap: 1.5rem; }
+  .domain-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .da-divider { display: none; }
+}
+
+/* ─────────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-headline { animation: fadeUp 0.7s ease both; }
+.hero-deck     { animation: fadeUp 0.7s 0.12s ease both; }
+.hero-actions  { animation: fadeUp 0.7s 0.22s ease both; }
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/">
+        <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+      <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+      <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+      <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
+      <li><a href="https://diosara.com">Diosa Ara</a></li>
+      <li><a href="/join" class="nav-cta">Join →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-overline">
+        <span>Labora Collective</span>
+        <span class="dot">·</span>
+        <span>A Diosa Ara Initiative</span>
+        <span class="dot">·</span>
+        <span>Physician-Led Intelligence</span>
+      </div>
+      <h1 class="hero-headline">
+        What happens to women's health<br>
+        happens <em>inside</em> systems<br>
+        most people never see.
+      </h1>
+      <p class="hero-deck">
+        Labora Collective is a physician-led intelligence platform covering the full 90% of women's health outcomes that happen outside the exam room — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.
+      </p>
+      <div class="hero-actions">
+        <a href="/join" class="btn-primary">Become a Member →</a>
+        <a href="/intelligence/labora-rounds/special-reports/" class="btn-ghost">Read the Intelligence Reports</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="pub-schedule">
+        <div class="pub-schedule-header">
+          <span>Weekly Publication Schedule</span>
+        </div>
+        <div class="pub-row">
+          <div class="pub-day copper">Monday</div>
+          <div class="pub-info">
+            <div class="pub-name">The Labora Signal</div>
+            <div class="pub-desc">Yemaya's Circle of Care — OB intelligence</div>
+          </div>
+        </div>
+        <div class="pub-row">
+          <div class="pub-day rose">Wednesday</div>
+          <div class="pub-info">
+            <div class="pub-name">The Labora Signal</div>
+            <div class="pub-desc">Her Health Matters — GYN + Reproductive Justice</div>
+          </div>
+        </div>
+        <div class="pub-row">
+          <div class="pub-day gold">Friday</div>
+          <div class="pub-info">
+            <div class="pub-name">The Labora Briefing</div>
+            <div class="pub-desc">Clinical · Political · Infrastructure</div>
+          </div>
+        </div>
+        <div class="pub-row" style="background:rgba(255,255,255,0.02);">
+          <div class="pub-day" style="color:rgba(255,255,255,0.2);">Monthly</div>
+          <div class="pub-info">
+            <div class="pub-name" style="font-size:0.95rem;">The Labora Digest</div>
+            <div class="pub-desc">Ten-domain monthly synthesis</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">10</span>
+      <span class="stat-label">Intelligence Domains</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">3×</span>
+      <span class="stat-label">Weekly Publications</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">1</span>
+      <span class="stat-label">Founding Physician</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">90%</span>
+      <span class="stat-label">of Health Outcomes Happen Outside the Exam Room</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MISSION ══ -->
+<section class="mission">
+  <span class="mission-label">What This Is</span>
+  <h2 class="mission-headline">Rigorous enough for a department chair.<br>Legible enough for a campaign staffer.<br>Urgent enough for a patient.</h2>
+  <p class="mission-body">The clinical evidence moves. Policy changes overnight. Economic forces reshape what care is available before a single guideline is updated. <strong>Labora Collective exists to close that gap</strong> — physician-authored intelligence that connects what's happening in courts, legislatures, funding agencies, and research trials to what it means in the exam room on Monday morning.</p>
+  <p class="mission-body">This is not advocacy. It is <strong>impact documentation</strong> — the measurable clinical, economic, and legal consequences of the decisions being made about women's health right now.</p>
+</section>
+
+<!-- ══ PUBLICATIONS ══ -->
+<section class="publications">
+  <div class="publications-inner">
+    <span class="section-label" style="color:rgba(251,245,255,0.3);">Weekly Intelligence</span>
+    <h2 class="section-hed">Three publications.<br>One intelligence layer.</h2>
+    <div class="pub-cards">
+
+      <!-- Signal Monday -->
+      <div class="pub-card">
+        <div class="card-accent copper"></div>
+        <div class="card-day copper">Every Monday</div>
+        <div class="card-name">The Labora Signal</div>
+        <div class="card-subtitle">Yemaya's Circle of Care</div>
+        <p class="card-desc">OB and obstetrical intelligence — from clinical trial findings to policy shifts affecting maternal care. Three stories, what they mean for patients, a direct question to Dr. Connor, and one action to take this week.</p>
+        <a href="/newsletters/ob-signal/" class="card-link copper">Read Signal Monday →</a>
+      </div>
+
+      <!-- Signal Wednesday -->
+      <div class="pub-card">
+        <div class="card-accent rose"></div>
+        <div class="card-day rose">Every Wednesday</div>
+        <div class="card-name">The Labora Signal</div>
+        <div class="card-subtitle">Her Health Matters</div>
+        <p class="card-desc">GYN and reproductive justice intelligence — with dedicated Reproductive Justice Spotlight coverage. The clinical realities of what's happening to women's access, care, and rights, reported without euphemism.</p>
+        <a href="/newsletters/gyn-signal/" class="card-link rose">Read Signal Wednesday →</a>
+      </div>
+
+      <!-- Briefing Friday -->
+      <div class="pub-card">
+        <div class="card-accent gold"></div>
+        <div class="card-day gold">Every Friday</div>
+        <div class="card-name">The Labora Briefing</div>
+        <div class="card-subtitle">Clinical · Political · Infrastructure</div>
+        <p class="card-desc">The week's intelligence across three pillars — what changed clinically, what moved politically, and what shifted in the infrastructure that delivers (or withholds) care. The Friday read that prepares you for Monday.</p>
+        <a href="/newsletters/briefing/" class="card-link gold">Read the Briefing →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ LABORA ROUNDS ══ -->
+<section class="rounds-feature">
+  <div class="rounds-inner">
+    <div class="rounds-left">
+      <span class="section-label">Intelligence Reports</span>
+      <h2>Labora Rounds —<br>Ten-domain weekly intelligence</h2>
+      <p>Every Monday, Labora Rounds delivers a complete intelligence sweep across ten domains: medical &amp; clinical, political &amp; legal, economic, health policy, innovation &amp; funding, menopause, social systems, political systems, Trump administration tracking, and immigration &amp; reproductive justice.</p>
+      <p><strong>The Special Reports</strong> are the foundation — deep-dive domain reports covering mid-2025 through early 2026, publication-ready and available to members and the public as the first release of Labora Collective Intelligence.</p>
+      <a href="/intelligence/labora-rounds/special-reports/" class="btn-rounds">Access the Intelligence Reports →</a>
+    </div>
+    <div class="rounds-right">
+      <div class="domain-grid">
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">
+            <span class="domain-num">Domain 01</span>
+            <h4>Medical &amp; Clinical Updates</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">
+            <span class="domain-num">Domain 02</span>
+            <h4>Political &amp; Legal Intelligence</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-03-economic.html">
+            <span class="domain-num">Domain 03</span>
+            <h4>Economic Analysis</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-04-health-policy.html">
+            <span class="domain-num">Domain 04</span>
+            <h4>Health Policy Cross-Cutting</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-05-innovation-funding.html">
+            <span class="domain-num">Domain 05</span>
+            <h4>Innovation &amp; Research Funding</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-06-menopause.html">
+            <span class="domain-num">Domain 06</span>
+            <h4>Menopause &amp; Post-Reproductive Health</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-07-social-systems.html">
+            <span class="domain-num">Domain 07</span>
+            <h4>Social Systems &amp; Intimacy</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-08-political-systems.html">
+            <span class="domain-num">Domain 08</span>
+            <h4>Political Systems Analysis</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-09-trump-admin.html">
+            <span class="domain-num">Domain 09</span>
+            <h4>Trump Administration Tracking</h4>
+          </a>
+        </div>
+        <div class="domain-cell">
+          <a href="/intelligence/labora-rounds/special-reports/domain-10-immigration-rj.html">
+            <span class="domain-num">Domain 10</span>
+            <h4>Immigration &amp; Reproductive Justice</h4>
+          </a>
+        </div>
+        <div class="domain-cell" style="grid-column: 1 / -1; border-top: 1px solid var(--blush-light);">
+          <a href="/intelligence/labora-rounds/special-reports/domain-11-clinical-practice.html">
+            <span class="domain-num">Domain 11</span>
+            <h4>Clinical Practice Intelligence — Evidence to Practice Gap</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER ══ -->
+<section class="founder">
+  <div class="founder-inner">
+    <div class="founder-portrait">
+      <!-- Replace with actual photo when available -->
+      <!-- <img src="[photo-url]" alt="Dr. Yamicia D. Connor"> -->
+      <span class="portrait-placeholder">YC</span>
+    </div>
+    <div class="founder-content">
+      <span class="section-label">From the Founder</span>
+      <blockquote>"The clinical evidence on women's health has never been better. The infrastructure to deliver it has never been more compromised. Labora Collective exists in that gap."</blockquote>
+      <p class="founder-bio">Labora Collective is built by a practicing OB-GYN who has watched brilliant evidence fail to reach patients — not because providers don't care, but because no one built the system to close the distance between what science knows and what policy allows.</p>
+      <p class="founder-name">Dr. Yamicia D. Connor, MD PhD MPH</p>
+      <p class="founder-title">Founder, Diosa Ara &nbsp;·&nbsp; Publisher, Labora Collective</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MEMBERSHIP ══ -->
+<section class="membership">
+  <div class="membership-inner">
+    <span class="section-label">Membership</span>
+    <h2>The full intelligence layer<br>is reserved for members.</h2>
+    <div class="tier-grid">
+
+      <!-- Free -->
+      <div class="tier">
+        <div class="tier-name">Free Access</div>
+        <div class="tier-title">Signal Reader</div>
+        <div class="tier-price">Free &nbsp;·&nbsp; No card required</div>
+        <ul class="tier-features">
+          <li>Signal Monday — weekly OB intelligence</li>
+          <li>Signal Wednesday — weekly GYN intelligence</li>
+          <li>Public domain reports as released</li>
+          <li class="dim">Labora Briefing not included</li>
+          <li class="dim">Member briefings not included</li>
+          <li class="dim">Ask Dr. Connor not included</li>
+        </ul>
+        <a href="/join" class="tier-btn outline">Subscribe Free →</a>
+      </div>
+
+      <!-- Diosa Insider -->
+      <div class="tier highlight">
+        <div class="tier-badge">Most Popular</div>
+        <div class="tier-name">Member</div>
+        <div class="tier-title">Diosa Insider</div>
+        <div class="tier-price">[Price] &nbsp;·&nbsp; Monthly or annual</div>
+        <ul class="tier-features">
+          <li>Everything in Signal Reader</li>
+          <li>The Labora Briefing — every Friday</li>
+          <li>Ask Dr. Connor — member Q&amp;A</li>
+          <li>Monthly Labora Digest</li>
+          <li>Full access to domain report archive</li>
+          <li class="dim">Labora Rounds full reports not included</li>
+        </ul>
+        <a href="/join" class="tier-btn featured">Become a Diosa Insider →</a>
+      </div>
+
+      <!-- Labora Luminary -->
+      <div class="tier">
+        <div class="tier-name">Senior Member</div>
+        <div class="tier-title">Labora Luminary</div>
+        <div class="tier-price">[Price] &nbsp;·&nbsp; Monthly or annual</div>
+        <ul class="tier-features">
+          <li>Everything in Diosa Insider</li>
+          <li>Labora Rounds — weekly ten-domain reports</li>
+          <li>Viva Voce — Dr. Connor's audio briefings</li>
+          <li>Early access to intelligence reports</li>
+          <li>Priority access to future DA products</li>
+          <li>Institutional licensing available</li>
+        </ul>
+        <a href="/join" class="tier-btn filled">Become a Luminary →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIOSA ARA STRIP ══ -->
+<section class="da-strip">
+  <div class="da-strip-inner">
+    <div class="da-logo">
+      <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_white_transparent.png" alt="Diosa Ara">
+    </div>
+    <div class="da-divider"></div>
+    <div class="da-text">
+      <p><strong>Labora Collective is a Diosa Ara initiative.</strong> <a href="https://diosara.com">Diosa Ara</a> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health. Labora Collective is its intelligence publishing arm — built to surface what clinicians, advocates, and patients need to know about the systems that shape women's health outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SITE FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective">
+        <p>Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve. A Diosa Ara initiative.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Publications</h5>
+        <ul>
+          <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+          <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+          <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy Reports</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Labora Collective &nbsp;·&nbsp; A Diosa Ara Initiative &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
