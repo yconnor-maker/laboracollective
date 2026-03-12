@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductive Healthcare Access Pack: Know Your Pharmacy Rights by State — The Labora Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --espresso: #362511;
+    --copper: #D48662;
+    --rose: #E7817F;
+    --blush: #EABAB0;
+    --teal: #1D6B78;
+    --bg-open: #FBF5FF;
+    --bg-warm: #F7F3EE;
+    --text-dark: #1A1A1A;
+    --text-mid: #4A4A4A;
+    --text-light: #767676;
+    --border-light: #E8E0D8;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-warm);
+    color: var(--text-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .header {
+    background-color: var(--espresso);
+    padding: 0;
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 24px 24px;
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .header-logo img {
+    height: 40px;
+    width: auto;
+  }
+  .header-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blush);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .accent-bar {
+    display: flex;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .accent-bar .bar-a { background-color: var(--espresso); flex: 1; }
+  .accent-bar .bar-b { background-color: var(--rose); flex: 1; }
+  .accent-bar .bar-c { background-color: var(--blush); flex: 1; }
+
+  .pack-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+  .pack-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .pack-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--blush);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .pack-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(234,186,176,0.65);
+    letter-spacing: 0.04em;
+  }
+
+  /* BODY */
+  .body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* ALERT BOX */
+  .alert-box {
+    background-color: #FFF0EF;
+    border-left: 4px solid var(--rose);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+  }
+  .alert-box .alert-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 6px;
+  }
+  .alert-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dark);
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background-color: var(--white);
+    border: 1.5px solid var(--border-light);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+  .highlight-box .highlight-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  /* BODY SECTION WRAPPER */
+  .pack-section {
+    margin-bottom: 44px;
+  }
+
+  /* STATE GRID */
+  .state-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 600px) {
+    .state-grid { grid-template-columns: 1fr; }
+  }
+  .state-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1.5px solid var(--border-light);
+    padding: 18px 20px;
+  }
+  .state-card.protected {
+    border-color: #C8E6C9;
+    background-color: #F9FFF9;
+  }
+  .state-card.partial {
+    border-color: #FFF3CD;
+    background-color: #FFFDF0;
+  }
+  .state-card.unprotected {
+    border-color: #FCCAC9;
+    background-color: #FFF5F5;
+  }
+  .state-card-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .state-card.protected .state-card-label { color: #2E7D32; }
+  .state-card.partial .state-card-label { color: #8B6914; }
+  .state-card.unprotected .state-card-label { color: #C62828; }
+  .state-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--espresso);
+    margin-bottom: 6px;
+  }
+  .state-card p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+  .state-card ul {
+    margin: 8px 0 0 0;
+    padding-left: 16px;
+  }
+  .state-card ul li {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 3px;
+  }
+
+  /* CLINICAL TABLE */
+  .clinical-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .clinical-table th {
+    background-color: var(--espresso);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 11px 14px;
+    text-align: left;
+  }
+  .clinical-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--text-dark);
+    line-height: 1.55;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+  }
+  .clinical-table tr:last-child td {
+    border-bottom: none;
+  }
+  .clinical-table tr:nth-child(even) td {
+    background-color: #FAF7F4;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-green { background-color: #E8F5E9; color: #2E7D32; }
+  .badge-yellow { background-color: #FFF8E1; color: #8B6914; }
+  .badge-red { background-color: #FFEBEE; color: #C62828; }
+  .badge-gray { background-color: #F5F5F5; color: #616161; }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .checklist li:last-child {
+    border-bottom: none;
+  }
+  .checklist li .check-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--rose);
+    border-radius: 4px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .checklist li .check-icon::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid var(--rose);
+    border-bottom: 2px solid var(--rose);
+    transform: rotate(-45deg) translateY(-2px);
+    opacity: 0;
+  }
+  .checklist li strong {
+    font-weight: 600;
+    color: var(--espresso);
+  }
+
+  /* NUMBERED STEPS */
+  .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    counter-reset: step-counter;
+  }
+  .step-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+    counter-increment: step-counter;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background-color: var(--rose);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step-content strong {
+    font-weight: 600;
+    color: var(--espresso);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .step-content p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* DATA CARD ROW */
+  .data-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 600px) {
+    .data-cards { grid-template-columns: 1fr; }
+  }
+  .data-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1.5px solid var(--border-light);
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .data-card .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--rose);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .data-card .stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-mid);
+    line-height: 1.4;
+  }
+
+  /* MEDS TABLE */
+  .meds-tag {
+    display: inline-block;
+    background-color: #EEF6FF;
+    border: 1px solid #B3D4F7;
+    color: #1565C0;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 3px 3px 3px 0;
+  }
+
+  /* GO DEEPER BLOCK */
+  .go-deeper {
+    background-color: var(--espresso);
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    margin-top: 44px;
+    margin-bottom: 36px;
+  }
+  .go-deeper .gd-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 10px;
+  }
+  .go-deeper h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.25;
+  }
+  .go-deeper .resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .go-deeper .resource-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .go-deeper .resource-list li:last-child { border-bottom: none; }
+  .go-deeper .resource-list li::before {
+    content: '→';
+    color: var(--rose);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .go-deeper .resource-list a {
+    color: var(--blush);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .go-deeper .resource-list a:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  /* CTA */
+  .cta-block {
+    background-color: var(--white);
+    border: 1.5px solid var(--border-light);
+    border-radius: 10px;
+    padding: 26px 28px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .cta-block p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-block;
+    background-color: var(--rose);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  .cta-btn:hover { background-color: #d97270; }
+
+  /* ATTRIBUTION */
+  .attribution {
+    border-top: 1px solid var(--border-light);
+    padding-top: 28px;
+    margin-top: 36px;
+    margin-bottom: 32px;
+  }
+  .attr-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 540px) { .attr-cols { grid-template-columns: 1fr; } }
+  .attr-col p {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .attr-col strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-mid);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER */
+  footer {
+    background-color: var(--espresso);
+    padding: 24px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+    color: rgba(234,186,176,0.6);
+    line-height: 1.6;
+  }
+  footer a {
+    color: var(--blush);
+    text-decoration: none;
+  }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="header-logo">
+        <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="The Labora Collective" />
+      </div>
+      <div class="header-brand">The Labora Collective · GYN Intelligence Pack</div>
+    </div>
+    <div class="accent-bar">
+      <div class="bar-a"></div>
+      <div class="bar-b"></div>
+      <div class="bar-c"></div>
+    </div>
+    <div class="pack-kicker">Reproductive Healthcare Access Pack</div>
+    <h1 class="pack-title">Know Your Pharmacy Rights by State</h1>
+    <p class="pack-subtitle">What the HHS OCR guidance rescission means for you — and what protections still exist</p>
+    <div class="pack-meta">Published March 11, 2026 · GYN/RJ Week 1 Resource · The Labora Collective</div>
+  </div>
+</header>
+
+<!-- BODY -->
+<main class="body">
+
+  <!-- ALERT -->
+  <div class="alert-box">
+    <div class="alert-label">⚠ Federal Backstop Removed</div>
+    <p>In February 2026, HHS rescinded the OCR guidance that had required pharmacies to dispense reproductive and emergency medications regardless of pharmacist objection. The federal layer of protection is gone. What remains depends entirely on your state.</p>
+  </div>
+
+  <!-- WHAT THIS MEANS OVERVIEW -->
+  <div class="highlight-box">
+    <div class="highlight-label">Why This Pack Exists</div>
+    <p>Pharmacist refusals of reproductive medications — contraception, misoprostol, methotrexate, hormonal therapies — are no longer subject to federal civil rights enforcement. The Illinois case that exposed this (a pharmacist refused to fill misoprostol for a cancer patient) is exactly what the rescinded guidance was designed to prevent. Without it, the only barrier to refusal is state law — and most states have none.</p>
+  </div>
+
+  <!-- SCOPE: WHAT MEDICATIONS ARE AFFECTED -->
+  <div class="pack-section">
+    <div class="section-label">Scope</div>
+    <h2 class="section-title">Which Medications Are Affected</h2>
+
+    <div class="highlight-box">
+      <div class="highlight-label">Note on Scope</div>
+      <p>Refusal laws and protections vary by how a medication is classified. Most state conscience clauses were written around contraception. Newer refusals involving misoprostol and methotrexate — dual-use medications for cancer and autoimmune disease, not just reproductive care — are in more legally uncertain territory.</p>
+    </div>
+
+    <table class="clinical-table">
+      <thead>
+        <tr>
+          <th>Medication</th>
+          <th>Reproductive Use</th>
+          <th>Non-Reproductive Use</th>
+          <th>Refusal Risk Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Oral contraceptives</strong></td>
+          <td>Contraception, PCOS, endometriosis</td>
+          <td>Acne, dysmenorrhea, anemia</td>
+          <td><span class="badge badge-yellow">Moderate</span></td>
+        </tr>
+        <tr>
+          <td><strong>Emergency contraception</strong><br><small>(Plan B, ella)</small></td>
+          <td>Emergency contraception</td>
+          <td>None recognized</td>
+          <td><span class="badge badge-red">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Misoprostol</strong></td>
+          <td>Medication abortion, miscarriage management</td>
+          <td>Gastric ulcer treatment, post-partum hemorrhage prevention</td>
+          <td><span class="badge badge-red">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Methotrexate</strong></td>
+          <td>Ectopic pregnancy treatment</td>
+          <td>Cancer chemotherapy, rheumatoid arthritis, psoriasis</td>
+          <td><span class="badge badge-yellow">Moderate–High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Mifepristone</strong></td>
+          <td>Medication abortion (with misoprostol)</td>
+          <td>Cushing's syndrome treatment</td>
+          <td><span class="badge badge-red">Very High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Hormonal IUD / Implant</strong></td>
+          <td>Long-acting contraception</td>
+          <td>Endometriosis, menorrhagia management</td>
+          <td><span class="badge badge-yellow">Moderate</span></td>
+        </tr>
+        <tr>
+          <td><strong>Progesterone supplements</strong></td>
+          <td>Luteal phase support, IVF support</td>
+          <td>Menopause HRT, irregular bleeding</td>
+          <td><span class="badge badge-gray">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- STATE PROTECTIONS -->
+  <div class="pack-section">
+    <div class="section-label">State-by-State Breakdown</div>
+    <h2 class="section-title">Where Pharmacy Anti-Discrimination Protections Exist</h2>
+
+    <p style="font-size:14px; color:var(--text-mid); margin-bottom:24px; line-height:1.65;">As of March 2026, a small number of states have laws requiring pharmacies to dispense medications regardless of individual pharmacist objection. These state laws now represent the primary legal protection available to patients.</p>
+
+    <div class="state-grid">
+      <div class="state-card protected">
+        <div class="state-card-label">✓ Strong Protection</div>
+        <div class="state-card-title">Illinois</div>
+        <p>Illinois Health Care Right of Conscience Act requires pharmacies (not just pharmacists) to ensure patients can access all lawfully prescribed medications. Pharmacists may object but the pharmacy must accommodate the patient — including referral or transfer. The February 2026 Notice of Violation issued by HHS against an Illinois pharmacy underscores that this state law applies even as federal guidance is rescinded.</p>
+      </div>
+      <div class="state-card protected">
+        <div class="state-card-label">✓ Strong Protection</div>
+        <div class="state-card-title">California</div>
+        <p>California requires pharmacies to dispense without undue delay. Pharmacist personal objections must be accommodated by the employer pharmacy, not by the patient. Board of Pharmacy enforcement is available for violations.</p>
+        <ul>
+          <li>Covers all FDA-approved contraception</li>
+          <li>Pharmacist accommodation is employer's obligation</li>
+          <li>File complaints: CA Board of Pharmacy</li>
+        </ul>
+      </div>
+      <div class="state-card protected">
+        <div class="state-card-label">✓ Strong Protection</div>
+        <div class="state-card-title">New York</div>
+        <p>New York public health law and SAFE Contraception Act require pharmacies to fill all lawful prescriptions. Attorney General has enforcement authority. LGBTQ+ protections also extend to gender-affirming hormone prescriptions.</p>
+      </div>
+      <div class="state-card protected">
+        <div class="state-card-label">✓ Strong Protection</div>
+        <div class="state-card-title">Washington State</div>
+        <p>Washington's pharmacy rules require pharmacies to deliver all lawfully prescribed medications in a timely manner. State has explicitly applied this to emergency contraception. Board of Pharmacy oversees compliance.</p>
+      </div>
+      <div class="state-card partial">
+        <div class="state-card-label">△ Partial / Mixed</div>
+        <div class="state-card-title">Colorado, Massachusetts, Oregon</div>
+        <p>These states have strong reproductive rights frameworks and state-level HHS equivalents with enforcement authority, but pharmacy dispensing rules are less explicitly codified than the four above. Practical protection is generally strong, but legal clarity is lower.</p>
+      </div>
+      <div class="state-card partial">
+        <div class="state-card-label">△ Partial / Unclear</div>
+        <div class="state-card-title">Maryland, Connecticut, Vermont, Minnesota</div>
+        <p>Reproductive rights protections exist at the state level but pharmacy-specific conscience protections are not consistently codified. Patients in these states may have practical access but fewer enforcement options if refused.</p>
+      </div>
+      <div class="state-card unprotected">
+        <div class="state-card-label">✗ No Protection</div>
+        <div class="state-card-title">Texas, Florida, Alabama, Mississippi, Louisiana, Tennessee, Arkansas, Idaho, South Dakota, North Dakota</div>
+        <p>These states have passed conscience protection laws that permit pharmacist refusals, or have no laws requiring dispensing. Following the HHS OCR guidance rescission, patients in these states have no federal or state-level legal recourse if refused a prescription.</p>
+      </div>
+      <div class="state-card unprotected">
+        <div class="state-card-label">✗ No Clear Protection</div>
+        <div class="state-card-title">Most Remaining States</div>
+        <p>The majority of states have no explicit pharmacy dispensing obligation law. Whether a refusal is actionable depends on individual pharmacy policy, chain corporate policy, and whether a healthcare civil rights claim can be sustained under state law.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT TO DO IF REFUSED -->
+  <div class="pack-section">
+    <div class="section-label">If You Are Refused</div>
+    <h2 class="section-title">Step-by-Step: What to Do When a Pharmacy Refuses Your Prescription</h2>
+
+    <ol class="step-list">
+      <li>
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>Ask for the refusal in writing</strong>
+          <p>Request that the pharmacist provide the reason for refusal and document it. Most will decline to put it in writing — that refusal itself is documentable. Note the pharmacist's name, date, time, and exact words used.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>Ask the pharmacy to transfer your prescription</strong>
+          <p>You have the right to have your prescription transferred to another pharmacy. If the individual pharmacist refuses but the pharmacy has an obligation to fill (as in Illinois, California, New York, Washington), escalate to the pharmacy manager or district manager on site or by phone.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>Call the pharmacy chain's corporate complaint line</strong>
+          <p>Major chains (CVS, Walgreens, Rite Aid, Walmart Pharmacy) have corporate-level non-discrimination policies that may go beyond state law. Document the complaint number given to you and the representative's name.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>File a complaint with your state's Board of Pharmacy</strong>
+          <p>If you are in a state with dispensing obligations (IL, CA, NY, WA), file immediately. In other states, filing creates a record even without immediate enforcement. Keep copies of everything.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>Contact your prescribing provider</strong>
+          <p>Your provider can call the pharmacy directly, switch to a different pharmacy, or provide a written statement documenting medical necessity. For misoprostol and methotrexate, explicit documentation of the medical indication (not reproductive use) may reduce resistance.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <strong>Contact a reproductive rights legal organization</strong>
+          <p>National Women's Law Center (NWLC), If/When/How, and the ACLU Reproductive Freedom Project can assess whether your situation is actionable under state or federal law. In some cases, documented refusals become the basis for civil rights claims.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- DOCUMENTATION PROTOCOL -->
+  <div class="pack-section">
+    <div class="section-label">Documentation Protocol</div>
+    <h2 class="section-title">How to Document a Refusal</h2>
+
+    <p style="font-size:14px; color:var(--text-mid); margin-bottom:20px; line-height:1.65;">Documentation is your most important tool. A well-documented refusal can support a complaint, a civil rights claim, and — over time — policy change. Record everything immediately while details are fresh.</p>
+
+    <table class="clinical-table">
+      <thead>
+        <tr>
+          <th>What to Record</th>
+          <th>How to Record It</th>
+          <th>Why It Matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Date, time, location</strong></td>
+          <td>Write it down or record a voice memo immediately</td>
+          <td>Establishes timeline; required for formal complaints</td>
+        </tr>
+        <tr>
+          <td><strong>Pharmacist's name and employee ID</strong> (if visible on badge)</td>
+          <td>Note from badge; ask politely if not visible</td>
+          <td>Identifies individual for complaint filing</td>
+        </tr>
+        <tr>
+          <td><strong>Exact words used</strong></td>
+          <td>Write down verbatim as soon after as possible</td>
+          <td>Establishes whether refusal was based on conscience, religion, or personal opinion — all legally significant</td>
+        </tr>
+        <tr>
+          <td><strong>Medication name and condition</strong></td>
+          <td>Note prescription label and written diagnosis if available</td>
+          <td>Establishes medical necessity; relevant for methotrexate/misoprostol dual-use arguments</td>
+        </tr>
+        <tr>
+          <td><strong>Whether transfer was offered</strong></td>
+          <td>Document whether pharmacist offered to transfer or refused</td>
+          <td>In IL, CA, NY, WA — failure to offer transfer is a separate violation</td>
+        </tr>
+        <tr>
+          <td><strong>Witnesses present</strong></td>
+          <td>Names and contact info if they're willing</td>
+          <td>Corroborating testimony for complaints or litigation</td>
+        </tr>
+        <tr>
+          <td><strong>Any written documentation from pharmacy</strong></td>
+          <td>Photograph or retain any refusal notice or receipt</td>
+          <td>Written refusals are rare but strong evidence</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CLINICAL PROVIDER OBLIGATIONS -->
+  <div class="pack-section">
+    <div class="section-label">For Providers</div>
+    <h2 class="section-title">Clinical Provider Obligations and Best Practices</h2>
+
+    <ul class="checklist">
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Know your pharmacy landscape.</strong> Identify which local pharmacies are reliably filling reproductive medications and which have documented refusal patterns. Build preferred pharmacy referral lists for your clinic.</span>
+      </li>
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Document medical indication explicitly.</strong> For methotrexate and misoprostol prescriptions, include the specific medical indication in the prescription or a written note to the pharmacist. This is especially important for ectopic pregnancies, cancer patients, and autoimmune patients whose medications are being refused based on assumed reproductive use.</span>
+      </li>
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Offer direct dispensing where allowed.</strong> In states where permitted, in-office or mail-order dispensing eliminates pharmacy refusal risk entirely for medications you can store and dispense directly.</span>
+      </li>
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Establish mail-order backup routes.</strong> Aid Access, Plan C, and telemedicine services with mail-order capabilities may be options for patients in restrictive states, particularly for emergency contraception and hormonal contraception.</span>
+      </li>
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Advise patients proactively on refusal risk.</strong> Patients should know before leaving your office what their likelihood of refusal is at local pharmacies, so they can plan accordingly rather than encounter a refusal in a moment of acute medical need.</span>
+      </li>
+      <li>
+        <div class="check-icon"></div>
+        <span><strong>Document patient-reported refusals in the medical record.</strong> Refusal-caused delays in care, care avoidance, and documented harms belong in the medical record. This creates the longitudinal evidence base that drives policy change.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- REPORTING CHANNELS -->
+  <div class="pack-section">
+    <div class="section-label">Reporting and Escalation</div>
+    <h2 class="section-title">Where to Report Pharmacy Refusals</h2>
+
+    <table class="clinical-table">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Appropriate Use</th>
+          <th>Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>State Board of Pharmacy</strong></td>
+          <td>All states; most effective in IL, CA, NY, WA</td>
+          <td>Search "[your state] Board of Pharmacy complaint"</td>
+        </tr>
+        <tr>
+          <td><strong>Chain pharmacy corporate complaints</strong></td>
+          <td>When individual pharmacist's behavior conflicts with chain policy</td>
+          <td>CVS: 1-800-746-7287 · Walgreens: 1-800-925-4733</td>
+        </tr>
+        <tr>
+          <td><strong>HHS Office for Civil Rights</strong></td>
+          <td>If refusal appears linked to race, sex, disability, or national origin (Sec. 1557 claims still valid even after OCR guidance rescission)</td>
+          <td>ocrportal.hhs.gov</td>
+        </tr>
+        <tr>
+          <td><strong>National Women's Law Center</strong></td>
+          <td>Legal assessment of whether refusal is actionable; connects patients to attorneys</td>
+          <td>nwlc.org</td>
+        </tr>
+        <tr>
+          <td><strong>If/When/How Legal Defense Fund</strong></td>
+          <td>Specifically for refusals involving abortion-related medications</td>
+          <td>ifwhenhow.org</td>
+        </tr>
+        <tr>
+          <td><strong>ACLU Reproductive Freedom Project</strong></td>
+          <td>Systemic or institutional refusal patterns with litigation potential</td>
+          <td>aclu.org/issues/reproductive-freedom</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GO DEEPER -->
+  <div class="go-deeper">
+    <div class="gd-label">Go Deeper</div>
+    <h3>Full Research and References</h3>
+    <ul class="resource-list">
+      <li><a href="#">HHS OCR Guidance Rescission: What Was Removed and What Replaced It</a></li>
+      <li><a href="#">Illinois Notice of Violation: The Case That Made the Rescission Visible</a></li>
+      <li><a href="#">State-by-State Pharmacy Conscience Law Tracker (Updated March 2026)</a></li>
+      <li><a href="#">Methotrexate and Misoprostol Refusals: The Dual-Use Legal Framework</a></li>
+      <li><a href="#">References: HHS Pharmacy Guidance Rescission + OCR Actions</a></li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>This pack is part of the Labora Collective GYN/RJ Week 1 signal package. Read the full story, then use this reference in your clinical practice and patient advocacy.</p>
+    <a href="LC_Signal_Essay_Pharmacy_GYN_20260311.html" class="cta-btn">Read the Full Essay</a>
+  </div>
+
+  <!-- ATTRIBUTION -->
+  <div class="attribution">
+    <div class="attr-cols">
+      <div class="attr-col">
+        <strong>Clinical Oversight</strong>
+        <p>Dr. Yamicia Connor, MD, PhD, MPH<br>Founder, The Labora Collective &amp; Diosa Ara<br>OB/GYN + Public Health</p>
+      </div>
+      <div class="attr-col">
+        <strong>Publication</strong>
+        <p>The Labora Collective · GYN/RJ Week 1<br>Published March 11, 2026<br>laboracollective.substack.com</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="https://laboracollective.substack.com">The Labora Collective</a> · Clinical intelligence for and about women's health.<br>
+    © 2026 Diosa Ara LLC · All rights reserved · <a href="https://laboracollective.substack.com">Subscribe for weekly signal</a>
+  </p>
+</footer>
+
+</body>
+</html>

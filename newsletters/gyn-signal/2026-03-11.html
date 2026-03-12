@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>The Labora Signal — Her Health Matters | March 11, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso:     #362511;
+  --espresso-mid: #4A3218;
+  --copper:       #D48662;
+  --copper-light: #E8A882;
+  --blush:        #EABAB0;
+  --blush-light:  #F5DDD9;
+  --rose:         #E7817F;
+  --rose-light:   #FAEAEA;
+  --lavender:     #FBF5FF;
+  --white:        #FFFFFF;
+  --muted:        #8A7060;
+  --body-text:    #2C1A0E;
+  --accent:       #E7817F;
+  --accent-light: #FAEAEA;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; color-scheme:light only; }
+body { font-family:'EB Garamond',Georgia,serif; background:var(--lavender); color:var(--body-text); font-size:18px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+
+.header { background:var(--espresso); padding:0; border-bottom:3px solid var(--rose); }
+.header-inner { max-width:680px; margin:0 auto; padding:2.5rem 2rem 2rem; }
+.lc-logo { display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
+.lc-mark { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--rose); letter-spacing:.05em; }
+.lc-wordmark { font-family:Arial,sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:rgba(251,245,255,.4); line-height:1.5; }
+.pub-tag { display:inline-block; background:var(--rose); padding:.35rem 1rem; margin-bottom:1.5rem; }
+.pub-tag span { font-family:Arial,sans-serif; font-size:.6rem; font-weight:700; letter-spacing:.25em; text-transform:uppercase; color:var(--white); }
+.pub-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,5vw,3.2rem); font-weight:300; line-height:1.05; color:var(--lavender); margin-bottom:.5rem; }
+.pub-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--rose-light); margin-bottom:1.5rem; }
+.accent-bar { display:grid; grid-template-columns:1fr 1fr 1fr; height:4px; margin-top:1.5rem; }
+.accent-bar div:nth-child(1) { background:var(--espresso-mid); }
+.accent-bar div:nth-child(2) { background:var(--rose); }
+.accent-bar div:nth-child(3) { background:var(--lavender); }
+.issue-meta { display:flex; align-items:center; gap:1.5rem; padding:.75rem 0 0; }
+.issue-meta span { font-family:Arial,sans-serif; font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(251,245,255,.3); }
+.issue-meta .dot { color:var(--rose); }
+
+.body { max-width:680px; margin:0 auto; padding:0 2rem 6rem; }
+
+.yc-block { padding:3rem 0 2.5rem; border-bottom:1px solid var(--rose-light); }
+.section-label { font-family:Arial,sans-serif; font-size:.56rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--rose); display:block; margin-bottom:1rem; }
+.yc-text { font-family:'EB Garamond',serif; font-size:1.05rem; line-height:1.85; color:var(--body-text); margin-bottom:1rem; }
+.yc-sig { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--muted); margin-top:1.5rem; }
+
+.stories { padding:2.5rem 0; }
+.story { padding:2rem 0; border-bottom:1px solid var(--rose-light); }
+.story:last-child { border-bottom:none; }
+.story-number { font-family:Arial,sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--blush); display:block; margin-bottom:.75rem; }
+.story h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,1.8rem); font-weight:400; line-height:1.2; color:var(--espresso); margin-bottom:1rem; }
+.story p { font-size:.98rem; line-height:1.8; color:var(--body-text); margin-bottom:.85rem; }
+.story p:last-of-type { margin-bottom:0; }
+.story-callout { background:var(--rose-light); border-left:3px solid var(--rose); padding:1rem 1.25rem; margin:1.25rem 0; }
+.story-callout .callout-label { font-family:Arial,sans-serif; font-size:.54rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--rose); display:block; margin-bottom:.5rem; }
+.story-callout p { font-size:.9rem; margin-bottom:0; line-height:1.65; }
+.go-deeper { margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--rose-light); }
+.go-deeper-label { font-family:Arial,sans-serif; font-size:.54rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.6rem; }
+.go-deeper a { display:block; font-family:Arial,sans-serif; font-size:.72rem; letter-spacing:.05em; color:var(--rose); text-decoration:none; border-bottom:1px solid var(--rose-light); padding:.3rem 0; }
+.go-deeper a:hover { color:var(--espresso); }
+.placeholder-link { color:var(--muted) !important; border-bottom-style:dashed !important; font-style:italic; }
+
+/* RJ SPOTLIGHT — unique to Wednesday */
+.rj-block { background:var(--espresso); border-left:4px solid var(--rose); padding:2rem 2.5rem; margin:2rem 0; }
+.rj-block .section-label { color:var(--rose); }
+.rj-block h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; color:var(--lavender); margin:.5rem 0 1rem; line-height:1.2; }
+.rj-block p { color:rgba(251,245,255,.8); font-size:.95rem; line-height:1.75; margin-bottom:1rem; }
+.rj-block p:last-child { margin-bottom:0; }
+
+.lc-block { background:var(--espresso); padding:2.5rem; margin:2.5rem 0; }
+.lc-block .section-label { color:var(--rose); margin-bottom:1.25rem; }
+.lc-block p { color:rgba(251,245,255,.75); font-size:.95rem; line-height:1.75; margin-bottom:1rem; }
+.lc-block p:last-child { margin-bottom:0; }
+.lc-block .lc-item { padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.08); }
+.lc-block .lc-item:last-child { border-bottom:none; padding-bottom:0; }
+.lc-block .lc-item-label { font-family:Arial,sans-serif; font-size:.5rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(231,129,127,.8); display:block; margin-bottom:.3rem; }
+.lc-block .lc-item p { margin-bottom:0; font-size:.9rem; }
+
+.members-block { border:1px solid var(--rose-light); padding:2rem; margin:2rem 0; background:var(--white); }
+.members-block .section-label { color:var(--rose); }
+.members-block h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--espresso); margin:.5rem 0 1rem; }
+.members-block p { font-size:.93rem; line-height:1.75; margin-bottom:.85rem; }
+.members-block .data-item { font-size:.88rem; color:var(--body-text); line-height:1.65; margin-bottom:.4rem; padding-left:.75rem; border-left:2px solid var(--rose-light); }
+.members-cta { display:inline-block; background:var(--espresso); color:var(--lavender); padding:.65rem 1.5rem; font-family:Arial,sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; text-decoration:none; margin-top:.5rem; }
+
+.ask-block { background:var(--rose-light); border-left:4px solid var(--rose); padding:2rem; margin:2rem 0; }
+.ask-block .section-label { color:var(--rose); }
+.ask-block h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--espresso); margin:.5rem 0 1rem; }
+.ask-block p { font-size:.93rem; line-height:1.75; }
+
+.action-block { background:var(--rose); padding:2rem 2.5rem; margin:2rem 0; }
+.action-block .section-label { color:rgba(255,255,255,.7); }
+.action-block p { color:rgba(255,255,255,.95); font-size:.98rem; line-height:1.8; }
+
+footer { background:var(--espresso-mid); border-top:3px solid var(--rose); padding:2.5rem 2rem; text-align:center; font-family:Arial,sans-serif; font-size:.65rem; color:rgba(251,245,255,.35); letter-spacing:.08em; }
+.footer-mark { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--lavender); margin-bottom:.4rem; }
+.footer-mark span { color:var(--rose); }
+footer a { color:var(--rose); text-decoration:none; }
+footer p { margin-top:.4rem; }
+
+@media(max-width:640px) {
+  .header-inner, .body { padding-left:1.25rem; padding-right:1.25rem; }
+  .lc-block, .action-block { padding:1.75rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="lc-logo">
+      <div class="lc-mark">LC</div>
+      <div class="lc-wordmark">Labora Collective<br>Intelligence</div>
+    </div>
+    <div class="pub-tag"><span>Her Health Matters &nbsp;·&nbsp; GYN + RJ &nbsp;·&nbsp; Wednesday Signal</span></div>
+    <h1 class="pub-title">The Labora Signal</h1>
+    <p class="pub-subtitle">What I'm seeing this week in gynecology and reproductive rights</p>
+    <div class="accent-bar"><div></div><div></div><div></div></div>
+    <div class="issue-meta">
+      <span>Week of March 8, 2026</span>
+      <span class="dot">·</span>
+      <span>GYN + RJ Issue</span>
+      <span class="dot">·</span>
+      <span>A Diosa Ara Initiative</span>
+    </div>
+  </div>
+</header>
+
+<div class="body">
+
+  <!-- §1 YC VOICE -->
+  <div class="yc-block">
+    <span class="section-label">What I'm Seeing This Week</span>
+    <p class="yc-text">What I keep coming back to this week is how many things are being dismantled simultaneously — and how the dismantling is designed to be hard to track.</p>
+    <p class="yc-text">One agency removes federal guidance that protected pharmacies from refusing to fill your prescription. A different agency rolls back what "pregnancy-related conditions" means under a workplace protection law. A court in Louisiana hears arguments that could end mail-order medication abortion in every state, including the ones where it's fully legal. None of these are the same story. All of them are the same project.</p>
+    <p class="yc-text">The good news — and there is some — is that the black box warning on hormone therapy is gone. For 23 years, that warning told women and their providers to be afraid of a medication that, for most of them, was actually safe. That's over. We can finally have the honest conversation we should have been having since 2002.</p>
+    <p class="yc-text">But we're having it in a week when the rest of the reproductive healthcare infrastructure is being systematically pulled apart. I want you to hold both things at once. The progress is real. The threat is real. Neither cancels the other out.</p>
+    <p class="yc-text">Here's what I want you paying attention to: the Louisiana mifepristone case. Not because it's only a Louisiana issue — but because it isn't. A ruling in that courtroom affects every patient in every state. That is the point.</p>
+    <p class="yc-sig">— Dr. Yamicia D. Connor, MD PhD MPH</p>
+  </div>
+
+  <!-- §2 THE STORIES -->
+  <div class="stories">
+    <span class="section-label">The Stories</span>
+
+    <!-- Story 01: HRT Black Box -->
+    <div class="story">
+      <span class="story-number">Story 01 — GYN</span>
+      <h2>The Black Box Warning on Hormone Therapy Is Gone. Here's What That Actually Means.</h2>
+      <p>In November 2025, the FDA removed the black box warning from menopausal hormone therapy that had been in place since 2002. Updated labeling arrived in January 2026. For 23 years, the most prominent warning category in FDA labeling — typically reserved for life-threatening risks — sat on medications that, for the majority of women who needed them, were not as dangerous as that warning implied.</p>
+      <p>The warning came from the Women's Health Initiative trial, which was halted in 2002 after detecting elevated breast cancer, heart attack, and stroke risk in participants. What wasn't immediately clear — and has become clear through subsequent research — is that the study was biased toward women in their 60s and 70s, when most women start hormone therapy in their 40s and 50s. The formulations studied are not what most providers prescribe today. When later studies used current formulations in appropriately aged populations, the same risks didn't replicate.</p>
+      <p>The result was 23 years of undertreated suffering. Approximately 1.3 million women annually experience moderate-to-severe hot flashes and night sweats that significantly impair sleep, work, and relationships. Many were refused treatment, or scared away from it, based on a study that didn't represent them.</p>
+      <p>The warning removal doesn't mean hormone therapy is right for everyone. It means the conversation is now available to have. Women under 60, or within 10 years of menopause onset, have a substantially different risk profile than the study population. Low-dose vaginal estrogen for genitourinary symptoms carries no black box warning now and minimal systemic absorption. Contraindications still exist: breast cancer history, unexplained bleeding, thromboembolic history. And for women who prefer non-hormonal options, fezolinetant (Veozah) reduces vasomotor symptoms 50–65% without hormones.</p>
+      <p>What's changed is that the starting point of the conversation is now accurate science, not 23-year-old fear.</p>
+      <div class="story-callout">
+        <span class="callout-label">What this means for you</span>
+        <p>If you have been suffering through menopause symptoms and were told hormone therapy wasn't safe for you — ask again. Bring this to your provider. Ask them to walk through your specific risk profile with the updated guidance. You deserve a conversation, not a categorical no based on outdated data.</p>
+      </div>
+      <div class="go-deeper">
+        <span class="go-deeper-label">Go deeper</span>
+        <a href="LC_Signal_Essay_HRT_GYN_20260311.html">→ Essay: "23 Years of Undertreated Suffering. The Black Box Warning Is Gone."</a>
+        <a href="LC_Signal_Essay_HRT_GYN_20260311.html">→ References: WHI Trial Critique, Updated HRT Guidance, Fezolinetant Data</a>
+        <a href="LC_Signal_Essay_HRT_GYN_20260311.html">→ Menopause Care: Risk Stratification and Counseling Under Updated Guidelines</a>
+      </div>
+    </div>
+
+    <!-- Story 02: PWFA -->
+    <div class="story">
+      <span class="story-number">Story 02 — GYN</span>
+      <h2>The Pregnant Workers Fairness Act Was Supposed to Protect You. They're Coming for It.</h2>
+      <p>The Pregnant Workers Fairness Act, effective June 2023, requires employers with 15 or more employees to provide reasonable accommodations for pregnancy and pregnancy-related conditions — unless doing so creates undue hardship. The EEOC's current regulations interpret "pregnancy-related conditions" to include infertility treatment, menstruation, menopause, and contraception.</p>
+      <p>That interpretation is now under threat. EEOC Chair Andrea Lucas has publicly signaled plans to narrow the definition — potentially excluding fertility treatment, menstrual conditions, menopause, and contraception from protection. On January 29, 2026, the Commission voted 2-1 along party lines to centralize litigation control with the Republican Chair, giving her authority to move those revisions forward quickly.</p>
+      <p>Most people think of the PWFA as protecting pregnant people. That's true, but it's only part of the story. The broad interpretation is what makes the law reach across a woman's entire reproductive life: time off for an IVF retrieval, schedule adjustments for endometriosis, temperature accommodations for severe hot flashes, insurance access for contraception. These are not edge cases. These are the daily places where reproductive health and economic survival intersect.</p>
+      <p>If the definition narrows, workers lose federal protection for all of it. No required accommodation for fertility treatment. No required accommodation for menstrual conditions that affect work capacity. The employer gets to say no without legal consequence. For your patients who work — and most of them do — this is directly clinical. The ability to keep a job while managing reproductive health conditions determines whether they can afford healthcare, maintain insurance, and sustain the financial stability that is itself a health determinant.</p>
+      <div class="story-callout">
+        <span class="callout-label">What this means for you</span>
+        <p>If you need a workplace accommodation for any reproductive health condition — fertility treatment, endometriosis, menopause, contraception — request it now and document the request. Current protections apply today. Regulatory changes take time. Use the window.</p>
+      </div>
+      <div class="go-deeper">
+        <span class="go-deeper-label">Go deeper</span>
+        <a href="LC_Signal_Essay_PWFA_GYN_20260311.html">→ Essay: "The PWFA Was Supposed to Cover Your Whole Reproductive Life. It May Not For Long."</a>
+        <a href="LC_Signal_Pack_PWFA_GYN_20260311.html">→ References: EEOC January 2026 Vote + PWFA Research Compilation</a>
+        <a href="LC_Signal_Pack_PWFA_GYN_20260311.html">→ Workplace Rights Pack: How to Request and Document Accommodations Under Current Law</a>
+      </div>
+    </div>
+
+    <!-- Story 03: Louisiana Mifepristone — RJ -->
+    <div class="story">
+      <span class="story-number">Story 03 — Reproductive Justice</span>
+      <h2>The Louisiana Mifepristone Case Is Not a Louisiana Issue.</h2>
+      <p>On February 24, 2026, a federal court in Louisiana heard arguments on a preliminary injunction that would end mail-order mifepristone access — not just in Louisiana, but nationwide. Every patient in every state, including California and New York, would lose the ability to receive this medication by mail. The hearing has happened. We are waiting for a ruling.</p>
+      <p>The legal theory is that FDA's 2023 modifications to mifepristone's distribution rules — the ones that allowed mail-order dispensing and telemedicine prescribing — violated federal administrative law, making them invalid everywhere. Louisiana is not asking for a Louisiana-specific restriction. They are asking a federal court to declare the expanded access rules void for the entire country.</p>
+      <p>What makes this especially significant: on January 27, the Department of Justice filed a motion in this case that declined to defend the merits of the 2023 FDA decision. DOJ criticized the prior FDA risk assessment as possibly inadequate — essentially agreeing with Louisiana's critique — while FDA indicated its own review would take approximately one year. The federal government is not defending an FDA approval it technically still maintains. The door has been left deliberately open.</p>
+      <p>Mail-order medication abortion was the primary access innovation after Dobbs. It allowed patients to receive care without crossing state lines, taking time off work, finding childcare, or arranging transportation that millions of people cannot arrange. A preliminary injunction ends that immediately — while legal challenges proceed, which could take years. The patients most harmed are the ones with the least capacity to absorb the loss: rural patients, patients without transportation, patients who work jobs without flexible scheduling.</p>
+      <p>This is the federal government helping one state's legal theory override every other state's access. That is the mechanism. It is worth naming it clearly.</p>
+      <div class="story-callout">
+        <span class="callout-label">What this means for you</span>
+        <p>Know which brick-and-mortar pharmacies in your area stock mifepristone. Know what in-person access looks like for your patients if mail-order ends overnight. If you use telemedicine medication abortion, have a contingency plan for your patients now.</p>
+      </div>
+      <div class="go-deeper">
+        <span class="go-deeper-label">Go deeper</span>
+        <a href="LC_Signal_Essay_Louisiana_GYN_20260311.html">→ Essay: "The Louisiana Mifepristone Case: A Nationwide Threat in State Clothing"</a>
+        <a href="LC_Signal_Essay_Louisiana_GYN_20260311.html">→ References: Louisiana v. FDA Legal Research + DOJ Filing Analysis</a>
+      </div>
+    </div>
+
+    <!-- Story 04: Pharmacist Refusal — RJ -->
+    <div class="story">
+      <span class="story-number">Story 04 — Reproductive Justice</span>
+      <h2>Your Pharmacist Can Now Refuse. And There Is No Federal Agency Left to Call.</h2>
+      <p>On January 27, 2026, HHS Office for Civil Rights formally rescinded the guidance that had reminded 60,000 retail pharmacies of their civil rights obligations when dispensing contraceptives and medications used in reproductive care — including misoprostol, methotrexate, and mifepristone. Federal civil rights enforcement on pharmacy refusals is gone.</p>
+      <p>This is not a new legal authority to refuse. The underlying civil rights laws remain on the books. What is gone is the federal enforcement infrastructure — the body that investigated complaints, issued findings, and applied consequences. Without it, a pharmacist can refuse to fill your prescription and there is no federal agency that will respond.</p>
+      <p>The medications covered are not limited to abortion. Misoprostol is used for miscarriage management, postpartum hemorrhage prevention, cervical ripening, and treatment of rheumatoid arthritis and ulcers. Methotrexate is used for ectopic pregnancy management, rheumatoid arthritis, psoriasis, and cancer treatment. A patient with rheumatoid arthritis being refused her methotrexate by a pharmacist with a religious objection now has no federal recourse.</p>
+      <p>The same week this guidance was rescinded, HHS issued a Notice of Violation to Illinois for tying pharmacy non-discrimination requirements to conscience protections — threatening the state's federal funding for trying to protect patients at the state level. The federal government is not just stepping back from enforcement. It is actively pressuring states that try to fill the gap.</p>
+      <div class="story-callout">
+        <span class="callout-label">What this means for you</span>
+        <p>Find out which pharmacies near you will reliably fill reproductive health prescriptions. Ask your provider to tell you specifically which pharmacy to go to — not just to hand you a prescription. If you're refused, document it: pharmacy name, medication, date, reason given. State protections may still apply and vary by location.</p>
+      </div>
+      <div class="go-deeper">
+        <span class="go-deeper-label">Go deeper</span>
+        <a href="LC_Signal_Essay_Pharmacy_GYN_20260311.html">→ Essay: "The Federal Backstop on Pharmacy Refusals Is Gone. Here's What's Left."</a>
+        <a href="LC_Signal_Pack_PharmacyRights_GYN_20260311.html">→ References: HHS Pharmacy Guidance Rescission + Illinois OCR Notice of Violation</a>
+        <a href="LC_Signal_Pack_PharmacyRights_GYN_20260311.html">→ Reproductive Healthcare Access Pack: Know Your Pharmacy Rights by State</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- §3 FROM THE LABORA COLLECTIVE -->
+  <div class="lc-block">
+    <span class="section-label">From the Labora Collective</span>
+    <div class="lc-item">
+      <span class="lc-item-label">Featured this week</span>
+      <p><strong style="color:rgba(251,245,255,.95);">Reproductive Healthcare Access Pack: Know Your Pharmacy Rights by State</strong> — State-by-state breakdown of pharmacy anti-discrimination protections that remain after the federal guidance rescission. Includes what to do if you're refused, how to document it, and which states have enforceable protections. Designed to be pulled up on your phone at the pharmacy counter. <a href="LC_Signal_Pack_PharmacyRights_GYN_20260311.html" style="color:rgba(231,129,127,.8);">→ Access the Pack</a></p>
+    </div>
+    <div class="lc-item">
+      <span class="lc-item-label">Also this week</span>
+      <p><strong style="color:rgba(251,245,255,.9);">Essay: "23 Years of Undertreated Suffering. The Black Box Warning Is Gone."</strong> — The full history of the WHI trial, what the science actually shows, and how to have the updated counseling conversation with your provider. <a href="LC_Signal_Essay_HRT_GYN_20260311.html" style="color:rgba(231,129,127,.8);">→ Read the Essay</a></p>
+    </div>
+    <div class="lc-item">
+      <span class="lc-item-label">Also this week</span>
+      <p><strong style="color:rgba(251,245,255,.9);">Essay: "The Louisiana Mifepristone Case: A Nationwide Threat in State Clothing"</strong> — The legal mechanism, the DOJ's extraordinary move, and what an injunction would mean for patients in every state. <a href="LC_Signal_Essay_Louisiana_GYN_20260311.html" style="color:rgba(231,129,127,.8);">→ Read the Essay</a></p>
+    </div>
+    <div class="lc-item">
+      <span class="lc-item-label">From the archive</span>
+      <p style="color:rgba(251,245,255,.45); font-style:italic;">Team: identify one archived piece on pharmacy access, reproductive rights litigation, or menopause care — add title, one sentence on why it's relevant now, and link.</p>
+    </div>
+  </div>
+
+  <!-- §4 INSIDE LABORA — MEMBERS -->
+  <div class="members-block">
+    <span class="section-label">Inside Labora This Week</span>
+    <h3>Labora Rounds tracked 10 domains this month</h3>
+    <p>Here's what surfaced in the domains most relevant to this issue:</p>
+    <p class="data-item"><strong>Reproductive Justice:</strong> DOJ selectively enforcing FACE Act — aggressive prosecution for church entry, active dismissal of clinic protection cases. Providers have no meaningful federal protection from clinic harassment or blockades.</p>
+    <p class="data-item"><strong>Women's Health Policy:</strong> ACA premium spike 114% — average costs jumped from $888 to $1,904 annually. ACA enrollment declined for the first time since 2020.</p>
+    <p class="data-item"><strong>Pharmaceutical Access:</strong> HER2+ breast cancer — first new frontline treatment in a decade approved December 15. Median progression-free survival nearly doubled: 40.7 months vs 26.9 months.</p>
+    <p style="margin-top:1rem;">Coming to Her Health Matters: Four more GYN+RJ essays publishing silently this cycle — on abortion travel costs, IUD counseling, Medicaid work requirements, and the FACE Act enforcement asymmetry. Members see them first.</p>
+    <p>New for members: <strong>PWFA Workplace Rights Pack</strong> — How to request and document accommodations for reproductive health conditions under current law, before the regulatory changes take effect. <a href="LC_Signal_Pack_PWFA_GYN_20260311.html" style="color:var(--rose);">→ Access the Pack</a></p>
+    <a href="https://laboracollective.com/join" class="members-cta">Become a Member →</a>
+  </div>
+
+  <!-- §5 ASK DR. CONNOR -->
+  <div class="ask-block">
+    <span class="section-label">Ask Dr. Connor — Reader Questions</span>
+    <h3>Paid subscribers: this one's for you.</h3>
+    <p>Something in this issue land differently for you? Have a question about menopause and hormone therapy, medication abortion access, workplace rights, or anything else in reproductive health?</p>
+    <p>Submit it below. We answer every question. You choose whether your answer comes publicly in a future issue or privately in your inbox.</p>
+    <p><a href="#" style="color:var(--rose);">[Submit your question]</a> <span style="color:var(--muted); font-size:.85rem;">[LINK COMING]</span></p>
+  </div>
+
+  <!-- §6 ONE ACTION -->
+  <div class="action-block">
+    <span class="section-label">One Action This Week</span>
+    <p>Share the pharmacy guidance story with one person who takes misoprostol, methotrexate, or any medication that could be affected by a refusal — for any reason, not just abortion. This is not an abstract risk. It is happening now, without a federal agency left to call.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-mark"><span>LC</span> — Labora Collective Intelligence</div>
+  <p>Thanks for reading. Reply directly if something here landed — we read every one.</p>
+  <p>— Dr. Yamicia Connor, MD, PhD, MPH &nbsp;·&nbsp; Founder, Labora Collective</p>
+  <p style="margin-top:.8rem;"><a href="https://laboracollective.com">laboracollective.com</a></p>
+  <p style="margin-top:.4rem;"><a href="#">Manage preferences</a> &nbsp;·&nbsp; <a href="#">Unsubscribe</a> &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+</footer>
+
+</body>
+</html>

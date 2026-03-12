@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Immigration Enforcement in Healthcare Settings — Crisis Playbook — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso: #362511; --espresso-mid: #4A3218; --body-text: #2C1A0E; --muted: #8A7060;
+  --copper: #D48662; --copper-light: #E8A882; --blush: #EABAB0; --blush-light: #F5DDD9;
+  --rose: #E7817F; --rose-light: #FAEAEA; --teal: #1D6B78; --teal-light: #E0F2F4;
+  --forest: #2E5240; --forest-light: #E4EFE8; --gold: #9E7D0A; --gold-light: #F5EDCC;
+  --bg-warm: #F7F3EE; --bg-open: #FBF5FF; --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light only; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg-warm); color: var(--body-text); font-size: 16px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+
+.header { background: var(--espresso); border-bottom: 3px solid var(--copper); }
+.header-inner { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem 2rem; }
+.lc-logo { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 2rem; }
+.pub-tag { display: inline-block; background: var(--copper); padding: 0.3rem 0.9rem; margin-bottom: 1.25rem; }
+.pub-tag span { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+.pub-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 300; line-height: 1.05; color: var(--bg-open); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.pub-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--blush); margin-bottom: 1.5rem; }
+.accent-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 3px; margin-bottom: 1rem; }
+.accent-bar div:nth-child(1) { background: var(--espresso-mid); }
+.accent-bar div:nth-child(2) { background: var(--copper); }
+.accent-bar div:nth-child(3) { background: var(--blush); }
+.doc-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.doc-meta span { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251,245,255,0.28); }
+.doc-meta .dot { color: var(--copper); }
+
+.body { max-width: 760px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+/* INTRO BANNER */
+.intro-banner {
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  margin: 2.5rem 0;
+}
+.intro-banner p { font-size: 0.95rem; line-height: 1.75; color: var(--body-text); margin-bottom: 0; }
+.intro-banner strong { color: var(--espresso); }
+
+/* SECTION HEADERS */
+.section-block { margin: 3rem 0; }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem; font-weight: 400; line-height: 1.2;
+  color: var(--espresso); margin-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--copper);
+}
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--copper); display: block; margin-bottom: 0.75rem;
+}
+
+/* CONTENT */
+.content-text { font-size: 0.97rem; line-height: 1.82; color: var(--body-text); margin-bottom: 1rem; }
+
+/* CHECKLIST */
+.checklist { list-style: none; margin: 1rem 0 1.5rem; }
+.checklist li {
+  font-size: 0.95rem; line-height: 1.72; color: var(--body-text);
+  padding: 0.55rem 0 0.55rem 2rem;
+  position: relative;
+  border-bottom: 1px solid var(--blush-light);
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: "□";
+  position: absolute; left: 0;
+  color: var(--copper); font-size: 0.85rem; font-weight: 600;
+}
+.checklist li strong { color: var(--espresso); }
+
+/* HIGHLIGHT BOX */
+.highlight-box {
+  background: var(--white);
+  border: 1px solid var(--blush);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.highlight-box .box-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal); display: block; margin-bottom: 0.5rem;
+}
+.highlight-box p { font-size: 0.93rem; line-height: 1.72; color: var(--body-text); margin-bottom: 0.5rem; }
+.highlight-box p:last-child { margin-bottom: 0; }
+
+/* ALERT BOX */
+.alert-box {
+  background: var(--rose-light);
+  border-left: 3px solid var(--rose);
+  padding: 1.1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.alert-box .alert-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rose); display: block; margin-bottom: 0.35rem;
+}
+.alert-box p { font-size: 0.92rem; line-height: 1.7; color: var(--body-text); margin-bottom: 0; }
+
+/* DOC LOG TABLE */
+.doc-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.doc-table th {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.55rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--white); background: var(--espresso-mid);
+  padding: 0.6rem 0.85rem; text-align: left;
+}
+.doc-table td { padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--blush-light); color: var(--body-text); vertical-align: top; }
+.doc-table tr:last-child td { border-bottom: none; }
+.doc-table td:first-child { font-weight: 500; color: var(--espresso); white-space: nowrap; }
+
+/* CTA FOOTER */
+.cta-block { background: var(--espresso); padding: 3rem 2rem; text-align: center; margin-top: 3rem; }
+.cta-block p { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: rgba(251,245,255,0.7); letter-spacing: 0.02em; margin-bottom: 1.5rem; line-height: 1.6; }
+.cta-btn { display: inline-block; background: var(--gold-light); color: var(--espresso); padding: 0.85rem 2.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: background 0.15s; }
+.cta-btn:hover { background: var(--copper-light); }
+
+.attribution { background: var(--bg-warm); border-top: 1px solid var(--blush-light); padding: 2.5rem 2rem; text-align: center; }
+.attribution-logos { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 0.85rem; }
+.attr-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--blush); flex-shrink: 0; }
+.attr-source { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 0; text-transform: uppercase; }
+.attr-rule { height: 1px; background: var(--blush-light); margin: 1.25rem 0; }
+.attr-links { display: flex; align-items: center; justify-content: center; gap: 1.25rem; }
+.attr-links a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: var(--copper); text-decoration: none; letter-spacing: 0.05em; transition: color 0.15s; }
+.attr-links a:hover { color: var(--espresso); }
+.attr-links .dot { color: var(--blush); font-size: 0.5rem; }
+.closer { background: var(--espresso); padding: 1rem 2rem; text-align: center; }
+.closer p { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(251,245,255,0.35); }
+footer { background: var(--bg-warm); border-top: 1px solid var(--blush-light); padding: 1.5rem 2rem; text-align: center; }
+footer p { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.08em; margin-top: 0.4rem; line-height: 1.7; }
+footer a { color: var(--copper); text-decoration: none; }
+@media (max-width: 640px) {
+  .header-inner, .body { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .cta-block { padding: 1.75rem 1.25rem; }
+  .doc-table { font-size: 0.82rem; }
+  .doc-table td:first-child { white-space: normal; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="lc-logo">
+      <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective" style="height:56px;width:auto;display:block;">
+    </div>
+    <div class="pub-tag">
+      <span>Labora Collective &nbsp;·&nbsp; Crisis Playbook &nbsp;·&nbsp; OB</span>
+    </div>
+    <h1 class="pub-title">Immigration Enforcement in Healthcare Settings</h1>
+    <p class="pub-subtitle">A crisis playbook for providers and institutional leaders</p>
+    <div class="accent-bar"><div></div><div></div><div></div></div>
+    <div class="doc-meta">
+      <span>March 2026 Edition</span>
+      <span class="dot">·</span>
+      <span>Updatable Framework</span>
+      <span class="dot">·</span>
+      <span>A Diosa Ara Initiative</span>
+    </div>
+  </div>
+</header>
+
+<div class="body">
+
+  <div class="intro-banner">
+    <p><strong>How to use this playbook:</strong> This document is designed to be consulted in the moment, not read after the fact. If enforcement is present in your facility right now, go directly to the relevant section. Print and post in break rooms, nursing stations, and administrative offices. Update as laws change.</p>
+  </div>
+
+  <!-- SECTION 1: PATIENT RIGHTS -->
+  <div class="section-block">
+    <span class="section-label">Section 01</span>
+    <h2 class="section-title">Patient Rights: What Every Patient Is Entitled To</h2>
+
+    <p class="content-text">These rights apply regardless of immigration status. No patient is required to provide documentation of citizenship or immigration status to receive emergency medical care.</p>
+
+    <ul class="checklist">
+      <li><strong>Right to emergency care:</strong> EMTALA (Emergency Medical Treatment and Labor Act) requires hospitals to provide stabilizing emergency care to all patients regardless of immigration status, citizenship, or ability to pay.</li>
+      <li><strong>Right to medical privacy:</strong> HIPAA protects patient health information. Immigration status is health information. It cannot be disclosed to law enforcement without a valid warrant, court order, or patient consent.</li>
+      <li><strong>Right to confidential clinical encounters:</strong> Patients have the right to speak with their provider without enforcement present. Providers can and should request that enforcement officers wait outside clinical spaces.</li>
+      <li><strong>Right to remain silent:</strong> A patient does not have to answer questions about immigration status, place of birth, or citizenship from anyone in the facility — including law enforcement.</li>
+      <li><strong>Right to an interpreter:</strong> Patients who do not speak English have the right to a qualified medical interpreter at no cost. This right is not affected by enforcement presence.</li>
+      <li><strong>No requirement to show ID:</strong> Medical facilities do not require patients to show identification as a condition of care. Asking for government-issued ID beyond what is required for billing is not standard protocol and should be documented if it occurs.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2: PROVIDER RIGHTS AND OBLIGATIONS -->
+  <div class="section-block">
+    <span class="section-label">Section 02</span>
+    <h2 class="section-title">Provider Rights and Obligations</h2>
+
+    <p class="content-text">You are not required to cooperate with immigration enforcement in ways that violate patient privacy or compromise care. You are not an immigration officer and your clinical role does not extend to enforcement assistance.</p>
+
+    <div class="highlight-box">
+      <span class="box-label">Key Legal Standard</span>
+      <p>ICE agents cannot compel disclosure of patient information without a <strong>judicial warrant</strong> (signed by a judge) or a valid court order. An administrative warrant or a verbal request does not meet this standard. When in doubt, consult your legal team before disclosing anything.</p>
+    </div>
+
+    <ul class="checklist">
+      <li><strong>You can ask enforcement to leave exam rooms:</strong> Clinical spaces are not public access areas. You may request — politely and firmly — that officers wait outside during patient encounters. Document whether they comply.</li>
+      <li><strong>You cannot share patient information without legal process:</strong> A verbal request from an officer does not require compliance. A business card does not constitute legal process. If presented with a document, do not sign anything before consulting legal counsel.</li>
+      <li><strong>You do not have to verify immigration status:</strong> Nothing in your clinical role requires you to ask about or verify a patient's immigration status. Doing so without clinical necessity may violate HIPAA and institutional policy.</li>
+      <li><strong>You are not required to notify ICE of a patient's location:</strong> A patient's presence in your facility is protected health information. You cannot proactively notify enforcement of a patient's location.</li>
+      <li><strong>Document everything:</strong> Every enforcement interaction in or near your facility should be documented immediately: date, time, location, badge numbers (if available), what was requested, your response, patient impact.</li>
+    </ul>
+
+    <div class="alert-box">
+      <span class="alert-label">If You Are Presented With a Warrant</span>
+      <p>Do not act unilaterally. Contact your hospital's legal counsel or risk management immediately. Do not block enforcement from executing a valid judicial warrant, but do not facilitate beyond what is legally required. Get legal guidance before disclosing any patient information.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3: DOCUMENTATION PROTOCOL -->
+  <div class="section-block">
+    <span class="section-label">Section 03</span>
+    <h2 class="section-title">Documentation Protocol: Every Incident</h2>
+
+    <p class="content-text">Document every enforcement-related incident the moment it concludes. This documentation serves three purposes: clinical (recording impact on care), legal (creating a record in case of litigation), and historical (building the institutional and policy record).</p>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>What to Record</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Date &amp; Time</td>
+          <td>Exact timestamp of enforcement presence / request</td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td>Unit, room number, floor — be specific</td>
+        </tr>
+        <tr>
+          <td>Agency &amp; Officers</td>
+          <td>Agency name, badge numbers if visible/provided, number of officers</td>
+        </tr>
+        <tr>
+          <td>What Was Requested</td>
+          <td>Verbatim if possible — what information or access did they seek?</td>
+        </tr>
+        <tr>
+          <td>Documentation Presented</td>
+          <td>What they showed you — warrant type, administrative form, verbal only</td>
+        </tr>
+        <tr>
+          <td>Your Response</td>
+          <td>What you said and did; who else was present</td>
+        </tr>
+        <tr>
+          <td>Patient Impact</td>
+          <td>Did the patient defer care? Leave AMA? Show distress? Alter their disclosure?</td>
+        </tr>
+        <tr>
+          <td>Witnesses</td>
+          <td>Names and roles of staff who observed</td>
+        </tr>
+        <tr>
+          <td>Next Steps Taken</td>
+          <td>Who was notified (legal, administration, risk management)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: HOSPITAL ADMINISTRATOR OBLIGATIONS -->
+  <div class="section-block">
+    <span class="section-label">Section 04</span>
+    <h2 class="section-title">What Hospital Administrators Are Obligated To Do</h2>
+
+    <ul class="checklist">
+      <li><strong>Have a written policy before enforcement arrives:</strong> Facilities that respond to the first enforcement event without a policy are operating reactively. A written protocol for handling enforcement presence in clinical spaces should exist now.</li>
+      <li><strong>Train staff before it happens:</strong> Every clinical employee should know the patient rights listed in Section 1 and the provider obligations in Section 2. This training is not optional in facilities serving immigrant populations.</li>
+      <li><strong>Designate a point of contact:</strong> When enforcement arrives, staff should know exactly who to call. That person should have immediate access to legal counsel.</li>
+      <li><strong>Have legal counsel on call:</strong> Any facility that serves patient populations at risk for enforcement contact should have legal counsel available around the clock to advise on warrant review and compliance requirements.</li>
+      <li><strong>Do not volunteer to cooperate:</strong> There is no legal obligation for hospitals to proactively facilitate immigration enforcement. Administrators should not agree to notify enforcement of patient arrivals, share patient lists, or allow unrestricted access to clinical areas.</li>
+      <li><strong>Collect incident reports systematically:</strong> All enforcement-related incidents should flow to a designated administrator and to legal counsel. Individual incidents create a pattern. That pattern is institutional data.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5: CLINICAL CONSEQUENCES TO DOCUMENT -->
+  <div class="section-block">
+    <span class="section-label">Section 05</span>
+    <h2 class="section-title">Clinical Consequences: What to Document in the Chart</h2>
+
+    <p class="content-text">When enforcement presence directly affects a patient's willingness to seek or continue care, that clinical consequence should be documented in the medical record. This is not political — it is clinically accurate documentation of a barrier to care.</p>
+
+    <ul class="checklist">
+      <li><strong>Avoidance of care:</strong> "Patient deferred prenatal visit due to reported concerns about enforcement presence at facility." Document the clinical risk created by that deferral.</li>
+      <li><strong>Departure against medical advice:</strong> When a patient leaves AMA in response to enforcement presence or fear, document the precipitating context — this is relevant to understanding and evaluating outcomes.</li>
+      <li><strong>Incomplete disclosure:</strong> If a patient withholds information relevant to their care due to fear of legal consequences, this is a clinically significant documentation gap. Note the circumstances.</li>
+      <li><strong>Emotional and psychological impact:</strong> Acute stress during pregnancy has documented clinical consequences. Enforcement-induced fear in a pregnant patient is a clinical finding, not a social observation.</li>
+    </ul>
+  </div>
+
+</div><!-- /body -->
+
+<div class="cta-block">
+  <p>This playbook is a Labora Collective member resource.<br>
+  <span style="opacity:0.55;font-size:0.85rem;">Members receive updated versions as the legal landscape changes. Full access to all packs and playbooks requires membership.</span></p>
+  <a href="https://laboracollective.com/join" class="cta-btn">Become a Member →</a>
+</div>
+
+<div class="attribution">
+  <div class="attribution-logos">
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:40px;width:auto;">
+    <div class="attr-dot"></div>
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:36px;width:auto;opacity:0.65;">
+  </div>
+  <p class="attr-source">Labora Collective &nbsp;·&nbsp; Crisis Playbook Series &nbsp;·&nbsp; A Diosa Ara Initiative</p>
+  <div class="attr-rule"></div>
+  <div class="attr-links">
+    <a href="https://laboracollective.com">laboracollective.com</a>
+    <span class="dot">·</span>
+    <a href="https://diosara.com">diosara.com</a>
+  </div>
+</div>
+
+<div class="closer"><p>Labora Collective &nbsp;·&nbsp; A Diosa Ara Initiative</p></div>
+
+<footer>
+  <p>This document is for educational and informational purposes. It does not constitute legal advice. Consult qualified legal counsel for guidance on your specific situation.</p>
+  <p><a href="{{manage_preferences_url}}">Manage preferences</a> &nbsp;·&nbsp; <a href="{{unsubscribe_url}}">Unsubscribe</a> &nbsp;·&nbsp; <a href="https://laboracollective.com">laboracollective.com</a></p>
+</footer>
+
+</body>
+</html>
