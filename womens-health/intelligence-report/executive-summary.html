@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Summary — The State of Women's and Children's Health in America</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 12.5pt;
+    line-height: 1.6;
+    color: #362610;
+    background: #fdf6f1;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: letter; margin: 0.5in; }
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; }
+    .phase-marker { break-inside: avoid; }
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 30px rgba(54,38,16,0.1);
+    overflow: hidden;
+  }
+
+  /* === HEADER === */
+  .header {
+    background: #1a0b04;
+    color: #EAB9B0;
+    padding: 40px 48px 32px;
+    border-bottom: 4px solid #E68180;
+  }
+  .header .top-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 10px;
+  }
+  .header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 28pt;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #EAB9B0;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 300;
+    color: #D38660;
+    letter-spacing: 0.04em;
+  }
+
+  .content { padding: 36px 48px 48px; }
+
+  /* === ANALOGY BLOCK === */
+  .analogy {
+    background: linear-gradient(135deg, #1a0b04 0%, #2a1508 100%);
+    color: #EAB9B0;
+    padding: 28px 32px;
+    margin: 0 -48px 32px;
+    font-size: 13pt;
+    line-height: 1.6;
+    font-style: italic;
+    border-left: 4px solid #E68180;
+    position: relative;
+  }
+  .analogy::before {
+    content: '"';
+    font-family: 'EB Garamond', serif;
+    font-size: 72pt;
+    color: #E68180;
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    line-height: 1;
+  }
+  .analogy p { padding-left: 40px; }
+
+  /* === PHASE MARKERS === */
+  .phase-marker {
+    margin: 36px 0 20px;
+    padding: 0;
+  }
+  .phase-marker .phase-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #E68180;
+    margin-bottom: 4px;
+  }
+  .phase-marker h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 18pt;
+    font-weight: 700;
+    color: #362610;
+    line-height: 1.2;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #E68180;
+  }
+
+  /* === SECTION HEADERS === */
+  h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #D38660;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 22px 0 8px;
+  }
+
+  p { margin: 8px 0; }
+
+  /* === CALLOUT: BIG STAT === */
+  .big-stat {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fdf6f1;
+    border-left: 4px solid #E68180;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .big-stat .number {
+    font-family: 'Jost', sans-serif;
+    font-size: 32pt;
+    font-weight: 700;
+    color: #E68180;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .big-stat .context {
+    font-size: 11pt;
+    color: #362610;
+    line-height: 1.4;
+  }
+
+  /* === CALLOUT: QUOTE === */
+  .pull-quote {
+    background: #EAB9B0;
+    padding: 16px 24px;
+    margin: 16px 0;
+    border-radius: 2px;
+    font-size: 12pt;
+    font-style: italic;
+    color: #362610;
+    border-left: 4px solid #D38660;
+  }
+
+  /* === CALLOUT: DARK === */
+  .callout-dark {
+    background: #362610;
+    color: #EAB9B0;
+    padding: 16px 24px;
+    margin: 16px 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.03em;
+    border-left: 4px solid #E68180;
+  }
+
+  /* === CALLOUT: NIGHT === */
+  .callout-night {
+    background: #1a0b04;
+    color: #EAB9B0;
+    padding: 20px 28px;
+    margin: 20px 0;
+    border-left: 4px solid #E68180;
+    border-radius: 2px;
+  }
+  .callout-night p { margin: 6px 0; font-size: 12pt; }
+  .callout-night strong { color: #E68180; }
+
+  /* === STAT GRID === */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .stat-box {
+    background: #fdf6f1;
+    border-left: 3px solid #D38660;
+    padding: 10px 14px;
+  }
+  .stat-box .num {
+    font-family: 'Jost', sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    color: #E68180;
+    line-height: 1.1;
+  }
+  .stat-box .label {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.35;
+  }
+
+  /* === TRANSITION LINE === */
+  .transition {
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #D38660;
+    opacity: 0.7;
+  }
+  .transition::before,
+  .transition::after {
+    content: '—';
+    margin: 0 12px;
+  }
+
+  /* === ACCENT TEXT === */
+  .accent { color: #E68180; font-weight: 700; }
+  strong { font-weight: 700; }
+
+  /* === CONGRESS LIST === */
+  .congress-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+    margin: 10px 0;
+    list-style: none;
+  }
+  .congress-list li {
+    font-size: 10.5pt;
+    padding: 3px 0 3px 14px;
+    position: relative;
+  }
+  .congress-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    background: #E68180;
+    border-radius: 50%;
+  }
+
+  /* === DIVIDER === */
+  hr {
+    border: none;
+    border-top: 1px solid #EAB9B0;
+    margin: 28px 0;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    background: #362610;
+    color: #EAB9B0;
+    padding: 16px 48px;
+    font-family: 'Jost', sans-serif;
+    font-size: 8.5pt;
+    font-weight: 400;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .footer a { color: #E68180; text-decoration: none; }
+  .footer .tagline {
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    font-size: 9.5pt;
+    font-weight: 300;
+    opacity: 0.65;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="top-label">Labora Collective</div>
+  <h1>Executive Summary</h1>
+  <div class="subtitle">The State of Women's &amp; Children's Health in America &bull; March 2026</div>
+</div>
+
+<div class="content">
+
+<!-- ANALOGY -->
+<div class="analogy">
+  <p>The U.S. obstetrical care system was a car that was already breaking down — old, neglected, running on deferred maintenance. Then someone forgot the oil change. Then the transmission blew. And now, on the side of the road with a busted transmission, the current administration is stripping the car for parts.</p>
+</div>
+
+<p>This summary traces the arc of decline across four phases: the first Trump term, the COVID pandemic, the Dobbs decision, and the first year of the second Trump term. The data shows how each phase compounded the last — and how we arrived at the most dangerous moment for women's and children's health in modern American history.</p>
+
+<!-- ============================================ -->
+<!-- BY THE NUMBERS: STOP THE SCROLL -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">The Case</div>
+  <h2>By the Numbers: The Facts That Prove the Thesis</h2>
+</div>
+
+<div class="callout-night">
+  <p><strong>In Texas, white women's maternal mortality increased 95% after the abortion ban.</strong></p>
+  <p>Texas maternal mortality surged <strong>56%</strong> overall from 2019–2022 — five times the national rate. The racial breakdown flips every assumption: white women <strong>+95%</strong>, Black women +38%, Hispanic women +30%. The single largest increase was among white women — the policy itself is driving the deaths. Texas maternal hospital deaths: <strong>79 → 120</strong>. The state has refused to review maternal deaths from 2022–2023.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>The policy designed to force birth is producing fewer births.</strong></p>
+  <p>Texas enacted the most restrictive ban in the country. Texas's fertility rate dropped to a new state low. Vasectomies among young men surged <strong>95%</strong> after Dobbs. Tubal sterilizations among women 19–26 leapt <strong>70%</strong>. The U.S. fertility rate hit an all-time low of under <strong>1.6</strong> — far below the 2.1 replacement rate. The pro-natalist agenda produced an anti-natalist outcome.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>264 women were turned in to law enforcement by their own doctors.</strong></p>
+  <p>In two years post-Dobbs, <strong>412</strong> criminal charges for pregnancy outcomes — an 8× increase. Alabama: 192. Oklahoma: 112. 75% low-income. 264 from medical disclosure. Women are avoiding prenatal care — the single most effective intervention — by <strong>40–60%</strong> in border regions because seeing a doctor can result in criminal charges.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>The #1 cause of death for pregnant women is homicide.</strong></p>
+  <p>Not hemorrhage. Not hypertension. Not infection. Homicide — at <strong>3.62 per 100,000</strong>, exceeding every obstetric cause combined by 2×. 68% involve firearms. After Dobbs, DV increased 7–10% in ban states. Each additional restriction → <strong>+3.4%</strong> intimate partner homicide rate. When a woman cannot end a pregnancy, she cannot leave the man who is killing her.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>937% increase in a disease prevented by a $30 shot — and the shot is in shortage.</strong></p>
+  <p>Congenital syphilis: 335 cases (2012) → <strong>4,000</strong> (2024). 282 babies dead or disabled in 2022 alone. Every death preventable with one penicillin injection. The drug has been in shortage since 2023. The CDC team tracking the epidemic was fired. The government's response to a 937% increase was to eliminate the people tracking it.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>Black women who earn $100,000+ still die at higher rates than white women in poverty.</strong></p>
+  <p>The racial disparity is not explained by income. The system is the variable. Black women die at <strong>3.5×</strong> the white rate. The response: target the only NIH institute studying why (<strong>$223.5M</strong> in grants terminated), destroy the only surveillance system measuring it (PRAMS fired), cut Medicaid — which covers <strong>64%</strong> of births to Black mothers.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>Fentanyl-xylazine deaths: 99 in 2018 → 6,020 in 2023.</strong></p>
+  <p>A 6,000% increase. Overdose is the #1 medical cause of maternal death. Treatment infrastructure: <strong>$2 billion</strong> in SAMHSA grants terminated overnight. Fewer than <strong>500</strong> reproductive psychiatrists for 3.6 million births/year. 75% of perinatal mood disorders go untreated. The wait: 48 days. For a woman on fentanyl, 48 days is a death sentence.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>The "pro-family" movement made IVF legally dangerous.</strong></p>
+  <p>Alabama Supreme Court: frozen embryos are "children." Three clinics shut down. Personhood language in <strong>11 state laws</strong>. Republicans blocked the Right to IVF Act. 1 in 8 couples need IVF. The movement that claims to champion families made the most effective family-building technology a legal liability.</p>
+</div>
+
+<div class="callout-night">
+  <p><strong>Women are deleting their health apps because their data can prosecute them.</strong></p>
+  <p><strong>50 million</strong> Americans use period-tracking apps. After HIPAA reproductive privacy was vacated, <strong>30%</strong> of users in ban states deleted them. Pharmacy records, search history, cell phone location: now available for prosecution. Women are disconnecting from digital health — the primary interface for prenatal care — because their data has become evidence.</p>
+</div>
+
+<div class="transition">The arc of decline</div>
+
+<!-- ============================================ -->
+<!-- PHASE 1: BASELINE -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">The Baseline</div>
+  <h2>The Car Was Already Old</h2>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">17.9</div>
+    <div class="label">U.S. maternal deaths per 100K — worst of any wealthy nation. Sweden: 4. Norway: 2.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">649</div>
+    <div class="label">Women who died in 2024. 84–93% of those deaths were preventable.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">3.5×</div>
+    <div class="label">Black women's maternal mortality rate compared to white women</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">4.9×</div>
+    <div class="label">Native/Indigenous women's maternal mortality rate compared to white women</div>
+  </div>
+</div>
+
+<p>The leading cause of pregnancy-associated death was not hemorrhage, not hypertension, not infection. It was <span class="accent">homicide</span> — at 3.62 per 100,000, exceeding every obstetric cause combined by more than two times. 68% involved firearms. The killer was almost always a male intimate partner. Black women aged 18–24: <span class="accent">8 per 100,000</span> — four times the national average.</p>
+
+<div class="big-stat">
+  <div class="number">&lt;25%</div>
+  <div class="context">of U.S. hospitals have Sexual Assault Nurse Examiner (SANE) capability. 75% of sexual assaults go unreported. The infrastructure to respond does not exist.</div>
+</div>
+
+<p>The leading medical cause was overdose — surpassing hemorrhage, hypertension, and sepsis since 2020. Fentanyl-xylazine deaths: 99 (2018) → 6,020 (2023). Mental health conditions accounted for 23% of pregnancy-related deaths. Fewer than <span class="accent">500</span> reproductive psychiatrists for 4 million annual births.</p>
+
+<p>For every $100 in wealth white households held, Black households held <span class="accent">$15</span>. The gap grew 38% between 2019 and 2022. Thirty years of economic policy: zero structural change. The women most exposed to maternal death were the same women most exposed to poverty.</p>
+
+<div class="pull-quote">This was the car before anyone touched it.</div>
+
+<!-- ============================================ -->
+<!-- PHASE 2: TRUMP 1 -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">Phase One: 2017–2020</div>
+  <h2>He Lit the Fuse</h2>
+</div>
+
+<p>Three Supreme Court appointments — <strong>Gorsuch, Kavanaugh, Barrett</strong> — created the majority that would overturn Roe v. Wade. This is the single most consequential action of the first term for women's health.</p>
+
+<p>Title X was restructured with a domestic gag rule, driving Planned Parenthood out of the program and reducing the network's capacity to serve low-income women. Family planning funding was cut. The ACA's individual mandate penalty was eliminated, destabilizing the insurance markets that covered maternity care.</p>
+
+<div class="pull-quote">The fuse was lit. The detonation would come two years later.</div>
+
+<!-- ============================================ -->
+<!-- PHASE 3: COVID -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">Phase Two: 2020–2022</div>
+  <h2>The System Broke</h2>
+</div>
+
+<div class="big-stat">
+  <div class="number">32.9</div>
+  <div class="context">Maternal mortality per 100K in 2021 — the highest in modern American history. Black maternal mortality hit 69.9 — more than 2.5× the overall rate.</div>
+</div>
+
+<p>Overdose deaths among pregnant and postpartum women increased <span class="accent">81%</span> between 2017 and 2020. Fentanyl entered the supply. Xylazine made overdoses harder to reverse. The behavioral health workforce broke — average counselor salary: $34,000. Burnout: 93%. Turnover: 33%.</p>
+
+<p>L&D units that were already marginal began closing. Rural hospitals lost revenue. Staffing collapsed. 55% of counties had no OB-GYN. The pandemic revealed how fragile the system was.</p>
+
+<div class="pull-quote">And then Dobbs hit.</div>
+
+<!-- ============================================ -->
+<!-- PHASE 4: DOBBS -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">Phase Three: 2022–2024</div>
+  <h2>The Transmission Blew</h2>
+</div>
+
+<p>Three Trump-appointed justices provided the votes. The consequences went far beyond abortion access.</p>
+
+<h3>Women dying of treatable complications</h3>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">+50%</div>
+    <div class="label">Texas: sepsis from miscarriage care. Doctors delay treatment to avoid felony charges.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">79 → 120</div>
+    <div class="label">Texas maternal hospital deaths — a 51.9% increase. Houston: +63% sepsis.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">+121.5%</div>
+    <div class="label">Idaho maternal mortality surge. 22–43% of OB-GYNs left. MFM: 9 → fewer than 5.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">+12.7%</div>
+    <div class="label">Texas infant deaths from congenital anomalies above expected baselines (2022)</div>
+  </div>
+</div>
+
+<div class="pull-quote">"Current Missouri law supersedes our medical judgment." — Statement given to a patient whose water broke at 18 weeks.</div>
+
+<h3>Criminalization of pregnancy</h3>
+
+<div class="big-stat">
+  <div class="number">412</div>
+  <div class="context">Criminal charges for pregnancy outcomes in 2 years post-Dobbs — an 8× increase from a baseline of ~26/year. Alabama: 192. Oklahoma: 112. 75% low-income. <strong>264 originated from medical disclosure — their own doctors reported them.</strong></div>
+</div>
+
+<p>Women in border regions reduced prenatal visits by <span class="accent">40–60%</span>. Prenatal care is the single most effective intervention for preventing maternal death. They were avoiding it because seeking care could result in prosecution.</p>
+
+<p>NBER documented <span class="accent">9,271 to 13,998</span> additional DV incidents in ban states. Each additional restriction → <span class="accent">+3.4%</span> IPV homicide rate. When a woman cannot end a pregnancy, she cannot leave the relationship.</p>
+
+<h3>Economic devastation</h3>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">4×</div>
+    <div class="label">Women denied abortion → fall below poverty line (Turnaway Study)</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">$133B</div>
+    <div class="label">Annual economic drag from abortion restrictions across 16 states</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">−21.2%</div>
+    <div class="label">OB-GYN residency applications in Alabama. Medical students leaving the South.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">5,000</div>
+    <div class="label">Projected OB-GYN shortfall by 2030. 37% over 55. It takes 12 years to train one.</div>
+  </div>
+</div>
+
+<div class="callout-dark">The transmission was blown. The car was on the side of the road. It was going to take years of focused investment to get it running again. Instead, the administration started stripping it for parts.</div>
+
+<!-- ============================================ -->
+<!-- PHASE 5: TRUMP 2 -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">Phase Four: 2025–Present</div>
+  <h2>Stripping the Car for Parts</h2>
+</div>
+
+<h3>They eliminated everyone who tracks the damage</h3>
+
+<p>The PRAMS team — tracking pregnancy outcomes across all 50 states for <span class="accent">38 years</span> — fired. Software shut down. Program killed before 2023 data could be released. Two of three branches of CDC's Division of Reproductive Health eliminated. NIMHD — the only institute studying why Black women die at 3.5× the white rate — lost <span class="accent">77 grants, $223.5 million</span>. Then targeted for elimination.</p>
+
+<p>CDC STI lab eliminated — while congenital syphilis has risen <span class="accent">700%</span> and 282 babies have died or been permanently disabled. 200+ datasets removed. 4,800 health workers fired. 20,000 more planned. CDC budget: <span class="accent">44% cut</span> proposed.</p>
+
+<div class="callout-dark">2023 is the last year of reliable national pregnancy data. The instruments that would measure the damage have been destroyed.</div>
+
+<h3>They gutted the safety net</h3>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">$900B</div>
+    <div class="label">Medicaid cuts signed into law. Work requirements Jan 2027. 5–10.3M lose coverage. Medicaid funds 42% of all births.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">39 states</div>
+    <div class="label">Planned Parenthood defunded from Medicaid — $45M/month unreimbursed care.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">50 → 1</div>
+    <div class="label">Office of Population Affairs staff. Title X frozen. $65.8M. 2.8M patients.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">$2B</div>
+    <div class="label">SAMHSA grants terminated overnight — treatment for the #1 medical cause of maternal death.</div>
+  </div>
+</div>
+
+<h3>They stripped the legal protections</h3>
+
+<p><strong>EMTALA rescinded</strong> — hospitals can refuse emergency care for a woman hemorrhaging from a pregnancy complication. <strong>HIPAA vacated</strong> — medical records, prescriptions, period apps: disclosable for prosecution. <strong>FACE Act</strong> — 23 clinic attackers pardoned, all prosecutions dismissed. <strong>Comstock Act</strong> — positioning an 1873 law to ban mailing mifepristone without a vote. 1 in 4 abortions are telehealth-delivered. Comstock collapses that overnight.</p>
+
+<p><strong>IVF under threat</strong> — Alabama Supreme Court declared frozen embryos are "children." Three fertility clinics shut down. Personhood language in 11 state laws. Congressional Republicans blocked the Right to IVF Act. The "pro-family" movement made the most effective family-building technology legally dangerous.</p>
+
+<p><strong>Digital surveillance of pregnancy</strong> — HIPAA reproductive privacy vacated. Period-tracking apps (50 million users), search history, pharmacy records, cell phone location data now available for prosecution. 30% of app users in ban states deleted their apps. Women are avoiding digital health tools — the primary interface for prenatal care — because their own data has been turned into evidence.</p>
+
+<h3>Immigration</h3>
+
+<p>ICE abolished the sensitive-locations policy — clinics, schools, churches no longer protected. CBP eliminated pregnant detainee protections. Sworn testimony of miscarriages in detention. Prenatal visits down <span class="accent">40–60%</span> in border communities. 11 million barred from any federal coverage.</p>
+
+<h3>Veterans and military women</h3>
+
+<p>VA abortion ban finalized — no exception for rape or incest. <span class="accent">2+ million</span> women veterans affected. <span class="accent">1 in 3</span> report military sexual trauma. VA providers banned from counseling about options.</p>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- CHILDREN -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">The Next Generation</div>
+  <h2>What Is Happening to the Children</h2>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-box">
+    <div class="num">4.6M</div>
+    <div class="label">Children lost Medicaid — 70% for paperwork, not ineligibility</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">478</div>
+    <div class="label">Additional infant deaths in ban states (265 Black — 11% excess)</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">+700%</div>
+    <div class="label">Congenital syphilis. 282 babies dead/disabled. Only drug in shortage. CDC lab eliminated.</div>
+  </div>
+  <div class="stat-box">
+    <div class="num">+88%</div>
+    <div class="label">Child labor violations. 5,792 children. 28 states weakening protections.</div>
+  </div>
+</div>
+
+<p>Childhood vaccination rates declining. Measles tripled in 2024. Teen births reversing in ban states. K-12 mental health grants rescinded. Counselor ratio: <span class="accent">372:1</span>.</p>
+
+<div class="callout-night">
+  <p>Every additional Adverse Childhood Experience → <strong>+13% preterm risk</strong>. 4+ ACEs → <strong>3× preeclampsia</strong>. ACE score of 6 → <strong>−20 years life expectancy</strong>.</p>
+  <p>The children accumulating ACEs right now — from the violence, the poverty, the Medicaid losses, the collapse of every system around them — will become the maternal mortality statistics of 2035 to 2050. <strong>The crisis we are documenting today is building the crisis that will kill their daughters.</strong></p>
+</div>
+
+<hr>
+
+<!-- ============================================ -->
+<!-- WHY CONGRESS -->
+<!-- ============================================ -->
+
+<div class="phase-marker">
+  <div class="phase-label">The Path Forward</div>
+  <h2>Why Congress</h2>
+</div>
+
+<p>Every major advance in maternal and child health in American history came through Congress:</p>
+
+<ul class="congress-list">
+  <li><strong>Medicaid (1965)</strong> — funds 42% of all births</li>
+  <li><strong>Title X (1970)</strong> — low-income reproductive care</li>
+  <li><strong>WIC (1972)</strong> — nutrition for mothers &amp; children</li>
+  <li><strong>EMTALA (1986)</strong> — emergency care guarantee</li>
+  <li><strong>FMLA (1993)</strong> — job protection for new mothers</li>
+  <li><strong>CHIP (1997)</strong> — 10 million children covered</li>
+  <li><strong>ACA (2010)</strong> — maternity as essential benefit</li>
+  <li><strong>Preventing Maternal Deaths Act (2018)</strong></li>
+  <li><strong>PUMP Act (2022)</strong> — breastfeeding protections</li>
+  <li><strong>Pregnant Workers Fairness Act (2023)</strong></li>
+</ul>
+
+<p>Every single one came from Congress. Not the executive branch. Not the courts. <strong>From Congress.</strong> And right now, only Congress can rebuild what has been dismantled.</p>
+
+<!-- ============================================ -->
+<!-- CLOSE -->
+<!-- ============================================ -->
+
+<div class="callout-night" style="margin-top: 28px;">
+  <p>Every person reading this either is a woman, knows a woman, has a woman in their family, or is married to a woman.</p>
+  <p>But beyond the obvious — the health of women and children, and particularly infant mortality, is directly correlated to the success and prospects of a nation. This is not a women's issue. <strong>This is critical national infrastructure.</strong> The obstetrical care system is critical infrastructure, the same way bridges and power grids are critical infrastructure.</p>
+  <p>A nation cannot prosper, survive, or thrive without this infrastructure in place. Every single person should care about this — because if you care about the success of this nation, you have to care about this issue.</p>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Labora Collective &bull; A Diosa Ara Initiative<br>
+  Dr. Yamicia Connor, MD, PhD, MPH &bull; <a href="mailto:yconnor@diosara.com">yconnor@diosara.com</a> &bull; <a href="https://laboracollective.com">laboracollective.com</a>
+  <div class="tagline">Intelligence that changes outcomes.</div>
+</div>
+
+</div>
+</body>
+</html>
