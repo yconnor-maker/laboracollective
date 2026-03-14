@@ -649,5 +649,203 @@
 </div>
 
 </div>
+
+<style>
+/* === SCROLL ANIMATIONS === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-reveal.visible .stat-box {
+  animation: fadeSlideUp 0.5s ease both;
+}
+.scroll-reveal.visible .stat-box:nth-child(1) { animation-delay: 0.05s; }
+.scroll-reveal.visible .stat-box:nth-child(2) { animation-delay: 0.15s; }
+.scroll-reveal.visible .stat-box:nth-child(3) { animation-delay: 0.25s; }
+.scroll-reveal.visible .stat-box:nth-child(4) { animation-delay: 0.35s; }
+
+.scroll-reveal.visible .congress-list li {
+  animation: fadeSlideUp 0.4s ease both;
+}
+.scroll-reveal.visible .congress-list li:nth-child(1) { animation-delay: 0.03s; }
+.scroll-reveal.visible .congress-list li:nth-child(2) { animation-delay: 0.06s; }
+.scroll-reveal.visible .congress-list li:nth-child(3) { animation-delay: 0.09s; }
+.scroll-reveal.visible .congress-list li:nth-child(4) { animation-delay: 0.12s; }
+.scroll-reveal.visible .congress-list li:nth-child(5) { animation-delay: 0.15s; }
+.scroll-reveal.visible .congress-list li:nth-child(6) { animation-delay: 0.18s; }
+.scroll-reveal.visible .congress-list li:nth-child(7) { animation-delay: 0.21s; }
+.scroll-reveal.visible .congress-list li:nth-child(8) { animation-delay: 0.24s; }
+.scroll-reveal.visible .congress-list li:nth-child(9) { animation-delay: 0.27s; }
+.scroll-reveal.visible .congress-list li:nth-child(10) { animation-delay: 0.3s; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === HOVER EFFECTS === */
+.stat-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+  cursor: default;
+}
+.stat-box:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(230,129,128,0.12);
+  border-left-color: #E68180;
+}
+.stat-box:hover .num { text-shadow: 0 0 20px rgba(230,129,128,0.3); }
+
+.big-stat {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+.big-stat:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 16px rgba(230,129,128,0.12);
+}
+.big-stat:hover .number { text-shadow: 0 0 24px rgba(230,129,128,0.4); }
+
+.callout-night {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+  cursor: default;
+}
+.callout-night:hover {
+  transform: translateX(4px);
+  box-shadow: -4px 0 24px rgba(230,129,128,0.1);
+  border-left-color: #D38660;
+}
+
+.callout-dark {
+  transition: letter-spacing 0.3s ease, background 0.3s ease;
+}
+.callout-dark:hover {
+  letter-spacing: 0.06em;
+  background: #2a1a08;
+}
+
+.pull-quote {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.pull-quote:hover {
+  transform: scale(1.01);
+  background: #e2a9a0;
+}
+
+.congress-list li {
+  transition: padding-left 0.2s ease, color 0.2s ease;
+}
+.congress-list li:hover {
+  padding-left: 20px;
+  color: #E68180;
+}
+</style>
+
+<script>
+// === ANIMATED NUMBER COUNTERS ===
+function parseNumber(text) {
+  const cleaned = text.replace(/[,$]/g, '');
+  const match = cleaned.match(/[+-]?[\d.]+/);
+  if (!match) return null;
+  return parseFloat(match[0]);
+}
+
+function formatNumber(value, template) {
+  const isInt = !template.match(/\.\d/);
+  const formatted = isInt ? Math.round(value).toLocaleString() : value.toFixed(1);
+  if (template.includes('$')) return '$' + formatted + template.match(/[\d.]([^\d.]*$)/)?.[1] || '';
+  if (template.startsWith('+')) return '+' + formatted + (template.match(/[\d.]([^\d.]*$)/)?.[1] || '');
+  if (template.startsWith('−') || template.startsWith('-')) return '−' + formatted + (template.match(/[\d.]([^\d.]*$)/)?.[1] || '');
+  return formatted + (template.match(/[\d.]([^\d.]*$)/)?.[1] || '');
+}
+
+function animateCounter(el, duration = 1200) {
+  const text = el.textContent.trim();
+  const target = parseNumber(text);
+  if (target === null || isNaN(target)) return;
+  const startTime = performance.now();
+
+  function update(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = formatNumber(target * eased, text);
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = text;
+  }
+  requestAnimationFrame(update);
+}
+
+// === SCROLL REVEAL ===
+function setupScrollReveal() {
+  const sections = document.querySelectorAll('.stat-grid, .big-stat, .callout-night, .callout-dark, .pull-quote, .analogy, .congress-list, .transition');
+  sections.forEach(el => el.classList.add('scroll-reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        const vals = entry.target.querySelectorAll('.num, .number');
+        vals.forEach((v, i) => setTimeout(() => animateCounter(v, 1000), i * 100));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  sections.forEach(el => observer.observe(el));
+}
+
+// === TOOLTIP SYSTEM ===
+const tooltips = {
+  '17.9': 'CDC NCHS, 2024. Worst of any wealthy nation.',
+  '649': 'CDC MMRIA. 84-93% preventable.',
+  '3.5×': 'CDC WONDER. Black: 49.5 vs White: 14.1 per 100K.',
+  '4.9×': 'CDC WONDER. AI/AN maternal mortality.',
+  '+50%': 'Texas DSHS. Sepsis increase post-ban.',
+  '+121.5%': 'Idaho DHHS. Pre-ban surge 2019-2021.',
+  '+12.7%': 'Texas vital statistics, 2022.',
+  '412': 'Pregnancy Justice, 2024. Doubled year over year.',
+  '4×': 'ANSIRH Turnaway Study, UCSF.',
+  '$133B': 'IWPR State-Level Economic Effects, 2024.',
+  '−21.2%': 'NRMP. Alabama residency applications.',
+  '5,000': 'ACOG workforce analysis, projected to 2030.',
+  '$900B': 'Congressional Budget Office score.',
+  '$2B': 'SAMHSA grant terminations, March 2025.',
+  '4.6M': '70% lost for paperwork, not eligibility.',
+  '+700%': 'CDC STI Surveillance. 282 babies.',
+  '+88%': 'DOL Wage & Hour Division, FY2023.',
+  '32.9': 'CDC NCHS, 2021. Highest in modern history.',
+};
+
+function setupTooltips() {
+  const allVals = document.querySelectorAll('.num, .number');
+  allVals.forEach(el => {
+    const text = el.textContent.trim();
+    if (tooltips[text]) {
+      el.style.cursor = 'help';
+      el.addEventListener('mouseenter', function() {
+        const tip = document.createElement('div');
+        tip.textContent = tooltips[text];
+        tip.style.cssText = `position:fixed;background:#1a0b04;color:#EAB9B0;padding:8px 12px;border-radius:6px;font-size:11px;font-family:'Jost',sans-serif;max-width:260px;line-height:1.4;z-index:9999;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity 0.2s,transform 0.2s;box-shadow:0 4px 16px rgba(0,0,0,0.25);border:1px solid rgba(230,129,128,0.2);`;
+        document.body.appendChild(tip);
+        const rect = el.getBoundingClientRect();
+        tip.style.left = rect.left + 'px';
+        tip.style.top = (rect.bottom + 6) + 'px';
+        requestAnimationFrame(() => { tip.style.opacity = '1'; tip.style.transform = 'translateY(0)'; });
+        el._tip = tip;
+      });
+      el.addEventListener('mouseleave', function() {
+        if (el._tip) { el._tip.style.opacity = '0'; setTimeout(() => el._tip?.remove(), 200); }
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => { setupScrollReveal(); setupTooltips(); });
+</script>
+
 </body>
 </html>

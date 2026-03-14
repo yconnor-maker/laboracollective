@@ -596,5 +596,244 @@
 
 </div><!-- end page 2 -->
 
+<style>
+/* === SCROLL ANIMATIONS === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.scroll-reveal.visible .data-row,
+.scroll-reveal.visible .compact-list li,
+.scroll-reveal.visible .icon-card,
+.scroll-reveal.visible .congress-grid .item {
+  animation: fadeSlideUp 0.4s ease both;
+}
+.scroll-reveal.visible .data-row:nth-child(1), .scroll-reveal.visible .compact-list li:nth-child(1), .scroll-reveal.visible .icon-card:nth-child(1) { animation-delay: 0.05s; }
+.scroll-reveal.visible .data-row:nth-child(2), .scroll-reveal.visible .compact-list li:nth-child(2), .scroll-reveal.visible .icon-card:nth-child(2) { animation-delay: 0.1s; }
+.scroll-reveal.visible .data-row:nth-child(3), .scroll-reveal.visible .compact-list li:nth-child(3), .scroll-reveal.visible .icon-card:nth-child(3) { animation-delay: 0.15s; }
+.scroll-reveal.visible .data-row:nth-child(4), .scroll-reveal.visible .compact-list li:nth-child(4), .scroll-reveal.visible .icon-card:nth-child(4) { animation-delay: 0.2s; }
+.scroll-reveal.visible .data-row:nth-child(5), .scroll-reveal.visible .compact-list li:nth-child(5) { animation-delay: 0.25s; }
+.scroll-reveal.visible .data-row:nth-child(6), .scroll-reveal.visible .compact-list li:nth-child(6) { animation-delay: 0.3s; }
+.scroll-reveal.visible .data-row:nth-child(7), .scroll-reveal.visible .compact-list li:nth-child(7) { animation-delay: 0.35s; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === HOVER EFFECTS === */
+.hero-stat { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+.hero-stat:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(230,129,128,0.15);
+  z-index: 2;
+  position: relative;
+}
+.hero-stat:hover .val { text-shadow: 0 0 20px rgba(230,129,128,0.4); }
+
+.data-row { transition: background 0.2s ease, padding-left 0.2s ease; }
+.data-row:hover {
+  background: rgba(234,185,176,0.12);
+  padding-left: 6px;
+}
+
+.icon-card { transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: default; }
+.icon-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(230,129,128,0.12);
+}
+
+.compact-list li { transition: background 0.2s ease, padding-left 0.2s ease; }
+.compact-list li:hover {
+  background: rgba(234,185,176,0.1);
+  padding-left: 16px;
+}
+
+.callout-strip {
+  transition: letter-spacing 0.3s ease, background 0.3s ease;
+}
+.callout-strip:hover {
+  letter-spacing: 0.08em;
+  background: #2a1a08;
+}
+
+.mini-stat { transition: transform 0.2s ease; }
+.mini-stat:hover { transform: scale(1.03); }
+
+/* Counter animation glow */
+.counting .val { transition: color 0.3s ease; }
+</style>
+
+<script>
+// === ANIMATED NUMBER COUNTERS ===
+function parseNumber(text) {
+  // Extract the first numeric value from text like "+95%", "17.9", "4.6M", "$133B", "3.5×"
+  const cleaned = text.replace(/[,$]/g, '');
+  const match = cleaned.match(/[+-]?[\d.]+/);
+  if (!match) return null;
+  return parseFloat(match[0]);
+}
+
+function formatNumber(value, template) {
+  // Reconstruct the original format
+  const isInt = !template.match(/\.\d/);
+  const formatted = isInt ? Math.round(value).toLocaleString() : value.toFixed(1);
+
+  // Preserve prefix (+, -, $) and suffix (%, ×, M, B, K)
+  const prefix = template.match(/^[^0-9]*/)?.[0]?.replace(/[\d.]/g, '') || '';
+  const suffix = template.match(/[\d.]([^\d.]*$)/)?.[1] || '';
+
+  // Handle special cases
+  if (template.includes('$')) return '$' + formatted + suffix;
+  if (template.startsWith('+')) return '+' + formatted + suffix;
+  if (template.startsWith('−') || template.startsWith('-')) return '−' + formatted + suffix;
+  return formatted + suffix;
+}
+
+function animateCounter(el, duration = 1200) {
+  const text = el.textContent.trim();
+  const target = parseNumber(text);
+  if (target === null || isNaN(target)) return;
+
+  const start = 0;
+  const startTime = performance.now();
+
+  el.classList.add('counting');
+
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = start + (target - start) * eased;
+
+    el.textContent = formatNumber(current, text);
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      el.textContent = text; // Restore exact original
+      el.classList.remove('counting');
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+// === SCROLL REVEAL ===
+function setupScrollReveal() {
+  // Mark sections for reveal
+  const sections = document.querySelectorAll('.two-col, .hero-stats, .icon-grid, .callout-strip, .impact-box, .close-block, .congress-grid, p.body-text');
+  sections.forEach(el => el.classList.add('scroll-reveal'));
+
+  // Observe
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+
+        // Trigger counters for any .val elements inside
+        const vals = entry.target.querySelectorAll('.val, .value');
+        vals.forEach((v, i) => {
+          setTimeout(() => animateCounter(v, 900), i * 80);
+        });
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  sections.forEach(el => observer.observe(el));
+}
+
+// === TOOLTIP SYSTEM ===
+const tooltips = {
+  '17.9': 'CDC NCHS, 2024. Sweden: 4, Norway: 2, UK: 10.',
+  '3.5×': 'CDC WONDER. Black MMR: 49.5 vs White: 14.1 per 100K.',
+  '55%': 'March of Dimes Maternity Care Deserts Report, 2024.',
+  '84–93%': 'CDC MMRIA. 649 deaths, 84-93% deemed preventable.',
+  '+95%': 'Texas DSHS. White women MMR nearly doubled post-ban.',
+  '+56%': 'Texas DSHS. 5× the national 11% increase.',
+  '62% higher': 'Commonwealth Fund, 2024. 28.8 vs 17.8 per 100K.',
+  '412 in 2 yrs': 'Pregnancy Justice, 2024. Doubled year over year.',
+  '$133B': 'IWPR State-Level Economic Effects Report, 2024.',
+  '4.6M': '70% lost coverage for paperwork, not eligibility.',
+  '+700%': 'CDC STI Surveillance. 282 babies dead/disabled in 2022.',
+  '$900B': 'CBO score of OBBBA Medicaid provisions.',
+  '$2B': 'SAMHSA grant terminations, overnight. March 2025.',
+  '77,050': 'HHS National Health Workforce Analysis, projected to 2038.',
+  '26,718': 'NCMEC CyberTipline, 2023. Linked to 20+ youth suicides.',
+};
+
+function setupTooltips() {
+  const allVals = document.querySelectorAll('.val, .value');
+  allVals.forEach(el => {
+    const text = el.textContent.trim();
+    if (tooltips[text]) {
+      el.style.cursor = 'help';
+      el.style.position = 'relative';
+      el.title = tooltips[text];
+
+      // Create floating tooltip
+      el.addEventListener('mouseenter', function(e) {
+        const tip = document.createElement('div');
+        tip.className = 'floating-tip';
+        tip.textContent = tooltips[text];
+        tip.style.cssText = `
+          position: fixed;
+          background: #1a0b04;
+          color: #EAB9B0;
+          padding: 8px 12px;
+          border-radius: 6px;
+          font-size: 10px;
+          font-family: 'Jost', sans-serif;
+          max-width: 240px;
+          line-height: 1.4;
+          z-index: 9999;
+          pointer-events: none;
+          opacity: 0;
+          transform: translateY(4px);
+          transition: opacity 0.2s, transform 0.2s;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+          border: 1px solid rgba(230,129,128,0.2);
+        `;
+        document.body.appendChild(tip);
+
+        const rect = el.getBoundingClientRect();
+        tip.style.left = rect.left + 'px';
+        tip.style.top = (rect.bottom + 6) + 'px';
+
+        requestAnimationFrame(() => {
+          tip.style.opacity = '1';
+          tip.style.transform = 'translateY(0)';
+        });
+
+        el._tip = tip;
+      });
+
+      el.addEventListener('mouseleave', function() {
+        if (el._tip) {
+          el._tip.style.opacity = '0';
+          setTimeout(() => el._tip?.remove(), 200);
+        }
+      });
+    }
+  });
+}
+
+// === INIT ===
+document.addEventListener('DOMContentLoaded', () => {
+  setupScrollReveal();
+  setupTooltips();
+});
+</script>
+
 </body>
 </html>
