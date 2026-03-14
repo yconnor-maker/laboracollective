@@ -1,92 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Reports — The Labora Collective</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Reports — Labora Collective Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso: #362511;
+  --copper: #D48662;
+  --blush: #EABAB0;
+  --rose: #E7817F;
+  --bg-warm: #F7F3EE;
+  --white: #FFFFFF;
+  --muted: #8A7A6E;
+  --teal: #5B8C8A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg-warm); color: var(--espresso); }
 
-    :root {
-      --deep-brown: #2C1A0E;
-      --copper: #C8825A;
-      --blush: #EDB8A8;
-      --coral: #D97068;
-      --lavender: #EEE8F0;
-      --off-white: #FAF7F4;
-    }
-    body {
-      font-family: Georgia, serif;
-      background-color: var(--off-white);
-      color: var(--deep-brown);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    .container {
-      max-width: 600px;
-      padding: 40px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(44, 26, 14, 0.1);
-      border-top: 6px solid var(--copper);
-    }
-    h1 {
-      color: var(--deep-brown);
-      margin-bottom: 10px;
-      font-size: 2em;
-    }
-    .label {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.8em;
-      color: var(--coral);
-      margin-bottom: 20px;
-    }
-    p {
-      line-height: 1.6;
-      color: var(--deep-brown);
-    }
-    .coming-soon {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 16px;
-      background-color: var(--blush);
-      color: var(--deep-brown);
-      border-radius: 4px;
-      font-family: Arial, sans-serif;
-      font-size: 0.9em;
-      font-weight: bold;
-    }
-    a {
-      display: inline-block;
-      margin-top: 30px;
-      color: var(--copper);
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.9em;
-      border-bottom: 1px solid var(--copper);
-    }
-    a:hover {
-      color: var(--coral);
-      border-bottom-color: var(--coral);
-    }
+/* Nav */
+.nav { background: var(--espresso); padding: 1rem 2rem; border-bottom: 2px solid var(--copper); }
+.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo a { text-decoration: none; }
+.nav-logo img { height: 36px; width: auto; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a { color: rgba(251,245,255,0.5); text-decoration: none; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.15s; }
+.nav-links a:hover { color: var(--copper); }
 
-  </style>
+/* Header */
+.page-header { background: var(--espresso); padding: 4rem 2rem 3rem; text-align: center; }
+.page-header .label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
+.page-header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; color: rgba(251,245,255,0.9); margin-bottom: 0.75rem; }
+.page-header p { font-size: 0.88rem; color: rgba(251,245,255,0.4); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+/* Content */
+.container { max-width: 960px; margin: 0 auto; padding: 3rem 2rem; }
+
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--copper); }
+
+/* Report cards */
+.report-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 3rem; }
+.report-card { background: var(--white); border: 1px solid rgba(54,37,17,0.08); border-radius: 6px; padding: 1.5rem; text-decoration: none; color: var(--espresso); transition: all 0.2s; display: flex; flex-direction: column; }
+.report-card:hover { border-color: var(--copper); box-shadow: 0 4px 16px rgba(212,134,98,0.1); transform: translateY(-2px); }
+.report-card.hero { grid-column: 1 / -1; background: var(--espresso); color: rgba(251,245,255,0.85); }
+.report-card.hero h3 { color: #fff; font-size: 1.4rem; }
+.report-card.hero p { color: rgba(251,245,255,0.45); }
+.report-card.hero .card-cta { color: var(--copper); }
+.card-badge { font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 2px; display: inline-block; margin-bottom: 0.6rem; width: fit-content; background: rgba(212,134,98,0.1); color: var(--copper); }
+.card-badge.interactive { background: rgba(91,140,138,0.12); color: var(--teal); }
+.card-badge.domain { background: rgba(54,37,17,0.06); color: var(--muted); }
+.report-card.hero .card-badge { background: rgba(212,134,98,0.2); }
+.report-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4rem; line-height: 1.2; }
+.report-card p { font-size: 0.78rem; line-height: 1.5; color: var(--muted); flex: 1; }
+.card-cta { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-top: 0.75rem; }
+
+/* Domain grid - 3 col */
+.domain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 3rem; }
+.domain-card { background: var(--white); border: 1px solid rgba(54,37,17,0.06); border-radius: 6px; padding: 1.25rem; text-decoration: none; color: var(--espresso); transition: all 0.15s; }
+.domain-card:hover { border-color: var(--copper); box-shadow: 0 2px 12px rgba(212,134,98,0.08); }
+.domain-num { font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); display: block; margin-bottom: 0.3rem; }
+.domain-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; line-height: 1.2; }
+
+/* Footer */
+.footer { background: var(--espresso); padding: 2rem; text-align: center; border-top: 2px solid var(--copper); }
+.footer a { color: var(--copper); text-decoration: none; font-size: 0.75rem; }
+.footer p { color: rgba(251,245,255,0.25); font-size: 0.65rem; margin-top: 0.5rem; }
+
+@media (max-width: 768px) {
+  .report-grid, .domain-grid { grid-template-columns: 1fr; }
+  .report-card.hero { grid-column: auto; }
+  .nav-links { display: none; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="label">The Labora Collective</div>
-    <h1>Special Reports</h1>
-    <p>Labora Rounds special reports.</p>
-    <div class="coming-soon">Coming Soon</div>
-    <br>
-    <a href="/">← Back to Homepage</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><a href="/"><img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective"></a></div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/#journals">Journals</a></li>
+      <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+      <li><a href="/sitemap/">Sitemap</a></li>
+    </ul>
   </div>
+</nav>
+
+<div class="page-header">
+  <div class="label">Labora Collective Intelligence</div>
+  <h1>Special Reports</h1>
+  <p>America's Women &amp; Children — built on a 26-domain research protocol documenting the systematic dismantling of women's health infrastructure.</p>
+</div>
+
+<div class="container">
+
+  <!-- FEATURED REPORTS -->
+  <h2 class="section-title">Featured Reports</h2>
+  <div class="report-grid">
+    <a href="executive-summary.html" class="report-card hero">
+      <span class="card-badge">FLAGSHIP REPORT</span>
+      <h3>Executive Summary</h3>
+      <p>The complete crisis in one document — maternal mortality, policy dismantlement, and what it means for every woman in America.</p>
+      <span class="card-cta">Read the Executive Summary →</span>
+    </a>
+    <a href="data-overview.html" class="report-card">
+      <span class="card-badge">INFOGRAPHIC</span>
+      <h3>Two-Page Data Overview</h3>
+      <p>The numbers that tell the story — printable, shareable, devastating.</p>
+      <span class="card-cta">View the Data →</span>
+    </a>
+    <a href="causal-map.html" class="report-card">
+      <span class="card-badge">VISUALIZATION</span>
+      <h3>Causal Map — Trump Actions</h3>
+      <p>Tracing every executive action to its downstream impact on women's health.</p>
+      <span class="card-cta">View the Causal Map →</span>
+    </a>
+  </div>
+
+  <!-- INTERACTIVE FIGURES -->
+  <h2 class="section-title">Interactive Figures</h2>
+  <div class="report-grid">
+    <a href="interactive/maternal-mortality-trajectory.html" class="report-card">
+      <span class="card-badge interactive">INTERACTIVE</span>
+      <h3>Maternal Mortality Trajectory</h3>
+      <p>Explore projected maternal deaths under current policy — with and without intervention.</p>
+      <span class="card-cta">Launch Interactive →</span>
+    </a>
+    <a href="interactive/federal-dismantlement-timeline.html" class="report-card">
+      <span class="card-badge interactive">INTERACTIVE</span>
+      <h3>Federal Dismantlement Timeline</h3>
+      <p>A chronology of every executive action, budget cut, and agency elimination targeting women's health.</p>
+      <span class="card-cta">Launch Interactive →</span>
+    </a>
+    <a href="interactive/state-scorecard-map.html" class="report-card">
+      <span class="card-badge interactive">INTERACTIVE</span>
+      <h3>State Scorecard Map</h3>
+      <p>Grade every state on maternal health outcomes, policy protections, and access to care.</p>
+      <span class="card-cta">Launch Interactive →</span>
+    </a>
+  </div>
+
+  <!-- DOMAIN REPORTS -->
+  <h2 class="section-title">Domain Intelligence Reports</h2>
+  <div class="domain-grid">
+    <a href="domain-01-medical-clinical.html" class="domain-card">
+      <span class="domain-num">Domain 01</span>
+      <h4>Medical &amp; Clinical Updates</h4>
+    </a>
+    <a href="domain-02-political-legal.html" class="domain-card">
+      <span class="domain-num">Domain 02</span>
+      <h4>Political &amp; Legal Intelligence</h4>
+    </a>
+    <a href="domain-03-economic.html" class="domain-card">
+      <span class="domain-num">Domain 03</span>
+      <h4>Economic Analysis</h4>
+    </a>
+    <a href="domain-04-health-policy.html" class="domain-card">
+      <span class="domain-num">Domain 04</span>
+      <h4>Health Policy Cross-Cutting</h4>
+    </a>
+    <a href="domain-05-innovation-funding.html" class="domain-card">
+      <span class="domain-num">Domain 05</span>
+      <h4>Innovation &amp; Research Funding</h4>
+    </a>
+    <a href="domain-06-menopause.html" class="domain-card">
+      <span class="domain-num">Domain 06</span>
+      <h4>Menopause &amp; Post-Reproductive</h4>
+    </a>
+    <a href="domain-07-social-systems.html" class="domain-card">
+      <span class="domain-num">Domain 07</span>
+      <h4>Social Systems &amp; Intimacy</h4>
+    </a>
+    <a href="domain-08-political-systems.html" class="domain-card">
+      <span class="domain-num">Domain 08</span>
+      <h4>Political Systems Analysis</h4>
+    </a>
+    <a href="domain-09-trump-admin.html" class="domain-card">
+      <span class="domain-num">Domain 09</span>
+      <h4>Trump Administration Tracking</h4>
+    </a>
+    <a href="domain-10-immigration-rj.html" class="domain-card">
+      <span class="domain-num">Domain 10</span>
+      <h4>Immigration &amp; Reproductive Justice</h4>
+    </a>
+    <a href="domain-11-clinical-practice.html" class="domain-card">
+      <span class="domain-num">Domain 11</span>
+      <h4>Clinical Practice Intelligence</h4>
+    </a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <a href="/">← Back to Labora Collective</a>
+  <p>© 2026 Labora Collective · A Diosa Ara Initiative</p>
+</footer>
+
 </body>
 </html>
