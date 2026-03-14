@@ -648,6 +648,137 @@ body {
 .footer-bottom a:hover { color: var(--copper); }
 
 /* ─────────────────────────────────────────────
+   JOURNALS — Three Publications
+───────────────────────────────────────────── */
+.journals {
+  background: var(--bg-warm);
+  padding: 5rem 2rem;
+  border-top: 1px solid rgba(54,37,17,0.08);
+}
+.journals-inner { max-width: 1100px; margin: 0 auto; }
+.journals-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.journals-intro .section-label { color: var(--copper); }
+.journals-intro .section-hed {
+  color: var(--espresso);
+  margin-bottom: 0;
+}
+
+.journal-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(54,37,17,0.08);
+  border: 2px solid rgba(54,37,17,0.08);
+}
+
+.journal-panel {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-panel-header {
+  padding: 2rem 1.75rem 1.5rem;
+  border-bottom: 1px solid rgba(54,37,17,0.07);
+}
+
+.journal-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.48rem; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+.journal-tag.wh  { background: #FDF0E8; color: var(--copper); }
+.journal-tag.ihn { background: var(--rose-light); color: var(--rose); }
+.journal-tag.bp  { background: var(--teal-light); color: var(--teal); }
+
+.journal-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400; line-height: 1.1;
+  color: var(--espresso);
+  margin-bottom: 0.6rem;
+}
+.journal-name em { font-style: italic; }
+
+.journal-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; line-height: 1.55;
+  color: var(--muted);
+}
+
+.journal-panel-body {
+  padding: 1.5rem 1.75rem;
+  flex: 1;
+}
+
+.subjournal-list { list-style: none; padding: 0; margin: 0; }
+.subjournal-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(54,37,17,0.06);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.subjournal-item:last-child { border-bottom: none; }
+
+.subjournal-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+}
+.wh-dot  { background: var(--copper); }
+.ihn-dot { background: var(--rose); }
+.bp-dot  { background: var(--teal); }
+
+.subjournal-text {}
+.subjournal-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-weight: 400;
+  color: var(--espresso); line-height: 1.2;
+  display: block; margin-bottom: 0.15rem;
+}
+.subjournal-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem; color: var(--muted);
+  line-height: 1.4;
+}
+
+.journal-logo-wrap {
+  margin-bottom: 1.25rem;
+}
+.journal-logo-wrap img {
+  height: 72px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.journal-panel-footer {
+  padding: 1.5rem 1.75rem;
+  border-top: 1px solid rgba(54,37,17,0.07);
+}
+.journal-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  transition: opacity 0.15s;
+}
+.journal-cta:hover { opacity: 0.7; }
+.journal-cta.wh  { color: var(--copper); }
+.journal-cta.ihn { color: var(--rose); }
+.journal-cta.bp  { color: var(--teal); }
+
+/* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -661,10 +792,11 @@ body {
   .tier.highlight { order: -1; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .nav-links { display: none; }
+  .journal-panels { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
   .hero-inner { padding: 3.5rem 1.25rem 3rem; }
-  .mission, .publications, .rounds-feature, .membership, .founder { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .mission, .publications, .rounds-feature, .membership, .founder, .journals { padding-left: 1.25rem; padding-right: 1.25rem; }
   .hero-stats { padding: 1.25rem; gap: 1.5rem; }
   .domain-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
@@ -691,10 +823,11 @@ body {
   <div class="nav-inner">
     <div class="nav-logo">
       <a href="/">
-        <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective">
+        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
       </a>
     </div>
     <ul class="nav-links">
+      <li><a href="/#journals">Journals</a></li>
       <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
       <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
       <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
@@ -791,6 +924,176 @@ body {
   <h2 class="mission-headline">Rigorous enough for a department chair.<br>Legible enough for a campaign staffer.<br>Urgent enough for a patient.</h2>
   <p class="mission-body">The clinical evidence moves. Policy changes overnight. Economic forces reshape what care is available before a single guideline is updated. <strong>Labora Collective exists to close that gap</strong> — physician-authored intelligence that connects what's happening in courts, legislatures, funding agencies, and research trials to what it means in the exam room on Monday morning.</p>
   <p class="mission-body">This is not advocacy. It is <strong>impact documentation</strong> — the measurable clinical, economic, and legal consequences of the decisions being made about women's health right now.</p>
+</section>
+
+<!-- ══ JOURNALS — Three Publications ══ -->
+<section class="journals" id="journals">
+  <div class="journals-inner">
+
+    <div class="journals-intro">
+      <span class="section-label">Our Publications</span>
+      <h2 class="section-hed" style="color:var(--espresso);">Three journals.<br>One complete picture of women's health.</h2>
+    </div>
+
+    <div class="journal-panels">
+
+      <!-- ─── WOMEN'S HEALTH ─── -->
+      <div class="journal-panel">
+        <div class="journal-panel-header">
+          <div class="journal-logo-wrap">
+            <img src="/assets/images/wh-logo.png" alt="Women's Health Journal">
+          </div>
+          <span class="journal-tag wh">Women's Health</span>
+          <h3 class="journal-name">Women's Health<br><em>Journal</em></h3>
+          <p class="journal-tagline">Clinical education, physiological health, and empowered care — the evidence you need to navigate your body, your care, and your decisions.</p>
+        </div>
+        <div class="journal-panel-body">
+          <ul class="subjournal-list">
+            <li class="subjournal-item">
+              <span class="subjournal-dot wh-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Her Health Matters</span>
+                <span class="subjournal-desc">GYN and reproductive justice — bridging clinical research and daily health</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot wh-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Yemaya's Circle of Care</span>
+                <span class="subjournal-desc">Maternal health and birthwork — OB intelligence for every stage</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot wh-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">The EmpowerHER Journal</span>
+                <span class="subjournal-desc">Navigating personalized medical care with clinical clarity</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot wh-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Pleasure &amp; Power</span>
+                <span class="subjournal-desc">Sexual and reproductive agency — evidence-based and unapologetic</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot wh-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Roots &amp; Wings</span>
+                <span class="subjournal-desc">Holistic approaches to lifecycle health from menarche to menopause</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="journal-panel-footer">
+          <a href="/womens-health/" class="journal-cta wh">Explore Women's Health Journal →</a>
+        </div>
+      </div>
+
+      <!-- ─── IN HER NAME ─── -->
+      <div class="journal-panel">
+        <div class="journal-panel-header">
+          <div class="journal-logo-wrap">
+            <img src="/assets/images/ihn-logo.png" alt="In Her Name">
+          </div>
+          <span class="journal-tag ihn">Policy &amp; Justice</span>
+          <h3 class="journal-name">In Her<br><em>Name</em></h3>
+          <p class="journal-tagline">Political, investigative, and systems reporting — the forces shaping women's health from the outside in, documented without euphemism.</p>
+        </div>
+        <div class="journal-panel-body">
+          <ul class="subjournal-list">
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">The Cost of Control</span>
+                <span class="subjournal-desc">Narrative analysis of legislative impact on women's health outcomes</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Brought to You by Racism</span>
+                <span class="subjournal-desc">Investigative reporting on medical bias and systemic failures</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Make Health Great Again</span>
+                <span class="subjournal-desc">Critique of healthcare policy, market dynamics, and political capture</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Know Your Rights</span>
+                <span class="subjournal-desc">Legal rights, patient protections, and what survives policy rollbacks</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">The Dossier: Bodies. Borders. Power.</span>
+                <span class="subjournal-desc">Immigration, carceral systems, and reproductive justice at the intersection</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot ihn-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Where's My Money?</span>
+                <span class="subjournal-desc">The economics of women's health — tracing financial violence from policy to personal outcome</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="journal-panel-footer">
+          <a href="/in-her-name/" class="journal-cta ihn">Explore In Her Name →</a>
+        </div>
+      </div>
+
+      <!-- ─── BLUEPRINT ─── -->
+      <div class="journal-panel">
+        <div class="journal-panel-header">
+          <div class="journal-logo-wrap">
+            <img src="/assets/images/blueprint-logo.png" alt="The Blueprint">
+          </div>
+          <span class="journal-tag bp">Research &amp; Practice</span>
+          <h3 class="journal-name">The<br><em>Blueprint</em></h3>
+          <p class="journal-tagline">Research, implementation, and infrastructure — where clinical intelligence becomes actionable guidance for providers, birthworkers, and advocates.</p>
+        </div>
+        <div class="journal-panel-body">
+          <ul class="subjournal-list">
+            <li class="subjournal-item">
+              <span class="subjournal-dot bp-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Labora Rounds</span>
+                <span class="subjournal-desc">Ten-domain weekly intelligence sweep — clinical, political, economic, and policy</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot bp-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">The Birthwork Brief</span>
+                <span class="subjournal-desc">Practitioner intelligence for doulas, midwives, and birthworkers in the field</span>
+              </div>
+            </li>
+            <li class="subjournal-item">
+              <span class="subjournal-dot bp-dot"></span>
+              <div class="subjournal-text">
+                <span class="subjournal-name">Doulas Corner</span>
+                <span class="subjournal-desc">Clinical protocols, pack and playbook pathways, and peer community resources</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="journal-panel-footer">
+          <a href="/blueprint/" class="journal-cta bp">Explore The Blueprint →</a>
+        </div>
+      </div>
+
+    </div><!-- /.journal-panels -->
+  </div><!-- /.journals-inner -->
 </section>
 
 <!-- ══ PUBLICATIONS ══ -->
@@ -1011,13 +1314,21 @@ body {
 <!-- ══ SITE FOOTER ══ -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-top">
+    <div class="footer-top" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr;">
       <div class="footer-brand">
-        <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective">
+        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
         <p>Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve. A Diosa Ara initiative.</p>
       </div>
       <div class="footer-col">
-        <h5>Publications</h5>
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Intelligence</h5>
         <ul>
           <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
           <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
@@ -1026,11 +1337,11 @@ body {
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Intelligence</h5>
+        <h5>Labora Rounds</h5>
         <ul>
-          <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical Reports</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy</a></li>
           <li><a href="/viva-voce/">Viva Voce</a></li>
         </ul>
       </div>

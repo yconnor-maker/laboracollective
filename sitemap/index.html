@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Map — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --espresso: #362511;
+    --copper: #D48662;
+    --blush: #EABAB0;
+    --rose: #E7817F;
+    --bg-warm: #F7F3EE;
+    --white: #FFFFFF;
+    --muted: #8A7A6E;
+    --teal: #5B8C8A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg-warm);
+    color: var(--espresso);
+    line-height: 1.6;
+  }
+
+  /* Header */
+  .header {
+    background: var(--espresso);
+    color: var(--blush);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--copper);
+  }
+  .header .label {
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    opacity: 0.5; margin-bottom: 0.5rem;
+  }
+  .header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .header .sub {
+    font-size: 0.8rem; color: var(--copper);
+    font-weight: 300;
+  }
+  .header .internal-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.25rem 1rem;
+    background: rgba(212,134,98,0.15);
+    border: 1px solid rgba(212,134,98,0.3);
+    border-radius: 20px;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .updated {
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  /* Section */
+  .section {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(54,37,17,0.06);
+    box-shadow: 0 2px 8px rgba(54,37,17,0.04);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--copper);
+  }
+  .section-header .icon { font-size: 1.3rem; }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--espresso);
+  }
+  .section-header .status {
+    margin-left: auto;
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.2rem 0.6rem; border-radius: 3px;
+  }
+  .status-live { background: #e6f4e6; color: #2d8a2d; }
+  .status-wip { background: #fff3cd; color: #8a6d0a; }
+  .status-planned { background: #f0ecf8; color: #6c5ce7; }
+
+  .page-list { list-style: none; }
+  .page-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(54,37,17,0.05);
+    font-size: 0.85rem;
+  }
+  .page-item:last-child { border-bottom: none; }
+  .page-item a {
+    color: var(--copper);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .page-item a:hover { text-decoration: underline; }
+  .page-item .path {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-family: monospace;
+  }
+  .page-item .tag {
+    font-size: 0.55rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.15rem 0.45rem; border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .tag-live { background: #e6f4e6; color: #2d8a2d; }
+  .tag-new  { background: #e6f0ff; color: #3366cc; }
+  .tag-soon { background: #f0ecf8; color: #6c5ce7; }
+
+  .sub-list { padding-left: 1.5rem; }
+  .sub-list .page-item { font-size: 0.8rem; }
+
+  /* Branding reference */
+  .brand-ref {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .swatch {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .footer a { color: var(--copper); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="label">Labora Collective</div>
+  <h1>Site Map</h1>
+  <div class="sub">laboracollective.com — Netlify</div>
+  <div class="internal-badge">Internal Distribution</div>
+</div>
+
+<div class="container">
+  <div class="updated">Last updated: March 13, 2026</div>
+
+  <!-- HOMEPAGE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🏠</span>
+      <h2>Homepage</h2>
+      <span class="status status-live">Live</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/">Homepage</a>
+        <span class="path">/index.html</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- INTELLIGENCE -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🔬</span>
+      <h2>Intelligence</h2>
+      <span class="status status-live">Live</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/">Intelligence Hub</a>
+        <span class="path">/intelligence/index.html</span>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/labora-rounds/">Labora Rounds</a>
+        <span class="path">/intelligence/labora-rounds/index.html</span>
+      </li>
+      <li class="page-item" style="font-weight:700; margin-top:0.5rem;">Special Reports</li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/labora-rounds/special-reports/">Special Reports Hub</a>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/labora-rounds/special-reports/executive-summary.html">Executive Summary</a>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/labora-rounds/special-reports/data-overview.html">Two-Page Data Overview</a>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-live">LIVE</span>
+        <a href="/intelligence/labora-rounds/special-reports/causal-map.html">Causal Map — Trump Actions</a>
+      </li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">Interactive Figures</li>
+      <li class="page-item">
+        <span class="tag tag-new">NEW</span>
+        <a href="/intelligence/labora-rounds/special-reports/interactive/maternal-mortality-trajectory.html">Maternal Mortality Trajectory</a>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-new">NEW</span>
+        <a href="/intelligence/labora-rounds/special-reports/interactive/federal-dismantlement-timeline.html">Federal Dismantlement Timeline</a>
+      </li>
+      <li class="page-item">
+        <span class="tag tag-new">NEW</span>
+        <a href="/intelligence/labora-rounds/special-reports/interactive/state-scorecard-map.html">State Scorecard Map</a>
+      </li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">Domain Reports (11)</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">01 — Medical & Clinical</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">02 — Political & Legal</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-03-economic.html">03 — Economic</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-04-health-policy.html">04 — Health Policy</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-05-innovation-funding.html">05 — Innovation & Funding</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-06-menopause.html">06 — Menopause</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-07-social-systems.html">07 — Social Systems</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-08-political-systems.html">08 — Political Systems</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-09-trump-admin.html">09 — Trump Administration</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-10-immigration-rj.html">10 — Immigration & RJ</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/special-reports/domain-11-clinical-practice.html">11 — Clinical Practice</a></li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/intelligence/labora-rounds/weekly/">Weekly Updates</a></li>
+    </ul>
+  </div>
+
+  <!-- NEWSLETTERS -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📨</span>
+      <h2>Newsletters & Publications</h2>
+      <span class="status status-live">Live</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/">Newsletters Hub</a></li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">OB Signal (Mondays)</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/ob-signal/">OB Signal Index</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/ob-signal/2026-03-10.html">Issue: March 10, 2026</a></li>
+      <li class="page-item" style="margin-left:1rem; font-size:0.75rem; color:var(--muted);">Essays: Congenital Syphilis · ICE Hospital Enforcement · PRAMS Funding</li>
+      <li class="page-item" style="margin-left:1rem; font-size:0.75rem; color:var(--muted);">Packs: Immigration Enforcement Playbook · Syphilis Clinical Reference</li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">GYN Signal (Wednesdays)</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/gyn-signal/">GYN Signal Index</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/gyn-signal/2026-03-11.html">Issue: March 11, 2026</a></li>
+      <li class="page-item" style="margin-left:1rem; font-size:0.75rem; color:var(--muted);">Essays: HRT · Mifepristone · Pharmacy Refusals · PWFA</li>
+      <li class="page-item" style="margin-left:1rem; font-size:0.75rem; color:var(--muted);">Packs: Pharmacy Rights · PWFA Workplace Rights</li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">Labora Briefing</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/briefing/">Briefing Index</a></li>
+    </ul>
+  </div>
+
+  <!-- ORGANIZATION -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🏛</span>
+      <h2>Organization</h2>
+      <span class="status status-wip">In Progress</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/womens-health/">Women's Health</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/blueprint/">Blueprint</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/in-her-name/">In Her Name</a></li>
+    </ul>
+    <ul class="page-list sub-list">
+      <li class="page-item" style="font-weight:600; margin-top:0.5rem;">Placeholder Pages (Coming Soon)</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Yemaya's Circle of Care</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Her Health Matters</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Love Letters to Motherhood</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Welcome to Motherhood</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Diosa's Quarter</li>
+    </ul>
+  </div>
+
+  <!-- NEEDED -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">📋</span>
+      <h2>Pages Still Needed</h2>
+      <span class="status status-planned">Planned</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item"><span class="tag tag-soon">SOON</span>About / Team Page</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Contact</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Privacy Policy</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Terms of Service</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Membership / Join Page</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Monthly Digest — Viva Voce</li>
+    </ul>
+  </div>
+
+  <!-- TEMPLATES -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🎨</span>
+      <h2>Templates & Templates</h2>
+      <span class="status status-wip">In Progress</span>
+    </div>
+    <ul class="page-list">
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/ob-signal/web-template.html">OB Signal Web Template</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/gyn-signal/web-template.html">GYN Signal Web Template</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span><a href="/newsletters/briefing/web-template.html">Briefing Web Template</a></li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span>OB Signal Email Template</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span>GYN Signal Email Template</li>
+      <li class="page-item"><span class="tag tag-live">LIVE</span>Briefing Email Template</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Base Page Template (shared nav/footer)</li>
+      <li class="page-item"><span class="tag tag-soon">SOON</span>Special Report Template</li>
+    </ul>
+  </div>
+
+  <!-- BRANDING -->
+  <div class="section">
+    <div class="section-header">
+      <span class="icon">🎨</span>
+      <h2>Brand Reference</h2>
+    </div>
+    <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem;">Primary Font: DM Sans · Display Font: Cormorant Garamond</p>
+    <div class="brand-ref">
+      <div class="swatch" style="background:#362511; color:#EABAB0;">Espresso<br>#362511</div>
+      <div class="swatch" style="background:#D48662; color:#fff;">Copper<br>#D48662</div>
+      <div class="swatch" style="background:#EABAB0; color:#362511;">Blush<br>#EABAB0</div>
+      <div class="swatch" style="background:#E7817F; color:#fff;">Rose<br>#E7817F</div>
+      <div class="swatch" style="background:#5B8C8A; color:#fff;">Teal<br>#5B8C8A</div>
+      <div class="swatch" style="background:#F7F3EE; color:#362511; border:1px solid #ddd;">Warm BG<br>#F7F3EE</div>
+    </div>
+    <p style="font-size:0.7rem; color:var(--muted); margin-top:1rem;"><strong>Report Theme:</strong> Dark (EB Garamond + Jost) — #0d0d12 bg, #EAB9B0 text, #E68180 accent</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  Labora Collective · Internal Distribution · <a href="/">Back to Site</a>
+</div>
+
+</body>
+</html>

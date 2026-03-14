@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Scorecard: Reproductive Health by State</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e8e6e3;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            margin-bottom: 32px;
+        }
+        .header .eyebrow {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ef4444;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .header .subtitle {
+            font-size: 16px;
+            color: #737373;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+        .metric-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .metric-btn {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: #a3a3a3;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .metric-btn:hover { border-color: #333; color: #e8e6e3; }
+        .metric-btn.active {
+            border-color: #ef4444;
+            color: #ef4444;
+            background: #ef444410;
+        }
+        .map-container {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ef444460, transparent);
+        }
+        #state-map {
+            width: 100%;
+            height: 500px;
+        }
+        .info-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 768px) {
+            .info-panel { grid-template-columns: 1fr; }
+        }
+        .ranking-panel {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .ranking-panel h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .ranking-panel.worst h3 { color: #ef4444; }
+        .ranking-panel.best h3 { color: #10b981; }
+        .rank-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #1a1a2a;
+            font-size: 13px;
+        }
+        .rank-item:last-child { border-bottom: none; }
+        .rank-num { color: #525252; font-weight: 700; width: 24px; }
+        .rank-state { flex: 1; color: #a3a3a3; }
+        .rank-value { font-weight: 700; }
+        .ranking-panel.worst .rank-value { color: #ef4444; }
+        .ranking-panel.best .rank-value { color: #10b981; }
+        .state-detail {
+            display: none;
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+        .state-detail.visible { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .state-detail h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .state-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .state-metric {
+            background: #0a0a0f;
+            border-radius: 8px;
+            padding: 14px;
+        }
+        .state-metric .sm-value {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .state-metric .sm-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #737373;
+        }
+        .legend-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 11px;
+            color: #525252;
+        }
+        .legend-gradient {
+            height: 8px;
+            flex: 1;
+            max-width: 300px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);
+        }
+        .footer {
+            font-size: 11px;
+            color: #525252;
+            line-height: 1.6;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="eyebrow">Labora Collective Intelligence Report</div>
+            <h1>State Scorecard: Where Women's Health Is Under Siege</h1>
+            <p class="subtitle">Hover over any state for a comprehensive snapshot. Switch metrics to see how abortion bans, L&D closures, workforce loss, and poverty converge in the same states.</p>
+        </div>
+
+        <div class="metric-selector" id="metric-selector">
+            <button class="metric-btn active" data-metric="composite" onclick="switchMetric('composite')">Overall Risk Score</button>
+            <button class="metric-btn" data-metric="mmr" onclick="switchMetric('mmr')">Maternal Mortality</button>
+            <button class="metric-btn" data-metric="ban" onclick="switchMetric('ban')">Abortion Ban Status</button>
+            <button class="metric-btn" data-metric="closures" onclick="switchMetric('closures')">L&D Closures</button>
+            <button class="metric-btn" data-metric="uninsured" onclick="switchMetric('uninsured')">Uninsured Rate</button>
+        </div>
+
+        <div class="map-container">
+            <div id="state-map"></div>
+            <div class="legend-bar">
+                <span>Lower risk</span>
+                <div class="legend-gradient"></div>
+                <span>Higher risk</span>
+            </div>
+        </div>
+
+        <div class="state-detail" id="state-detail">
+            <h2 id="detail-state-name">—</h2>
+            <div class="state-metrics" id="detail-metrics"></div>
+        </div>
+
+        <div class="info-panel">
+            <div class="ranking-panel worst">
+                <h3>🔴 10 Worst States for Maternal Health</h3>
+                <div id="worst-list"></div>
+            </div>
+            <div class="ranking-panel best">
+                <h3>🟢 10 Best States for Maternal Health</h3>
+                <div id="best-list"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <strong>Sources:</strong> CDC NCHS Vital Statistics; KFF State Health Facts; Guttmacher Institute; March of Dimes Maternity Care Deserts; CMS Medicaid Data. Composite score is unweighted average of normalized metrics.<br>
+            <strong>Report:</strong> Americas Women & Children Intelligence Report — Labora Collective, March 2026
+        </div>
+    </div>
+
+    <script>
+        // State data: [state abbrev, name, MMR, ban status (0-3), L&D closures %, uninsured %, composite risk 0-100]
+        const stateData = {
+            'AL': { name: 'Alabama', mmr: 36.4, ban: 3, closures: 32, uninsured: 11.2, gdp_rank: 46, composite: 82 },
+            'AK': { name: 'Alaska', mmr: 18.2, ban: 0, closures: 25, uninsured: 13.1, gdp_rank: 22, composite: 45 },
+            'AZ': { name: 'Arizona', mmr: 22.1, ban: 1, closures: 18, uninsured: 10.8, gdp_rank: 30, composite: 52 },
+            'AR': { name: 'Arkansas', mmr: 43.5, ban: 3, closures: 38, uninsured: 10.3, gdp_rank: 48, composite: 88 },
+            'CA': { name: 'California', mmr: 10.2, ban: 0, closures: 8, uninsured: 6.8, gdp_rank: 5, composite: 18 },
+            'CO': { name: 'Colorado', mmr: 11.8, ban: 0, closures: 12, uninsured: 7.1, gdp_rank: 12, composite: 22 },
+            'CT': { name: 'Connecticut', mmr: 12.5, ban: 0, closures: 10, uninsured: 4.2, gdp_rank: 4, composite: 15 },
+            'DE': { name: 'Delaware', mmr: 16.8, ban: 0, closures: 12, uninsured: 5.8, gdp_rank: 18, composite: 28 },
+            'FL': { name: 'Florida', mmr: 23.8, ban: 2, closures: 20, uninsured: 13.2, gdp_rank: 28, composite: 62 },
+            'GA': { name: 'Georgia', mmr: 33.9, ban: 2, closures: 34, uninsured: 13.7, gdp_rank: 32, composite: 78 },
+            'HI': { name: 'Hawaii', mmr: 8.5, ban: 0, closures: 5, uninsured: 3.8, gdp_rank: 20, composite: 10 },
+            'ID': { name: 'Idaho', mmr: 28.5, ban: 3, closures: 30, uninsured: 11.5, gdp_rank: 44, composite: 80 },
+            'IL': { name: 'Illinois', mmr: 18.2, ban: 0, closures: 22, uninsured: 6.3, gdp_rank: 14, composite: 35 },
+            'IN': { name: 'Indiana', mmr: 27.6, ban: 3, closures: 28, uninsured: 8.9, gdp_rank: 34, composite: 72 },
+            'IA': { name: 'Iowa', mmr: 16.5, ban: 2, closures: 24, uninsured: 5.1, gdp_rank: 26, composite: 48 },
+            'KS': { name: 'Kansas', mmr: 19.8, ban: 1, closures: 26, uninsured: 9.2, gdp_rank: 30, composite: 52 },
+            'KY': { name: 'Kentucky', mmr: 30.8, ban: 3, closures: 35, uninsured: 6.1, gdp_rank: 45, composite: 76 },
+            'LA': { name: 'Louisiana', mmr: 44.8, ban: 3, closures: 36, uninsured: 9.8, gdp_rank: 47, composite: 90 },
+            'ME': { name: 'Maine', mmr: 13.5, ban: 0, closures: 18, uninsured: 5.6, gdp_rank: 35, composite: 30 },
+            'MD': { name: 'Maryland', mmr: 19.2, ban: 0, closures: 10, uninsured: 5.5, gdp_rank: 8, composite: 25 },
+            'MA': { name: 'Massachusetts', mmr: 7.8, ban: 0, closures: 6, uninsured: 2.9, gdp_rank: 3, composite: 8 },
+            'MI': { name: 'Michigan', mmr: 18.5, ban: 0, closures: 20, uninsured: 5.8, gdp_rank: 24, composite: 35 },
+            'MN': { name: 'Minnesota', mmr: 12.2, ban: 0, closures: 14, uninsured: 4.3, gdp_rank: 10, composite: 20 },
+            'MS': { name: 'Mississippi', mmr: 49.8, ban: 3, closures: 42, uninsured: 13.7, gdp_rank: 50, composite: 95 },
+            'MO': { name: 'Missouri', mmr: 26.8, ban: 3, closures: 30, uninsured: 9.5, gdp_rank: 32, composite: 70 },
+            'MT': { name: 'Montana', mmr: 18.6, ban: 1, closures: 28, uninsured: 9.8, gdp_rank: 36, composite: 50 },
+            'NE': { name: 'Nebraska', mmr: 16.2, ban: 2, closures: 22, uninsured: 7.8, gdp_rank: 24, composite: 48 },
+            'NV': { name: 'Nevada', mmr: 20.5, ban: 0, closures: 16, uninsured: 11.2, gdp_rank: 28, composite: 42 },
+            'NH': { name: 'New Hampshire', mmr: 10.5, ban: 0, closures: 12, uninsured: 4.5, gdp_rank: 9, composite: 18 },
+            'NJ': { name: 'New Jersey', mmr: 22.8, ban: 0, closures: 14, uninsured: 7.5, gdp_rank: 6, composite: 32 },
+            'NM': { name: 'New Mexico', mmr: 25.2, ban: 0, closures: 30, uninsured: 12.4, gdp_rank: 40, composite: 55 },
+            'NY': { name: 'New York', mmr: 20.5, ban: 0, closures: 18, uninsured: 5.4, gdp_rank: 7, composite: 30 },
+            'NC': { name: 'North Carolina', mmr: 24.5, ban: 1, closures: 22, uninsured: 11.2, gdp_rank: 31, composite: 55 },
+            'ND': { name: 'North Dakota', mmr: 14.5, ban: 3, closures: 26, uninsured: 7.5, gdp_rank: 16, composite: 50 },
+            'OH': { name: 'Ohio', mmr: 21.8, ban: 2, closures: 22, uninsured: 6.8, gdp_rank: 26, composite: 52 },
+            'OK': { name: 'Oklahoma', mmr: 32.5, ban: 3, closures: 34, uninsured: 14.3, gdp_rank: 38, composite: 82 },
+            'OR': { name: 'Oregon', mmr: 11.2, ban: 0, closures: 14, uninsured: 5.8, gdp_rank: 16, composite: 22 },
+            'PA': { name: 'Pennsylvania', mmr: 17.8, ban: 1, closures: 18, uninsured: 5.8, gdp_rank: 20, composite: 38 },
+            'RI': { name: 'Rhode Island', mmr: 10.8, ban: 0, closures: 8, uninsured: 3.5, gdp_rank: 22, composite: 14 },
+            'SC': { name: 'South Carolina', mmr: 31.2, ban: 3, closures: 32, uninsured: 11.8, gdp_rank: 43, composite: 78 },
+            'SD': { name: 'South Dakota', mmr: 18.5, ban: 3, closures: 28, uninsured: 10.2, gdp_rank: 28, composite: 58 },
+            'TN': { name: 'Tennessee', mmr: 29.8, ban: 3, closures: 30, uninsured: 10.5, gdp_rank: 36, composite: 74 },
+            'TX': { name: 'Texas', mmr: 34.5, ban: 3, closures: 24, uninsured: 18.4, gdp_rank: 15, composite: 85 },
+            'UT': { name: 'Utah', mmr: 14.2, ban: 2, closures: 14, uninsured: 9.2, gdp_rank: 18, composite: 40 },
+            'VT': { name: 'Vermont', mmr: 9.5, ban: 0, closures: 15, uninsured: 3.2, gdp_rank: 30, composite: 16 },
+            'VA': { name: 'Virginia', mmr: 18.8, ban: 1, closures: 16, uninsured: 7.8, gdp_rank: 12, composite: 38 },
+            'WA': { name: 'Washington', mmr: 11.5, ban: 0, closures: 10, uninsured: 5.5, gdp_rank: 8, composite: 20 },
+            'WV': { name: 'West Virginia', mmr: 37.5, ban: 3, closures: 40, uninsured: 7.2, gdp_rank: 49, composite: 84 },
+            'WI': { name: 'Wisconsin', mmr: 15.2, ban: 1, closures: 18, uninsured: 5.2, gdp_rank: 22, composite: 35 },
+            'WY': { name: 'Wyoming', mmr: 16.8, ban: 2, closures: 30, uninsured: 11.5, gdp_rank: 26, composite: 52 },
+            'DC': { name: 'Washington D.C.', mmr: 26.5, ban: 0, closures: 5, uninsured: 3.1, gdp_rank: 1, composite: 28 }
+        };
+
+        const banLabels = { 0: 'Protected', 1: 'Restricted', 2: 'Severely restricted', 3: 'Total or near-total ban' };
+        const banColors = { 0: '#10b981', 1: '#f59e0b', 2: '#f97316', 3: '#ef4444' };
+
+        const metrics = {
+            composite: { label: 'Overall Risk Score', field: 'composite', colorscale: [[0, '#10b981'], [0.5, '#f59e0b'], [1, '#ef4444']], range: [0, 100], format: v => v + '/100', suffix: '' },
+            mmr: { label: 'Maternal Mortality Rate', field: 'mmr', colorscale: [[0, '#10b981'], [0.5, '#f59e0b'], [1, '#ef4444']], range: [0, 55], format: v => v.toFixed(1), suffix: ' per 100K' },
+            ban: { label: 'Abortion Ban Status', field: 'ban', colorscale: [[0, '#10b981'], [0.33, '#f59e0b'], [0.66, '#f97316'], [1, '#ef4444']], range: [0, 3], format: v => banLabels[v], suffix: '' },
+            closures: { label: 'L&D Unit Closures', field: 'closures', colorscale: [[0, '#10b981'], [0.5, '#f59e0b'], [1, '#ef4444']], range: [0, 50], format: v => v + '%', suffix: ' of rural units closed' },
+            uninsured: { label: 'Uninsured Rate', field: 'uninsured', colorscale: [[0, '#10b981'], [0.5, '#f59e0b'], [1, '#ef4444']], range: [0, 20], format: v => v + '%', suffix: '' }
+        };
+
+        let currentMetric = 'composite';
+
+        function getStateValues(field) {
+            const codes = Object.keys(stateData);
+            return codes.map(c => stateData[c][field]);
+        }
+
+        function buildHoverText() {
+            return Object.entries(stateData).map(([code, s]) => {
+                return `<b>${s.name}</b><br>` +
+                    `Risk Score: <b>${s.composite}/100</b><br>` +
+                    `MMR: <b>${s.mmr}</b> per 100K<br>` +
+                    `Abortion: <b>${banLabels[s.ban]}</b><br>` +
+                    `L&D Closures: <b>${s.closures}%</b><br>` +
+                    `Uninsured: <b>${s.uninsured}%</b>`;
+            });
+        }
+
+        function renderMap(metric) {
+            const m = metrics[metric];
+            const codes = Object.keys(stateData);
+            const values = getStateValues(m.field);
+            const hoverTexts = buildHoverText();
+
+            const trace = {
+                type: 'choropleth',
+                locationmode: 'USA-states',
+                locations: codes,
+                z: values,
+                text: hoverTexts,
+                hoverinfo: 'text',
+                colorscale: m.colorscale,
+                zmin: m.range[0],
+                zmax: m.range[1],
+                colorbar: {
+                    title: { text: m.label, font: { size: 11, color: '#737373' } },
+                    tickfont: { color: '#525252', size: 10 },
+                    bgcolor: 'rgba(0,0,0,0)',
+                    outlinewidth: 0,
+                    len: 0.6,
+                    thickness: 12
+                },
+                marker: {
+                    line: { color: '#1e1e2e', width: 1 }
+                }
+            };
+
+            const layout = {
+                geo: {
+                    scope: 'usa',
+                    bgcolor: 'rgba(0,0,0,0)',
+                    lakecolor: '#0a0a0f',
+                    landcolor: '#111118',
+                    showlakes: true,
+                    projection: { type: 'albers usa' },
+                    showframe: false,
+                    showcoastlines: false
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                margin: { l: 0, r: 0, t: 0, b: 0 },
+                font: { family: 'Inter', color: '#a3a3a3' },
+                hoverlabel: {
+                    bgcolor: '#1e1e2e',
+                    bordercolor: '#333',
+                    font: { family: 'Inter', color: '#e8e6e3', size: 13 }
+                }
+            };
+
+            Plotly.newPlot('state-map', [trace], layout, { responsive: true, displayModeBar: false });
+
+            // Click handler
+            document.getElementById('state-map').on('plotly_click', function(data) {
+                if (data.points && data.points[0]) {
+                    showStateDetail(data.points[0].location);
+                }
+            });
+        }
+
+        function switchMetric(metric) {
+            currentMetric = metric;
+            document.querySelectorAll('.metric-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.metric === metric);
+            });
+            renderMap(metric);
+            updateRankings(metric);
+        }
+
+        function showStateDetail(code) {
+            const s = stateData[code];
+            if (!s) return;
+            const panel = document.getElementById('state-detail');
+            document.getElementById('detail-state-name').textContent = s.name;
+            document.getElementById('detail-state-name').style.color =
+                s.composite >= 70 ? '#ef4444' : s.composite >= 40 ? '#f59e0b' : '#10b981';
+
+            document.getElementById('detail-metrics').innerHTML = `
+                <div class="state-metric">
+                    <div class="sm-value" style="color:${s.composite >= 70 ? '#ef4444' : s.composite >= 40 ? '#f59e0b' : '#10b981'}">${s.composite}/100</div>
+                    <div class="sm-label">Overall Risk Score</div>
+                </div>
+                <div class="state-metric">
+                    <div class="sm-value" style="color:${s.mmr >= 30 ? '#ef4444' : s.mmr >= 20 ? '#f59e0b' : '#10b981'}">${s.mmr}</div>
+                    <div class="sm-label">Maternal Mortality per 100K</div>
+                </div>
+                <div class="state-metric">
+                    <div class="sm-value" style="color:${banColors[s.ban]}">${banLabels[s.ban]}</div>
+                    <div class="sm-label">Abortion Status</div>
+                </div>
+                <div class="state-metric">
+                    <div class="sm-value" style="color:${s.closures >= 30 ? '#ef4444' : s.closures >= 20 ? '#f59e0b' : '#10b981'}">${s.closures}%</div>
+                    <div class="sm-label">Rural L&D Closures</div>
+                </div>
+                <div class="state-metric">
+                    <div class="sm-value" style="color:${s.uninsured >= 12 ? '#ef4444' : s.uninsured >= 8 ? '#f59e0b' : '#10b981'}">${s.uninsured}%</div>
+                    <div class="sm-label">Uninsured Rate</div>
+                </div>
+                <div class="state-metric">
+                    <div class="sm-value" style="color:#a3a3a3">#${s.gdp_rank}</div>
+                    <div class="sm-label">GDP Per Capita Rank</div>
+                </div>
+            `;
+            panel.classList.add('visible');
+        }
+
+        function updateRankings(metric) {
+            const m = metrics[metric];
+            const sorted = Object.entries(stateData)
+                .map(([code, s]) => ({ code, name: s.name, value: s[m.field] }))
+                .sort((a, b) => b.value - a.value);
+
+            const worst = sorted.slice(0, 10);
+            const best = sorted.slice(-10).reverse();
+
+            document.getElementById('worst-list').innerHTML = worst.map((s, i) =>
+                `<div class="rank-item"><span class="rank-num">${i+1}</span><span class="rank-state">${s.name}</span><span class="rank-value">${m.format(s.value)}${m.suffix}</span></div>`
+            ).join('');
+
+            document.getElementById('best-list').innerHTML = best.map((s, i) =>
+                `<div class="rank-item"><span class="rank-num">${i+1}</span><span class="rank-state">${s.name}</span><span class="rank-value">${m.format(s.value)}${m.suffix}</span></div>`
+            ).join('');
+        }
+
+        // Initialize
+        renderMap('composite');
+        updateRankings('composite');
+    </script>
+</body>
+</html>

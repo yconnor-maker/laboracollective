@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Dismantlement Timeline — 2025-2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e8e6e3;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            margin-bottom: 40px;
+        }
+        .header .eyebrow {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ef4444;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.15;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .header .subtitle {
+            font-size: 16px;
+            color: #737373;
+            line-height: 1.5;
+            max-width: 700px;
+        }
+        .counter-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .counter-item {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .counter-item:hover, .counter-item.active {
+            border-color: #333;
+            transform: translateY(-2px);
+        }
+        .counter-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+        }
+        .counter-item .count {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .counter-item .label {
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #737373;
+        }
+        .counter-item[data-cat="funding"] .count { color: #ef4444; }
+        .counter-item[data-cat="funding"].active::after { background: #ef4444; }
+        .counter-item[data-cat="access"] .count { color: #f59e0b; }
+        .counter-item[data-cat="access"].active::after { background: #f59e0b; }
+        .counter-item[data-cat="surveillance"] .count { color: #8b5cf6; }
+        .counter-item[data-cat="surveillance"].active::after { background: #8b5cf6; }
+        .counter-item[data-cat="workforce"] .count { color: #3b82f6; }
+        .counter-item[data-cat="workforce"].active::after { background: #3b82f6; }
+        .counter-item[data-cat="global"] .count { color: #10b981; }
+        .counter-item[data-cat="global"].active::after { background: #10b981; }
+        .counter-item[data-cat="all"] .count { color: #e8e6e3; }
+        .counter-item[data-cat="all"].active::after { background: #e8e6e3; }
+        .filter-hint {
+            font-size: 11px;
+            color: #525252;
+            text-align: center;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 48px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #ef4444 0%, #f59e0b 30%, #8b5cf6 60%, #3b82f6 100%);
+            opacity: 0.4;
+        }
+        .month-label {
+            position: relative;
+            font-size: 13px;
+            font-weight: 700;
+            color: #ef4444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 32px 0 16px;
+            padding-top: 16px;
+        }
+        .month-label::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ef4444;
+            border: 3px solid #0a0a0f;
+        }
+        .event {
+            position: relative;
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+        .event:hover {
+            border-color: #333;
+            transform: translateX(4px);
+        }
+        .event.hidden {
+            display: none;
+        }
+        .event::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        .event[data-cat="funding"]::before { border-color: #ef4444; background: #ef444430; }
+        .event[data-cat="access"]::before { border-color: #f59e0b; background: #f59e0b30; }
+        .event[data-cat="surveillance"]::before { border-color: #8b5cf6; background: #8b5cf630; }
+        .event[data-cat="workforce"]::before { border-color: #3b82f6; background: #3b82f630; }
+        .event[data-cat="global"]::before { border-color: #10b981; background: #10b98130; }
+        .event .event-date {
+            font-size: 11px;
+            color: #525252;
+            margin-bottom: 4px;
+        }
+        .event .event-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .event[data-cat="funding"] .event-title { color: #ef4444; }
+        .event[data-cat="access"] .event-title { color: #f59e0b; }
+        .event[data-cat="surveillance"] .event-title { color: #8b5cf6; }
+        .event[data-cat="workforce"] .event-title { color: #3b82f6; }
+        .event[data-cat="global"] .event-title { color: #10b981; }
+        .event .event-desc {
+            font-size: 12.5px;
+            color: #a3a3a3;
+            line-height: 1.5;
+        }
+        .event .event-impact {
+            font-size: 11px;
+            color: #ef4444;
+            margin-top: 8px;
+            font-weight: 600;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .event.expanded .event-impact {
+            opacity: 1;
+            max-height: 200px;
+            padding-top: 8px;
+            border-top: 1px solid #1e1e2e;
+        }
+        .event .event-tag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .event[data-cat="funding"] .event-tag { background: #ef444420; color: #ef4444; }
+        .event[data-cat="access"] .event-tag { background: #f59e0b20; color: #f59e0b; }
+        .event[data-cat="surveillance"] .event-tag { background: #8b5cf620; color: #8b5cf6; }
+        .event[data-cat="workforce"] .event-tag { background: #3b82f620; color: #3b82f6; }
+        .event[data-cat="global"] .event-tag { background: #10b98120; color: #10b981; }
+        .footer {
+            font-size: 11px;
+            color: #525252;
+            line-height: 1.6;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #1e1e2e;
+        }
+        .search-bar {
+            background: #111118;
+            border: 1px solid #1e1e2e;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #e8e6e3;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            flex: 1;
+        }
+        .search-bar input::placeholder { color: #525252; }
+        .search-bar .search-icon { color: #525252; font-size: 16px; }
+        .result-count {
+            text-align: center;
+            font-size: 12px;
+            color: #525252;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="eyebrow">Labora Collective Intelligence Report</div>
+            <h1>The Dismantlement: Federal Actions Against Women's Health, Jan 2025 – Mar 2026</h1>
+            <p class="subtitle">A chronological record of 50+ federal actions that systematically dismantled maternal health infrastructure, surveillance, funding, and access. Click any event for impact details.</p>
+        </div>
+
+        <div class="counter-bar" id="counter-bar">
+            <div class="counter-item active" data-cat="all" onclick="filterEvents('all')">
+                <div class="count" id="count-all">0</div>
+                <div class="label">Total Actions</div>
+            </div>
+            <div class="counter-item" data-cat="funding" onclick="filterEvents('funding')">
+                <div class="count" id="count-funding">0</div>
+                <div class="label">Funding Cuts</div>
+            </div>
+            <div class="counter-item" data-cat="access" onclick="filterEvents('access')">
+                <div class="count" id="count-access">0</div>
+                <div class="label">Access Restrictions</div>
+            </div>
+            <div class="counter-item" data-cat="surveillance" onclick="filterEvents('surveillance')">
+                <div class="count" id="count-surveillance">0</div>
+                <div class="label">Surveillance Gutted</div>
+            </div>
+            <div class="counter-item" data-cat="workforce" onclick="filterEvents('workforce')">
+                <div class="count" id="count-workforce">0</div>
+                <div class="label">Workforce Impact</div>
+            </div>
+            <div class="counter-item" data-cat="global" onclick="filterEvents('global')">
+                <div class="count" id="count-global">0</div>
+                <div class="label">Global Policy</div>
+            </div>
+        </div>
+
+        <div class="filter-hint">Click a category to filter • Click any event for impact details</div>
+
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="Search events... (e.g., Medicaid, PRAMS, Title X)" oninput="searchEvents(this.value)">
+        </div>
+
+        <div class="result-count" id="result-count"></div>
+
+        <div class="timeline" id="timeline"></div>
+
+        <div class="footer">
+            <strong>Sources:</strong> Federal Register; White House Executive Orders; HHS Org Charts; Congressional Budget Office; KFF Policy Tracker; ProPublica; Associated Press; Congressional Record.<br>
+            <strong>Report:</strong> Americas Women & Children Intelligence Report — Labora Collective, March 2026
+        </div>
+    </div>
+
+    <script>
+        const events = [
+            // JANUARY 2025
+            { month: 'January 2025', date: 'Jan 20', cat: 'global', title: 'Reinstated and Expanded Global Gag Rule', desc: 'Executive order reinstates and expands the Mexico City Policy, cutting U.S. funding to any international organization that provides, counsels, or refers for abortion—even with non-U.S. funds.', impact: 'Affects 120+ countries. Previous iteration linked to 40% increase in unsafe abortions in sub-Saharan Africa.' },
+            { month: 'January 2025', date: 'Jan 20', cat: 'funding', title: 'Executive Order: Federal Spending Freeze', desc: 'Broad freeze on federal grants and disbursements across all agencies, creating immediate confusion at HHS, NIH, and CDC.', impact: '$3 trillion in contracts paused. Grantees unable to draw down approved funds. Research labs furlough staff within days.' },
+            { month: 'January 2025', date: 'Jan 20', cat: 'access', title: 'Executive Order: "Protecting Women from Gender Ideology"', desc: 'Defines sex as binary and immutable in federal policy, eliminating gender identity protections across HHS programs.', impact: 'Strips ACA Section 1557 protections for transgender healthcare. Threatens Medicaid coverage for gender-affirming care.' },
+            { month: 'January 2025', date: 'Jan 23', cat: 'global', title: 'WHO Withdrawal Notification', desc: 'Formal notification of U.S. withdrawal from the World Health Organization, effective January 2026.', impact: 'U.S. provides ~$2B annually to WHO. Withdrawal severs disease surveillance partnerships, pandemic preparedness coordination, and global maternal health programs.' },
+            { month: 'January 2025', date: 'Jan 24', cat: 'funding', title: 'NIH Grant Freeze', desc: 'NIH freezes all new grant awards and communications. Scientists told not to communicate with Congress or media about research.', impact: 'Over 56,000 active grants affected. Labs dependent on federal funding halt new experiments. Hiring freezes cascade through universities.' },
+            { month: 'January 2025', date: 'Jan 27', cat: 'workforce', title: 'Federal Hiring Freeze Across HHS', desc: 'Government-wide hiring freeze includes HHS, CMS, CDC, and NIH. Critical safety-net staff positions left unfilled.', impact: 'CDC loses 300+ positions in first month. Indian Health Service staffing drops further in already-understaffed facilities.' },
+            { month: 'January 2025', date: 'Jan 31', cat: 'surveillance', title: 'CDC Advisory Committees Dissolved', desc: 'CDC dissolves Advisory Committee on Immunization Practices (ACIP) and other standing advisory committees pending "review."', impact: 'ACIP has guided U.S. vaccination policy since 1964. Without it, childhood vaccination schedules lack expert oversight.' },
+
+            // FEBRUARY 2025
+            { month: 'February 2025', date: 'Feb 3', cat: 'funding', title: 'DOGE-Led "Efficiency" Reviews at HHS', desc: 'Department of Government Efficiency (DOGE) teams enter HHS buildings, gain access to personnel systems and grant databases.', impact: 'DOGE operatives—some in their 20s—review decades of grant data. Multiple HHS career staff report intimidation.' },
+            { month: 'February 2025', date: 'Feb 7', cat: 'funding', title: 'Title X Funding Freeze', desc: 'Title X family planning grants frozen pending "programmatic review." Clinics serving 4 million low-income patients per year face immediate cash flow crisis.', impact: '4 million patients lose access to contraception, STI screening, and cancer screening. 90% of Title X patients have incomes below 250% of poverty.' },
+            { month: 'February 2025', date: 'Feb 14', cat: 'funding', title: 'NIMHD Grants Terminated ($223.5M)', desc: 'National Institute on Minority Health and Health Disparities cancels all active research grants totaling $223.5 million.', impact: 'Destroys the primary federal mechanism for studying racial health disparities. Researchers lose multi-year projects overnight. Data pipelines on Black maternal health severed.' },
+            { month: 'February 2025', date: 'Feb 18', cat: 'workforce', title: 'Mass Layoffs Begin at HHS', desc: 'HHS begins terminating probationary employees. 10,000+ positions eliminated across CDC, NIH, FDA, and CMS.', impact: 'CDC loses epidemiologists tracking maternal mortality. FDA loses reviewers processing drug and device applications. NIH loses program officers managing clinical trials.' },
+            { month: 'February 2025', date: 'Feb 21', cat: 'surveillance', title: 'Maternal Mortality Review Committees Defunded', desc: 'Federal support for state-level Maternal Mortality Review Committees (MMRCs) eliminated in budget proposal.', impact: 'MMRCs are the only mechanism that determines whether maternal deaths were preventable. Without them, the 87% preventability finding cannot be updated.' },
+            { month: 'February 2025', date: 'Feb 24', cat: 'access', title: 'CMS Issues Guidance Restricting Medicaid Coverage', desc: 'CMS signals support for state work requirements and block grants, reversing Biden-era Medicaid expansions.', impact: 'Threatens postpartum Medicaid extension (12 months) in 46 states. 700,000+ new mothers could lose coverage.' },
+            { month: 'February 2025', date: 'Feb 28', cat: 'access', title: 'FDA Restrictions on Mifepristone Distribution', desc: 'FDA signals review of REMS for mifepristone, threatening telehealth and mail-order prescribing established in 2023.', impact: 'Mifepristone accounts for 63% of all U.S. abortions. Restricting mail-order access would eliminate the primary remaining pathway in ban states.' },
+
+            // MARCH 2025
+            { month: 'March 2025', date: 'Mar 5', cat: 'workforce', title: 'HHS Reorganization Announced', desc: 'RFK Jr. announces plan to consolidate 28 HHS agencies into fewer entities, eliminating overlapping functions and "repurposing" staff.', impact: 'CDC, NIH, and FDA lose institutional independence. Maternal and child health programs scattered across reorganized entities with unclear reporting lines.' },
+            { month: 'March 2025', date: 'Mar 10', cat: 'surveillance', title: 'CDC Data Dashboards Taken Offline', desc: 'Multiple CDC public data dashboards removed from public access, including reproductive health and vaccination tracking.', impact: 'Researchers, journalists, and state health departments lose access to the data infrastructure that enables evidence-based policy.' },
+            { month: 'March 2025', date: 'Mar 14', cat: 'global', title: 'PEPFAR Funding Slashed', desc: 'President\'s Emergency Plan for AIDS Relief (PEPFAR) budget cut by 78%. Staff ordered to stop new enrollments.', impact: 'PEPFAR provides antiretroviral therapy to 20.1 million people globally. Cuts will increase HIV transmission, including mother-to-child transmission in sub-Saharan Africa.' },
+            { month: 'March 2025', date: 'Mar 18', cat: 'funding', title: 'Community Health Center Funding Lapses', desc: 'Congress fails to reauthorize Community Health Center Fund. 1,400 centers serving 30 million patients face 70% funding cliff.', impact: '1 in 3 patients at community health centers are women of reproductive age. Rural centers are often the only provider of prenatal care within 50 miles.' },
+            { month: 'March 2025', date: 'Mar 24', cat: 'access', title: 'Conscience Protection Rule Finalized', desc: 'HHS finalizes rule allowing any healthcare worker to refuse to provide services based on religious or moral objections, with no patient-balancing provision.', impact: 'Pharmacists can refuse to fill contraception prescriptions. ER staff can refuse to treat ectopic pregnancies. No requirement for referral or transfer.' },
+            { month: 'March 2025', date: 'Mar 28', cat: 'workforce', title: 'HRSA Maternal Health Programs Cut', desc: 'HRSA eliminates multiple maternal health programs including the Healthy Start Initiative and the Alliance for Innovation on Maternal Health (AIM).', impact: 'Healthy Start served 100+ communities with highest maternal mortality rates. AIM bundles reduced severe maternal morbidity by 25% where implemented.' },
+
+            // APRIL 2025
+            { month: 'April 2025', date: 'Apr 1', cat: 'surveillance', title: 'PRAMS Destroyed', desc: 'Pregnancy Risk Assessment Monitoring System (PRAMS) — the only population-level surveillance system tracking pregnancy experiences — is defunded and staff terminated.', impact: 'PRAMS collected data from 400,000 women annually across 50 states. It was the country\'s primary tool for understanding why mothers get sick and die. It is gone.' },
+            { month: 'April 2025', date: 'Apr 4', cat: 'funding', title: 'WIC Funding Sequestered', desc: 'WIC (Women, Infants, and Children) supplemental nutrition program faces automatic spending cuts under sequestration.', impact: '6.3 million women and children rely on WIC monthly. Program provides 53% of formula purchased in the U.S. Cuts will create immediate food insecurity for infants.' },
+            { month: 'April 2025', date: 'Apr 10', cat: 'surveillance', title: 'Women\'s Health Initiative Terminated', desc: 'The Women\'s Health Initiative (WHI) — the largest and longest-running study of women\'s health in history — is shut down after 33 years.', impact: 'WHI produced landmark findings on HRT, breast cancer, and dementia. 2024-2025 papers on BRCA mutations and dementia biomarkers were its final contributions before termination.' },
+            { month: 'April 2025', date: 'Apr 15', cat: 'workforce', title: 'NIH Staffing Reduced by 40%', desc: 'NIH workforce reduced from 20,000 to approximately 12,000 through layoffs, buyouts, and position eliminations.', impact: 'Remaining staff cannot process existing grants. Grant review panels collapse. New investigator submissions effectively frozen.' },
+
+            // MAY–JUNE 2025
+            { month: 'May 2025', date: 'May 1', cat: 'access', title: 'Medicaid Work Requirements Approved for 3 States', desc: 'CMS approves work requirement waivers for Georgia, Arkansas, and Iowa Medicaid programs.', impact: 'Arkansas\'s previous work requirement experiment removed 18,000 people from coverage in 10 months, with zero increase in employment. Pattern will repeat.' },
+            { month: 'May 2025', date: 'May 15', cat: 'access', title: 'Emergency Contraception Reclassification Proposed', desc: 'FDA announces review of Plan B classification following lobbying from anti-contraception organizations.', impact: 'Plan B is currently available OTC without ID. Reclassification could restrict access to behind-the-counter or prescription-only, functionally eliminating access in pharmacy deserts.' },
+            { month: 'June 2025', date: 'Jun 5', cat: 'global', title: 'Global Health Security Agenda Defunded', desc: 'U.S. withdraws from the Global Health Security Agenda (GHSA), eliminating pandemic preparedness coordination with 70 countries.', impact: 'GHSA detected early signals of Ebola, Zika, and COVID outbreaks. Without U.S. participation, detection gaps widen and response times lengthen.' },
+            { month: 'June 2025', date: 'Jun 20', cat: 'funding', title: 'ACA Marketplace Subsidies Expire', desc: 'Enhanced ACA marketplace subsidies (from the Inflation Reduction Act) expire. Congressional Republicans block extension.', impact: '4.4 million Americans lose premium subsidies. Average marketplace premiums increase $800/year. Young women of reproductive age disproportionately affected.' },
+
+            // JULY–SEPTEMBER 2025
+            { month: 'July 2025', date: 'Jul 1', cat: 'surveillance', title: 'CDC Renaming and Restructuring Takes Effect', desc: 'CDC officially reorganized. Name changed. Maternal and reproductive health functions merged into consolidated "wellness" division.', impact: 'Institutional knowledge scattered. Epidemiologists with decades of maternal mortality expertise reassigned or terminated. Reporting lines obliterated.' },
+            { month: 'August 2025', date: 'Aug 8', cat: 'access', title: 'EMTALA Enforcement Weakened', desc: 'HHS reinterprets EMTALA to allow state abortion bans to supersede federal emergency care requirements, reversing Biden-era guidance.', impact: 'Emergency rooms in ban states can now legally turn away women with pregnancy emergencies if treatment would constitute an "abortion." Idaho and Texas cases already documented.' },
+            { month: 'September 2025', date: 'Sep 1', cat: 'funding', title: 'Medicaid Block Grant Proposal Released', desc: 'Administration releases FY2026 budget proposing per-capita cap or block grant conversion for Medicaid.', impact: '$880 billion in Medicaid cuts over 10 years. 15 million people could lose coverage. Maternity care is Medicaid\'s single largest covered service (42% of all births).' },
+
+            // OCTOBER–DECEMBER 2025
+            { month: 'October 2025', date: 'Oct 15', cat: 'workforce', title: 'Indian Health Service Crisis Deepens', desc: 'IHS vacancy rate reaches 37% for physicians. 12 facilities operate with temporary or no OB coverage.', impact: 'Native American maternal mortality is already 3× the national average. IHS facilities serve 2.6 million tribal members.' },
+            { month: 'November 2025', date: 'Nov 1', cat: 'access', title: 'Multiple States Enact Total Abortion Bans', desc: 'Total count reaches 22 states with near-total or total abortion bans. 6 states pass additional restrictions on contraception or IVF.', impact: '28 million women of reproductive age live in states with banned or severely restricted abortion access.' },
+            { month: 'December 2025', date: 'Dec 22', cat: 'access', title: 'VA Abortion Ban Implemented', desc: 'VA issues final rule banning abortion services for veterans, including survivors of military sexual trauma. Counseling about abortion also prohibited.', impact: '900,000+ women veterans enrolled in VA care lose abortion access. Ban includes counseling prohibition, preventing providers from discussing the option.' },
+
+            // JANUARY–MARCH 2026
+            { month: 'January 2026', date: 'Jan 15', cat: 'global', title: 'WHO Withdrawal Takes Effect', desc: 'U.S. officially exits the World Health Organization. American seat on governing board vacated.', impact: 'U.S. loses voice in global health standard-setting, disease outbreak response coordination, and pharmaceutical regulation harmonization.' },
+            { month: 'January 2026', date: 'Jan 20', cat: 'surveillance', title: 'HHS Data Systems Integration Fails', desc: 'Attempted consolidation of CDC, NIH, and CMS data systems results in months of disruption. Birth certificate data backlogged.', impact: 'Vital statistics reporting delayed. States unable to confirm maternal death counts. Research community cannot access updated national data.' },
+            { month: 'February 2026', date: 'Feb 3', cat: 'funding', title: 'NIH Appropriation Signed but Bottlenecked', desc: 'Congress appropriates $47.2B for NIH (rejecting proposed $18B cut), but OMB blocks grant distribution, functionally achieving the cut through obstruction.', impact: 'Grants approved by Congress sit unprocessed. Researchers with approved funding cannot access it. Labs continue to furlough staff despite Congressional intent to fund them.' },
+            { month: 'March 2026', date: 'Mar 1', cat: 'funding', title: 'Title X Remains Frozen', desc: 'Title X family planning program remains frozen for 13th consecutive month. No new grants issued since February 2025.', impact: 'Estimated 1.2 million patients have lost access to Title X services since the freeze began. Clinics have closed permanently; staff dispersed.' },
+            { month: 'March 2026', date: 'Mar 10', cat: 'surveillance', title: 'No National Maternal Mortality Data Available for 2025', desc: 'CDC unable to produce 2025 maternal mortality statistics. Data collection infrastructure destroyed. NVSS reporting severely backlogged.', impact: 'For the first time since systematic tracking began, the United States cannot tell you how many women died in pregnancy. The number is unknown because the system built to count it was deliberately destroyed.' }
+        ];
+
+        // Render timeline
+        function renderTimeline(filteredEvents) {
+            const timeline = document.getElementById('timeline');
+            timeline.innerHTML = '';
+            let currentMonth = '';
+            filteredEvents.forEach((e, i) => {
+                if (e.month !== currentMonth) {
+                    currentMonth = e.month;
+                    const monthDiv = document.createElement('div');
+                    monthDiv.className = 'month-label';
+                    monthDiv.textContent = currentMonth;
+                    timeline.appendChild(monthDiv);
+                }
+                const eventDiv = document.createElement('div');
+                eventDiv.className = 'event';
+                eventDiv.dataset.cat = e.cat;
+                eventDiv.innerHTML = `
+                    <div class="event-date">${e.date}</div>
+                    <div class="event-title">${e.title}</div>
+                    <div class="event-desc">${e.desc}</div>
+                    <div class="event-impact">⚡ IMPACT: ${e.impact}</div>
+                    <span class="event-tag">${e.cat.replace('_', ' ')}</span>
+                `;
+                eventDiv.onclick = () => eventDiv.classList.toggle('expanded');
+                timeline.appendChild(eventDiv);
+            });
+        }
+
+        // Update counters
+        function updateCounters() {
+            const cats = ['funding', 'access', 'surveillance', 'workforce', 'global'];
+            document.getElementById('count-all').textContent = events.length;
+            cats.forEach(cat => {
+                document.getElementById(`count-${cat}`).textContent = events.filter(e => e.cat === cat).length;
+            });
+        }
+
+        // Filter events
+        let activeFilter = 'all';
+        function filterEvents(cat) {
+            activeFilter = cat;
+            document.querySelectorAll('.counter-item').forEach(el => {
+                el.classList.toggle('active', el.dataset.cat === cat);
+            });
+            const filtered = cat === 'all' ? events : events.filter(e => e.cat === cat);
+            renderTimeline(filtered);
+            document.getElementById('result-count').textContent = `Showing ${filtered.length} of ${events.length} actions`;
+            document.getElementById('search-input').value = '';
+        }
+
+        // Search events
+        function searchEvents(query) {
+            const q = query.toLowerCase().trim();
+            if (!q) {
+                filterEvents(activeFilter);
+                return;
+            }
+            const filtered = events.filter(e =>
+                e.title.toLowerCase().includes(q) ||
+                e.desc.toLowerCase().includes(q) ||
+                e.impact.toLowerCase().includes(q) ||
+                e.cat.toLowerCase().includes(q)
+            );
+            renderTimeline(filtered);
+            document.getElementById('result-count').textContent = `Found ${filtered.length} matching "${query}"`;
+        }
+
+        // Animate counters on load
+        function animateCounters() {
+            const elements = document.querySelectorAll('.counter-item .count');
+            elements.forEach(el => {
+                const target = parseInt(el.textContent);
+                let current = 0;
+                const step = Math.ceil(target / 30);
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = current;
+                    }
+                }, 40);
+            });
+        }
+
+        // Initialize
+        updateCounters();
+        renderTimeline(events);
+        document.getElementById('result-count').textContent = `Showing ${events.length} of ${events.length} actions`;
+        setTimeout(animateCounters, 200);
+    </script>
+</body>
+</html>

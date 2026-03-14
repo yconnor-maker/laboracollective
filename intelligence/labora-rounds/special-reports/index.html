@@ -3,234 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Reports — Labora Rounds — The Labora Collective</title>
-  <meta name="description" content="Intelligence reports from the Labora Collective — comprehensive, data-driven analysis across women's and children's health domains.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Special Reports — The Labora Collective</title>
   <style>
+
     :root {
-      --espresso:       #362511;
-      --body-text:      #2C1A0E;
-      --muted:          #8A7060;
-      --copper:         #D48662;
-      --copper-light:   #E8A882;
-      --blush:          #EABAB0;
-      --blush-light:    #F5DDD9;
-      --rose:           #E7817F;
-      --bg-warm:        #F7F3EE;
-      --white:          #FFFFFF;
+      --deep-brown: #2C1A0E;
+      --copper: #C8825A;
+      --blush: #EDB8A8;
+      --coral: #D97068;
+      --lavender: #EEE8F0;
+      --off-white: #FAF7F4;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg-warm);
-      color: var(--body-text);
+      font-family: Georgia, serif;
+      background-color: var(--off-white);
+      color: var(--deep-brown);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
-    }
-
-    /* HEADER */
-    .header {
-      background: var(--espresso);
-      padding: 48px 24px 40px;
       text-align: center;
     }
-    .header .label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--copper);
-      margin-bottom: 12px;
-    }
-    .header h1 {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-    .header .sub {
-      font-size: 15px;
-      color: rgba(251,245,255,0.5);
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* REPORTS GRID */
     .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 24px;
+      max-width: 600px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(44, 26, 14, 0.1);
+      border-top: 6px solid var(--copper);
     }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
+    h1 {
+      color: var(--deep-brown);
+      margin-bottom: 10px;
+      font-size: 2em;
+    }
+    .label {
+      font-family: Arial, sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--copper);
-      margin-bottom: 16px;
+      font-size: 0.8em;
+      color: var(--coral);
+      margin-bottom: 20px;
     }
-    .report-card {
-      display: block;
-      padding: 28px 32px;
-      background: var(--white);
-      border: 1px solid rgba(44,26,14,0.08);
-      border-radius: 12px;
-      text-decoration: none;
-      margin-bottom: 16px;
-      transition: all 0.2s ease;
-      border-left: 4px solid var(--copper);
+    p {
+      line-height: 1.6;
+      color: var(--deep-brown);
     }
-    .report-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(44,26,14,0.08);
-      border-left-color: var(--rose);
-    }
-    .report-card .card-label {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--copper);
-      margin-bottom: 6px;
-    }
-    .report-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--espresso);
-      margin-bottom: 6px;
-    }
-    .report-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .report-card .badge {
+    .coming-soon {
       display: inline-block;
-      padding: 3px 10px;
-      background: var(--blush-light);
-      color: var(--rose);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 100px;
-      margin-top: 10px;
+      margin-top: 20px;
+      padding: 8px 16px;
+      background-color: var(--blush);
+      color: var(--deep-brown);
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+      font-weight: bold;
     }
-
-    /* FEATURED */
-    .featured-card {
-      border-left: 4px solid var(--rose);
-      background: linear-gradient(135deg, var(--white), var(--blush-light));
-    }
-
-    /* DOMAIN REPORTS */
-    .domain-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .domain-link {
-      display: block;
-      padding: 16px 20px;
-      background: var(--white);
-      border: 1px solid rgba(44,26,14,0.06);
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .domain-link:hover {
-      border-color: var(--copper);
-      transform: translateY(-1px);
-    }
-    .domain-link .num {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--copper);
-    }
-    .domain-link .name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--espresso);
-      margin-top: 4px;
-    }
-
-    .back-link {
+    a {
       display: inline-block;
-      margin-top: 32px;
+      margin-top: 30px;
       color: var(--copper);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
+      font-family: Arial, sans-serif;
+      font-size: 0.9em;
+      border-bottom: 1px solid var(--copper);
     }
-    .back-link:hover { color: var(--rose); }
+    a:hover {
+      color: var(--coral);
+      border-bottom-color: var(--coral);
+    }
 
-    .footer {
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid rgba(44,26,14,0.06);
-      margin-top: 40px;
-    }
   </style>
 </head>
 <body>
-
-<div class="header">
-  <div class="label">Labora Collective · Labora Rounds</div>
-  <h1>Special Reports</h1>
-  <p class="sub">Data-driven intelligence reports on the state of women's and children's health in America.</p>
-</div>
-
-<div class="container">
-
-  <div class="section-label">Featured Report — March 2026</div>
-
-  <a class="report-card featured-card" href="executive-summary.html">
-    <div class="card-label">Executive Summary</div>
-    <h3>The State of Women's & Children's Health in America</h3>
-    <p>The complete argument — from the baseline crisis through policy impacts. Texas maternal mortality up 95% for white women. 60+ federal actions documented.</p>
-    <span class="badge">New — March 2026</span>
-  </a>
-
-  <a class="report-card" href="data-overview.html">
-    <div class="card-label">Two-Page Data Overview</div>
-    <h3>Every Number on Two Pages</h3>
-    <p>A dense, printable overview — every critical data point organized by domain. Designed to be handed to a legislator.</p>
-  </a>
-
-  <a class="report-card" href="causal-map.html">
-    <div class="card-label">Causal Analysis</div>
-    <h3>What They Did to Make Each Number Worse</h3>
-    <p>60+ specific, dated federal actions mapped to worsening outcomes across 12 domains. Interactive filtering by category.</p>
-  </a>
-
-  <div class="section-label" style="margin-top:40px;">Domain Intelligence Reports</div>
-
-  <div class="domain-grid">
-    <a class="domain-link" href="domain-01-medical-clinical.html"><span class="num">Domain 01</span><div class="name">Medical & Clinical</div></a>
-    <a class="domain-link" href="domain-02-political-legal.html"><span class="num">Domain 02</span><div class="name">Political & Legal</div></a>
-    <a class="domain-link" href="domain-03-economic.html"><span class="num">Domain 03</span><div class="name">Economic</div></a>
-    <a class="domain-link" href="domain-04-health-policy.html"><span class="num">Domain 04</span><div class="name">Health Policy</div></a>
-    <a class="domain-link" href="domain-05-innovation-funding.html"><span class="num">Domain 05</span><div class="name">Innovation & Funding</div></a>
-    <a class="domain-link" href="domain-06-menopause.html"><span class="num">Domain 06</span><div class="name">Menopause & Post-Reproductive</div></a>
-    <a class="domain-link" href="domain-07-social-systems.html"><span class="num">Domain 07</span><div class="name">Social Systems & Intimacy</div></a>
-    <a class="domain-link" href="domain-08-political-systems.html"><span class="num">Domain 08</span><div class="name">Political Systems</div></a>
-    <a class="domain-link" href="domain-09-trump-admin.html"><span class="num">Domain 09</span><div class="name">Trump Administration</div></a>
-    <a class="domain-link" href="domain-10-immigration-rj.html"><span class="num">Domain 10</span><div class="name">Immigration & RJ</div></a>
-    <a class="domain-link" href="domain-11-clinical-practice.html"><span class="num">Domain 11</span><div class="name">Clinical Practice</div></a>
+  <div class="container">
+    <div class="label">The Labora Collective</div>
+    <h1>Special Reports</h1>
+    <p>Labora Rounds special reports.</p>
+    <div class="coming-soon">Coming Soon</div>
+    <br>
+    <a href="/">← Back to Homepage</a>
   </div>
-
-  <a class="back-link" href="/">← Back to Homepage</a>
-</div>
-
-<div class="footer">
-  © 2026 Labora Collective · A Diosa Ara Initiative · Dr. Yamicia Connor, MD, PhD, MPH
-</div>
-
 </body>
 </html>
