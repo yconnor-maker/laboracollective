@@ -1,0 +1,104 @@
+<!-- ══ LC SHARED COMPONENT: Journal Panel Card ══
+     Usage: Reusable card for linking to a journal section.
+     Duplicate and modify the values for each journal.
+
+     Color classes:
+       Women's Health:  tag="wh"  dot="wh-dot"  cta="wh"  accent=copper
+       In Her Name:     tag="ihn" dot="ihn-dot" cta="ihn" accent=rose
+       Blueprint:       tag="bp"  dot="bp-dot"  cta="bp"  accent=teal
+
+     Replace:
+       - {{JOURNAL_TAG_CLASS}}  → wh | ihn | bp
+       - {{JOURNAL_TAG_LABEL}}  → Women's Health | Policy & Justice | Research & Practice
+       - {{JOURNAL_ICON_SRC}}   → /assets/images/wh-icon.png (etc.)
+       - {{JOURNAL_ICON_ALT}}   → Alt text for icon
+       - {{JOURNAL_NAME_HTML}}  → e.g. Women's Health<br><em>Journal</em>
+       - {{JOURNAL_TAGLINE}}    → Description text
+       - {{DOT_CLASS}}          → wh-dot | ihn-dot | bp-dot
+       - {{SUB_NAME}}           → Sub-journal name
+       - {{SUB_DESC}}           → Sub-journal description
+       - {{CTA_CLASS}}          → wh | ihn | bp
+       - {{CTA_HREF}}           → Link URL
+       - {{CTA_TEXT}}           → e.g. Explore Women's Health Journal →
+══ -->
+
+<!-- SINGLE JOURNAL PANEL -->
+<div class="journal-panel">
+  <div class="journal-panel-header">
+    <div class="journal-logo-wrap">
+      <img src="{{JOURNAL_ICON_SRC}}" alt="{{JOURNAL_ICON_ALT}}">
+    </div>
+    <span class="journal-tag {{JOURNAL_TAG_CLASS}}">{{JOURNAL_TAG_LABEL}}</span>
+    <h3 class="journal-name">{{JOURNAL_NAME_HTML}}</h3>
+    <p class="journal-tagline">{{JOURNAL_TAGLINE}}</p>
+  </div>
+  <div class="journal-panel-body">
+    <ul class="subjournal-list">
+      <li class="subjournal-item">
+        <span class="subjournal-dot {{DOT_CLASS}}"></span>
+        <div class="subjournal-text">
+          <span class="subjournal-name">{{SUB_NAME}}</span>
+          <span class="subjournal-desc">{{SUB_DESC}}</span>
+        </div>
+      </li>
+      <!-- Duplicate <li> blocks for additional sub-journals -->
+    </ul>
+  </div>
+  <div class="journal-panel-footer">
+    <a href="{{CTA_HREF}}" class="journal-cta {{CTA_CLASS}}">{{CTA_TEXT}}</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     EXAMPLE: All three panels in a grid container
+     ═══════════════════════════════════════════════ -->
+<!--
+<section class="journals" id="journals">
+  <div class="journals-inner">
+    <div class="journals-intro">
+      <span class="section-label" style="color:var(--copper);">Our Publications</span>
+      <h2 class="section-hed" style="color:var(--espresso);">Three journals.<br>One complete picture of women's health.</h2>
+    </div>
+    <div class="journal-panels">
+      [Paste three journal-panel blocks here]
+    </div>
+  </div>
+</section>
+-->
+
+<!-- JOURNAL PANEL STYLES (include in <style> or external CSS) -->
+<!--
+.journals { background: var(--bg-warm); padding: 5rem 2rem; border-top: 1px solid rgba(54,37,17,0.08); }
+.journals-inner { max-width: 1100px; margin: 0 auto; }
+.journals-intro { text-align: center; margin-bottom: 4rem; }
+.journal-panels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(54,37,17,0.08); border: 2px solid rgba(54,37,17,0.08); }
+.journal-panel { background: var(--white); display: flex; flex-direction: column; }
+.journal-panel-header { padding: 2rem 1.75rem 1.5rem; border-bottom: 1px solid rgba(54,37,17,0.07); }
+.journal-tag { font-family: 'DM Sans', sans-serif; font-size: 0.48rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; display: inline-block; padding: 0.25rem 0.65rem; margin-bottom: 1rem; border-radius: 2px; }
+.journal-tag.wh  { background: #FDF0E8; color: var(--copper); }
+.journal-tag.ihn { background: var(--rose-light); color: var(--rose); }
+.journal-tag.bp  { background: var(--teal-light); color: var(--teal); }
+.journal-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; line-height: 1.1; color: var(--espresso); margin-bottom: 0.6rem; }
+.journal-name em { font-style: italic; }
+.journal-tagline { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; line-height: 1.55; color: var(--muted); }
+.journal-panel-body { padding: 1.5rem 1.75rem; flex: 1; }
+.subjournal-list { list-style: none; padding: 0; margin: 0; }
+.subjournal-item { padding: 0.75rem 0; border-bottom: 1px solid rgba(54,37,17,0.06); display: flex; align-items: flex-start; gap: 0.75rem; }
+.subjournal-item:last-child { border-bottom: none; }
+.subjournal-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 0.4rem; }
+.wh-dot  { background: var(--copper); }
+.ihn-dot { background: var(--rose); }
+.bp-dot  { background: var(--teal); }
+.subjournal-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 400; color: var(--espresso); line-height: 1.2; display: block; margin-bottom: 0.15rem; }
+.subjournal-desc { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; color: var(--muted); line-height: 1.4; }
+.journal-logo-wrap { margin-bottom: 1.25rem; }
+.journal-logo-wrap img { height: 72px; width: auto; display: block; border-radius: 4px; }
+.journal-panel-footer { padding: 1.5rem 1.75rem; border-top: 1px solid rgba(54,37,17,0.07); }
+.journal-cta { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: opacity 0.15s; }
+.journal-cta:hover { opacity: 0.7; }
+.journal-cta.wh  { color: var(--copper); }
+.journal-cta.ihn { color: var(--rose); }
+.journal-cta.bp  { color: var(--teal); }
+
+@media (max-width: 900px) { .journal-panels { grid-template-columns: 1fr; } }
+-->

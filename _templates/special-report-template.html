@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="{{REPORT_DESCRIPTION}}">
+<meta property="og:title" content="{{REPORT_TITLE}} — Labora Collective Intelligence">
+<meta property="og:description" content="{{REPORT_DESCRIPTION}}">
+<title>{{REPORT_TITLE}} — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   LABORA COLLECTIVE — Special Report Template
+   LC Design System v2
+   ============================================================ */
+
+:root {
+  --espresso:       #362511;
+  --espresso-mid:   #4A3218;
+  --body-text:      #2C1A0E;
+  --muted:          #8A7060;
+  --copper:         #D48662;
+  --copper-light:   #E8A882;
+  --blush:          #EABAB0;
+  --blush-light:    #F5DDD9;
+  --rose:           #E7817F;
+  --rose-light:     #FAEAEA;
+  --teal:           #1D6B78;
+  --teal-light:     #E0F2F4;
+  --forest:         #2E5240;
+  --forest-light:   #E4EFE8;
+  --gold:           #9E7D0A;
+  --gold-light:     #F5EDCC;
+  --bg-warm:        #F7F3EE;
+  --bg-open:        #FBF5FF;
+  --white:          #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light only; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg-warm);
+  color: var(--body-text);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NAV ─── */
+.nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.nav-logo img { height: 36px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links li a { font-family: 'DM Sans', sans-serif; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.45); text-decoration: none; transition: color 0.15s; }
+.nav-links li a:hover { color: var(--copper); }
+.nav-cta { display: inline-block; background: var(--copper); color: var(--white); padding: 0.4rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background 0.15s; }
+.nav-cta:hover { background: var(--copper-light); color: var(--espresso); }
+.nav-hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
+.nav-hamburger span { display: block; width: 20px; height: 2px; background: rgba(251,245,255,0.5); }
+
+/* ─── REPORT HEADER ─── */
+.report-header {
+  background: var(--espresso);
+  border-bottom: 4px solid var(--copper);
+  padding: 4rem 2rem 3.5rem;
+}
+.report-header-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.report-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  padding: 0.25rem 0.65rem; border-radius: 3px;
+  display: inline-block; margin-bottom: 1.5rem;
+  background: rgba(212,134,98,0.2); color: var(--copper);
+}
+.report-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 300; line-height: 1.08;
+  color: var(--bg-open);
+  margin-bottom: 1rem;
+}
+.report-title em { font-style: italic; color: var(--copper); }
+.report-subtitle {
+  font-size: 1rem; line-height: 1.75;
+  color: rgba(251,245,255,0.5);
+  max-width: 680px; margin-bottom: 2rem;
+}
+.report-meta {
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.report-meta-item {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.report-meta-label { color: rgba(251,245,255,0.25); }
+.report-meta-value { color: rgba(251,245,255,0.55); font-weight: 500; }
+
+/* ─── REPORT LAYOUT: Sidebar + Content ─── */
+.report-layout {
+  max-width: 1100px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: 3rem 2rem 4rem;
+}
+
+/* ─── TABLE OF CONTENTS SIDEBAR ─── */
+.report-toc {
+  position: sticky; top: 80px;
+  align-self: start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+.toc-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.48rem; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--muted); display: block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(54,37,17,0.1);
+}
+.toc-list { list-style: none; padding: 0; }
+.toc-list li { margin-bottom: 0; }
+.toc-list li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; line-height: 1.4;
+  color: var(--muted);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+.toc-list li a:hover {
+  color: var(--copper);
+  border-left-color: var(--copper);
+  background: rgba(212,134,98,0.04);
+}
+.toc-list li a.active {
+  color: var(--espresso); font-weight: 500;
+  border-left-color: var(--copper);
+  background: rgba(212,134,98,0.06);
+}
+.toc-list li.toc-section {
+  margin-top: 1rem;
+}
+.toc-list li.toc-section a {
+  font-size: 0.64rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blush);
+}
+
+/* ─── REPORT CONTENT ─── */
+.report-content {}
+.report-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300; line-height: 1.15;
+  color: var(--espresso);
+  margin: 3.5rem 0 1.25rem;
+  padding-top: 1rem;
+}
+.report-content h2:first-child { margin-top: 0; }
+.report-content h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--espresso);
+  margin: 2.5rem 0 0.75rem;
+}
+.report-content h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--body-text);
+  margin: 1.75rem 0 0.5rem;
+}
+.report-content p {
+  font-size: 1rem; line-height: 1.85;
+  color: var(--body-text); margin-bottom: 1.25rem;
+}
+.report-content a { color: var(--copper); text-decoration: none; border-bottom: 1px solid rgba(212,134,98,0.3); transition: border-color 0.15s; }
+.report-content a:hover { border-color: var(--copper); }
+.report-content blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-style: italic; font-weight: 300;
+  color: var(--espresso); line-height: 1.4;
+  border-left: 3px solid var(--copper);
+  padding-left: 1.5rem; margin: 2.5rem 0;
+}
+.report-content ul, .report-content ol {
+  margin: 0 0 1.25rem 1.5rem; color: var(--body-text);
+}
+.report-content li { margin-bottom: 0.5rem; line-height: 1.7; }
+
+/* Data callout boxes */
+.data-callout {
+  background: var(--white);
+  border: 1px solid rgba(54,37,17,0.08);
+  border-left: 3px solid var(--copper);
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+.data-callout .callout-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--copper); display: block;
+  margin-bottom: 0.75rem;
+}
+.data-callout .callout-stat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300;
+  color: var(--espresso); line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.data-callout p {
+  font-size: 0.88rem; line-height: 1.6;
+  color: var(--muted); margin-bottom: 0;
+}
+
+/* Interactive embed area */
+.interactive-embed {
+  margin: 3rem 0;
+  border: 1px solid rgba(54,37,17,0.08);
+  background: var(--white);
+}
+.interactive-embed-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(54,37,17,0.06);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.interactive-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.46rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.2rem 0.5rem; border-radius: 3px;
+  background: rgba(29,107,120,0.1); color: var(--teal);
+}
+.interactive-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--espresso);
+}
+.interactive-embed iframe {
+  width: 100%; height: 500px; border: none;
+  display: block;
+}
+
+/* ─── REPORT NAVIGATION (prev/next) ─── */
+.report-nav {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 2rem 3rem;
+  display: flex; justify-content: space-between; gap: 1rem;
+}
+.report-nav-link {
+  display: flex; flex-direction: column; gap: 0.25rem;
+  text-decoration: none;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(54,37,17,0.08);
+  background: var(--white);
+  transition: border-color 0.15s;
+  max-width: 48%;
+}
+.report-nav-link:hover { border-color: var(--copper); }
+.report-nav-link .nav-direction {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.5rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--copper);
+}
+.report-nav-link .nav-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 400;
+  color: var(--espresso); line-height: 1.2;
+}
+.report-nav-link.next { margin-left: auto; text-align: right; }
+
+/* ─── BRAND STRIP ─── */
+.brand-strip { background: var(--espresso); padding: 4rem 2rem; border-top: 3px solid var(--copper); }
+.brand-strip-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.brand-strip-content { max-width: 600px; }
+.brand-strip-label { font-family: 'DM Sans', sans-serif; font-size: 0.52rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--copper); display: block; margin-bottom: 1rem; }
+.brand-strip-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 300; line-height: 1.15; color: var(--bg-open); margin-bottom: 1rem; }
+.brand-strip-desc { font-size: 0.88rem; line-height: 1.72; color: rgba(251,245,255,0.4); }
+.brand-strip-actions { display: flex; flex-direction: column; gap: 0.75rem; flex-shrink: 0; }
+.brand-strip-btn { display: inline-block; text-align: center; padding: 0.82rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.15s; min-width: 220px; }
+.brand-strip-btn.primary { background: var(--gold-light); color: var(--espresso); border: 1px solid var(--gold); }
+.brand-strip-btn.primary:hover { background: var(--copper-light); }
+.brand-strip-btn.secondary { background: transparent; color: rgba(251,245,255,0.45); border: 1px solid rgba(255,255,255,0.12); }
+.brand-strip-btn.secondary:hover { border-color: var(--copper); color: var(--copper); }
+
+/* ─── FOOTER ─── */
+.site-footer { background: var(--espresso); padding: 3.5rem 2rem 2rem; }
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
+.footer-brand img { height: 44px; width: auto; margin-bottom: 1rem; display: block; }
+.footer-brand p { font-size: 0.82rem; line-height: 1.72; color: rgba(251,245,255,0.28); }
+.footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,245,255,0.22); margin-bottom: 1rem; }
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li { padding: 0.3rem 0; }
+.footer-col ul li a { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: rgba(251,245,255,0.35); text-decoration: none; transition: color 0.15s; }
+.footer-col ul li a:hover { color: var(--copper); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-family: 'DM Sans', sans-serif; font-size: 0.56rem; color: rgba(251,245,255,0.2); letter-spacing: 0.08em; text-transform: uppercase; }
+.footer-bottom a { color: rgba(251,245,255,0.2); text-decoration: none; transition: color 0.15s; }
+.footer-bottom a:hover { color: var(--copper); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); flex-direction: column; padding: 1.5rem 2rem; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-links.open { display: flex; }
+  .report-layout { grid-template-columns: 1fr; }
+  .report-toc { position: static; max-height: none; padding-bottom: 2rem; border-bottom: 1px solid rgba(54,37,17,0.1); margin-bottom: 1rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .brand-strip-inner { flex-direction: column; text-align: center; }
+  .brand-strip-actions { align-items: center; }
+  .report-nav { flex-direction: column; }
+  .report-nav-link { max-width: 100%; }
+  .report-nav-link.next { text-align: left; }
+}
+@media (max-width: 640px) {
+  .report-header { padding: 3rem 1.25rem 2.5rem; }
+  .report-layout { padding: 2rem 1.25rem 3rem; }
+  .report-nav { padding: 0 1.25rem 2rem; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/"><img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective"></a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/#journals">Journals</a></li>
+      <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+      <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+      <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+      <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
+      <li><a href="https://diosara.com">Diosa Ara</a></li>
+      <li><a href="/join" class="nav-cta">Join →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ REPORT HEADER ══ -->
+<header class="report-header">
+  <div class="report-header-inner">
+    <span class="report-badge">{{REPORT_TYPE — e.g. SPECIAL REPORT, DOMAIN REPORT}}</span>
+    <h1 class="report-title">{{REPORT_TITLE}}</h1>
+    <p class="report-subtitle">{{REPORT_SUBTITLE}}</p>
+    <div class="report-meta">
+      <div class="report-meta-item">
+        <span class="report-meta-label">Author </span>
+        <span class="report-meta-value">Dr. Yamicia D. Connor</span>
+      </div>
+      <div class="report-meta-item">
+        <span class="report-meta-label">Published </span>
+        <span class="report-meta-value">{{PUBLISH_DATE}}</span>
+      </div>
+      <div class="report-meta-item">
+        <span class="report-meta-label">Domain </span>
+        <span class="report-meta-value">{{DOMAIN_NUMBER — e.g. 01 of 11}}</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ REPORT LAYOUT ══ -->
+<div class="report-layout">
+
+  <!-- TABLE OF CONTENTS -->
+  <aside class="report-toc">
+    <span class="toc-label">Table of Contents</span>
+    <ul class="toc-list">
+      <li class="toc-section"><a href="#overview">Overview</a></li>
+      <li><a href="#section-1">{{Section 1 Title}}</a></li>
+      <li><a href="#section-2">{{Section 2 Title}}</a></li>
+      <li><a href="#section-3">{{Section 3 Title}}</a></li>
+      <li class="toc-section"><a href="#data">Key Data</a></li>
+      <li><a href="#data-1">{{Data Section 1}}</a></li>
+      <li><a href="#data-2">{{Data Section 2}}</a></li>
+      <li class="toc-section"><a href="#interactive">Interactive Figures</a></li>
+      <li><a href="#implications">Implications</a></li>
+      <li><a href="#methodology">Methodology</a></li>
+    </ul>
+  </aside>
+
+  <!-- REPORT CONTENT -->
+  <main class="report-content">
+
+    <h2 id="overview">Overview</h2>
+    <p>Replace with report overview. This template provides a two-column layout with a sticky table of contents sidebar, designed for long-form intelligence reports with data callouts and interactive embed areas.</p>
+
+    <!-- DATA CALLOUT EXAMPLE -->
+    <div class="data-callout">
+      <span class="callout-label">Key Finding</span>
+      <div class="callout-stat">{{STATISTIC}}</div>
+      <p>{{Description of the data point and its significance}}</p>
+    </div>
+
+    <h2 id="section-1">{{Section 1 Title}}</h2>
+    <p>Section content goes here. Use standard paragraphs, subheadings (h3, h4), lists, and blockquotes as needed.</p>
+
+    <h3>Subsection</h3>
+    <p>Continue with detailed analysis. The report template supports all the same typography as the base page, plus data callouts and interactive embeds.</p>
+
+    <h2 id="section-2">{{Section 2 Title}}</h2>
+    <p>Additional section content.</p>
+
+    <!-- INTERACTIVE EMBED EXAMPLE -->
+    <div class="interactive-embed">
+      <div class="interactive-embed-header">
+        <span class="interactive-badge">Interactive</span>
+        <span class="interactive-title">{{Interactive Figure Title}}</span>
+      </div>
+      <iframe src="{{INTERACTIVE_URL}}" title="{{Interactive Figure Title}}"></iframe>
+    </div>
+
+    <h2 id="section-3">{{Section 3 Title}}</h2>
+    <p>More content here.</p>
+
+    <h2 id="implications">Clinical &amp; Policy Implications</h2>
+    <p>What these findings mean for practitioners, advocates, and patients.</p>
+
+    <h2 id="methodology">Methodology</h2>
+    <p>Data sources, time frame, and analytical approach used in this report.</p>
+
+  </main>
+
+</div>
+
+<!-- ══ REPORT NAVIGATION ══ -->
+<div class="report-nav">
+  <a href="{{PREV_URL}}" class="report-nav-link prev">
+    <span class="nav-direction">← Previous Report</span>
+    <span class="nav-title">{{PREV_TITLE}}</span>
+  </a>
+  <a href="{{NEXT_URL}}" class="report-nav-link next">
+    <span class="nav-direction">Next Report →</span>
+    <span class="nav-title">{{NEXT_TITLE}}</span>
+  </a>
+</div>
+
+<!-- ══ BRAND STRIP ══ -->
+<section class="brand-strip">
+  <div class="brand-strip-inner">
+    <div class="brand-strip-content">
+      <span class="brand-strip-label">Join the Collective</span>
+      <h2 class="brand-strip-headline">Physician-led intelligence.<br>Delivered to your inbox.</h2>
+      <p class="brand-strip-desc">Free subscribers get the Monday and Wednesday Signal — clinical intelligence on OB and GYN. Members unlock the full Labora Briefing, domain reports, Ask Dr. Connor, and more.</p>
+    </div>
+    <div class="brand-strip-actions">
+      <a href="https://laboracollective.substack.com/subscribe" class="brand-strip-btn primary">Subscribe Free →</a>
+      <a href="/join" class="brand-strip-btn secondary">Become a Member →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
+        <p>Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve. A Diosa Ara initiative.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+          <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+          <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Labora Rounds</h5>
+        <ul>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+  }
+
+  // TOC active state on scroll
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const sections = document.querySelectorAll('.report-content h2[id]');
+  if (sections.length && tocLinks.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px' });
+    sections.forEach(section => observer.observe(section));
+  }
+</script>
+
+</body>
+</html>
