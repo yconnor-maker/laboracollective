@@ -1,92 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women's Health Journal — The Labora Collective</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Women's Health Journal — clinical education, physiological health, and empowered care. The evidence you need to navigate your body, your care, and your decisions. A Labora Collective publication.">
+<title>Women's Health Journal — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --espresso:#362511; --espresso-mid:#4A3218; --body-text:#2C1A0E; --muted:#8A7060;
+  --copper:#D48662; --copper-light:#E8A882; --blush:#EABAB0; --blush-light:#F5DDD9;
+  --rose:#E7817F; --rose-light:#FAEAEA; --teal:#1D6B78; --teal-light:#E0F2F4;
+  --forest:#2E5240; --forest-light:#E4EFE8; --gold:#9E7D0A; --gold-light:#F5EDCC;
+  --bg-warm:#F7F3EE; --bg-open:#FBF5FF; --white:#FFFFFF;
+  --accent:#D48662; --accent-light:#F5DDD9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:light only;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:var(--body-text);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.nav{background:var(--espresso);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-logo img{height:34px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links li a{font-size:0.64rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,245,255,0.4);text-decoration:none;transition:color 0.15s;}
+.nav-links li a:hover,.nav-links li a.active{color:var(--copper);}
+.nav-cta{display:inline-block;background:var(--copper);color:var(--white);padding:0.38rem 1.1rem;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:background 0.15s;}
+.nav-cta:hover{background:var(--copper-light);color:var(--espresso);}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:0.5rem;}
+.nav-hamburger span{display:block;width:20px;height:2px;background:rgba(251,245,255,0.5);}
 
-    :root {
-      --deep-brown: #2C1A0E;
-      --copper: #C8825A;
-      --blush: #EDB8A8;
-      --coral: #D97068;
-      --lavender: #EEE8F0;
-      --off-white: #FAF7F4;
-    }
-    body {
-      font-family: Georgia, serif;
-      background-color: var(--off-white);
-      color: var(--deep-brown);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    .container {
-      max-width: 600px;
-      padding: 40px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(44, 26, 14, 0.1);
-      border-top: 6px solid var(--copper);
-    }
-    h1 {
-      color: var(--deep-brown);
-      margin-bottom: 10px;
-      font-size: 2em;
-    }
-    .label {
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.8em;
-      color: var(--coral);
-      margin-bottom: 20px;
-    }
-    p {
-      line-height: 1.6;
-      color: var(--deep-brown);
-    }
-    .coming-soon {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 16px;
-      background-color: var(--blush);
-      color: var(--deep-brown);
-      border-radius: 4px;
-      font-family: Arial, sans-serif;
-      font-size: 0.9em;
-      font-weight: bold;
-    }
-    a {
-      display: inline-block;
-      margin-top: 30px;
-      color: var(--copper);
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.9em;
-      border-bottom: 1px solid var(--copper);
-    }
-    a:hover {
-      color: var(--coral);
-      border-bottom-color: var(--coral);
-    }
+.page-hero{background:var(--espresso);border-bottom:4px solid var(--accent);padding:4rem 2rem 3.5rem;}
+.page-hero-inner{max-width:1100px;margin:0 auto;}
+.hero-overline{font-size:0.52rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:300;line-height:1.08;color:var(--bg-open);margin-bottom:0.5rem;}
+.hero-title em{font-style:italic;color:var(--blush);}
+.hero-deck{font-size:1rem;line-height:1.75;color:rgba(251,245,255,0.45);max-width:600px;margin-bottom:2rem;}
+.hero-actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;}
+.btn-primary{display:inline-block;background:var(--gold-light);color:var(--espresso);padding:0.78rem 2.25rem;font-size:0.64rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);transition:background 0.15s;}
+.btn-primary:hover{background:var(--copper-light);}
+.btn-text{font-size:0.62rem;color:rgba(251,245,255,0.3);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.12);padding-bottom:1px;transition:color 0.15s;}
+.btn-text:hover{color:var(--accent);}
 
-  </style>
+.sub-journals{padding:4rem 2rem;background:var(--bg-warm);}
+.sub-journals-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:0.52rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:0.5rem;}
+.section-hed{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:300;color:var(--espresso);margin-bottom:2.5rem;line-height:1.15;}
+.sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--blush-light);border:1px solid var(--blush-light);}
+.sub-card{background:var(--white);padding:2rem 1.75rem;}
+.sub-card-accent{height:2px;width:32px;background:var(--accent);margin-bottom:1.25rem;}
+.sub-card-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--espresso);line-height:1.2;margin-bottom:0.6rem;}
+.sub-card-desc{font-size:0.84rem;color:var(--muted);line-height:1.65;}
+
+.brand-strip{background:var(--espresso);padding:4rem 2rem;border-top:3px solid var(--accent);}
+.brand-strip-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;}
+.brand-strip-label{font-size:0.52rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:1rem;}
+.brand-strip-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:300;line-height:1.15;color:var(--bg-open);margin-bottom:1rem;}
+.brand-strip-desc{font-size:0.88rem;line-height:1.72;color:rgba(251,245,255,0.4);}
+.brand-strip-actions{display:flex;flex-direction:column;gap:0.75rem;flex-shrink:0;}
+.brand-strip-btn{display:inline-block;text-align:center;padding:0.82rem 2rem;font-size:0.64rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:all 0.15s;min-width:220px;}
+.brand-strip-btn.primary{background:var(--gold-light);color:var(--espresso);border:1px solid var(--gold);}
+.brand-strip-btn.primary:hover{background:var(--copper-light);}
+.brand-strip-btn.secondary{background:transparent;color:rgba(251,245,255,0.45);border:1px solid rgba(255,255,255,0.12);}
+.brand-strip-btn.secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+.site-footer{background:var(--espresso);padding:3.5rem 2rem 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:2rem;}
+.footer-brand img{height:40px;width:auto;margin-bottom:1rem;display:block;}
+.footer-brand p{font-size:0.82rem;line-height:1.72;color:rgba(251,245,255,0.28);}
+.footer-col h5{font-size:0.52rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(251,245,255,0.22);margin-bottom:1rem;}
+.footer-col ul{list-style:none;padding:0;}
+.footer-col ul li{padding:0.3rem 0;}
+.footer-col ul li a{font-size:0.8rem;color:rgba(251,245,255,0.35);text-decoration:none;transition:color 0.15s;}
+.footer-col ul li a:hover{color:var(--copper);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{font-size:0.56rem;color:rgba(251,245,255,0.2);letter-spacing:0.08em;text-transform:uppercase;}
+.footer-bottom a{color:rgba(251,245,255,0.2);text-decoration:none;transition:color 0.15s;}
+.footer-bottom a:hover{color:var(--copper);}
+
+@media(max-width:900px){
+  .nav-hamburger{display:flex;}
+  .nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--espresso);flex-direction:column;padding:1.5rem 2rem;gap:1rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-links.open{display:flex;}
+  .sub-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
+  .brand-strip-inner{flex-direction:column;}
+}
+@media(max-width:640px){
+  .page-hero{padding:3rem 1.25rem 2.5rem;}
+  .sub-journals{padding:3rem 1.25rem;}
+  .sub-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="label">The Labora Collective</div>
-    <h1>Women's Health Journal</h1>
-    <p>The main editorial vertical for Women's Health.</p>
-    <div class="coming-soon">Coming Soon</div>
-    <br>
-    <a href="/">← Back to Homepage</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <a href="/"><img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective"></a>
+    </div>
+    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/#journals" class="active">Journals</a></li>
+      <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+      <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+      <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+      <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
+      <li><a href="https://diosara.com">Diosa Ara</a></li>
+      <li><a href="/join" class="nav-cta">Join →</a></li>
+    </ul>
   </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-overline">Labora Collective · Journal</span>
+    <h1 class="hero-title">Women's Health<br><em>Journal</em></h1>
+    <p class="hero-deck">Clinical education, physiological health, and empowered care — the evidence you need to navigate your body, your care, and your decisions.</p>
+    <div class="hero-actions">
+      <a href="https://laboracollective.substack.com/s/womens-health-empowered-care-informed" class="btn-primary">Read on Substack →</a>
+      <a href="/join" class="btn-text">Become a Member</a>
+    </div>
+  </div>
+</section>
+
+<section class="sub-journals">
+  <div class="sub-journals-inner">
+    <span class="section-label">Publications</span>
+    <h2 class="section-hed">Five sub-journals. One complete picture of women's health.</h2>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="sub-card-accent"></div>
+        <div class="sub-card-name">Her Health Matters</div>
+        <p class="sub-card-desc">GYN and reproductive justice — bridging clinical research and daily health. Evidence-based, unapologetic coverage of the conditions and systems shaping gynecological care.</p>
+      </div>
+      <div class="sub-card">
+        <div class="sub-card-accent"></div>
+        <div class="sub-card-name">Yemaya's Circle of Care</div>
+        <p class="sub-card-desc">Maternal health and birthwork — OB intelligence for every stage. From prenatal care to postpartum support, clinical clarity on obstetrical outcomes and the systems that affect them.</p>
+      </div>
+      <div class="sub-card">
+        <div class="sub-card-accent"></div>
+        <div class="sub-card-name">The EmpowerHER Journal</div>
+        <p class="sub-card-desc">Navigating personalized medical care with clinical clarity. Practical intelligence for patients making informed decisions about their health, care teams, and treatment options.</p>
+      </div>
+      <div class="sub-card">
+        <div class="sub-card-accent"></div>
+        <div class="sub-card-name">Pleasure &amp; Power</div>
+        <p class="sub-card-desc">Sexual and reproductive agency — evidence-based and unapologetic. Clinical grounding for conversations about sexual health, consent, desire, and reproductive autonomy.</p>
+      </div>
+      <div class="sub-card">
+        <div class="sub-card-accent"></div>
+        <div class="sub-card-name">Roots &amp; Wings</div>
+        <p class="sub-card-desc">Holistic approaches to lifecycle health from menarche to menopause. The full arc of women's physiological lives, covered with clinical depth and cultural awareness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brand-strip">
+  <div class="brand-strip-inner">
+    <div>
+      <span class="brand-strip-label">Subscribe</span>
+      <h2 class="brand-strip-headline">Clinical intelligence on women's health.<br>Delivered weekly.</h2>
+      <p class="brand-strip-desc">Signal Monday and Signal Wednesday are free. Members unlock the full Labora Briefing, domain reports, Ask Dr. Connor, and more.</p>
+    </div>
+    <div class="brand-strip-actions">
+      <a href="https://laboracollective.substack.com/subscribe" class="brand-strip-btn primary">Subscribe Free →</a>
+      <a href="/join" class="brand-strip-btn secondary">Become a Member →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
+        <p>Physician-led intelligence for women's health. A Diosa Ara initiative.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
+          <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
+          <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Labora Rounds</h5>
+        <ul>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+  }
+</script>
 </body>
 </html>

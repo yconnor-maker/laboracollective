@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light only">
 <meta name="description" content="Physician-led intelligence on women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.">
 <title>Labora Collective — Physician-Led Intelligence for Women's Health</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 
 /* ============================================================
@@ -62,9 +62,9 @@ body {
   padding: 0 2rem;
   display: flex; align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 56px;
 }
-.nav-logo img { height: 48px; width: auto; display: block; }
+.nav-logo img { height: 36px; width: auto; display: block; }
 .nav-links {
   display: flex; align-items: center; gap: 2rem;
   list-style: none;
@@ -121,6 +121,8 @@ body {
   gap: 4rem; align-items: start;
 }
 
+.hero-left {}
+
 .hero-overline {
   display: flex; align-items: center; gap: 0.85rem;
   margin-bottom: 2rem;
@@ -135,7 +137,7 @@ body {
 
 .hero-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
   font-weight: 300; line-height: 1.04;
   color: var(--bg-open);
   letter-spacing: -0.01em;
@@ -177,6 +179,8 @@ body {
 }
 .btn-ghost:hover { color: var(--copper); border-color: var(--copper); }
 
+/* Hero right — publication schedule strip */
+.hero-right {}
 .pub-schedule {
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.03);
@@ -206,6 +210,7 @@ body {
 .pub-day.copper { color: var(--copper); }
 .pub-day.rose   { color: var(--rose); }
 .pub-day.gold   { color: var(--gold-light); }
+.pub-info {}
 .pub-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem; font-weight: 400;
@@ -225,6 +230,7 @@ body {
   max-width: 1100px; margin: 0 auto;
   display: flex; gap: 3rem; flex-wrap: wrap;
 }
+.stat-item { }
 .stat-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem; font-weight: 300;
@@ -252,7 +258,7 @@ body {
 }
 .mission-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
   font-weight: 300; line-height: 1.15;
   color: var(--espresso); margin-bottom: 1.5rem;
 }
@@ -278,7 +284,7 @@ body {
 }
 .section-hed {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 300; color: var(--bg-open);
   margin-bottom: 2.75rem; line-height: 1.15;
 }
@@ -655,6 +661,7 @@ body {
   width: 1px; height: 60px; background: rgba(255,255,255,0.08);
   flex-shrink: 0;
 }
+.da-text {}
 .da-text p {
   font-size: 0.88rem; line-height: 1.72;
   color: rgba(251,245,255,0.38);
@@ -808,6 +815,7 @@ body {
 .ihn-dot { background: var(--rose); }
 .bp-dot  { background: var(--teal); }
 
+.subjournal-text {}
 .subjournal-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem; font-weight: 400;
@@ -883,6 +891,171 @@ body {
 .hero-deck     { animation: fadeUp 0.7s 0.12s ease both; }
 .hero-actions  { animation: fadeUp 0.7s 0.22s ease both; }
 
+/* ─────────────────────────────────────────────
+   BROWSE LAYER — Latest Intelligence
+───────────────────────────────────────────── */
+.browse-layer {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--blush-light);
+  border-bottom: 1px solid var(--blush-light);
+}
+.browse-inner { max-width: 1100px; margin: 0 auto; }
+.browse-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
+}
+.browse-header .browse-hed {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 300; color: var(--espresso); line-height: 1.12;
+  margin: 0.5rem 0 0;
+}
+.browse-header .browse-all {
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--copper); text-decoration: none;
+  border-bottom: 1px solid rgba(212,134,98,0.25);
+  padding-bottom: 2px; white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.browse-header .browse-all:hover { opacity: 0.65; }
+
+.browse-channel { margin-bottom: 3.5rem; }
+.browse-channel:last-child { margin-bottom: 0; }
+.channel-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--blush-light);
+}
+.channel-pill {
+  display: inline-block;
+  padding: 0.22rem 0.8rem;
+  font-size: 0.5rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--white);
+}
+.channel-pill.copper { background: var(--copper); }
+.channel-pill.rose   { background: var(--rose); }
+.channel-pill.gold   { background: var(--gold); }
+.channel-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 400;
+  color: var(--espresso); flex: 1;
+}
+.channel-meta {
+  font-size: 0.52rem; font-weight: 400;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted);
+}
+.channel-link {
+  font-size: 0.56rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.channel-link.copper { color: var(--copper); border-color: rgba(212,134,98,0.3); }
+.channel-link.rose   { color: var(--rose);   border-color: rgba(231,129,127,0.3); }
+.channel-link:hover  { opacity: 0.65; }
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--blush-light);
+  border: 1px solid var(--blush-light);
+}
+.article-card {
+  background: var(--white);
+  padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.article-card:hover { background: var(--bg-open); }
+.article-card-accent {
+  height: 2px; width: 36px; margin-bottom: 1rem;
+}
+.article-card-accent.copper { background: var(--copper); }
+.article-card-accent.rose   { background: var(--rose); }
+.article-card-label {
+  font-size: 0.5rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+.article-card-label.copper { color: var(--copper); }
+.article-card-label.rose   { color: var(--rose); }
+.article-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-weight: 400;
+  color: var(--espresso); line-height: 1.3;
+  margin-bottom: 0.65rem; flex: 1;
+}
+.article-card-meta {
+  font-size: 0.56rem; color: var(--muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: auto; padding-top: 1rem;
+  border-top: 1px solid var(--blush-light);
+}
+.article-card-cta {
+  display: inline-block; margin-top: 0.75rem;
+  font-size: 0.56rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+}
+.article-card-cta.copper { color: var(--copper); border-color: rgba(212,134,98,0.25); }
+.article-card-cta.rose   { color: var(--rose);   border-color: rgba(231,129,127,0.25); }
+.article-card-cta:hover  { opacity: 0.65; }
+
+/* 4-column grid for GYN (4 articles) */
+.article-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+
+/* Labora Rounds browse row */
+.rounds-browse-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--blush-light); border: 1px solid var(--blush-light);
+}
+.rounds-browse-cell {
+  background: var(--white); padding: 1.5rem;
+  text-decoration: none; transition: background 0.15s;
+  display: flex; align-items: center; gap: 1rem;
+}
+.rounds-browse-cell:hover { background: var(--bg-open); }
+.rbc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 300;
+  color: var(--gold); opacity: 0.5; flex-shrink: 0;
+  line-height: 1;
+}
+.rbc-text {}
+.rbc-label {
+  font-size: 0.48rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 0.25rem;
+}
+.rbc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem; font-weight: 400;
+  color: var(--espresso); line-height: 1.25;
+}
+
+@media (max-width: 900px) {
+  .article-grid, .article-grid.four-col { grid-template-columns: repeat(2, 1fr); }
+  .rounds-browse-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .browse-layer { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .article-grid, .article-grid.four-col { grid-template-columns: 1fr; }
+  .channel-header { flex-wrap: wrap; }
+}
+
 </style>
 </head>
 <body>
@@ -902,7 +1075,7 @@ body {
       <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
       <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
       <li><a href="https://diosara.com">Diosa Ara</a></li>
-      <li><a href="https://laboracollective.substack.com/subscribe" class="nav-cta">Join →</a></li>
+      <li><a href="/join" class="nav-cta">Join →</a></li>
     </ul>
   </div>
 </nav>
@@ -927,7 +1100,7 @@ body {
         Labora Collective is a physician-led intelligence platform covering the full 90% of women's health outcomes that happen outside the exam room — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.
       </p>
       <div class="hero-actions">
-        <a href="https://laboracollective.substack.com/subscribe" class="btn-primary">Become a Member →</a>
+        <a href="/join" class="btn-primary">Become a Member →</a>
         <a href="/intelligence/labora-rounds/special-reports/" class="btn-ghost">Read the Intelligence Reports</a>
       </div>
     </div>
@@ -1218,6 +1391,140 @@ body {
   </div><!-- /.journals-inner -->
 </section>
 
+<!-- ══ BROWSE LAYER — Latest Intelligence ══ -->
+<section class="browse-layer" id="latest">
+  <div class="browse-inner">
+
+    <div class="browse-header">
+      <div>
+        <span class="section-label" style="color:var(--copper);">Latest Intelligence</span>
+        <h2 class="browse-hed">What's published now.</h2>
+      </div>
+    </div>
+
+    <!-- ─── SIGNAL MONDAY — OB ─── -->
+    <div class="browse-channel">
+      <div class="channel-header">
+        <span class="channel-pill copper">Monday</span>
+        <span class="channel-title">The Labora Signal — Yemaya's Circle of Care</span>
+        <span class="channel-meta">OB &amp; Obstetrical Intelligence</span>
+        <a href="/newsletters/ob-signal/" class="channel-link copper">All issues →</a>
+      </div>
+      <div class="article-grid">
+        <a class="article-card" href="/newsletters/ob-signal/essays/congenital-syphilis-crisis-20260310.html">
+          <div class="article-card-accent copper"></div>
+          <div class="article-card-label copper">Signal Monday · Mar 10</div>
+          <div class="article-card-title">Why We Don't Know What We're Doing — And Who's Responsible</div>
+          <div class="article-card-meta">Congenital Syphilis Crisis · 8 min read</div>
+        </a>
+        <a class="article-card" href="/newsletters/ob-signal/essays/ice-hospital-enforcement-20260310.html">
+          <div class="article-card-accent copper"></div>
+          <div class="article-card-label copper">Signal Monday · Mar 10</div>
+          <div class="article-card-title">The Hospital Was Supposed to Be Safe. That Is Being Taken From Us.</div>
+          <div class="article-card-meta">ICE Enforcement &amp; Maternal Care · 7 min read</div>
+        </a>
+        <a class="article-card" href="/newsletters/ob-signal/essays/prams-funding-surveillance-20260310.html">
+          <div class="article-card-accent copper"></div>
+          <div class="article-card-label copper">Signal Monday · Mar 10</div>
+          <div class="article-card-title">PRAMS Funding Expires in April. Here's What We Lose.</div>
+          <div class="article-card-meta">Maternal Surveillance &amp; Data · 6 min read</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── SIGNAL WEDNESDAY — GYN ─── -->
+    <div class="browse-channel">
+      <div class="channel-header">
+        <span class="channel-pill rose">Wednesday</span>
+        <span class="channel-title">The Labora Signal — Her Health Matters</span>
+        <span class="channel-meta">GYN &amp; Reproductive Justice Intelligence</span>
+        <a href="/newsletters/gyn-signal/" class="channel-link rose">All issues →</a>
+      </div>
+      <div class="article-grid four-col">
+        <a class="article-card" href="/newsletters/gyn-signal/essays/hrt-undertreated-menopause-20260311.html">
+          <div class="article-card-accent rose"></div>
+          <div class="article-card-label rose">Signal Wednesday · Mar 11</div>
+          <div class="article-card-title">23 Years of Undertreated Suffering. The Black Box Warning Is Gone.</div>
+          <div class="article-card-meta">Menopause &amp; HRT · 9 min read</div>
+        </a>
+        <a class="article-card" href="/newsletters/gyn-signal/essays/louisiana-mifepristone-case-20260311.html">
+          <div class="article-card-accent rose"></div>
+          <div class="article-card-label rose">Signal Wednesday · Mar 11</div>
+          <div class="article-card-title">The Louisiana Mifepristone Case: A Nationwide Threat in State Clothing</div>
+          <div class="article-card-meta">Reproductive Rights · 8 min read</div>
+        </a>
+        <a class="article-card" href="/newsletters/gyn-signal/essays/pharmacy-refusals-federal-backstop-20260311.html">
+          <div class="article-card-accent rose"></div>
+          <div class="article-card-label rose">Signal Wednesday · Mar 11</div>
+          <div class="article-card-title">The Federal Backstop on Pharmacy Refusals Is Gone. Here's What's Left.</div>
+          <div class="article-card-meta">Access &amp; Rights · 7 min read</div>
+        </a>
+        <a class="article-card" href="/newsletters/gyn-signal/essays/pwfa-workplace-protections-20260311.html">
+          <div class="article-card-accent rose"></div>
+          <div class="article-card-label rose">Signal Wednesday · Mar 11</div>
+          <div class="article-card-title">The PWFA Was Supposed to Cover Your Whole Reproductive Life. It May Not For Long.</div>
+          <div class="article-card-meta">Workplace Rights · 7 min read</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── LABORA ROUNDS SPECIAL REPORTS ─── -->
+    <div class="browse-channel">
+      <div class="channel-header">
+        <span class="channel-pill gold">Intelligence</span>
+        <span class="channel-title">Labora Rounds — Special Reports</span>
+        <span class="channel-meta">Eleven-Domain Analysis · Public Access</span>
+        <a href="/intelligence/labora-rounds/special-reports/" class="channel-link copper" style="color:var(--gold);border-color:rgba(158,125,10,0.3);">All reports →</a>
+      </div>
+      <div class="rounds-browse-row">
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">
+          <span class="rbc-num">01</span>
+          <div class="rbc-text">
+            <span class="rbc-label">Domain 01 · Clinical</span>
+            <span class="rbc-title">Medical &amp; Clinical Intelligence</span>
+          </div>
+        </a>
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">
+          <span class="rbc-num">02</span>
+          <div class="rbc-text">
+            <span class="rbc-label">Domain 02 · Policy</span>
+            <span class="rbc-title">Political &amp; Legal Analysis</span>
+          </div>
+        </a>
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/domain-03-economic.html">
+          <span class="rbc-num">03</span>
+          <div class="rbc-text">
+            <span class="rbc-label">Domain 03 · Economic</span>
+            <span class="rbc-title">Economic Analysis</span>
+          </div>
+        </a>
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/domain-04-health-policy.html">
+          <span class="rbc-num">04</span>
+          <div class="rbc-text">
+            <span class="rbc-label">Domain 04 · Health Policy</span>
+            <span class="rbc-title">Health Policy Cross-Cutting</span>
+          </div>
+        </a>
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/domain-09-trump-admin.html">
+          <span class="rbc-num">09</span>
+          <div class="rbc-text">
+            <span class="rbc-label">Domain 09 · Administration</span>
+            <span class="rbc-title">Trump Administration Tracking</span>
+          </div>
+        </a>
+        <a class="rounds-browse-cell" href="/intelligence/labora-rounds/special-reports/special-reports.html">
+          <span class="rbc-num" style="font-size:1.4rem;opacity:0.3;">→</span>
+          <div class="rbc-text">
+            <span class="rbc-label">View All Eleven Domains</span>
+            <span class="rbc-title">Complete Special Reports Archive</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /.browse-inner -->
+</section>
+
 <!-- ══ PUBLICATIONS ══ -->
 <section class="publications">
   <div class="publications-inner">
@@ -1378,7 +1685,7 @@ body {
           <li class="dim">Member briefings not included</li>
           <li class="dim">Ask Dr. Connor not included</li>
         </ul>
-        <a href="https://laboracollective.substack.com/subscribe" class="tier-btn outline">Subscribe Free →</a>
+        <a href="/join" class="tier-btn outline">Subscribe Free →</a>
       </div>
 
       <!-- Diosa Insider -->
@@ -1395,7 +1702,7 @@ body {
           <li>Full access to domain report archive</li>
           <li class="dim">Labora Rounds full reports not included</li>
         </ul>
-        <a href="https://laboracollective.substack.com/subscribe" class="tier-btn featured">Become a Diosa Insider →</a>
+        <a href="/join" class="tier-btn featured">Become a Diosa Insider →</a>
       </div>
 
       <!-- Labora Luminary -->
@@ -1411,7 +1718,7 @@ body {
           <li>Priority access to future DA products</li>
           <li>Institutional licensing available</li>
         </ul>
-        <a href="https://laboracollective.substack.com/subscribe" class="tier-btn filled">Become a Luminary →</a>
+        <a href="/join" class="tier-btn filled">Become a Luminary →</a>
       </div>
 
     </div>
@@ -1469,7 +1776,7 @@ body {
         <h5>Organization</h5>
         <ul>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
-          <li><a href="https://laboracollective.substack.com/subscribe">Membership</a></li>
+          <li><a href="/join">Membership</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
