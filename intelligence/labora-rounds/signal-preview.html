@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labora Rounds - 7 Signals Every Person Protecting Women's Health Needs to See</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #1e2340;
+            --surface: #282e50;
+            --accent: #89abd1;
+            --accent-warm: #cb6fa6;
+            --crisis-red: #e05858;
+            --text-primary: #f5ede5;
+            --text-secondary: #d2beac;
+            --text-sand: #e8ddd5;
+            --border-color: rgba(232,221,213,0.10);
+            --warm-brown: #9f734e;
+            --plum: #8a566e;
+        }
+
+        body {
+            font-family: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .header-top {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--warm-brown);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-sand);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .header-bottom {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* Audience Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(232,221,213,0.15);
+            background-color: transparent;
+            color: var(--text-sand);
+            cursor: pointer;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            letter-spacing: 0.02em;
+        }
+
+        .tab-button:hover {
+            border-color: var(--warm-brown);
+            color: var(--warm-brown);
+        }
+
+        .tab-button.active {
+            background-color: var(--warm-brown);
+            color: var(--text-primary);
+            border-color: var(--warm-brown);
+        }
+
+        /* Signal Card */
+        .signal-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--crisis-red);
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            display: none;
+        }
+
+        .signal-card.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .signal-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .signal-number {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: var(--warm-brown);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .signal-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        /* Audience Translation Box */
+        .audience-translation {
+            background-color: rgba(232,221,213,0.04);
+            border: 1px solid rgba(232,221,213,0.10);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .audience-translation.active {
+            display: block;
+        }
+
+        .audience-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--warm-brown);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .audience-content {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        /* Source Info */
+        .source-info {
+            background-color: rgba(232,221,213,0.03);
+            border: 1px solid rgba(232,221,213,0.08);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .source-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .source-text {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .source-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Layer 2 Status */
+        .layer2-status {
+            background-color: rgba(248, 81, 73, 0.05);
+            border: 1px solid rgba(248, 81, 73, 0.3);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .layer2-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--crisis-red);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--crisis-red);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .layer2-text {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Article Link */
+        .article-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            border: 1px solid var(--warm-brown);
+            border-radius: 4px;
+            color: var(--warm-brown);
+            text-decoration: none;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .article-link:hover {
+            background-color: var(--warm-brown);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--warm-brown);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 1rem;
+            }
+
+            .signal-title {
+                font-size: 1.5rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .signal-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="../../assets/images/da-logo.png" alt="Diosa Ara" class="header-logo">
+            <div class="header-top">Diosa Ara Research Intelligence</div>
+            <h1 class="header-title">Labora Rounds</h1>
+            <p class="header-subtitle">7 Signals Every Person Protecting Women's Health Needs to See</p>
+            <div class="header-bottom">Powered by The Labora Collective</div>
+        </div>
+
+        <!-- Audience Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" data-audience="ob_providers">OB Providers</button>
+            <button class="tab-button" data-audience="midwives">Midwives (CNM/CPM)</button>
+            <button class="tab-button" data-audience="birth_workers_doulas">Birth Workers & Doulas</button>
+            <button class="tab-button" data-audience="institutional_leaders">Institutional Leaders</button>
+            <button class="tab-button" data-audience="general_public">For Everyone</button>
+        </div>
+
+        <!-- Signal Cards -->
+        <div id="signals-container"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <img src="../../assets/images/lc-logo-light-peach.png" alt="Labora Collective" class="footer-logo">
+        <p>Labora Rounds delivers weekly signals on reproductive health policy, maternal outcomes, and clinical evidence.</p>
+        <a href="https://laboracollective.com" class="cta-button">Get the Full Intelligence Stream</a>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem;">
+            Last updated: March 22, 2026 | <a href="https://laboracollective.com" style="color: var(--accent); text-decoration: none;">Visit Labora Collective</a>
+        </p>
+    </div>
+
+    <script>
+        const signals = [{"id": "maternal_homicide", "number": 1, "title": "Homicide is #1 cause of maternal death", "sources": {"report": "Labora Rounds Special Report, Domain 18 \u2014 Social Systems & Intimacy Crisis", "data_through": "March 2026", "article": null}, "layer2_status": "Active crisis. No federal screening mandate exists. Reporting infrastructure unchanged.", "layer2_indicator": true, "audiences": {"ob_providers": "Maternal homicide now exceeds all obstetric causes combined. Rate: 3.62 per 100,000. 68% involve firearms. Screen for intimate partner violence at every prenatal visit \u2014 document as part of social history. Post-Dobbs data shows 7-10% increase in DV in abortion ban states. Each additional abortion restriction correlates with +3.4% increase in intimate partner homicide. Your referral to social work, shelters, and legal aid is a clinical intervention with mortality benefit.", "midwives": "CNMs: You have prescriptive authority in birth centers and hospitals \u2014 use screening protocols and domestic violence documentation in your charts. CPMs: Out-of-hospital birth carries additional risk if IPV is present. Screen clients at intake and first visit. Partner with local DV agencies for warm referrals. Collaborate with OBs on shared clients with known DV histories. Homicide is now the leading pregnancy-related cause of death.", "birth_workers_doulas": "Homicide is the #1 killer of pregnant people. 68% involve firearms. You are often the trusted person clients talk to first. Know how to listen without judgment. Have local DV hotlines, shelters, and legal aid numbers ready. If a client discloses abuse, believe her. Know your scope \u2014 you can't provide therapy, but you can provide compassion and concrete resources. Connect her to someone who can help.", "institutional_leaders": "Maternal homicide is now the leading cause of pregnancy-related death (3.62 per 100,000 live births). Post-Dobbs abortion restrictions correlate with 7-10% increases in intimate partner violence in ban states. Revenue and reputation risk: develop mandatory IPV screening protocols, staff training, social work integration, and trauma-informed care standards. Establish partnerships with local DV services, law enforcement, and legal aid. This is a staffing and liability issue.", "general_public": "If you are pregnant or know someone who is: homicide is now the #1 cause of death during pregnancy and the year after birth. That's more dangerous than gestational diabetes, pre-eclampsia, or any medical complication. Most of these deaths involve abuse in a relationship. If you feel unsafe, tell a doctor, nurse, midwife, or doula. They can help. There are free hotlines (1-800-799-7233) and shelters. You deserve to be safe."}}, {"id": "congenital_syphilis", "number": 2, "title": "Congenital syphilis surges 937%", "sources": {"report": "Labora Rounds Report, Domain 01 \u2014 Maternal Health & Birth Outcomes", "data_through": "February 2026", "article": "https://laboracollective.com/newsletters/ob-signal/essays/congenital-syphilis-crisis-20260310.html"}, "layer2_status": "Active crisis. Bicillin L-A remains in shortage. CDC STI surveillance team eliminated.", "layer2_indicator": true, "audiences": {"ob_providers": "Congenital syphilis cases: 335 (2012) \u2192 4,000 (2024). 282 infants dead or permanently disabled in 2022 alone. One-time treatment: benzathine penicillin G (Bicillin L-A) \u2014 $30 and fully preventable. Current problem: Bicillin is in shortage. The CDC team tracking this epidemic was fired. Check maternal RPR/VDRL at first prenatal visit and third trimester. Treat empirically if positive; don't wait for titer confirmation. Partner notification and treatment are essential.", "midwives": "Syphilis screening is standard prenatal care. CNMs: You have access to penicillin protocols in hospital settings. CPMs: Out-of-hospital births should include routine serologic screening at first visit and late pregnancy. Partner with OBs on all positive cases. Bicillin L-A shortage means treatment delays \u2014 work with your backup OB to secure supply. Untreated maternal syphilis is a medical emergency for the fetus.", "birth_workers_doulas": "Syphilis is treatable but catastrophic if missed. Untreated maternal syphilis causes stillbirth, birth defects, and infant death. The cure is one shot of penicillin. Encourage all pregnant clients to get prenatal care early. If someone can't access care, help them find a community health center or hospital clinic. This is one of the most preventable tragedies in obstetrics right now.", "institutional_leaders": "Congenital syphilis is a preventable catastrophe. 937% surge (335 \u2192 4,000 cases). 282 infants died or were permanently disabled in 2022. Bicillin L-A shortages are delaying treatment. CDC surveillance team was eliminated \u2014 you have no federal reporting infrastructure. Ensure robust prenatal screening protocols, secure Bicillin supply chain, and train staff on empiric treatment. Budget for supply chain contingency.", "general_public": "Syphilis in pregnancy is completely preventable and treatable \u2014 one shot stops it. But if it's missed, it can kill your baby or cause permanent disability. 282 babies were harmed in 2022 from congenital syphilis. The treatment has existed for 70 years and costs $30. Every pregnant person should be screened at the start of pregnancy. If you're pregnant, ask your doctor about syphilis screening."}}, {"id": "texas_maternal_mortality", "number": 3, "title": "Texas maternal mortality +56%, white women +95% after abortion ban", "sources": {"report": "Labora Rounds Special Report, Domain 13 \u2014 Legal Infrastructure", "data_through": "2022 (most recent available)", "article": null}, "layer2_status": "Ongoing. Texas MMMRC has not reviewed 2022-2023 deaths. SB 8 remains enforced.", "layer2_indicator": true, "audiences": {"ob_providers": "Texas maternal mortality rate: 5x national average. Post-SB 8 (Sept 2021): +56% overall. White women +95%, Black women +38%, Hispanic women +30%. Disparities are widening. Hospital maternal deaths: 79 (pre-ban) \u2192 120 (post-ban). Texas MMMRC has not reviewed 2022-2023 deaths. SB 8 forces treatment decisions: if continuing pregnancy threatens your license, are you documenting and consulting appropriately? Expect liability scrutiny. Document all clinical reasoning.", "midwives": "Texas CNMs: SB 8 limits your practice autonomy. High-risk cases that might benefit from early delivery or pregnancy termination are legally constrained. CPMs: Refer early to hospital-based care for any complications. Maternal mortality is rising fastest among providers in ban states. Know your transfer protocols and legal exposure.", "birth_workers_doulas": "Texas is experiencing a maternal mortality crisis. Abortion restrictions are making pregnancy riskier, especially for women of color. If you work in Texas, you're seeing pregnant clients navigate impossible choices. Help them connect to organizations that provide legal aid and interstate abortion access information. Document what you're hearing from clients \u2014 this data matters.", "institutional_leaders": "Texas maternal mortality +56% post-ban. White women +95%, Black women +38%, Hispanic women +30%. 120 hospital maternal deaths in 2022 (vs. 79 pre-ban). Texas MMMRC has not reviewed 2022-2023 data. Liability exposure is real: if your hospital is avoiding pregnancy termination in cases where it's medically indicated, document the clinical reasoning and specialty consultation. Train teams on legal vs. medical decision-making.", "general_public": "If you live in Texas and are thinking about pregnancy: maternal death rates have jumped 56% since the abortion ban. For white women, it's up 95%. This is especially dangerous for Black and Hispanic women. Texas is not reviewing these deaths systematically. If you're pregnant and something goes wrong, your doctors may be legally constrained in how they can treat you. Know what options exist in neighboring states if you need emergency care."}}, {"id": "criminalization_pregnancy", "number": 4, "title": "264 women turned in to law enforcement by their own doctors", "sources": {"report": "Labora Rounds Special Report, Domain 13 \u2014 Legal Infrastructure", "data_through": "December 2025", "article": null}, "layer2_status": "Escalating. HIPAA reproductive privacy rule vacated. No federal protection for patient records.", "layer2_indicator": true, "audiences": {"ob_providers": "412 criminal charges for pregnancy outcomes in 2 years post-Dobbs \u2014 8x increase. 264 women reported to law enforcement by healthcare providers. 75% are low-income. Women are avoiding prenatal care by 40-60% in border regions. HIPAA reproductive privacy rule was vacated \u2014 your patient records can be subpoenaed for criminal investigation. Document clinical facts. Don't speculate on 'fetal intent' or maternal behavior. Limit notes to medical findings.", "midwives": "Pregnant clients are terrified of law enforcement involvement. CPMs especially: home birth clients may fear hospital reporting. CNMs: know your facility's legal reporting obligations and mandatory reporting thresholds. Women are delaying care \u2014 this is harming outcomes. Normalize prenatal care as medical care, not criminal exposure.", "birth_workers_doulas": "Pregnant people are scared. They're avoiding hospitals because they fear being reported to police for miscarriage, stillbirth, or using substances. Your role is to destigmatize care and help clients understand: pregnancy loss is a medical event, not a crime. Know local legal aid organizations. If a client is scared of hospitalization, help her understand what to expect and what her rights are.", "institutional_leaders": "412 criminal charges for pregnancy outcomes in 2 years post-Dobbs. 264 women reported by their own healthcare providers. 75% are low-income. Prenatal care engagement is down 40-60% in border regions. HIPAA reproductive privacy rule vacated. Your hospital is a potential law enforcement partner. Adopt clear policies: what triggers mandatory reporting, what's medical care vs. criminal investigation, how to protect patient confidentiality within legal limits. This affects staff recruitment and retention.", "general_public": "If you're pregnant: you have the right to medical confidentiality. But new laws are changing that. Some healthcare providers are now reporting pregnant people to police for miscarriage or substance use. This is making pregnant people avoid hospitals \u2014 which is more dangerous. If you're scared, talk to a legal aid organization first. You have rights. Don't go alone."}}, {"id": "deportation_preterm_labor", "number": 5, "title": "Deportation fear as a physiological driver of preterm labor", "sources": {"report": "Labora Rounds Report, Domain 19 \u2014 Immigration & Reproductive Justice", "data_through": "February 2026", "article": "https://laboracollective.com/newsletters/ob-signal/essays/ice-hospital-enforcement-20260310.html"}, "layer2_status": "Active. ICE sensitive locations policy formally revoked. Prenatal visit rates declining in immigrant communities.", "layer2_indicator": true, "audiences": {"ob_providers": "Chronic stress from deportation threat triggers physiological preterm labor and pre-eclampsia. Elevated cortisol is measurable and pathogenic. ICE revoked its 2021 sensitive locations policy \u2014 pregnant women are no longer protected from detention at hospitals. Immigrant pregnant clients are avoiding prenatal care. Ask about immigration status and fears; refer to legal aid and community organizations. Document stress as a clinical risk factor. This is a clinical problem, not a policy problem \u2014 but policy is causing it.", "midwives": "Immigrant pregnant clients face deportation fear. CNMs: coordinate with hospital legal and social work teams if you have immigrant clients in your practice. CPMs: know that out-of-hospital birth may increase risk if clients are avoiding hospital care due to immigration fears. Refer early, establish trust, normalize prenatal care.", "birth_workers_doulas": "Immigrant clients are terrified. Deportation fear is a real physiological stressor that causes preterm birth and high blood pressure in pregnancy. Your presence as a trusted, non-law-enforcement person is protective. Help clients connect to legal aid, community health centers, and doula networks that understand immigration-related trauma. Know that fear itself is a risk factor.", "institutional_leaders": "Immigrant pregnant clients are avoiding prenatal care due to ICE enforcement. Preterm labor rates are rising in immigrant communities. ICE sensitive locations policy revoked \u2014 hospitals are no longer safe spaces. Develop clear protocols: how do you protect pregnant patients from ICE? Do you have legal aid partnerships? How do you communicate safety to immigrant communities? This affects outcomes and liability.", "general_public": "If you are an immigrant and pregnant: you are entitled to prenatal care. ICE is enforcing immigration law at hospitals, but pregnant people and medical providers are supposed to be protected. If you're scared, ask for a social worker or patient advocate at your first visit. They can connect you to legal aid. Don't avoid hospitals because of fear \u2014 pregnancy complications need medical care. Community health centers and patient advocacy organizations can help."}}, {"id": "hrt_black_box_removal", "number": 6, "title": "FDA removes 24-year HRT black box warning", "sources": {"report": "Labora Rounds Report, Domain 05 \u2014 Menopause & Midlife Health", "data_through": "FDA action January 2026", "article": "https://laboracollective.com/newsletters/gyn-signal/essays/hrt-undertreated-menopause-20260311.html"}, "layer2_status": "In effect. FDA label updated. Most practice protocols have not yet been revised.", "layer2_indicator": false, "audiences": {"ob_providers": "FDA removed the black box warning from HRT in January 2026 \u2014 after 24 years. Current evidence: for women under 60 and within 10 years of menopause onset, benefits outweigh risks. Liability flipped overnight: denying HRT to eligible women is now below standard of care. 1.3M women annually experience severe vasomotor symptoms with no treatment. Update your protocols. Train staff. Expect patient questions.", "midwives": "CNMs: if you have menopause patients, you can now offer HRT without the black box liability. CPMs: referral to OB or nurse practitioner for HRT evaluation is appropriate. Menopause is a legitimate medical condition with effective treatment. Women have been undertreated for 24 years.", "birth_workers_doulas": "Menopause is not an emergency, but hot flashes and night sweats can be disabling. For decades, doctors were scared to prescribe HRT because of a warning label. That warning is gone. If you have menopausal clients, encourage them to talk to their doctor about HRT options. It's safe and effective for most women.", "institutional_leaders": "FDA removed HRT black box warning (January 2026). Standard of care shifted: denying HRT to eligible women is now a liability. 1.3M women annually with severe vasomotor symptoms. Update your practice guidelines, train clinicians, and ensure HRT is accessible. This is a protocol change with liability and market implications.", "general_public": "If you're going through menopause: hot flashes, night sweats, and mood changes are real medical symptoms. For 24 years, doctors were cautious about treating them with hormone therapy. The FDA just said hormone therapy is safe and effective for most women in menopause. If you're suffering, ask your doctor about it. You don't have to just endure it."}}, {"id": "medicaid_coverage_loss", "number": 7, "title": "5.7 million women projected to lose Medicaid coverage", "sources": {"report": "Labora Rounds Report, Domain 01 \u2014 Maternal Health & Birth Outcomes", "data_through": "Signed July 2025, effective January 2027", "article": null}, "layer2_status": "Countdown. Effective January 2027. No state implementation guidance issued yet.", "layer2_indicator": true, "audiences": {"ob_providers": "One Big Beautiful Bill Act: 80-hour monthly work requirement for Medicaid. Urban Institute projects 5.7M women of reproductive age will lose coverage \u2014 not because they don't qualify, but because paperwork burden and work requirements will push them off. This is a safety-net collapse. Expect uninsured obstetric patients, delayed prenatal care, and higher maternal mortality. Document and advocate.", "midwives": "Medicaid is the insurance for 40% of births nationally. This law will strip coverage from millions of low-income pregnant women. CNMs in hospital settings will see uninsured emergency admissions. CPMs in community settings will have clients with no insurance. Know your community's safety-net hospitals and referral pathways.", "birth_workers_doulas": "Millions of low-income pregnant people will lose insurance in January 2027. This will affect access to prenatal care, hospital birth, and postpartum care. Know your community resources: free clinics, community health centers, doula networks that serve uninsured clients. Help pregnant clients understand their options before coverage is lost.", "institutional_leaders": "5.7M women of reproductive age projected to lose Medicaid (effective January 2027). This is a massive uncompensated care surge. Prenatal care access will collapse in rural and urban safety-net settings. Prepare your uncompensated care budget, train staff on financial navigation, and coordinate with state Medicaid agencies on implementation. This is a staffing and financial issue.", "general_public": "If you're a woman of reproductive age and on Medicaid: a new law starting January 2027 will require 80 hours of work per month to stay on Medicaid. If you're pregnant, caregiving, or can't meet the work requirement, you could lose coverage. 5.7 million women are expected to be dropped. Start planning now. Find a community health center or free clinic. Talk to a social worker about your options."}}];
+        const currentAudience = {'value': 'ob_providers'};
+
+        // Render signals on page load
+        function renderSignals() {
+            const container = document.getElementById('signals-container');
+            container.innerHTML = '';
+
+            signals.forEach(signal => {
+                const card = document.createElement('div');
+                card.className = 'signal-card';
+                card.dataset.signalId = signal.id;
+
+                let articleLink = '';
+                if (signal.sources.article) {
+                    articleLink = `<a href="${signal.sources.article}" target="_blank" class="article-link">Read the full analysis →</a>`;
+                }
+
+                let layer2Html = '';
+                if (signal.layer2_indicator) {
+                    layer2Html = `
+                        <div class="layer2-status">
+                            <div class="layer2-header">
+                                <span class="status-dot"></span>
+                                Current Status
+                            </div>
+                            <div class="layer2-text">${signal.layer2_status}</div>
+                        </div>
+                    `;
+                }
+
+                const audienceTranslations = Object.entries(signal.audiences).map(([key, text]) => {
+                    const audiences = {
+                        'ob_providers': 'For OB Providers',
+                        'midwives': 'For Midwives',
+                        'birth_workers_doulas': 'For Birth Workers & Doulas',
+                        'institutional_leaders': 'For Institutional Leaders',
+                        'general_public': 'For Everyone'
+                    };
+                    return `
+                        <div class="audience-translation" data-audience="${key}">
+                            <div class="audience-label">${audiences[key]}</div>
+                            <div class="audience-content">${text}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                card.innerHTML = `
+                    <div class="signal-header">
+                        <div class="signal-number">Signal ${signal.number}</div>
+                        <h2 class="signal-title">${signal.title}</h2>
+                    </div>
+
+                    <div class="source-info">
+                        <div class="source-text"><strong>Source:</strong> ${signal.sources.report}</div>
+                        <div class="source-text"><strong>Data:</strong> ${signal.sources.data_through}</div>
+                    </div>
+
+                    ${layer2Html}
+
+                    <div class="audience-translations">
+                        ${audienceTranslations}
+                    </div>
+
+                    ${articleLink}
+                `;
+
+                container.appendChild(card);
+            });
+
+            updateActiveAudience();
+        }
+
+        // Update which audience translations are visible
+        function updateActiveAudience() {
+            document.querySelectorAll('.audience-translation').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            document.querySelectorAll(`.audience-translation[data-audience="${currentAudience.value}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
+            document.querySelectorAll('.signal-card').forEach(card => {
+                card.classList.add('active');
+            });
+        }
+
+        // Tab button click handler
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSignals();
+
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentAudience.value = e.target.dataset.audience;
+                    updateActiveAudience();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
