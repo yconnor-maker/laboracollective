@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Birthworker Brief &mdash; The Blueprint &mdash; Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root{--espresso:#362511;--teal:#1D6B78;--teal-light:#E0F2F4;--copper:#D48662;--copper-light:#E8A882;--bg-warm:#F7F3EE;--bg-open:#FBF5FF;--white:#FFFFFF;--muted:#8A7060;--blush-light:#F5DDD9;}
+*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:#2C1A0E;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.lc-nav{background:var(--espresso);position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.06);}
+.lc-nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.lc-nav-brand{display:flex;align-items:center;gap:0.65rem;text-decoration:none;}
+.lc-nav-mark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--bg-open);}
+.lc-nav-mark em{font-style:normal;color:var(--copper);}
+.lc-nav-links{display:flex;list-style:none;margin:0;padding:0;}
+.lc-nav-links li a{display:block;font-family:'DM Sans',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,245,255,0.45);text-decoration:none;padding:0 0.85rem;height:56px;line-height:56px;border-bottom:2px solid transparent;transition:color 0.15s;}
+.lc-nav-links li a:hover{color:var(--copper);}
+.lc-nav-links li a.active{color:var(--teal);border-bottom-color:var(--teal);}
+.lc-nav-cta{display:inline-block;background:var(--copper);color:var(--white);padding:0.4rem 1.1rem;font-size:0.58rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;border-radius:2px;margin-left:0.5rem;}
+.breadcrumb{background:var(--espresso);border-bottom:1px solid rgba(255,255,255,0.06);padding:0.65rem 2rem;}
+.breadcrumb-inner{max-width:1100px;margin:0 auto;font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,245,255,0.28);}
+.breadcrumb a{color:rgba(251,245,255,0.28);text-decoration:none;}.breadcrumb a:hover{color:var(--teal);}
+.breadcrumb-sep{margin:0 0.4rem;color:rgba(255,255,255,0.15);}
+.breadcrumb-current{color:var(--teal);}
+.page-hero{background:var(--espresso);border-bottom:4px solid var(--teal);padding:4rem 2rem 3.5rem;}
+.page-hero-inner{max-width:1100px;margin:0 auto;}
+.hero-overline{font-size:0.52rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:1rem;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:300;color:var(--bg-open);margin-bottom:0.75rem;line-height:1.08;}
+.hero-deck{font-size:1rem;line-height:1.75;color:rgba(251,245,255,0.45);max-width:580px;}
+.placeholder-section{padding:5rem 2rem;background:var(--bg-open);}
+.placeholder-inner{max-width:700px;margin:0 auto;text-align:center;}
+.placeholder-inner h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--espresso);margin-bottom:1rem;}
+.placeholder-inner p{font-size:0.92rem;color:var(--muted);line-height:1.75;margin-bottom:2rem;}
+.btn{display:inline-block;padding:0.8rem 2rem;font-size:0.64rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--teal);color:var(--teal);transition:all 0.15s;}
+.btn:hover{background:var(--teal);color:var(--white);}
+.lc-footer{background:var(--espresso);border-top:3px solid var(--copper);padding:2.5rem 2rem;}
+.lc-footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.lc-footer-mark{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--bg-open);}
+.lc-footer-mark em{font-style:normal;color:var(--copper);}
+.lc-footer-copy{font-size:0.56rem;color:rgba(251,245,255,0.2);letter-spacing:0.08em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand"><div class="lc-nav-mark"><em>Labora</em> Collective</div></a>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/" class="active">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb"><div class="breadcrumb-inner"><a href="/blueprint/">The Blueprint</a><span class="breadcrumb-sep">/</span><span class="breadcrumb-current">The Birthworker Brief</span></div></div>
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-overline">The Blueprint</span>
+    <h1 class="hero-title">The Birthworker Brief</h1>
+    <p class="hero-deck">Practice intelligence for midwives, doulas, lactation consultants, and community health workers. Clinical updates, policy changes, and field-ready guidance.</p>
+  </div>
+</section>
+<section class="placeholder-section">
+  <div class="placeholder-inner">
+    <h2>Launching soon</h2>
+    <p>The Birthworker Brief is in development. Subscribe to The Blueprint on Substack to receive it the moment it drops.</p>
+    <a href="https://laboracollective.substack.com/s/the-blueprint" class="btn">Subscribe to The Blueprint &rarr;</a>
+  </div>
+</section>
+<footer class="lc-footer"><div class="lc-footer-inner"><div class="lc-footer-mark"><em>Labora</em> Collective</div><p class="lc-footer-copy">&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative</p></div></footer>
+</body>
+</html>
