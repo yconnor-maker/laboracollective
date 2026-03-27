@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Partner Kit &mdash; Doula Edition | Labora Collective</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --espresso:       #362511;
+      --espresso-mid:   #4A3218;
+      --body-text:      #2C1A0E;
+      --muted:          #8A7060;
+      --copper:         #D48662;
+      --copper-light:   #E8A882;
+      --blush:          #EABAB0;
+      --blush-light:    #F5DDD9;
+      --rose:           #C0392B;
+      --rose-mid:       #E57373;
+      --rose-light:     #FDECEA;
+      --teal:           #1D6B78;
+      --teal-light:     #E0F2F4;
+      --forest:         #2E5240;
+      --forest-light:   #E4EFE8;
+      --gold:           #9E7D0A;
+      --gold-light:     #F5EDCC;
+      --bg-warm:        #F7F3EE;
+      --bg-open:        #FBF5FF;
+      --white:          #FFFFFF;
+      --accent:         var(--teal);
+      --accent-light:   var(--teal-light);
+      --font-display:   'Cormorant Garamond', Georgia, serif;
+      --font-body:      'DM Sans', Arial, sans-serif;
+      --font-ui:        'DM Sans', Arial, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--bg-open); color: var(--body-text); font-size: 16px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    a { color: var(--teal); text-decoration: none; }
+    a:hover { color: var(--espresso); }
+
+    /* HEADER */
+    .lc-header { background: var(--espresso); border-bottom: 3px solid var(--teal); }
+    .lc-header-inner { max-width: 700px; margin: 0 auto; padding: 2.5rem 2rem 2rem; }
+    .lc-logo { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 2rem; }
+    .lc-mark { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--teal); letter-spacing: 0.05em; }
+    .lc-wordmark { font-family: var(--font-ui); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(251,245,255,0.4); line-height: 1.5; }
+    .lc-pub-tag { display: inline-block; background: var(--teal); padding: 0.3rem 0.9rem; margin-bottom: 1.25rem; }
+    .lc-pub-tag span { font-family: var(--font-ui); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+    .lc-pub-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; line-height: 1.05; color: var(--bg-open); margin-bottom: 0.5rem; }
+    .lc-pub-subtitle { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--teal-light); margin-bottom: 1.5rem; }
+    .lc-accent-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 4px; margin-top: 1.5rem; }
+    .lc-accent-bar div:nth-child(1) { background: var(--espresso-mid); }
+    .lc-accent-bar div:nth-child(2) { background: var(--teal); }
+    .lc-accent-bar div:nth-child(3) { background: var(--teal-light); }
+    .lc-issue-meta { display: flex; gap: 1.5rem; padding: 0.75rem 0 0; flex-wrap: wrap; }
+    .lc-issue-meta span { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251,245,255,0.3); }
+    /* NAV */
+    .lc-nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .lc-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .lc-nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+    .lc-nav-mark { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--bg-open); letter-spacing: -0.01em; line-height: 1; }
+    .lc-nav-mark em { font-style: normal; color: var(--teal); }
+    .lc-nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
+    .lc-nav-links li a { display: block; font-family: var(--font-ui); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.45); text-decoration: none; padding: 0 0.85rem; height: 56px; line-height: 56px; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .lc-nav-links li a:hover, .lc-nav-links li a.active { color: var(--teal); border-bottom-color: var(--teal); }
+    .lc-nav-cta { display: inline-block; background: var(--teal); color: var(--white); padding: 0.4rem 1.1rem; font-family: var(--font-ui); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; margin-left: 0.5rem; }
+    .lc-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
+    .lc-nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(251,245,255,0.5); }
+
+    /* BODY LAYOUT */
+    .lc-body { max-width: 700px; margin: 0 auto; padding: 0 2rem 6rem; }
+    .lc-body p { font-size: 0.98rem; line-height: 1.8; color: var(--body-text); margin-bottom: 0.85rem; }
+    .lc-body h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; color: var(--espresso); margin: 2rem 0 0.75rem; }
+    .lc-body h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: var(--espresso); margin: 0.5rem 0 0.75rem; }
+    .lc-section-label { font-family: var(--font-ui); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.75rem; }
+    .section-divider { border: none; border-top: 1px solid rgba(29,107,120,0.15); margin: 3rem 0; }
+    /* WELCOME BLOCK */
+    .lc-welcome { background: var(--espresso); padding: 2.5rem; margin: 2.5rem 0; border-left: 4px solid var(--teal); }
+    .lc-welcome .lc-section-label { color: var(--teal-light); margin-bottom: 1rem; }
+    .lc-welcome h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; color: var(--bg-open); margin: 0 0 1rem; }
+    .lc-welcome p { color: rgba(251,245,255,0.8); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
+    .lc-welcome .welcome-sig { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--teal-light); margin-top: 1.25rem; }
+    /* CALLOUT */
+    .lc-callout { background: var(--teal-light); border-left: 3px solid var(--teal); padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .lc-callout-label { font-family: var(--font-ui); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.5rem; }
+    .lc-callout p { font-size: 0.9rem; margin-bottom: 0; line-height: 1.65; }
+    /* RED FLAG CARDS */
+    .lc-red-flag { border: 1.5px solid var(--rose); border-radius: 2px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; position: relative; background: var(--white); }
+    .lc-red-flag-badge { position: absolute; top: -11px; left: 1.25rem; background: var(--rose); color: white; font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.75rem; }
+    .lc-red-flag h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--rose); margin: 0.5rem 0 0.75rem; }
+    .lc-red-flag ul { list-style: none; padding: 0; margin: 0.75rem 0; }
+    .lc-red-flag ul li { font-size: 0.9rem; padding: 0.3rem 0 0.3rem 1.25rem; border-bottom: 1px solid var(--rose-light); color: var(--body-text); position: relative; }
+    .lc-red-flag ul li:last-child { border-bottom: none; }
+    .lc-red-flag ul li::before { content: "›"; position: absolute; left: 0; color: var(--rose); font-weight: 700; }
+    .lc-red-flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .lc-red-flag-col { padding: 0.875rem 1rem; border-radius: 2px; }
+    .lc-red-flag-col.urgent { background: var(--rose-light); border: 1px solid var(--rose-mid); }
+    .lc-red-flag-col.emergency { background: var(--rose); }
+    .lc-red-flag-col h4 { font-family: var(--font-ui); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .lc-red-flag-col.urgent h4 { color: var(--rose); }
+    .lc-red-flag-col.emergency h4 { color: rgba(255,255,255,0.7); }
+    .lc-red-flag-col p { font-size: 0.85rem; line-height: 1.6; margin: 0; }
+    .lc-red-flag-col.emergency p { color: white; }
+    .lc-doula-note { background: var(--blush-light); border-left: 3px solid var(--blush); padding: 0.875rem 1.125rem; margin-top: 1rem; font-size: 0.88rem; font-style: italic; color: var(--muted); line-height: 1.65; }
+
+    /* ESCALATION STEPS */
+    .lc-step { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--teal-light); }
+    .lc-step:last-child { border-bottom: none; }
+    .lc-step-num { background: var(--teal); color: white; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700; min-width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; flex-shrink: 0; margin-top: 0.15rem; }
+    .lc-step-body { flex: 1; }
+    .lc-step-body strong { display: block; font-family: var(--font-ui); font-size: 0.82rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.25rem; letter-spacing: 0.02em; }
+    .lc-step-body span { font-size: 0.9rem; color: var(--body-text); line-height: 1.65; }
+    .lc-advocacy { background: var(--espresso); padding: 1.75rem 2rem; margin: 1.5rem 0; }
+    .lc-advocacy .lc-section-label { color: var(--teal-light); margin-bottom: 1rem; }
+    .lc-advocacy p { color: rgba(251,245,255,0.8); font-size: 0.93rem; line-height: 1.75; margin-bottom: 0.6rem; }
+    .lc-advocacy p:last-child { margin-bottom: 0; }
+    /* QUESTION CARDS */
+    .lc-question { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 0.875rem 1.125rem; margin: 0.75rem 0; font-size: 0.92rem; font-style: italic; color: var(--espresso); line-height: 1.65; }
+    .lc-question-label { font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.4rem; font-style: normal; }
+    .lc-question-label.client { color: var(--muted); }
+    .lc-question.client { background: var(--blush-light); border-left-color: var(--blush); }
+    /* HANDOUT */
+    .lc-handout { background: var(--bg-warm); border: 1px solid rgba(29,107,120,0.15); padding: 1.75rem 2rem; margin: 1.5rem 0; }
+    .lc-handout h3 { font-family: var(--font-display); font-size: 1.35rem; color: var(--espresso); margin-bottom: 0.75rem; }
+    .lc-handout h4 { font-family: var(--font-ui); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin: 1.25rem 0 0.5rem; }
+    .lc-handout ul { list-style: none; padding: 0; }
+    .lc-handout ul li { font-size: 0.9rem; padding: 0.4rem 0 0.4rem 1.25rem; border-bottom: 1px solid rgba(29,107,120,0.1); position: relative; }
+    .lc-handout ul li:last-child { border-bottom: none; }
+    .lc-handout ul li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-size: 0.8rem; }
+    /* INTEL BRIEF */
+    .lc-stream { border-left: 3px solid var(--teal); padding: 1.25rem 1.5rem; margin: 1.25rem 0; background: var(--white); }
+    .lc-stream.rj { border-left-color: var(--blush); }
+    .lc-stream-label { font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; display: block; }
+    .lc-stream.rj .lc-stream-label { color: var(--muted); }
+    .lc-stream h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--espresso); margin-bottom: 0.5rem; }
+    /* FOOTER */
+    .lc-footer { background: var(--espresso); border-top: 3px solid var(--teal); padding: 3rem 2rem 2rem; }
+    .lc-footer-inner { max-width: 1100px; margin: 0 auto; }
+    .lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 1.5rem; }
+    .lc-footer-brand-mark { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.3rem; }
+    .lc-footer-brand-mark em { font-style: normal; color: var(--teal); }
+    .lc-footer-brand-desc { font-size: 0.82rem; line-height: 1.72; color: rgba(251,245,255,0.28); margin-top: 0.75rem; }
+    .lc-footer-col h5 { font-family: var(--font-ui); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,245,255,0.22); margin-bottom: 1rem; }
+    .lc-footer-col ul { list-style: none; padding: 0; }
+    .lc-footer-col ul li a { font-size: 0.8rem; color: rgba(251,245,255,0.35); text-decoration: none; display: block; padding: 0.25rem 0; }
+    .lc-footer-col ul li a:hover { color: var(--teal); }
+    .lc-footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bottom p { font-family: var(--font-ui); font-size: 0.56rem; color: rgba(251,245,255,0.2); letter-spacing: 0.08em; text-transform: uppercase; }
+    @media (max-width: 900px) { .lc-nav-toggle { display: flex; } .lc-nav-links { display: none; } .lc-nav-links.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); padding: 1.5rem 2rem; } .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+    @media (max-width: 640px) { .lc-body, .lc-header-inner { padding-left: 1.25rem; padding-right: 1.25rem; } .lc-red-flag-grid { grid-template-columns: 1fr; } .lc-footer-top { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+
+<header class="lc-header">
+  <div class="lc-header-inner">
+    <div class="lc-logo">
+      <div class="lc-mark">LC</div>
+      <div class="lc-wordmark">Labora<br>Collective</div>
+    </div>
+    <div class="lc-pub-tag">
+      <span>Clinical Partner Network &middot; Doula Edition</span>
+    </div>
+    <h1 class="lc-pub-title">Clinical Partner Kit</h1>
+    <p class="lc-pub-subtitle">Clinical intelligence for the people in the room when it matters most.</p>
+    <div class="lc-accent-bar"><div></div><div></div><div></div></div>
+    <div class="lc-issue-meta">
+      <span>March 2026</span>
+      <span>&middot;</span>
+      <span>Doula Edition &mdash; v1.0</span>
+      <span>&middot;</span>
+      <span>For Masters of Maternity</span>
+    </div>
+  </div>
+</header>
+
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women&rsquo;s Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="lc-body">
+  <div style="padding-top: 3rem;">
+
+    <!-- WELCOME -->
+    <div class="lc-welcome">
+      <span class="lc-section-label">For the Masters of Maternity Community &mdash; March 27, 2026</span>
+      <h2>A gift from Dr. Yamicia Connor &amp; The Labora Collective</h2>
+      <p>You are the people in the room when it matters most. The Labora Collective exists because of that truth. This kit is built from the same clinical intelligence we use in practice &mdash; yours to use, reference, and share with your clients.</p>
+      <p>Inside: red flag cards for the conditions that kill, step-by-step escalation pathways, visit question sets, client education handouts, and a monthly intelligence brief. All of it translated from peer-reviewed research into the language of birthwork.</p>
+      <div class="welcome-sig">&mdash; Welcome to the network.</div>
+    </div>
+
+    <!-- WHAT'S INSIDE -->
+    <span class="lc-section-label">What&rsquo;s Inside</span>
+    <h2>Your Clinical Intelligence Toolkit</h2>
+    <p>As a doula, you sit at the intersection of clinical care and human experience. You see what providers miss. You hear what patients can&rsquo;t say in a 12-minute appointment. You are the continuity when the system offers fragments. This kit exists because that role deserves clinical intelligence &mdash; not dumbed-down pamphlets, but real, evidence-based tools translated for how you actually work.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
+      <div style="background:var(--teal-light);border-left:3px solid var(--teal);padding:1.1rem 1.25rem;">
+        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">Red Flag Cards</div>
+        <p style="font-size:0.88rem;margin:0;line-height:1.6;">The conditions that kill &mdash; and the signs that appear before they do.</p>
+      </div>
+      <div style="background:var(--teal-light);border-left:3px solid var(--teal);padding:1.1rem 1.25rem;">
+        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;">Escalation Pathways</div>
+        <p style="font-size:0.88rem;margin:0;line-height:1.6;">Step-by-step protocols for when something isn&rsquo;t right and the system isn&rsquo;t responding.</p>
+      </div>
+      <div style="background:var(--gold-light);border-left:3px solid var(--gold);padding:1.1rem 1.25rem;">
+        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">Visit Question Sets</div>
+        <p style="font-size:0.88rem;margin:0;line-height:1.6;">Exact questions to ask providers on your client&rsquo;s behalf at every key visit.</p>
+      </div>
+      <div style="background:var(--blush-light);border-left:3px solid var(--blush);padding:1.1rem 1.25rem;">
+        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem;">Client Handouts</div>
+        <p style="font-size:0.88rem;margin:0;line-height:1.6;">Materials to walk through with your client or hand them to take home.</p>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 2: RED FLAG CARDS -->
+    <span class="lc-section-label">Section 2</span>
+    <h2>Red Flag Cards</h2>
+    <p>The conditions that kill &mdash; and the signs that show up before they do. Keep these accessible during every client interaction.</p>
+
+    <div class="lc-red-flag">
+      <div class="lc-red-flag-badge">Red Flag Card</div>
+      <h3>Postpartum Hypertension</h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem;">Source: AJOG MFM, January 2026 &nbsp;&middot;&nbsp; Women on labetalol had 2.5&times; the odds of hospital readmission vs. nifedipine</p>
+      <ul>
+        <li>Blood pressure readings above 140/90 at any home check</li>
+        <li>Headache that doesn&rsquo;t respond to Tylenol or ibuprofen</li>
+        <li>Vision changes &mdash; blurry, spots, or double vision</li>
+        <li>Severe pain in the upper belly, especially right side</li>
+        <li>Rapid swelling of the face or hands (not just feet)</li>
+        <li>Chest pain or shortness of breath</li>
+        <li><strong>BP over 160/110 at any reading = go to ER immediately</strong></li>
+      </ul>
+      <div class="lc-red-flag-grid">
+        <div class="lc-red-flag-col urgent">
+          <h4>Call Provider Same Day</h4>
+          <p>BP over 150 with any symptoms. Readings consistently above 140 despite medication.</p>
+        </div>
+        <div class="lc-red-flag-col emergency">
+          <h4>ER &mdash; Do Not Wait</h4>
+          <p>BP over 160/110. Severe headache with vision changes. Chest pain. Difficulty breathing.</p>
+        </div>
+      </div>
+      <div class="lc-doula-note">Ask your client which BP medication she was discharged on. If it&rsquo;s labetalol, she has 2.5&times; the odds of readmission compared to nifedipine. Encourage her to ask her provider about switching. Make sure she has an arm-cuff blood pressure monitor and is checking 3&times; daily.</div>
+    </div>
+
+    <div class="lc-red-flag">
+      <div class="lc-red-flag-badge">Red Flag Card</div>
+      <h3>Preeclampsia Warning Signs</h3>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem;">Source: The Lancet, January 2026 &nbsp;&middot;&nbsp; Planned early-term birth reduced preeclampsia incidence by 30% in high-risk patients</p>
+      <ul>
+        <li>Sudden, severe headache that won&rsquo;t go away</li>
+        <li>Visual disturbances &mdash; spots, flashing lights, or blurry vision</li>
+        <li>Pain in the upper right abdomen or below the ribs</li>
+        <li>Sudden swelling of face, hands, or feet (especially asymmetric)</li>
+        <li>Nausea or vomiting starting suddenly in the 2nd or 3rd trimester</li>
+        <li>Feeling of extreme restlessness or anxiety &mdash; &ldquo;something is wrong&rdquo;</li>
+        <li><strong>Seizure activity = call 911 immediately</strong></li>
+      </ul>
+      <div class="lc-red-flag-grid">
+        <div class="lc-red-flag-col urgent">
+          <h4>Call Provider Now</h4>
+          <p>Any combination of headache + vision changes. Upper right belly pain with nausea. Sudden face swelling.</p>
+        </div>
+        <div class="lc-red-flag-col emergency">
+          <h4>Call 911</h4>
+          <p>Seizure. Loss of consciousness. Inability to speak or move one side. Chest pain with breathing difficulty.</p>
+        </div>
+      </div>
+      <div class="lc-doula-note">Preeclampsia can develop <em>during pregnancy OR up to 6 weeks postpartum</em>. Many clients think the risk disappears after delivery &mdash; it doesn&rsquo;t. Trust her when she says &ldquo;something feels wrong.&rdquo; Maternal instinct is a clinical indicator.</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 3: ESCALATION PATHWAYS -->
+    <span class="lc-section-label">Section 3</span>
+    <h2>Escalation Pathways</h2>
+    <p>When something isn&rsquo;t right and the system isn&rsquo;t responding &mdash; here is exactly what to do.</p>
+
+    <div class="lc-callout" style="margin-bottom:1.5rem;">
+      <span class="lc-callout-label">Preeclampsia: When Your Client&rsquo;s Concerns Are Dismissed</span>
+      <p>Follow these steps in order. Document everything.</p>
+    </div>
+
+    <div class="lc-step">
+      <div class="lc-step-num">1</div>
+      <div class="lc-step-body"><strong>Document the symptoms</strong><span>Write down exactly what your client is experiencing: specific symptoms, when they started, severity 1&ndash;10. Take photos of swelling. Record BP readings with timestamps.</span></div>
+    </div>
+    <div class="lc-step">
+      <div class="lc-step-num">2</div>
+      <div class="lc-step-body"><strong>Use the clinical language</strong><span>Say: &ldquo;My client is presenting with [headache / visual changes / epigastric pain / edema]. Given her risk profile, I&rsquo;m concerned about hypertensive disorder. Can we get a blood pressure and urine protein check?&rdquo;</span></div>
+    </div>
+    <div class="lc-step">
+      <div class="lc-step-num">3</div>
+      <div class="lc-step-body"><strong>Request specific tests by name</strong><span>Ask for: blood pressure check, urine dipstick for protein, CBC, comprehensive metabolic panel (CMP), and liver enzymes (AST/ALT). You are allowed to request these.</span></div>
+    </div>
+    <div class="lc-step">
+      <div class="lc-step-num">4</div>
+      <div class="lc-step-body"><strong>If dismissed: escalate within the facility</strong><span>Say: &ldquo;I&rsquo;d like to speak with the charge nurse&rdquo; or &ldquo;I&rsquo;d like to request a second clinical opinion.&rdquo; You can also say: &ldquo;I&rsquo;d like this refusal to evaluate documented in the chart.&rdquo;</span></div>
+    </div>
+    <div class="lc-step">
+      <div class="lc-step-num">5</div>
+      <div class="lc-step-body"><strong>If still dismissed: go to L&amp;D triage directly</strong><span>Take her to labor and delivery triage. Say: &ldquo;She is [X weeks / X days postpartum] with [symptoms]. She needs evaluation for preeclampsia.&rdquo;</span></div>
+    </div>
+    <div class="lc-step">
+      <div class="lc-step-num">6</div>
+      <div class="lc-step-body"><strong>After the encounter: document everything</strong><span>Write down who you spoke to, what they said, what tests were ordered or refused, and the outcome. Your notes may be the only record of what happened. They matter.</span></div>
+    </div>
+
+    <div class="lc-advocacy" style="margin-top:2rem;">
+      <span class="lc-section-label">Protecting Clients Facing Bias or Barriers</span>
+      <p>Black, Indigenous, undocumented, young, low-income, and trans clients face additional barriers in healthcare settings. Your presence is protective. Use these phrases:</p>
+      <p>&ldquo;My client has questions she&rsquo;d like answered before we proceed.&rdquo; &nbsp;&middot;&nbsp; &ldquo;Can you walk us through the consent form together?&rdquo; &nbsp;&middot;&nbsp; &ldquo;You have the right to ask questions. You don&rsquo;t have to agree to anything you don&rsquo;t understand.&rdquo;</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 4: VISIT QUESTION SETS -->
+    <span class="lc-section-label">Section 4</span>
+    <h2>Visit Question Sets</h2>
+    <p>Exact questions to ask providers on your client&rsquo;s behalf &mdash; because the right question at the right moment changes outcomes.</p>
+
+    <h3>At Hospital Discharge (Postpartum)</h3>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;Which blood pressure medication are you prescribing? I&rsquo;ve seen data that nifedipine may have better outcomes postpartum than labetalol. Can we discuss which is the best option?&rdquo;</div>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;What blood pressure readings should prompt a call versus a visit versus going to the ER? Can you give us specific numbers?&rdquo;</div>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;Can we schedule a follow-up within one to two weeks instead of waiting six weeks? Her blood pressure was elevated.&rdquo;</div>
+    <div class="lc-question client"><span class="lc-question-label client">Ask Your Client</span>&ldquo;Do you feel like you got clear answers today? Do you want me to write down what the doctor said so you can refer back to it?&rdquo;</div>
+
+    <h3 style="margin-top:2rem;">Gestational Diabetes Diagnosis</h3>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;Can you walk me through what my glucose targets are, how to interpret my readings, and at what point we&rsquo;d consider medication? I want to understand the plan, not just the numbers.&rdquo;</div>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;I&rsquo;ve seen that continuous glucose monitoring can improve outcomes in gestational diabetes. Is that an option for me?&rdquo;</div>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;Given my gestational diabetes, what&rsquo;s our plan for delivery timing? I&rsquo;ve heard that outcomes may worsen after 39 weeks for diet-controlled GDM.&rdquo;</div>
+
+    <h3 style="margin-top:2rem;">Delivery Planning (Third Trimester)</h3>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;If labor stalls, under what specific clinical conditions do you recommend vacuum or forceps versus offering a cesarean section?&rdquo;</div>
+    <div class="lc-question"><span class="lc-question-label">Ask the Provider</span>&ldquo;Can you explain the long-term pelvic floor risks associated with each delivery option so my client can make an informed decision?&rdquo;</div>
+    <div class="lc-question client"><span class="lc-question-label client">Ask Your Client</span>&ldquo;What matters most to you about how this birth goes? Let&rsquo;s make sure the medical team knows your priorities &mdash; not just their protocols.&rdquo;</div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 5: CLIENT EDUCATION HANDOUTS -->
+    <span class="lc-section-label">Section 5</span>
+    <h2>Client Education Handouts</h2>
+    <p>Materials to walk through with your client or hand them to take home. Plain language, clinically accurate.</p>
+
+    <div class="lc-handout">
+      <h3>Postpartum Blood Pressure: What You Need to Know</h3>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Doula Talking Points: Walk your client through this during a postpartum visit.</p>
+      <h4>What&rsquo;s happening in your body</h4>
+      <p>After delivery, your cardiovascular system is readjusting. Blood volume drops, hormones shift, and blood pressure can spike &mdash; sometimes higher than during pregnancy. The medication you were given at discharge is supposed to keep your blood pressure controlled while this transition happens.</p>
+      <h4>What to do at home</h4>
+      <ul>
+        <li>Check your blood pressure 3 times daily: morning, midday, evening</li>
+        <li>Use an arm cuff, not a wrist monitor</li>
+        <li>Sit calmly for 15 minutes before checking</li>
+        <li>Log every reading with date and time &mdash; bring this to every visit</li>
+        <li>Under 140 = continue monitoring. Over 150 with symptoms = call same day. Over 160/110 = emergency.</li>
+      </ul>
+      <div class="lc-doula-note">Check in with your client about her medication. If she&rsquo;s on labetalol and her readings are creeping up, encourage her to call her provider and ask about switching to nifedipine. Don&rsquo;t wait for the 6-week visit. The data says the first two weeks are when readmissions happen.</div>
+    </div>
+
+    <div class="lc-handout">
+      <h3>Gestational Diabetes: What You Need to Know</h3>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Doula Talking Points: Share this when your client receives a GDM diagnosis.</p>
+      <h4>What&rsquo;s happening in your body</h4>
+      <p>Your placenta produces hormones that make your cells resistant to insulin. This isn&rsquo;t something you caused &mdash; it&rsquo;s a physiological response to pregnancy. Gestational diabetes is a placental disease, not a lifestyle diagnosis.</p>
+      <h4>What matters most</h4>
+      <ul>
+        <li>Ask for specific glucose targets &mdash; not just &ldquo;keep it controlled&rdquo;</li>
+        <li>Ask about continuous glucose monitoring (CGM) &mdash; it reduces large-baby complications</li>
+        <li>Don&rsquo;t accept &ldquo;just watch your diet&rdquo; as a complete plan</li>
+        <li>Ask about delivery timing around 39 weeks &mdash; outcomes worsen after that for diet-controlled GDM</li>
+        <li>Get screened for type 2 diabetes after delivery &mdash; GDM is a risk factor</li>
+      </ul>
+      <div class="lc-doula-note">Your client may feel guilt or shame about a GDM diagnosis. Reinforce: this is placental physiology, not willpower. Help her advocate for a clear delivery plan, not just glucose monitoring.</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 6: MONTHLY INTELLIGENCE BRIEF -->
+    <span class="lc-section-label">Section 6</span>
+    <h2>Monthly Intelligence Brief</h2>
+    <p>What&rsquo;s new in OB that affects your clients &mdash; delivered monthly, written for doulas. One key story per stream, plus this month&rsquo;s clinical red flag.</p>
+
+    <div class="lc-stream">
+      <span class="lc-stream-label">OB Stream &mdash; Maternal Safety &amp; Escalation</span>
+      <h3>Delayed cord clamping after cesarean reduces preterm mortality</h3>
+      <p>New AJOG data confirms that delayed cord clamping after cesarean delivery of extremely preterm infants (&lt;29 weeks) reduces risk of mortality or severe brain injury compared to immediate clamping. If your client is facing a preterm cesarean, make sure her birth plan specifically requests delayed cord clamping. Use the language: &ldquo;We are requesting delayed cord clamping per current AJOG evidence for preterm deliveries.&rdquo;</p>
+    </div>
+
+    <div class="lc-stream rj">
+      <span class="lc-stream-label">Reproductive Justice Stream &mdash; Systems &amp; Policy</span>
+      <h3>Duplicate medical records are a patient safety crisis &mdash; and your clients are most at risk</h3>
+      <p>BMJ Quality &amp; Safety data shows that 5&ndash;10% of hospital records are accidentally duplicated, and patients with split charts are nearly 5&times; more likely to die in-hospital. Clients who have changed names &mdash; post-marriage, post-divorce, trans clients, domestic violence survivors &mdash; face dramatically elevated risk. Before every admission, ask your client if she has ever received care at this hospital under a different name or address. If yes, ask the team to confirm her chart is consolidated. One sentence. Every time.</p>
+    </div>
+
+    <div style="background:var(--gold-light);border-left:3px solid var(--gold);padding:1.1rem 1.5rem;margin:1.25rem 0;">
+      <span style="font-family:var(--font-ui);font-size:0.5rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.75rem;">Also in This Brief</span>
+      <p style="font-size:0.9rem;margin-bottom:0.5rem;"><strong>GLP-1 drugs + endometrial cancer:</strong> JAMA Network Open (440,000 women) &mdash; GLP-1 medications combined with progestin therapy reduced endometrial cancer risk by 66%. Relevant for clients with abnormal bleeding who are on GLP-1s for weight management.</p>
+      <p style="font-size:0.9rem;margin:0;"><strong>Tirzepatide + HRT:</strong> The Lancet reports postmenopausal women on both tirzepatide and hormone therapy lost significantly more weight than tirzepatide alone. The hormonal connection matters for your midlife clients.</p>
+    </div>
+
+    <div style="background:var(--rose-light);border:1.5px solid var(--rose-mid);padding:1.25rem 1.5rem;margin:1.25rem 0;position:relative;">
+      <div style="position:absolute;top:-11px;left:1.25rem;background:var(--rose);color:white;font-family:var(--font-ui);font-size:0.5rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.2rem 0.75rem;">This Month&rsquo;s Red Flag</div>
+      <h3 style="color:var(--rose);margin-top:0.5rem;font-size:1.25rem;">Postpartum BP medication matters more than you think</h3>
+      <p>Women discharged on labetalol have 2.5&times; the odds of hospital readmission for hypertension compared to those on nifedipine. Source: AJOG MFM, January 2026. If your postpartum client is on labetalol and her readings are not coming down, this conversation cannot wait until the 6-week visit.</p>
+      <p style="font-size:0.88rem;color:var(--muted);margin:0;font-style:italic;">Watch for: BP over 150 in the first two weeks postpartum &mdash; headache that doesn&rsquo;t respond to Tylenol &mdash; face or hand swelling. Any of these = call the provider same day.</p>
+    </div>
+
+    <div class="lc-callout" style="text-align:center;margin-top:1.5rem;">
+      <span class="lc-callout-label">Go Deeper</span>
+      <p>Full intelligence reports available at <strong>laboracollective.com</strong> &mdash; Members receive the complete monthly briefing from Labora Rounds, the Collective&rsquo;s clinical research engine.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- JOIN / CTA BLOCK -->
+    <div style="background:var(--espresso);padding:2.5rem;margin:2rem 0;text-align:center;">
+      <span class="lc-section-label" style="color:var(--teal-light);justify-content:center;display:block;">Clinical Partners Network</span>
+      <h2 style="font-family:var(--font-display);font-size:1.9rem;font-weight:300;color:var(--bg-open);margin:0.5rem 0 1rem;">Clinical intelligence for the people who show up.</h2>
+      <p style="color:rgba(251,245,255,0.7);font-size:0.93rem;max-width:480px;margin:0 auto 1.5rem;line-height:1.75;">This kit is part of the Labora Collective&rsquo;s Clinical Partners Network &mdash; a resource program for doulas, community health workers, and maternal health advocates working on the frontlines.</p>
+      <a href="/join" style="display:inline-block;background:var(--teal);color:white;font-family:var(--font-ui);font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 2rem;text-decoration:none;margin-bottom:0.75rem;">Join the Collective</a>
+      <p style="color:rgba(251,245,255,0.3);font-size:0.75rem;margin:0;">Questions? Contact <a href="mailto:yconnor@diosara.com" style="color:var(--teal-light);">yconnor@diosara.com</a></p>
+    </div>
+
+  </div><!-- end lc-body content -->
+</main>
+
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div>
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,245,255,0.25);margin-bottom:0.5rem;">A Diosa Ara Initiative</div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women&rsquo;s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women&rsquo;s Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
+          <li><a href="/intelligence/labora-rounds/weekly/">Weekly Updates</a></li>
+          <li><a href="/the-signal/">The Signal</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy" style="color:rgba(251,245,255,0.2);">Privacy</a></p>
+      <p><a href="https://diosara.com" style="color:rgba(251,245,255,0.2);">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.querySelector('.lc-nav-toggle');
+const links = document.querySelector('.lc-nav-links');
+if (toggle && links) {
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+}
+</script>
+</body>
+</html>
