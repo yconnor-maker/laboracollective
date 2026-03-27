@@ -4,11 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="description" content="Labora Collective Newsletters — Signal Monday, Signal Wednesday, and Briefing Friday. Weekly women's health intelligence from a practicing OB-GYN.">
-<title>Newsletters — Labora Collective</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<meta name="description" content="Newsletters — The Signal, Viva Voce, and the Monthly Digest. Physician-led intelligence for women's health.">
+<title>Newsletters &mdash; Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 :root {
+  --espresso:#362511; --espresso-mid:#4A3218; --body-text:#2C1A0E; --muted:#8A7060;
+  --copper:#D48662; --copper-light:#E8A882; --blush:#EABAB0; --blush-light:#F5DDD9;
+  --rose:#E7817F; --rose-light:#FAEAEA; --teal:#1D6B78; --teal-light:#E0F2F4;
+  --forest:#2E5240; --forest-light:#E4EFE8; --gold:#9E7D0A; --gold-light:#F5EDCC;
+  --bg-warm:#F7F3EE; --bg-open:#FBF5FF; --white:#FFFFFF;
+  --accent:#D48662; --accent-light:#F5DDD9;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;color-scheme:light only;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:var(--body-text);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+
+    .lc-nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .lc-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .lc-nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
+    .lc-nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--bg-open); letter-spacing: -0.01em; line-height: 1; }
+    .lc-nav-mark em { font-style: normal; color: var(--copper); }
+    .lc-nav-org { font-family: 'DM Sans', sans-serif; font-size: 0.5rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.28); line-height: 1.3; border-left: 1px solid rgba(251,245,255,0.1); padding-left: 0.65rem; }
+    .lc-nav-org a { color: rgba(251,245,255,0.28); text-decoration: none; transition: color 0.15s; }
+    .lc-nav-org a:hover { color: var(--copper); }
+    .lc-nav-links { display: flex; align-items: center; gap: 0; list-style: none; margin: 0; padding: 0; }
+    .lc-nav-links li a { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.45); text-decoration: none; padding: 0 0.85rem; height: 56px; line-height: 56px; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .lc-nav-links li a:hover { color: var(--copper); }
+    .lc-nav-links li a.lc-nav-active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+    .lc-nav-cta { display: inline-block; background: var(--copper); color: var(--white); padding: 0.4rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.15s; margin-left: 0.5rem; }
+    .lc-nav-cta:hover { background: var(--copper-light); color: var(--espresso); }
+    .lc-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
+    .lc-nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(251,245,255,0.5); transition: transform 0.2s, opacity 0.2s; }
+
+
   --espresso:     #362511; --espresso-mid: #4A3218;
   --body-text:    #2C1A0E; --muted:        #8A7060;
   --copper:       #D48662; --copper-light: #E8A882;
@@ -24,19 +53,6 @@ html { scroll-behavior:smooth; color-scheme:light only; }
 body { font-family:'DM Sans',sans-serif; background:var(--bg-warm); color:var(--body-text); line-height:1.8; -webkit-font-smoothing:antialiased; }
 
 /* ── NAV ── */
-.nav { background:var(--espresso); border-bottom:1px solid rgba(255,255,255,0.06); position:sticky; top:0; z-index:100; }
-.nav-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
-.nav-logo img { height:34px; width:auto; display:block; }
-.nav-breadcrumb { font-size:0.54rem; color:rgba(251,245,255,0.18); letter-spacing:0.1em; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem; }
-.nav-breadcrumb a { color:rgba(251,245,255,0.28); text-decoration:none; transition:color 0.15s; }
-.nav-breadcrumb a:hover { color:var(--copper); }
-.nav-breadcrumb .sep { opacity:0.3; }
-.nav-links { display:flex; align-items:center; gap:1.75rem; list-style:none; }
-.nav-links li a { font-size:0.62rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(251,245,255,0.38); text-decoration:none; transition:color 0.15s; }
-.nav-links li a:hover { color:var(--copper); }
-.nav-links li a.active { color:var(--copper); }
-.nav-cta { display:inline-block; background:var(--gold-light); color:var(--espresso); padding:0.36rem 1rem; font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); transition:background 0.15s; }
-.nav-cta:hover { background:var(--copper-light); }
 
 /* ── HEADER ── */
 .header { background:var(--espresso); border-bottom:1px solid rgba(255,255,255,0.06); }
@@ -169,7 +185,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg-warm); color:var(--
   .pub-card { grid-template-columns:5px 1fr; }
   .pub-card-right { display:none; }
   .ae-inner { grid-template-columns:1fr; }
-  .nav-links { display:none; }
 }
 @media (max-width:640px) {
   .header-inner, .publications, .comparison, .access-explainer { padding-left:1.25rem; padding-right:1.25rem; }
@@ -180,292 +195,121 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg-warm); color:var(--
   .attr-col { padding:0.65rem 0; border-bottom:1px solid var(--blush-light); }
   .attr-col:last-child { border-bottom:none; }
 }
+
+
+
+    .lc-footer { background: var(--espresso); border-top: 3px solid var(--copper); padding: 3.5rem 2rem 2rem; }
+    .lc-footer-inner { max-width: 1100px; margin: 0 auto; }
+    .lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
+    .lc-footer-brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.3rem; }
+    .lc-footer-brand-mark em { font-style: normal; color: var(--copper); }
+    .lc-footer-brand-org { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(251,245,255,0.25); margin-bottom: 1rem; }
+    .lc-footer-brand-org a { color: rgba(251,245,255,0.25); text-decoration: none; }
+    .lc-footer-brand-desc { font-size: 0.82rem; line-height: 1.72; color: rgba(251,245,255,0.28); }
+    .lc-footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,245,255,0.22); margin-bottom: 1rem; }
+    .lc-footer-col ul { list-style: none; padding: 0; }
+    .lc-footer-col ul li { padding: 0.3rem 0; }
+    .lc-footer-col ul li a { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: rgba(251,245,255,0.35); text-decoration: none; transition: color 0.15s; }
+    .lc-footer-col ul li a:hover { color: var(--copper); }
+    .lc-footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bottom p { font-family: 'DM Sans', sans-serif; font-size: 0.56rem; color: rgba(251,245,255,0.2); letter-spacing: 0.08em; text-transform: uppercase; }
+    .lc-footer-bottom a { color: rgba(251,245,255,0.2); text-decoration: none; }
+    .lc-footer-bottom a:hover { color: var(--copper); }
+
+
+    @media (max-width: 900px) {
+      .lc-nav-toggle { display: flex; }
+      .lc-nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); flex-direction: column; padding: 1.5rem 2rem; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+      .lc-nav-links.open { display: flex; }
+      .lc-nav-links li a { height: auto; line-height: 1; padding: 0.8rem 0; border-bottom: none; font-size: 0.7rem; }
+      .lc-nav-cta { margin: 0.8rem 0 0 0; text-align: center; display: block; }
+      .lc-nav-org { display: none; }
+      .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 640px) {
+      .lc-footer-top { grid-template-columns: 1fr; }
+    }
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <a href="/"><img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective"></a>
-    </div>
-    <div class="nav-breadcrumb">
-      <a href="/">Home</a><span class="sep">›</span>Newsletters
-    </div>
-    <ul class="nav-links">
-      <li><a href="/newsletters/" class="active">Newsletters</a></li>
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/" class="lc-nav-active">The Signal</a></li>
+      <li><a href="/womens-health/">Women&#39;s Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
       <li><a href="/intelligence/">Intelligence</a></li>
-      <li><a href="/intelligence/labora-rounds/">Labora Rounds</a></li>
-      <li><a href="/join" class="nav-cta">Join →</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
-</nav>
-
-<!-- HEADER -->
-<header class="header">
-  <div class="header-inner">
-    <div class="header-logo">
-      <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-light-peach.png" alt="Labora Collective" style="height:44px;width:auto;">
+</nav><p>Newsletter hub</p><footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/weekly/">Weekly Updates</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/start-here">Start Here</a></li>
+        </ul>
+      </div>
     </div>
-    <span class="header-super">Labora Collective · Publications</span>
-    <h1 class="header-title">Newsletters</h1>
-    <p class="header-deck">Three publications. A weekly rhythm that covers obstetrics on Monday, GYN and reproductive justice on Wednesday, and a cross-cutting clinical, political, and infrastructure briefing on Friday. The Signal is free. The Briefing is for members.</p>
-    <div class="pub-schedule">
-      <div class="sched-cell">
-        <span class="sched-day copper">Monday</span>
-        <div class="sched-pub">The Labora Signal</div>
-        <div class="sched-sub">Yemaya's Circle of Care</div>
-        <span class="sched-access access-free">Free</span>
-      </div>
-      <div class="sched-cell">
-        <span class="sched-day rose">Wednesday</span>
-        <div class="sched-pub">The Labora Signal</div>
-        <div class="sched-sub">Her Health Matters</div>
-        <span class="sched-access access-free">Free</span>
-      </div>
-      <div class="sched-cell">
-        <span class="sched-day gold">Friday</span>
-        <div class="sched-pub">The Labora Briefing</div>
-        <div class="sched-sub">Clinical · Political · Infrastructure</div>
-        <span class="sched-access access-member">Member</span>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- PUBLICATIONS -->
-<section class="publications">
-  <div class="publications-inner">
-    <span class="section-label" style="color:var(--copper);">Three Publications</span>
-    <h2 class="section-hed">Weekly rhythm. Distinct editorial identity. One intelligence layer.</h2>
-
-    <div class="pub-cards">
-
-      <!-- Signal Monday -->
-      <div class="pub-card">
-        <div class="pub-card-stripe copper"></div>
-        <div class="pub-card-body">
-          <div class="pc-header">
-            <span class="pc-day copper">Every Monday</span>
-            <span class="pc-badge badge-free">Free</span>
-          </div>
-          <div class="pc-name">The Labora Signal</div>
-          <div class="pc-sub">Yemaya's Circle of Care</div>
-          <p class="pc-desc">Weekly obstetrical intelligence. Dr. Connor's direct voice, three stories with clinical translation, a reader question answered without hedging, and one action for the week. The Monday read that prepares you for whatever your patients bring.</p>
-          <div class="pc-sections">
-            <span class="pc-section">YC Voice</span>
-            <span class="pc-section">Three Stories</span>
-            <span class="pc-section">What It Means</span>
-            <span class="pc-section">Ask Dr. Connor</span>
-            <span class="pc-section">One Action</span>
-            <span class="pc-section">From Labora</span>
-          </div>
-        </div>
-        <div class="pub-card-right">
-          <div></div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.85rem;">
-            <a href="/newsletters/ob-signal/" class="pc-cta-primary copper">Subscribe Free →</a>
-            <a href="/newsletters/ob-signal/" class="pc-cta-secondary">View publication page</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Signal Wednesday -->
-      <div class="pub-card">
-        <div class="pub-card-stripe rose"></div>
-        <div class="pub-card-body">
-          <div class="pc-header">
-            <span class="pc-day rose">Every Wednesday</span>
-            <span class="pc-badge badge-free">Free</span>
-          </div>
-          <div class="pc-name">The Labora Signal</div>
-          <div class="pc-sub">Her Health Matters</div>
-          <p class="pc-desc">Weekly GYN and reproductive justice intelligence. Same structure as Signal Monday — different domain. With a dedicated RJ Spotlight section in every issue covering the intersection of reproductive rights, criminalization, and access. The Wednesday read that takes reproductive justice as seriously as the clinical evidence.</p>
-          <div class="pc-sections">
-            <span class="pc-section">YC Voice</span>
-            <span class="pc-section">Three Stories</span>
-            <span class="pc-section" style="background:var(--rose-light);color:var(--rose);border-color:var(--rose);">RJ Spotlight</span>
-            <span class="pc-section">What It Means</span>
-            <span class="pc-section">One Action</span>
-            <span class="pc-section">From Labora</span>
-          </div>
-        </div>
-        <div class="pub-card-right">
-          <div></div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.85rem;">
-            <a href="/newsletters/gyn-signal/" class="pc-cta-primary rose">Subscribe Free →</a>
-            <a href="/newsletters/gyn-signal/" class="pc-cta-secondary">View publication page</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Briefing Friday -->
-      <div class="pub-card">
-        <div class="pub-card-stripe gold"></div>
-        <div class="pub-card-body">
-          <div class="pc-header">
-            <span class="pc-day gold">Every Friday</span>
-            <span class="pc-badge badge-member">Member</span>
-          </div>
-          <div class="pc-name">The Labora Briefing</div>
-          <div class="pc-sub">Clinical · Political · Infrastructure</div>
-          <p class="pc-desc">The week's complete intelligence across three pillars. Clinical developments that change practice, political and legal movements that threaten or protect care, and the infrastructure shifts — funding, workforce, delivery — that determine what's possible. The Friday read that prepares you for Monday. Available to Diosa Insider and Labora Luminary members.</p>
-          <div class="pc-sections">
-            <span class="pc-section">Intelligence Lead</span>
-            <span class="pc-section" style="background:var(--teal-light);color:var(--teal);border-color:var(--teal);">Pillar: Clinical</span>
-            <span class="pc-section" style="background:var(--rose-light);color:var(--rose);border-color:var(--rose);">Pillar: Political</span>
-            <span class="pc-section" style="background:var(--blush-light);color:var(--copper);border-color:var(--blush);">Pillar: Infrastructure</span>
-            <span class="pc-section">In Your District</span>
-            <span class="pc-section">Forward Look</span>
-          </div>
-        </div>
-        <div class="pub-card-right">
-          <div></div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.85rem;">
-            <a href="/join" class="pc-cta-primary gold">Become a Member →</a>
-            <a href="/newsletters/briefing/" class="pc-cta-secondary">View publication page</a>
-          </div>
-        </div>
-      </div>
-
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
-</section>
-
-<!-- COMPARISON TABLE -->
-<section class="comparison">
-  <div class="comparison-inner">
-    <span class="comp-label">Side by Side</span>
-    <h2 class="comp-hed">Which publication is right for you?</h2>
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th class="pub-col" style="width:180px;"></th>
-          <th class="copper">Signal Monday</th>
-          <th class="rose">Signal Wednesday</th>
-          <th class="gold">Briefing Friday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="row-label">Domain</td>
-          <td>OB &amp; Obstetrics</td>
-          <td>GYN &amp; Reproductive Justice</td>
-          <td>Cross-cutting — all domains</td>
-        </tr>
-        <tr>
-          <td class="row-label">Access</td>
-          <td><span class="yes">Free</span></td>
-          <td><span class="yes">Free</span></td>
-          <td>Diosa Insider · Luminary</td>
-        </tr>
-        <tr>
-          <td class="row-label">Frequency</td>
-          <td>Weekly, Monday</td>
-          <td>Weekly, Wednesday</td>
-          <td>Weekly, Friday</td>
-        </tr>
-        <tr>
-          <td class="row-label">YC Voice</td>
-          <td><span class="yes">✓</span></td>
-          <td><span class="yes">✓</span></td>
-          <td><span class="no">—</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">RJ Spotlight</td>
-          <td><span class="no">—</span></td>
-          <td><span class="yes">✓ Wednesday exclusive</span></td>
-          <td><span class="no">—</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">Ask Dr. Connor</td>
-          <td><span class="yes">✓</span></td>
-          <td><span class="no">—</span></td>
-          <td><span class="no">—</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">Three pillars</td>
-          <td><span class="no">—</span></td>
-          <td><span class="no">—</span></td>
-          <td><span class="yes">✓ Clinical · Political · Infra</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">In Your District</td>
-          <td><span class="no">—</span></td>
-          <td><span class="no">—</span></td>
-          <td><span class="yes">✓</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">Forward Look</td>
-          <td><span class="no">—</span></td>
-          <td><span class="no">—</span></td>
-          <td><span class="yes">✓ Specific dates &amp; deadlines</span></td>
-        </tr>
-        <tr>
-          <td class="row-label">Best for</td>
-          <td>OB clinicians, midwives, maternity advocates</td>
-          <td>GYN providers, RJ advocates, reproductive health orgs</td>
-          <td>Policy staff, researchers, campaign teams, senior clinicians</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- FREE VS MEMBER -->
-<section class="access-explainer">
-  <div class="ae-inner">
-    <div class="ae-cell">
-      <span class="ae-icon free">○</span>
-      <div class="ae-title">Free Subscriber</div>
-      <p class="ae-desc">The Signal — both Monday and Wednesday — is free, forever. No trial. No credit card. No expiration. Subscribe once and receive every issue in your inbox.</p>
-      <ul class="ae-list">
-        <li>Signal Monday — Yemaya's Circle of Care</li>
-        <li>Signal Wednesday — Her Health Matters</li>
-        <li>Access to all Labora Rounds Special Reports</li>
-        <li>Ask Dr. Connor section in Signal Monday</li>
-      </ul>
-      <a href="/newsletters/ob-signal/#subscribe" class="ae-cta free-cta">Subscribe to the Signal →</a>
-    </div>
-    <div class="ae-cell dark">
-      <span class="ae-icon member">◆</span>
-      <div class="ae-title">Diosa Insider Member</div>
-      <p class="ae-desc">Members receive everything in the free tier plus The Labora Briefing every Friday, the monthly Labora Digest, and the full member intelligence layer.</p>
-      <ul class="ae-list">
-        <li>Everything in the free tier</li>
-        <li>The Labora Briefing — every Friday</li>
-        <li>Monthly Labora Digest</li>
-        <li>Full domain report archive</li>
-        <li>Labora Luminary: + weekly Labora Rounds</li>
-      </ul>
-      <a href="/join" class="ae-cta member-cta">Become a Member →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ATTRIBUTION -->
-<div class="attribution">
-  <div class="attribution-logos">
-    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:38px;width:auto;">
-    <div class="attr-dot"></div>
-    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:34px;width:auto;opacity:0.65;">
-  </div>
-  <p class="attr-source">Newsletters · Labora Collective · A Diosa Ara Initiative</p>
-  <div class="attr-rule"></div>
-  <div class="attr-cols">
-    <div class="attr-col"><p><strong>Labora Collective</strong> publishes three newsletters covering women's health intelligence — clinical, political, and economic — from a practicing OB-GYN.</p></div>
-    <div class="attr-divider"></div>
-    <div class="attr-col"><p><strong>Diosa Ara</strong> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health.</p></div>
-  </div>
-  <div class="attr-rule"></div>
-  <div class="attr-links">
-    <a href="/">laboracollective.com</a><span class="dot">·</span>
-    <a href="/intelligence/">Intelligence</a><span class="dot">·</span>
-    <a href="https://diosara.com">diosara.com</a>
-  </div>
-</div>
-<div class="closer"><p>Labora Collective · A Diosa Ara Initiative</p></div>
-
+</footer>
+<script>
+const hamburger = document.querySelector('.lc-nav-toggle');
+const navLinks = document.querySelector('.lc-nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+}
+</script>
 </body>
 </html>
