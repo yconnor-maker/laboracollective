@@ -1,107 +1,23 @@
-<!-- ══ LC SHARED COMPONENT: Navigation Bar ══
-     Usage: Copy this <nav> block into any page.
-     Adjust logo src path based on page depth:
-       Root level:     src="assets/images/lc-logo-light-peach.png"
-       One level deep:  src="../assets/images/lc-logo-light-peach.png"
-       Two levels deep: src="../../assets/images/lc-logo-light-peach.png"
-     Or use absolute paths: src="/assets/images/lc-logo-light-peach.png"
+<!-- ══ LC SHARED COMPONENT: Canonical Navigation Bar ══
+     Locked as of March 26, 2026 (DECISIONS_LOCKED.md)
+     Nav items: The Signal · Women's Health · In Her Name · The Blueprint · Intelligence · Viva Voce · Join
 ══ -->
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <a href="/">
-        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
-      </a>
-    </div>
-    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="/#journals">Journals</a></li>
-      <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
-      <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
-      <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
-      <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
-      <li><a href="https://diosara.com">Diosa Ara</a></li>
-      <li><a href="https://laboracollective.substack.com/subscribe" class="nav-cta">Join →</a></li>
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
-
-<!-- NAV STYLES (include in <style> or external CSS) -->
-<!--
-.nav {
-  background: var(--espresso);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  position: sticky; top: 0; z-index: 100;
-}
-.nav-inner {
-  max-width: 1100px; margin: 0 auto;
-  padding: 0 2rem;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  height: 56px;
-}
-.nav-logo img { height: 36px; width: auto; display: block; }
-.nav-links {
-  display: flex; align-items: center; gap: 2rem;
-  list-style: none;
-}
-.nav-links li a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.66rem; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(251,245,255,0.45); text-decoration: none;
-  transition: color 0.15s;
-}
-.nav-links li a:hover { color: var(--copper); }
-.nav-cta {
-  display: inline-block;
-  background: var(--copper); color: var(--white);
-  padding: 0.4rem 1.1rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-.nav-cta:hover { background: var(--copper-light); color: var(--espresso); }
-
-/* Hamburger — mobile only */
-.nav-hamburger {
-  display: none; background: none; border: none; cursor: pointer;
-  flex-direction: column; gap: 4px; padding: 0.5rem;
-}
-.nav-hamburger span {
-  display: block; width: 20px; height: 2px;
-  background: rgba(251,245,255,0.5);
-  transition: transform 0.2s, opacity 0.2s;
-}
-@media (max-width: 900px) {
-  .nav-hamburger { display: flex; }
-  .nav-links {
-    display: none;
-    position: absolute; top: 56px; left: 0; right: 0;
-    background: var(--espresso);
-    flex-direction: column; padding: 1.5rem 2rem; gap: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .nav-links.open { display: flex; }
-}
--->
-
-<!-- NAV SCRIPT (include before </body>) -->
-<!--
-<script>
-  const hamburger = document.querySelector('.nav-hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('open');
-    });
-  }
-</script>
--->

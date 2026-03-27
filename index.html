@@ -52,7 +52,7 @@ body {
 /* ─────────────────────────────────────────────
    NAV
 ───────────────────────────────────────────── */
-.nav {
+.lc-nav {
   background: var(--espresso);
   border-bottom: 1px solid rgba(255,255,255,0.06);
   position: sticky; top: 0; z-index: 100;
@@ -676,7 +676,7 @@ body {
 /* ─────────────────────────────────────────────
    FOOTER
 ───────────────────────────────────────────── */
-.site-footer {
+.lc-footer {
   background: var(--espresso);
   padding: 3.5rem 2rem 2rem;
 }
@@ -1061,21 +1061,21 @@ body {
 <body>
 
 <!-- ══ NAV ══ -->
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <a href="/">
-        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
-      </a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="/#journals">Journals</a></li>
-      <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
-      <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
-      <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
-      <li><a href="/intelligence/labora-rounds/special-reports/">Labora Rounds</a></li>
-      <li><a href="https://diosara.com">Diosa Ara</a></li>
-      <li><a href="/join" class="nav-cta">Join →</a></li>
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
@@ -1739,55 +1739,38 @@ body {
 </section>
 
 <!-- ══ SITE FOOTER ══ -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr;">
-      <div class="footer-brand">
-        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
-        <p>Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve. A Diosa Ara initiative.</p>
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health.</p>
       </div>
-      <div class="footer-col">
-        <h5>Journals</h5>
-        <ul>
-          <li><a href="/womens-health/">Women's Health</a></li>
-          <li><a href="/in-her-name/">In Her Name</a></li>
-          <li><a href="/blueprint/">The Blueprint</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Intelligence</h5>
-        <ul>
-          <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
-          <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
-          <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
-          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Labora Rounds</h5>
-        <ul>
-          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy</a></li>
-          <li><a href="/viva-voce/">Viva Voce</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Organization</h5>
-        <ul>
-          <li><a href="https://diosara.com">Diosa Ara</a></li>
-          <li><a href="/join">Membership</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><!-- Women's Health, In Her Name, The Blueprint --></div>
+      <div class="lc-footer-col"><h5>Products</h5><!-- The Signal, Viva Voce, Monthly Digest --></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><!-- Labora Rounds, Special Reports, Weekly --></div>
+      <div class="lc-footer-col"><h5>Organization</h5><!-- Diosa Ara, Membership, About, Start Here --></div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Labora Collective &nbsp;·&nbsp; A Diosa Ara Initiative &nbsp;·&nbsp; <a href="/privacy">Privacy</a> &nbsp;·&nbsp; <a href="/terms">Terms</a></p>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; Privacy &middot; Terms</p>
       <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
 </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.lc-nav-toggle');
+  var links = document.querySelector('.lc-nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      links.classList.toggle('active');
+    });
+  }
+});
+</script>
 
 </body>
 </html>

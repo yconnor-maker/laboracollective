@@ -20,7 +20,7 @@
 body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg-warm); color: var(--espresso); }
 
 /* Nav */
-.nav { background: var(--espresso); padding: 1rem 2rem; border-bottom: 2px solid var(--copper); }
+.lc-nav { background: var(--espresso); padding: 1rem 2rem; border-bottom: 2px solid var(--copper); }
 .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo a { text-decoration: none; }
 .nav-logo img { height: 36px; width: auto; }
@@ -72,18 +72,43 @@ body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg-warm)
   .report-card.hero { grid-column: auto; }
   .nav-links { display: none; }
 }
+
+/* ── LC Footer ── */
+.lc-footer { background: #362511; color: rgba(251,245,255,0.65); border-top: 2px solid #D48662; margin-top: 4rem; }
+.lc-footer-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+.lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.lc-footer-brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #FBF5FF; margin-bottom: 0.3rem; }
+.lc-footer-brand-mark em { font-style: italic; }
+.lc-footer-brand-org { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.lc-footer-brand-org a { color: inherit; text-decoration: none; }
+.lc-footer-brand-desc { font-size: 0.75rem; line-height: 1.6; }
+.lc-footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #D48662; margin-bottom: 0.8rem; }
+.lc-footer-bottom { border-top: 1px solid rgba(251,245,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.65rem; }
+.lc-footer-bottom a { color: #D48662; text-decoration: none; }
+@media (max-width: 768px) {
+  .lc-footer-top { grid-template-columns: 1fr; }
+  .lc-footer-bottom { flex-direction: column; gap: 0.5rem; }
+}
+
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-logo"><a href="/"><img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective"></a></div>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/#journals">Journals</a></li>
-      <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
-      <li><a href="/sitemap/">Sitemap</a></li>
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
@@ -193,10 +218,38 @@ body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg-warm)
 
 </div>
 
-<footer class="footer">
-  <a href="/">← Back to Labora Collective</a>
-  <p>© 2026 Labora Collective · A Diosa Ara Initiative</p>
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health.</p>
+      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><!-- Women's Health, In Her Name, The Blueprint --></div>
+      <div class="lc-footer-col"><h5>Products</h5><!-- The Signal, Viva Voce, Monthly Digest --></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><!-- Labora Rounds, Special Reports, Weekly --></div>
+      <div class="lc-footer-col"><h5>Organization</h5><!-- Diosa Ara, Membership, About, Start Here --></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; Privacy &middot; Terms</p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
 </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.lc-nav-toggle');
+  var links = document.querySelector('.lc-nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      links.classList.toggle('active');
+    });
+  }
+});
+</script>
 
 </body>
 </html>

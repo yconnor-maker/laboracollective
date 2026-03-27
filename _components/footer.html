@@ -1,109 +1,24 @@
-<!-- ══ LC SHARED COMPONENT: Site Footer ══
-     Usage: Copy this <footer> block to the bottom of any page, before </body>.
-     Adjust image src paths based on page depth (or use absolute /assets/... paths).
+<!-- ══ LC SHARED COMPONENT: Canonical Footer ══
+     Locked as of March 26, 2026 (DECISIONS_LOCKED.md)
+     Columns: Brand · Journals · Products · Intelligence · Organization
 ══ -->
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/assets/images/lc-logo-light-peach.png" alt="Labora Collective">
-        <p>Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve. A Diosa Ara initiative.</p>
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health.</p>
       </div>
-      <div class="footer-col">
-        <h5>Journals</h5>
-        <ul>
-          <li><a href="/womens-health/">Women's Health</a></li>
-          <li><a href="/in-her-name/">In Her Name</a></li>
-          <li><a href="/blueprint/">The Blueprint</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Intelligence</h5>
-        <ul>
-          <li><a href="/newsletters/ob-signal/">Signal Monday</a></li>
-          <li><a href="/newsletters/gyn-signal/">Signal Wednesday</a></li>
-          <li><a href="/newsletters/briefing/">Briefing Friday</a></li>
-          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Labora Rounds</h5>
-        <ul>
-          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html">Clinical</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html">Policy</a></li>
-          <li><a href="/viva-voce/">Viva Voce</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Organization</h5>
-        <ul>
-          <li><a href="https://diosara.com">Diosa Ara</a></li>
-          <li><a href="https://laboracollective.substack.com/subscribe">Membership</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><!-- Women's Health, In Her Name, The Blueprint --></div>
+      <div class="lc-footer-col"><h5>Products</h5><!-- The Signal, Viva Voce, Monthly Digest --></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><!-- Labora Rounds, Special Reports, Weekly --></div>
+      <div class="lc-footer-col"><h5>Organization</h5><!-- Diosa Ara, Membership, About, Start Here --></div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></p>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; Privacy &middot; Terms</p>
       <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
 </footer>
-
-<!-- FOOTER STYLES (include in <style> or external CSS) -->
-<!--
-.site-footer {
-  background: var(--espresso);
-  padding: 3.5rem 2rem 2rem;
-}
-.footer-inner { max-width: 1100px; margin: 0 auto; }
-.footer-top {
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: 3rem; padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  margin-bottom: 2rem;
-}
-.footer-brand img { height: 44px; width: auto; margin-bottom: 1rem; display: block; }
-.footer-brand p {
-  font-size: 0.82rem; line-height: 1.72;
-  color: rgba(251,245,255,0.28);
-}
-.footer-col h5 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem; font-weight: 700;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(251,245,255,0.22); margin-bottom: 1rem;
-}
-.footer-col ul { list-style: none; padding: 0; }
-.footer-col ul li { padding: 0.3rem 0; }
-.footer-col ul li a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem; color: rgba(251,245,255,0.35);
-  text-decoration: none; transition: color 0.15s;
-}
-.footer-col ul li a:hover { color: var(--copper); }
-.footer-bottom {
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-}
-.footer-bottom p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.56rem; color: rgba(251,245,255,0.2);
-  letter-spacing: 0.08em; text-transform: uppercase;
-}
-.footer-bottom a {
-  color: rgba(251,245,255,0.2); text-decoration: none;
-  transition: color 0.15s;
-}
-.footer-bottom a:hover { color: var(--copper); }
-
-@media (max-width: 900px) {
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-}
-@media (max-width: 640px) {
-  .footer-top { grid-template-columns: 1fr; }
-}
--->

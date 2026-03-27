@@ -9,6 +9,24 @@
 
 </head>
 <body style="margin:0;padding:0;background:#FBF5FF;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;color:#2C1A0E;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;">
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
 
 <!-- ══ HEADER ══ -->
 <header class="header">
@@ -168,10 +186,38 @@
 </div>
 
 <!-- ══ FOOTER ══ -->
-<footer>
-  <p>You received this because you subscribed to The Labora Signal.</p>
-  <p><a href="{{manage_preferences_url}}">Manage preferences</a> &nbsp;·&nbsp; <a href="{{unsubscribe_url}}">Unsubscribe</a> &nbsp;·&nbsp; <a href="https://laboracollective.com">laboracollective.com</a></p>
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health.</p>
+      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><!-- Women's Health, In Her Name, The Blueprint --></div>
+      <div class="lc-footer-col"><h5>Products</h5><!-- The Signal, Viva Voce, Monthly Digest --></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><!-- Labora Rounds, Special Reports, Weekly --></div>
+      <div class="lc-footer-col"><h5>Organization</h5><!-- Diosa Ara, Membership, About, Start Here --></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; Privacy &middot; Terms</p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
 </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.lc-nav-toggle');
+  var links = document.querySelector('.lc-nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      links.classList.toggle('active');
+    });
+  }
+});
+</script>
 
 </body>
 </html>
