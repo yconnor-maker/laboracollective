@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packs — Labora Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #362511;
+            background-color: #F7F3EE;
+            line-height: 1.6;
+        }
+
+        /* ========== NAVIGATION ========== */
+        .lc-nav {
+            position: sticky;
+            top: 0;
+            background-color: #362511;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .lc-nav-inner {
+            max-width: 1100px;
+            height: 56px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lc-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .lc-nav-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #FBF5FF;
+            letter-spacing: 0.02em;
+        }
+
+        .lc-nav-mark em {
+            color: #D48662;
+            font-style: normal;
+        }
+
+        .lc-nav-org {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: rgba(251, 245, 255, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-left: 0.75rem;
+            padding-left: 0.75rem;
+            border-left: 1px solid rgba(251, 245, 255, 0.2);
+        }
+
+        .lc-nav-org a {
+            color: rgba(251, 245, 255, 0.45);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .lc-nav-org a:hover {
+            color: #FBF5FF;
+        }
+
+        .lc-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .lc-nav-links a {
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(251, 245, 255, 0.45);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .lc-nav-links a:hover {
+            color: #FBF5FF;
+        }
+
+        .lc-nav-cta {
+            background-color: #D48662;
+            color: white !important;
+            padding: 0.4rem 1rem;
+            border-radius: 3px;
+            font-size: 0.58rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+
+        .lc-nav-cta:hover {
+            background-color: #c57551;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background-color: #362511;
+            color: #FBF5FF;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: rgba(251, 245, 255, 0.9);
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(251, 245, 255, 0.8);
+        }
+
+        /* ========== FILTER BAR ========== */
+        .filter-section {
+            background-color: #F7F3EE;
+            padding: 2rem 2rem;
+            border-bottom: 1px solid rgba(212, 134, 98, 0.1);
+        }
+
+        .filter-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .filter-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #362511;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .filter-pills {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scroll-behavior: smooth;
+        }
+
+        .filter-pills::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .filter-pills::-webkit-scrollbar-track {
+            background: rgba(212, 134, 98, 0.05);
+        }
+
+        .filter-pills::-webkit-scrollbar-thumb {
+            background: rgba(212, 134, 98, 0.2);
+            border-radius: 2px;
+        }
+
+        .filter-pill {
+            padding: 0.55rem 1.2rem;
+            border: 1px solid #8A7060;
+            border-radius: 25px;
+            background-color: transparent;
+            color: #362511;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .filter-pill:hover {
+            border-color: #D48662;
+            color: #D48662;
+        }
+
+        .filter-pill.active {
+            background-color: #D48662;
+            color: white;
+            border-color: #D48662;
+        }
+
+        /* ========== MAIN LAYOUT ========== */
+        .packs-wrapper {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .domain-sidebar {
+            width: 220px;
+            padding: 2rem 1.5rem;
+            background-color: #FBF5FF;
+            border-right: 1px solid rgba(212, 134, 98, 0.1);
+            position: sticky;
+            top: 56px;
+            height: calc(100vh - 56px);
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #362511;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-links {
+            list-style: none;
+        }
+
+        .sidebar-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-links a {
+            font-size: 0.8rem;
+            color: #8A7060;
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-links a:hover,
+        .sidebar-links a.active {
+            color: #D48662;
+            border-left-color: #D48662;
+        }
+
+        .packs-content {
+            flex: 1;
+            padding: 3rem 2rem;
+        }
+
+        /* ========== DOMAIN SECTIONS ========== */
+        .domain-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+        }
+
+        .domain-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            gap: 1rem;
+        }
+
+        .domain-border {
+            width: 4px;
+            height: 2.5rem;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .domain-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #362511;
+        }
+
+        /* Accent colors per domain */
+        .domain-pregnancy .domain-border { background-color: #D48662; }
+        .domain-gynecology .domain-border { background-color: #E7817F; }
+        .domain-menopause .domain-border { background-color: #9E7D0A; }
+        .domain-navigation .domain-border { background-color: #1D6B78; }
+        .domain-lactation .domain-border { background-color: #2E5240; }
+        .domain-contraception .domain-border { background-color: #5B8FA8; }
+        .domain-sexual .domain-border { background-color: #EABAB0; }
+        .domain-pelvic .domain-border { background-color: #8A7060; }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* ========== PACK CARD ========== */
+        .pack-card {
+            background-color: white;
+            border-radius: 6px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-top: 3px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .pack-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .domain-pregnancy .pack-card:hover { border-top-color: #D48662; }
+        .domain-gynecology .pack-card:hover { border-top-color: #E7817F; }
+        .domain-menopause .pack-card:hover { border-top-color: #9E7D0A; }
+        .domain-navigation .pack-card:hover { border-top-color: #1D6B78; }
+        .domain-lactation .pack-card:hover { border-top-color: #2E5240; }
+        .domain-contraception .pack-card:hover { border-top-color: #5B8FA8; }
+        .domain-sexual .pack-card:hover { border-top-color: #EABAB0; }
+        .domain-pelvic .pack-card:hover { border-top-color: #8A7060; }
+
+        .pack-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #362511;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .pack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .persona-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 0.7rem;
+            border-radius: 20px;
+            background-color: rgba(212, 134, 98, 0.1);
+            color: #D48662;
+        }
+
+        .pack-meta {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #f0e8e0;
+        }
+
+        .pack-playbooks {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #362511;
+            margin-bottom: 0.5rem;
+        }
+
+        .pack-domain {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8A7060;
+        }
+
+        .pack-card.hidden {
+            display: none;
+        }
+
+        /* ========== COMING SOON ========== */
+        .coming-soon-section {
+            background-color: #FBF5FF;
+            border-radius: 6px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .coming-soon-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #362511;
+            margin-bottom: 0.5rem;
+        }
+
+        .coming-soon-text {
+            font-size: 0.9rem;
+            color: #8A7060;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background-color: #362511;
+            color: #FBF5FF;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-column a {
+            color: rgba(251, 245, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #FBF5FF;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(251, 245, 255, 0.15);
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-credit {
+            font-size: 0.8rem;
+            color: rgba(251, 245, 255, 0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.75rem;
+            color: rgba(251, 245, 255, 0.5);
+        }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .domain-sidebar {
+                display: none;
+            }
+
+            .packs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .lc-nav-links {
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lc-nav-inner {
+                height: auto;
+                flex-wrap: wrap;
+                padding: 1rem 1.5rem;
+            }
+
+            .lc-nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .packs-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .packs-content {
+                padding: 2rem 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .filter-pills {
+                gap: 0.5rem;
+            }
+
+            .filter-pill {
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero .description {
+                font-size: 0.9rem;
+            }
+
+            .domain-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .pack-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="lc-nav">
+        <div class="lc-nav-inner">
+            <a href="/" class="lc-nav-brand">
+                <span class="lc-nav-mark">Labora <em>Collective</em></span>
+                <span class="lc-nav-org"><a href="https://diosara.com">Diosa Ara</a></span>
+            </a>
+            <ul class="lc-nav-links">
+                <li><a href="/womens-health/">Women's Health</a></li>
+                <li><a href="/in-her-name/">In Her Name</a></li>
+                <li><a href="/blueprint/">Blueprint</a></li>
+                <li><a href="/intelligence/">Intelligence</a></li>
+                <li><a href="/packs/">Packs</a></li>
+                <li><a class="lc-nav-cta" href="/subscribe">Subscribe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Packs</h1>
+            <p class="subtitle">Guided care bundles that start where you are — and give you every tool to take the next step.</p>
+            <p class="description">Each pack is 5–6 playbooks organized around a single question or condition. Pick the one that matches your situation.</p>
+        </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <section class="filter-section">
+        <div class="filter-inner">
+            <label class="filter-label">Filter by persona</label>
+            <div class="filter-pills">
+                <button class="filter-pill active" data-persona="all">All</button>
+                <button class="filter-pill" data-persona="anxious">Anxious Googler</button>
+                <button class="filter-pill" data-persona="chronic">Chronic Navigator</button>
+                <button class="filter-pill" data-persona="planner">High-Performing Planner</button>
+                <button class="filter-pill" data-persona="dismissed">Dismissed + Determined</button>
+                <button class="filter-pill" data-persona="postpartum">Postpartum Invisible</button>
+                <button class="filter-pill" data-persona="clinician">Clinician Ally</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="packs-wrapper">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="domain-sidebar">
+            <h3 class="sidebar-title">Domains</h3>
+            <ul class="sidebar-links">
+                <li><a href="#pregnancy" class="sidebar-link active" data-domain="pregnancy">Pregnancy & Birth</a></li>
+                <li><a href="#gynecology" class="sidebar-link" data-domain="gynecology">Gynecology</a></li>
+                <li><a href="#menopause" class="sidebar-link" data-domain="menopause">Menopause</a></li>
+                <li><a href="#navigation" class="sidebar-link" data-domain="navigation">System Navigation</a></li>
+                <li><a href="#lactation" class="sidebar-link" data-domain="lactation">Lactation & Postpartum</a></li>
+                <li><a href="#contraception" class="sidebar-link" data-domain="contraception">Contraception</a></li>
+                <li><a href="#sexual" class="sidebar-link" data-domain="sexual">Sexual Health</a></li>
+                <li><a href="#pelvic" class="sidebar-link" data-domain="pelvic">Pelvic Health</a></li>
+            </ul>
+        </aside>
+
+        <!-- PACKS CONTENT -->
+        <main class="packs-content">
+            <!-- PREGNANCY & BIRTH -->
+            <section class="domain-section domain-pregnancy" id="pregnancy">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Pregnancy & Birth</h2>
+                </div>
+                <div class="packs-grid">
+                    <a href="/packs/trying-to-conceive/" class="pack-card" data-personas="anxious,planner">
+                        <h3 class="pack-title">We're Trying to Get Pregnant — What Should I Actually Know?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Anxious Googler</span>
+                            <span class="persona-tag">Planner</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">Pregnancy & Birth</div>
+                        </div>
+                    </a>
+                    <a href="/packs/high-blood-pressure-pregnancy/" class="pack-card" data-personas="chronic,planner">
+                        <h3 class="pack-title">My Blood Pressure Is Rising — Should I Be Worried?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Chronic Navigator</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Pregnancy & Birth</div>
+                        </div>
+                    </a>
+                    <a href="/packs/bleeding-in-pregnancy/" class="pack-card" data-personas="anxious,dismissed">
+                        <h3 class="pack-title">I'm Bleeding in Pregnancy — Is This Normal?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Anxious Googler</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">Pregnancy & Birth</div>
+                        </div>
+                    </a>
+                    <a href="/packs/fetal-movement/" class="pack-card" data-personas="anxious">
+                        <h3 class="pack-title">My Baby Isn't Moving as Much — When Is This an Emergency?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Anxious Googler</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">Pregnancy & Birth</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- GYNECOLOGY -->
+            <section class="domain-section domain-gynecology" id="gynecology">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Gynecology</h2>
+                </div>
+                <div class="packs-grid">
+                    <a href="/packs/severe-periods/" class="pack-card" data-personas="chronic,dismissed">
+                        <h3 class="pack-title">My Periods Are Destroying My Life</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Chronic Navigator</span>
+                            <span class="persona-tag">Dismissed + Determined</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Gynecology</div>
+                        </div>
+                    </a>
+                    <a href="/packs/endometriosis/" class="pack-card" data-personas="chronic,dismissed,clinician">
+                        <h3 class="pack-title">I Just Got Diagnosed with Endometriosis</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Chronic Navigator</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Gynecology</div>
+                        </div>
+                    </a>
+                    <a href="/packs/fibroids/" class="pack-card" data-personas="planner,chronic">
+                        <h3 class="pack-title">I Have Fibroids — Do I Need Surgery?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Planner</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Gynecology</div>
+                        </div>
+                    </a>
+                    <a href="/packs/pcos/" class="pack-card" data-personas="chronic,planner,clinician">
+                        <h3 class="pack-title">I Have PCOS — What Does That Actually Mean for My Life?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Chronic Navigator</span>
+                            <span class="persona-tag">Planner</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Gynecology</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- MENOPAUSE -->
+            <section class="domain-section domain-menopause" id="menopause">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Menopause</h2>
+                </div>
+                <div class="packs-grid">
+                    <a href="/packs/perimenopause/" class="pack-card" data-personas="anxious,planner">
+                        <h3 class="pack-title">I Think Perimenopause Might Be Starting</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Anxious Googler</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">Menopause</div>
+                        </div>
+                    </a>
+                    <a href="/packs/hormone-therapy/" class="pack-card" data-personas="planner,clinician">
+                        <h3 class="pack-title">Should I Take Hormone Therapy?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Planner</span>
+                            <span class="persona-tag">Clinician Ally</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">Menopause</div>
+                        </div>
+                    </a>
+                    <a href="/packs/menopausal-sexual-health/" class="pack-card" data-personas="sexual,planner">
+                        <h3 class="pack-title">Sex Has Become Painful — Is This Menopause?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Planner</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">Menopause</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- SYSTEM NAVIGATION -->
+            <section class="domain-section domain-navigation" id="navigation">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>System Navigation</h2>
+                </div>
+                <div class="packs-grid">
+                    <a href="/packs/doctor-wont-listen/" class="pack-card" data-personas="dismissed,clinician">
+                        <h3 class="pack-title">My Doctor Won't Listen to Me</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Dismissed + Determined</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">System Navigation</div>
+                        </div>
+                    </a>
+                    <a href="/packs/restrictive-state-care/" class="pack-card" data-personas="dismissed,postpartum">
+                        <h3 class="pack-title">I'm Pregnant in a State That Restricts Reproductive Care</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Dismissed + Determined</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">6 playbooks</div>
+                            <div class="pack-domain">System Navigation</div>
+                        </div>
+                    </a>
+                    <a href="/packs/bad-medical-experience/" class="pack-card" data-personas="dismissed">
+                        <h3 class="pack-title">I Had a Bad Medical Experience — What Can I Do?</h3>
+                        <div class="pack-tags">
+                            <span class="persona-tag">Dismissed + Determined</span>
+                        </div>
+                        <div class="pack-meta">
+                            <div class="pack-playbooks">5 playbooks</div>
+                            <div class="pack-domain">System Navigation</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- LACTATION & POSTPARTUM -->
+            <section class="domain-section domain-lactation" id="lactation">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Lactation & Postpartum</h2>
+                </div>
+                <div class="coming-soon-section">
+                    <p class="coming-soon-label">Coming Soon</p>
+                    <p class="coming-soon-text">Dedicated packs for postpartum recovery, breastfeeding, and returning to work are in development.</p>
+                </div>
+            </section>
+
+            <!-- CONTRACEPTION -->
+            <section class="domain-section domain-contraception" id="contraception">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Contraception</h2>
+                </div>
+                <div class="coming-soon-section">
+                    <p class="coming-soon-label">Coming Soon</p>
+                    <p class="coming-soon-text">Comprehensive guides to choosing, using, and managing all forms of contraception will launch soon.</p>
+                </div>
+            </section>
+
+            <!-- SEXUAL HEALTH -->
+            <section class="domain-section domain-sexual" id="sexual">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Sexual Health</h2>
+                </div>
+                <div class="coming-soon-section">
+                    <p class="coming-soon-label">Coming Soon</p>
+                    <p class="coming-soon-text">Packs addressing sexual desire, pleasure, pain, and communication are under development.</p>
+                </div>
+            </section>
+
+            <!-- PELVIC HEALTH -->
+            <section class="domain-section domain-pelvic" id="pelvic">
+                <div class="domain-header">
+                    <div class="domain-border"></div>
+                    <h2>Pelvic Health</h2>
+                </div>
+                <div class="coming-soon-section">
+                    <p class="coming-soon-label">Coming Soon</p>
+                    <p class="coming-soon-text">Specialized guidance for pelvic floor dysfunction, incontinence, and pelvic pain is on the way.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="/about/">About Labora Collective</a></li>
+                        <li><a href="/mission/">Our Mission</a></li>
+                        <li><a href="/team/">Team</a></li>
+                        <li><a href="/careers/">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Journals</h3>
+                    <ul>
+                        <li><a href="/womens-health/">Women's Health</a></li>
+                        <li><a href="/in-her-name/">In Her Name</a></li>
+                        <li><a href="/blueprint/">Blueprint</a></li>
+                        <li><a href="/intelligence/">Intelligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="mailto:hello@laboracollective.org">Email</a></li>
+                        <li><a href="https://twitter.com">Twitter / X</a></li>
+                        <li><a href="https://linkedin.com">LinkedIn</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-credit">Diosa Ara Research Intelligence · Labora Rounds · Powered by <a href="/">The Labora Collective</a></p>
+                <p class="footer-copyright">&copy; 2026 The Labora Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Filter functionality
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const packCards = document.querySelectorAll('.pack-card');
+
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                // Remove active class from all pills
+                filterPills.forEach(p => p.classList.remove('active'));
+                // Add active class to clicked pill
+                this.classList.add('active');
+
+                const selectedPersona = this.getAttribute('data-persona');
+
+                // Filter pack cards
+                packCards.forEach(card => {
+                    if (selectedPersona === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const cardPersonas = card.getAttribute('data-personas');
+                        if (cardPersonas && cardPersonas.includes(selectedPersona)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Sidebar navigation highlighting
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const domainSections = document.querySelectorAll('.domain-section');
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update sidebar active state on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            domainSections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-domain') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

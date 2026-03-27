@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Labora Collective — Article</title>
+  <title>Labora Collective — Essay</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
 
@@ -178,18 +178,31 @@
       .lc-footer-top { grid-template-columns: 1fr; }
     }
 
-    /* Article: copper default. Override for specific journals. */
+    /* Essay: override --accent per journal. Default: copper (OB). Set to var(--rose) for GYN/RJ. */
     :root { --accent: var(--copper); --accent-light: var(--blush-light); }
 
-    /* ── Article sidebar callout ── */
-    .lc-sidebar-callout {
-      background: var(--accent-light);
-      border: 1px solid var(--accent);
-      padding: 1.5rem;
+    /* ── Essay-specific ── */
+    .lc-essay-pullquote {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 0 1rem 1.5rem;
       margin: 2rem 0;
     }
-    .lc-sidebar-callout .lc-section-label { margin-bottom: 0.75rem; }
-    .lc-sidebar-callout p { font-size: 0.88rem; line-height: 1.65; }
+    .lc-essay-author {
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -205,8 +218,8 @@
     <div class="lc-pub-tag">
       <span>{{PUB_TAG}}</span>
     </div>
-    <h1 class="lc-pub-title">{{ARTICLE_TITLE}}</h1>
-    <p class="lc-pub-subtitle">{{ARTICLE_SUBTITLE}}</p>
+    <h1 class="lc-pub-title">{{ESSAY_TITLE}}</h1>
+    <p class="lc-pub-subtitle">{{ESSAY_SUBTITLE}}</p>
     <div class="lc-accent-bar"><div></div><div></div><div></div></div>
   </div>
 </header>
@@ -222,8 +235,8 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="lc-nav-links">
-      <li><a href="/the-signal/">The Signal</a></li>
-      <li><a href="/womens-health/" class="lc-nav-active">Women's Health</a></li>
+      <li><a href="/the-signal/" class="lc-nav-active">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
       <li><a href="/in-her-name/">In Her Name</a></li>
       <li><a href="/blueprint/">The Blueprint</a></li>
       <li><a href="/intelligence/">Intelligence</a></li>
@@ -236,33 +249,30 @@
 
 <main class="lc-body">
   <div style="padding-top: 3rem;">
-    <span class="lc-section-label">{{ARTICLE_CATEGORY}}</span>
+    <span class="lc-essay-author">By {{AUTHOR}} &middot; {{DATE}}</span>
 
     <p>{{BODY_INTRO}}</p>
 
-    <div class="lc-sidebar-callout">
-      <span class="lc-section-label">Key Takeaway</span>
-      <p>{{KEY_TAKEAWAY}}</p>
-    </div>
+    <div class="lc-essay-pullquote">{{PULLQUOTE}}</div>
 
-    <h2>{{SUBHEAD_1}}</h2>
     <p>{{BODY_SECTION_1}}</p>
 
-    <h2>{{SUBHEAD_2}}</h2>
+    <h2>{{SUBHEAD_1}}</h2>
     <p>{{BODY_SECTION_2}}</p>
 
     <div class="lc-callout">
-      <span class="lc-callout-label">What This Means For You</span>
+      <span class="lc-callout-label">Clinical Implications</span>
       <p>{{CALLOUT_TEXT}}</p>
     </div>
 
-    <h2>{{SUBHEAD_3}}</h2>
+    <h2>{{SUBHEAD_2}}</h2>
     <p>{{BODY_SECTION_3}}</p>
 
     <div class="lc-go-deeper">
       <span class="lc-go-deeper-label">Go Deeper</span>
       <a href="{{LINK_1}}">{{LINK_TEXT_1}}</a>
       <a href="{{LINK_2}}">{{LINK_TEXT_2}}</a>
+      <a href="{{LINK_3}}">{{LINK_TEXT_3}}</a>
     </div>
   </div>
 </main>
