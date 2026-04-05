@@ -1394,7 +1394,7 @@ body {
   .intel-cards { grid-template-columns: 1fr 1fr; }
   .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .ms-tiers { grid-template-columns: 1fr 1fr; }
-  .ms-tier.featured { order: -1; }
+  .ms-tier.featured { order: 0; }
   .packs-grid { grid-template-columns: 1fr 1fr; }
   .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .masthead-tagline { display: none; }
@@ -1888,21 +1888,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
     <div class="ms-tiers">
 
-      <!-- TIER 1: Diosa Circle (Free) -->
-      <div class="ms-tier">
-        <span class="ms-tier-name">Free</span>
-        <h3 class="ms-tier-title">Diosa Circle</h3>
-        <span class="ms-tier-price">$0 / forever</span>
-        <ul class="ms-tier-features">
-          <li>The Signal — twice-weekly dispatches</li>
-          <li>Selected free articles &amp; essays</li>
-          <li>Monthly Labora Digest</li>
-          <li>Event invitations &amp; community previews</li>
-        </ul>
-        <a href="/join?tier=circle" class="ms-tier-btn outline">Subscribe Free &rarr;</a>
-      </div>
-
-      <!-- TIER 2: Diosa Essentials ($15/mo beta) -->
+      <!-- TIER 1: Diosa Essentials ($15/mo beta) -->
       <div class="ms-tier featured">
         <span class="ms-tier-badge beta">Beta Price (50% Off)</span>
         <span class="ms-tier-name">Essentials</span>
@@ -1915,6 +1901,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <li>Community membership &amp; discussion</li>
         </ul>
         <a href="/join?tier=essentials" class="ms-tier-btn filled">Join Now &rarr;</a>
+      </div>
+
+      <!-- TIER 2: Diosa Circle (Free) -->
+      <div class="ms-tier">
+        <span class="ms-tier-name">Free</span>
+        <h3 class="ms-tier-title">Diosa Circle</h3>
+        <span class="ms-tier-price">$0 / forever</span>
+        <ul class="ms-tier-features">
+          <li>The Signal — twice-weekly dispatches</li>
+          <li>Selected free articles &amp; essays</li>
+          <li>Monthly Labora Digest</li>
+          <li>Event invitations &amp; community previews</li>
+        </ul>
+        <a href="/join?tier=circle" class="ms-tier-btn outline">Subscribe Free &rarr;</a>
       </div>
 
       <!-- TIER 3: Diosa Insiders ($27.50/mo beta) -->
