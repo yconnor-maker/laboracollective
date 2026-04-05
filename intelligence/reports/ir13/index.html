@@ -219,29 +219,30 @@ p{margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
 .attr-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;color:var(--copper);text-decoration:none;letter-spacing:.05em}
 .attr-links a:hover{text-decoration:underline}
 
-/* ─── FOOTER (Locked — LC Design System v2) ─── */
-.lc-footer{background:var(--espresso);border-top:3px solid var(--copper);color:rgba(251,245,255,0.5)}
-.lc-footer-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem}
-.lc-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.lc-footer-brand-mark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--bg-open);margin-bottom:.35rem}
-.lc-footer-brand-mark em{font-style:normal;color:var(--copper)}
-.lc-footer-brand-org{font-size:.55rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,245,255,0.3);margin-bottom:1rem}
-.lc-footer-brand-org a{color:inherit;text-decoration:none}
-.lc-footer-brand-desc{font-size:.78rem;line-height:1.65;color:rgba(251,245,255,0.35)}
-.lc-footer-col h5{font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem}
-.lc-footer-col ul{list-style:none;padding:0}
-.lc-footer-col li{margin-bottom:.5rem}
-.lc-footer-col a{font-size:.78rem;color:rgba(251,245,255,0.4);text-decoration:none;transition:color .15s}
-.lc-footer-col a:hover{color:var(--copper)}
-.lc-footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:rgba(251,245,255,0.25)}
-.lc-footer-bottom a{color:rgba(251,245,255,0.3);text-decoration:none}
-.lc-footer-bottom a:hover{color:var(--copper)}
+/* FOOTER */
+.lc-footer{background:var(--espresso);color:rgba(251,245,255,0.82);border-top:4px solid var(--copper);}
+.lc-footer-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem;}
+.lc-footer-top{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:2rem;}
+.lc-footer-brand-mark{font-family:var(--font-display,'Cormorant Garamond',serif);font-size:1.35rem;font-weight:600;color:var(--bg-open,#FBF5FF);}
+.lc-footer-brand-mark em{font-style:normal;color:var(--copper);}
+.lc-footer-brand-org{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:0.25rem;}
+.lc-footer-brand-org a{color:rgba(251,245,255,0.6);text-decoration:none;}
+.lc-footer-brand-desc{font-size:0.82rem;line-height:1.6;color:rgba(251,245,255,0.55);margin-top:0.75rem;}
+.lc-footer-col h5{font-family:var(--font-ui,'DM Sans',sans-serif);font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--copper);margin-bottom:0.75rem;}
+.lc-footer-col ul{list-style:none;}
+.lc-footer-col li{margin-bottom:0.4rem;}
+.lc-footer-col a{font-size:0.82rem;color:rgba(251,245,255,0.7);text-decoration:none;transition:color 0.15s;}
+.lc-footer-col a:hover{color:var(--copper);}
+.lc-footer-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(251,245,255,0.08);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:rgba(251,245,255,0.45);}
+.lc-footer-bottom a{color:rgba(251,245,255,0.55);text-decoration:none;}
+.lc-footer-bottom a:hover{color:var(--copper);}
+@media(max-width:900px){.lc-footer-top{grid-template-columns:1fr 1fr;gap:2rem;}}
+@media(max-width:640px){.lc-footer-top{grid-template-columns:1fr;}.lc-footer-inner{padding:2rem 1.25rem 1.5rem;}}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
   .action-grid{grid-template-columns:1fr}
   .sr{grid-template-columns:1fr}
-  .lc-footer-top{grid-template-columns:1fr 1fr;gap:2rem}
   .lc-nav-links{display:none}
   .lc-nav-toggle{display:block}
 }
@@ -250,7 +251,6 @@ p{margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
   .article-body{padding:0 1.25rem 3rem}
   .sblock{padding:1.75rem 1.25rem}
   .fw{padding:2rem 1.25rem}
-  .lc-footer-top{grid-template-columns:1fr}
   .anchor-image{min-height:250px}
   .img-placeholder{min-height:180px}
 }
@@ -604,54 +604,51 @@ p{margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
   </div>
 </div>
 
-<!-- ══ FOOTER (Locked — LC Design System v2) ══ -->
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
-      <div>
+      <div class="lc-footer-brand">
         <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
         <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
-        <div class="lc-footer-brand-desc">Clinical intelligence, research synthesis, and evidence-based advocacy for women's and children's health. Built by physicians. Powered by data. Centered on equity.</div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
-        <h5>Publications</h5>
+        <h5>Journals</h5>
         <ul>
-          <li><a href="/the-signal/">The Signal</a></li>
           <li><a href="/womens-health/">Women's Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
           <li><a href="/blueprint/">The Blueprint</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
         <h5>Intelligence</h5>
         <ul>
-          <li><a href="/intelligence/">Overview</a></li>
-          <li><a href="/intelligence/clinical/">Clinical</a></li>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
           <li><a href="/intelligence/research/">Research</a></li>
-          <li><a href="/intelligence/policy/">Policy</a></li>
+          <li><a href="/intelligence/clinical/">Clinical</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Resources</h5>
+        <h5>Organization</h5>
         <ul>
-          <li><a href="/viva-voce/">Viva Voce</a></li>
-          <li><a href="/playbooks/">Playbooks</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div class="lc-footer-col">
-        <h5>Connect</h5>
-        <ul>
-          <li><a href="/join">Join</a></li>
-          <li><a href="https://linkedin.com/in/yamiciaconnor">LinkedIn</a></li>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join/">Membership</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/start-here/">Start Here</a></li>
         </ul>
       </div>
     </div>
     <div class="lc-footer-bottom">
-      <span>&copy; 2026 Labora Collective. A Diosa Ara Initiative. All rights reserved.</span>
-      <span>This report is for informational and educational purposes. <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a></span>
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
 </footer>
