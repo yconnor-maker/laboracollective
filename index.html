@@ -4,24 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<meta name="description" content="Physician-led intelligence on women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.">
-<title>Labora Collective — Physician-Led Intelligence for Women's Health</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<meta name="description" content="The organizing infrastructure for women's health. A physician-led community, marketplace, and intelligence platform for patients, providers, doulas, and the institutions that serve them.">
+<title>Labora Collective — The Organizing Infrastructure for Women's Health</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400" rel="stylesheet">
 <style>
 
 /* ============================================================
-   LABORA COLLECTIVE — Homepage Redesign
+   LABORA COLLECTIVE — Front Page Rebuild (Phase 1)
    laboracollective.com/index.html
    LC Design System v2 — Magazine/Publication Hybrid
-   March 26, 2026
+   Rebuilt March 28, 2026
+   8-Section Architecture — All Approvals Received
    ============================================================ */
 
 :root {
   --espresso:       #362511;
   --espresso-mid:   #4A3218;
   --body-text:      #2C1A0E;
-  --muted:          #8A7060;
+  --muted:          #6B5648;
   --copper:         #D48662;
+  --copper-text:     #7A4D2E;
   --copper-light:   #E8A882;
   --blush:          #EABAB0;
   --blush-light:    #F5DDD9;
@@ -37,6 +39,9 @@
   --bg-open:        #FBF5FF;
   --white:          #FFFFFF;
   --blue:           #5B8FA8;
+      --font-display:   'Cormorant Garamond', Georgia, serif;
+      --font-body:      'EB Garamond', Georgia, serif;
+      --font-ui:        'DM Sans', Arial, Helvetica, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -57,20 +62,20 @@ body {
 .lc-nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
 .lc-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
 .lc-nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
-.lc-nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bg-open); }
+.lc-nav-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--bg-open); }
 .lc-nav-mark em { font-style: normal; color: var(--copper); }
-.lc-nav-org { font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.28); border-left: 1px solid rgba(251,245,255,0.1); padding-left: 0.65rem; }
+.lc-nav-org { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.82); border-left: 1px solid rgba(251,245,255,0.1); padding-left: 0.65rem; }
 .lc-nav-org a { color: inherit; text-decoration: none; }
-.lc-nav-links { display: flex; align-items: center; gap: 1.4rem; list-style: none; }
-.lc-nav-links li a { font-family: 'DM Sans', sans-serif; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.45); text-decoration: none; transition: color 0.15s; height: 56px; line-height: 56px; display: inline-block; border-bottom: 2px solid transparent; }
+.lc-nav-links { display: flex; align-items: center; gap: 1.2rem; list-style: none; flex-wrap: nowrap; }
+.lc-nav-links li a { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.88); text-decoration: none; transition: color 0.15s; height: 56px; line-height: 56px; display: inline-block; border-bottom: 2px solid transparent; white-space: nowrap; }
 .lc-nav-links li a:hover { color: var(--copper); }
-.lc-nav-cta { background: var(--copper); color: var(--white) !important; padding: 0.4rem 1.1rem !important; font-size: 0.58rem !important; font-weight: 700; letter-spacing: 0.18em; border: none !important; height: auto !important; line-height: 1.4 !important; }
+.lc-nav-cta { background: #B56A45; color: var(--white) !important; padding: 0.4rem 1.1rem !important; font-size: 0.75rem !important; font-weight: 700; letter-spacing: 0.18em; border: none !important; height: auto !important; line-height: 1.4 !important; }
 .lc-nav-cta:hover { background: var(--copper-light); color: var(--espresso) !important; }
 .lc-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-.lc-nav-toggle span { display: block; width: 18px; height: 2px; background: rgba(251,245,255,0.5); margin: 4px 0; transition: 0.3s; }
+.lc-nav-toggle span { display: block; width: 18px; height: 2px; background: rgba(251,245,255,0.88); margin: 4px 0; transition: 0.3s; }
 
 /* ─────────────────────────────────────────────
-   HERO CAROUSEL — Magazine Cover Energy
+   SECTION 1: HERO CAROUSEL — 4 Mission Slides
 ───────────────────────────────────────────── */
 .hero-carousel {
   position: relative;
@@ -87,30 +92,39 @@ body {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-slide.active { opacity: 1; z-index: 2; }
 
-/* Anchor image layer */
-.hero-slide-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center 30%;
-  transition: transform 8s ease-out;
-}
-.hero-slide.active .hero-slide-img {
-  transform: scale(1.04);
-}
+/* Slide background images — Substack-style: image underneath, text on top */
+.hero-slide[data-slide="0"] { background-image: url('assets/images/hero/slide-0-editorial-group.png'); }
+.hero-slide[data-slide="1"] { background-image: url('assets/images/hero/slide-1-kitchen-table.png'); }
+.hero-slide[data-slide="2"] { background-image: url('assets/images/hero/slide-2-hospital-corridor.png'); }
+.hero-slide[data-slide="3"] { background-image: url('assets/images/hero/slide-3-flag-texture.png'); }
 
-/* Gradient overlays for text legibility */
+/* Gradient overlay for text legibility */
 .hero-slide::after {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top, rgba(54,37,17,0.95) 0%, rgba(54,37,17,0.7) 35%, rgba(54,37,17,0.25) 65%, rgba(54,37,17,0.4) 100%);
   z-index: 1;
+}
+
+/* Each slide has a unique gradient vibe */
+.hero-slide[data-slide="0"]::after {
+  background: linear-gradient(135deg, rgba(54,37,17,0.78) 0%, rgba(54,37,17,0.55) 50%, rgba(212,134,98,0.25) 100%);
+}
+.hero-slide[data-slide="1"]::after {
+  background: linear-gradient(135deg, rgba(54,37,17,0.78) 0%, rgba(54,37,17,0.55) 50%, rgba(231,129,127,0.25) 100%);
+}
+.hero-slide[data-slide="2"]::after {
+  background: linear-gradient(135deg, rgba(54,37,17,0.78) 0%, rgba(54,37,17,0.55) 50%, rgba(29,107,120,0.25) 100%);
+}
+.hero-slide[data-slide="3"]::after {
+  background: linear-gradient(135deg, rgba(54,37,17,0.78) 0%, rgba(54,37,17,0.55) 50%, rgba(158,125,10,0.25) 100%);
 }
 
 .hero-slide-content {
@@ -119,66 +133,69 @@ body {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem 4.5rem;
+  padding: 0 2rem;
 }
 
-.hero-slide-journal {
+.hero-slide-label {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   padding: 0.3rem 0.85rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
-.hero-slide-journal.copper { background: var(--copper); color: var(--white); }
-.hero-slide-journal.rose   { background: var(--rose); color: var(--white); }
-.hero-slide-journal.gold   { background: var(--gold); color: var(--white); }
-.hero-slide-journal.forest { background: var(--forest); color: var(--white); }
-.hero-slide-journal.teal   { background: var(--teal); color: var(--white); }
+.hero-slide-label.copper { background: var(--copper); color: var(--white); }
+.hero-slide-label.rose   { background: var(--rose); color: var(--white); }
+.hero-slide-label.teal   { background: var(--teal); color: var(--white); }
+.hero-slide-label.gold   { background: var(--gold); color: var(--white); }
 
 .hero-slide-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 300;
-  line-height: 1.06;
+  line-height: 1.08;
   color: var(--white);
-  max-width: 720px;
-  margin-bottom: 0.85rem;
+  max-width: 780px;
+  margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
-.hero-slide-headline em { font-style: italic; color: var(--copper-light); }
 
-.hero-slide-deck {
+.hero-slide-body {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.6);
-  max-width: 560px;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.58);
+  max-width: 600px;
+  margin-bottom: 2rem;
 }
 
 .hero-slide-cta {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--copper);
   text-decoration: none;
-  border-bottom: 1px solid rgba(212,134,98,0.4);
-  padding-bottom: 2px;
+  padding: 0.75rem 2rem;
   transition: all 0.2s;
 }
-.hero-slide-cta:hover { color: var(--copper-light); border-color: var(--copper-light); }
+.hero-slide-cta.copper { background: var(--copper); color: var(--white); }
+.hero-slide-cta.copper:hover { background: var(--copper-light); color: var(--espresso); }
+.hero-slide-cta.rose { background: var(--rose); color: var(--white); }
+.hero-slide-cta.rose:hover { background: #f0a3a1; color: var(--espresso); }
+.hero-slide-cta.teal { background: var(--teal); color: var(--white); }
+.hero-slide-cta.teal:hover { background: #2a8a99; color: var(--white); }
+.hero-slide-cta.gold { background: var(--gold); color: var(--white); }
+.hero-slide-cta.gold:hover { background: #b8930c; color: var(--white); }
 
 /* Slide indicators */
 .hero-indicators {
   position: absolute;
-  bottom: 2rem;
+  bottom: 2.5rem;
   right: 2rem;
   z-index: 10;
   display: flex;
@@ -199,8 +216,6 @@ body {
   width: 28px;
   border-radius: 4px;
 }
-
-/* Pause button */
 .hero-pause {
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.15);
@@ -214,6 +229,22 @@ body {
   transition: all 0.2s;
 }
 .hero-pause:hover { background: rgba(255,255,255,0.2); color: var(--white); }
+
+/* Slide audience labels at bottom-left */
+.hero-slide-audience {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.75rem;
+}
+.hero-audience-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.hero-audience-dot.active { opacity: 1; }
 
 /* Masthead bar below carousel */
 .hero-masthead {
@@ -235,7 +266,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   font-style: italic;
-  color: rgba(251,245,255,0.35);
+  color: rgba(251,245,255,0.82);
   flex: 1;
 }
 .masthead-stats {
@@ -243,7 +274,6 @@ body {
   gap: 2.5rem;
   flex-wrap: wrap;
 }
-.masthead-stat {}
 .masthead-stat-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
@@ -254,8 +284,8 @@ body {
 }
 .masthead-stat-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.5rem;
-  color: rgba(251,245,255,0.25);
+  font-size: 0.78rem;
+  color: rgba(251,245,255,0.88);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -265,7 +295,7 @@ body {
   color: var(--espresso);
   padding: 0.65rem 1.75rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -276,298 +306,548 @@ body {
 }
 .masthead-join:hover { background: var(--copper-light); }
 
-/* ─────────────────────────────────────────────
-   EDITORIAL RIVERS — Content by Section
-───────────────────────────────────────────── */
 
-/* Section header pattern */
-.river-section { padding: 4rem 2rem; }
-.river-inner { max-width: 1100px; margin: 0 auto; }
-.river-header {
+/* ─────────────────────────────────────────────
+   VISUAL: Image Placeholder Styling
+───────────────────────────────────────────── */
+.img-placeholder {
+  background: linear-gradient(135deg, var(--blush-light) 0%, var(--bg-open) 50%, var(--blush-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--blush);
+  opacity: 0.4;
+  margin: 8px;
+}
+.img-placeholder-dark {
+  background: linear-gradient(135deg, rgba(212,134,98,0.08) 0%, rgba(54,37,17,0.15) 50%, rgba(212,134,98,0.08) 100%);
+  color: rgba(251,245,255,0.85);
+}
+.img-placeholder-dark::before {
+  border-color: rgba(212,134,98,0.2);
+}
+
+/* ─────────────────────────────────────────────
+   VISUAL: Logo Banner between sections
+───────────────────────────────────────────── */
+.logo-banner {
+  padding: 2rem;
+  background: var(--espresso);
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.logo-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.logo-banner-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(251,245,255,0.82);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+.logo-banner-item em { font-style: normal; color: var(--copper); font-weight: 600; }
+.logo-banner-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(251,245,255,0.12);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 1B: WHAT IS THE LABORA COLLECTIVE
+───────────────────────────────────────────── */
+.what-is-lc {
+  padding: 4rem 2rem 3.5rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--blush-light);
+}
+.what-is-lc-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.what-is-lc-badge {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  margin-bottom: 1.5rem;
+}
+.what-is-lc-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+.what-is-lc-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--muted);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+}
+.what-is-lc-cta {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  text-decoration: none;
+  border: 1.5px solid var(--copper-text);
+  padding: 0.65rem 1.8rem;
+  transition: all 0.2s;
+}
+.what-is-lc-cta:hover {
+  background: var(--copper);
+  color: var(--white);
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 1C: TESTIMONIALS — Horizontal Scroller
+───────────────────────────────────────────── */
+.testimonials {
+  padding: 3rem 0 3.5rem;
+  background: var(--bg-open);
+  border-bottom: 1px solid var(--blush-light);
+  overflow: hidden;
+}
+.testimonials-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.testimonials-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.testimonials-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--espresso);
+}
+.testimonials-headline em {
+  font-style: normal;
+  color: var(--copper-text);
+}
+.testimonials-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.testimonials-nav button {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--copper-text);
+  background: transparent;
+  color: var(--copper-text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.testimonials-nav button:hover {
+  background: var(--copper);
+  color: var(--white);
+}
+.testimonials-track-wrap {
+  overflow: hidden;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+}
+.testimonials-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.75rem;
+  border: 1px solid var(--blush-light);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 360px;
+  flex-shrink: 0;
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--espresso);
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+}
+.testimonial-quote::before {
+  content: '\201C';
+  font-size: 2.2rem;
+  color: var(--copper-text);
+  display: block;
+  line-height: 0.5;
+  margin-bottom: 0.5rem;
+}
+.testimonial-attr {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  border-top: 1px solid var(--blush-light);
+  padding-top: 0.75rem;
+}
+.testimonial-attr span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #736559;
+  
+  margin-top: 0.15rem;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 2: EDITOR'S PICK
+───────────────────────────────────────────── */
+.editors-pick {
+  padding: 4rem 2rem;
+  background: var(--white);
+  border-bottom: 1px solid var(--blush-light);
+}
+.editors-pick-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.ep-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.ep-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+}
+.ep-header-line {
+  flex: 1;
+  height: 1px;
+  background: var(--blush-light);
+}
+.ep-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--bg-warm);
+  border: 1px solid var(--blush-light);
+  text-decoration: none;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+}
+.ep-card:hover {
+  box-shadow: 0 8px 32px rgba(54,37,17,0.08);
+}
+.ep-card-img {
+  min-height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--blush-light);
+}
+.ep-card-content {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ep-card-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  margin-bottom: 1rem;
+}
+.ep-card-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.ep-card-excerpt {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.ep-card-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,134,98,0.4);
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+
+/* ─────────────────────────────────────────────
+   SECTION 3: JOURNAL RIVERS — 3 Columns
+───────────────────────────────────────────── */
+.journal-rivers {
+  padding: 4rem 2rem;
+  background: var(--bg-warm);
+}
+.journal-rivers-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.jr-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 2.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--blush-light);
-  flex-wrap: wrap;
-  gap: 1rem;
 }
-.river-header-left {}
-.river-label {
+.jr-header-left {}
+.jr-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.26em;
   text-transform: uppercase;
+  color: var(--copper-text);
   display: block;
   margin-bottom: 0.35rem;
 }
-.river-title {
+.jr-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 300;
   color: var(--espresso);
   line-height: 1.12;
 }
-.river-see-all {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.56rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid;
-  padding-bottom: 2px;
-  transition: opacity 0.15s;
-  flex-shrink: 0;
-}
-.river-see-all:hover { opacity: 0.65; }
 
-/* ─── Lead + sidebar layout (magazine feel) ─── */
-.river-lead-layout {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 1px;
-  background: var(--blush-light);
-  border: 1px solid var(--blush-light);
-}
-
-.river-lead-card {
-  background: var(--white);
-  padding: 2.5rem 2.25rem;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.2s;
-  position: relative;
-}
-.river-lead-card:hover { background: var(--bg-open); }
-
-.river-lead-card .rlc-img {
-  width: 100%;
-  height: 260px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 1.75rem;
-  border-radius: 2px;
-  position: relative;
-}
-.river-lead-card .rlc-img::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 60%;
-  background: linear-gradient(to top, rgba(54,37,17,0.08), transparent);
-}
-
-.rlc-tag {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 0.75rem;
-}
-.rlc-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
-  font-weight: 400;
-  color: var(--espresso);
-  line-height: 1.18;
-  margin-bottom: 0.75rem;
-}
-.rlc-excerpt {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--muted);
-  flex: 1;
-}
-.rlc-meta {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.54rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--blush-light);
-}
-
-/* Sidebar stack */
-.river-sidebar {
-  display: flex;
-  flex-direction: column;
-  background: var(--blush-light);
-  gap: 1px;
-}
-.river-sidebar-card {
-  background: var(--white);
-  padding: 1.5rem 1.5rem;
-  text-decoration: none;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: background 0.2s;
-}
-.river-sidebar-card:hover { background: var(--bg-open); }
-.rsc-accent {
-  height: 2px; width: 32px; margin-bottom: 0.85rem;
-}
-.rsc-headline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--espresso);
-  line-height: 1.25;
-  margin-bottom: 0.4rem;
-}
-.rsc-meta {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* ─── Three-column article river ─── */
-.river-3col {
+.jr-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--blush-light);
   border: 1px solid var(--blush-light);
 }
-.river-article {
+
+.jr-column {
   background: var(--white);
   padding: 2rem 1.75rem;
-  text-decoration: none;
   display: flex;
   flex-direction: column;
-  transition: background 0.2s;
 }
-.river-article:hover { background: var(--bg-open); }
-.ra-img {
-  width: 100%;
-  height: 160px;
-  background-size: cover;
-  background-position: center;
+.jr-col-accent {
+  height: 3px;
+  width: 48px;
   margin-bottom: 1.25rem;
-  border-radius: 2px;
 }
-.ra-tag {
+.jr-col-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--blush-light);
+}
+.jr-col-name {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.48rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 0.6rem;
 }
-.ra-headline {
+.jr-col-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+.jr-col-link:hover { opacity: 1; }
+
+.jr-article {
+  text-decoration: none;
+  display: block;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--blush-light);
+  transition: background 0.15s;
+}
+.jr-article:last-child { border-bottom: none; }
+.jr-article:hover { background: var(--bg-open); margin: 0 -1.75rem; padding: 1.25rem 1.75rem; }
+.jr-article-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: var(--espresso);
-  line-height: 1.25;
-  margin-bottom: 0.5rem;
-  flex: 1;
+  line-height: 1.28;
+  margin-bottom: 0.35rem;
 }
-.ra-excerpt {
+.jr-article-meta {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
-  line-height: 1.55;
-  color: var(--muted);
-  margin-bottom: 0.85rem;
-}
-.ra-meta {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-top: auto;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--blush-light);
 }
 
-/* ─── Dark river section (Intelligence) ─── */
-.river-section.dark {
-  background: var(--espresso-mid);
-}
-.river-section.dark .river-title { color: var(--bg-open); }
-.river-section.dark .river-header { border-bottom-color: rgba(255,255,255,0.08); }
-.river-section.dark .river-3col,
-.river-section.dark .river-lead-layout { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.06); }
-.river-section.dark .river-article,
-.river-section.dark .river-lead-card,
-.river-section.dark .river-sidebar-card { background: rgba(255,255,255,0.03); }
-.river-section.dark .river-article:hover,
-.river-section.dark .river-lead-card:hover,
-.river-section.dark .river-sidebar-card:hover { background: rgba(255,255,255,0.06); }
-.river-section.dark .rlc-headline,
-.river-section.dark .rsc-headline,
-.river-section.dark .ra-headline { color: var(--bg-open); }
-.river-section.dark .rlc-excerpt,
-.river-section.dark .ra-excerpt,
-.river-section.dark .rlc-meta,
-.river-section.dark .rsc-meta,
-.river-section.dark .ra-meta { color: rgba(251,245,255,0.4); }
-.river-section.dark .river-sidebar { background: rgba(255,255,255,0.06); }
-.river-section.dark .rlc-meta,
-.river-section.dark .ra-meta { border-top-color: rgba(255,255,255,0.06); }
 
-/* ─── Featured Intelligence strip ─── */
-.featured-strip {
+/* ─────────────────────────────────────────────
+   SECTION 4: INTELLIGENCE SHOWCASE
+───────────────────────────────────────────── */
+.intel-showcase {
   background: var(--espresso);
-  padding: 3rem 2rem;
-  border-top: 3px solid var(--copper);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 5rem 2rem;
+  border-top: 3px solid var(--gold);
 }
-.featured-strip-inner {
+.intel-showcase-inner {
   max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
 }
-.fs-content {}
-.fs-label {
+.intel-header {
+  margin-bottom: 3rem;
+}
+.intel-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--copper);
+  color: var(--gold);
   display: block;
   margin-bottom: 1rem;
 }
-.fs-headline {
+.intel-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 3.5vw, 2.4rem);
   font-weight: 300;
-  color: var(--white);
+  color: var(--bg-open);
   line-height: 1.12;
   margin-bottom: 1rem;
+  max-width: 600px;
 }
-.fs-deck {
+.intel-deck {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.65;
-  color: rgba(251,245,255,0.45);
-  margin-bottom: 1.5rem;
+  color: rgba(251,245,255,0.88);
+  max-width: 560px;
 }
-.fs-cta {
+
+.intel-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 2.5rem;
+}
+.intel-card {
+  background: rgba(255,255,255,0.03);
+  padding: 1.75rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.intel-card:hover { background: rgba(255,255,255,0.07); }
+.intel-card-domain {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.60rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  align-self: flex-start;
+}
+.intel-card-domain.gold-badge { background: rgba(158,125,10,0.2); color: var(--gold); }
+.intel-card-domain.blue-badge { background: rgba(91,143,168,0.2); color: var(--blue); }
+.intel-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--bg-open);
+  line-height: 1.28;
+  margin-bottom: 0.5rem;
+  flex: 1;
+}
+.intel-card-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.64rem;
+  color: rgba(251,245,255,0.88);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.intel-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.intel-cta {
   display: inline-block;
   background: var(--gold-light);
   color: var(--espresso);
   padding: 0.75rem 2rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -575,99 +855,148 @@ body {
   border: 1px solid var(--gold);
   transition: background 0.15s;
 }
-.fs-cta:hover { background: var(--copper-light); }
-
-.fs-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-}
-.fs-card {
-  background: rgba(255,255,255,0.03);
-  padding: 1.35rem 1.25rem;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.fs-card:hover { background: rgba(255,255,255,0.07); }
-.fs-card-badge {
+.intel-cta:hover { background: var(--copper-light); }
+.intel-stat {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.44rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border-radius: 2px;
-  display: inline-block;
-  margin-bottom: 0.6rem;
-  background: rgba(212,134,98,0.2);
-  color: var(--copper);
+  font-size: 0.82rem;
+  color: rgba(251,245,255,0.82);
 }
-.fs-card-badge.interactive { background: rgba(29,107,120,0.2); color: var(--teal); }
-.fs-card-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--bg-open);
-  line-height: 1.25;
+.intel-stat strong {
+  color: var(--gold);
+  font-weight: 600;
 }
 
-/* ─── Founder editorial pull-quote ─── */
-.founder-pull {
-  background: var(--bg-warm);
-  padding: 4rem 2rem;
+
+/* ─────────────────────────────────────────────
+   SECTION 5: COMMUNITY & IDENTITY
+───────────────────────────────────────────── */
+.community-section {
+  background: var(--bg-open);
+  padding: 5rem 2rem;
   border-top: 1px solid var(--blush-light);
 }
-.founder-pull-inner {
-  max-width: 820px;
+.community-inner {
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
-.fp-portrait {
-  width: 100px; height: 100px;
-  border-radius: 50%;
-  border: 2px solid rgba(212,134,98,0.25);
-  overflow: hidden;
-  margin: 0 auto 1.75rem;
-  background: var(--espresso-mid);
-  display: flex; align-items: center; justify-content: center;
+.community-text {}
+.community-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 1rem;
 }
-.fp-portrait img { width: 100%; height: 100%; object-fit: cover; }
-.fp-portrait .portrait-placeholder {
+.community-headline {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem; color: var(--copper); font-weight: 300;
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
 }
-.fp-quote {
+.community-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.community-body strong { color: var(--body-text); font-weight: 500; }
+.community-cta {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,107,120,0.3);
+  padding-bottom: 2px;
+}
+.community-cta:hover { border-color: var(--teal); }
+
+.community-cards {}
+.community-card {
+  background: var(--white);
+  border: 1px solid var(--blush-light);
+  padding: 2rem;
+  margin-bottom: 1px;
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.2s;
+}
+.community-card:hover { box-shadow: 0 4px 16px rgba(54,37,17,0.06); }
+.community-card + .community-card { margin-top: 1rem; }
+.cc-accent {
+  height: 2px;
+  width: 32px;
+  margin-bottom: 1rem;
+}
+.cc-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.cc-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Founder quote inside community */
+.founder-quote {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--white);
+  border-left: 3px solid var(--copper);
+}
+.fq-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 300;
   color: var(--espresso);
-  line-height: 1.35;
-  margin-bottom: 1.25rem;
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
 }
-.fp-quote em { font-style: normal; color: var(--copper); }
-.fp-attribution {
+.fq-text em { font-style: normal; color: var(--copper-text); }
+.fq-attr {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--muted);
 }
-.fp-attribution strong {
-  color: var(--body-text);
-  font-weight: 500;
-}
+.fq-attr strong { color: var(--body-text); font-weight: 500; }
 
-/* ─── Membership CTA ─── */
-.membership-cta {
+
+/* ─────────────────────────────────────────────
+   SECTION 6: MEMBERSHIP TIERS — 4 Tiers
+───────────────────────────────────────────── */
+.membership-section {
   background: var(--espresso);
-  padding: 4rem 2rem;
-  text-align: center;
+  padding: 5rem 2rem;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
-.membership-cta-inner { max-width: 720px; margin: 0 auto; }
-.mc-label {
+.membership-inner { max-width: 1100px; margin: 0 auto; }
+.membership-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.ms-label {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -675,7 +1004,7 @@ body {
   display: block;
   margin-bottom: 1.25rem;
 }
-.mc-headline {
+.ms-headline {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.5rem, 4vw, 2.6rem);
   font-weight: 300;
@@ -683,74 +1012,86 @@ body {
   line-height: 1.12;
   margin-bottom: 1rem;
 }
-.mc-deck {
+.ms-deck {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
-  color: rgba(251,245,255,0.45);
+  color: rgba(251,245,255,0.88);
   line-height: 1.7;
-  margin-bottom: 2rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
-.mc-tiers {
+.ms-tiers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: rgba(255,255,255,0.06);
   text-align: left;
   margin-bottom: 2rem;
 }
-.mc-tier {
+.ms-tier {
   background: rgba(255,255,255,0.03);
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.mc-tier.featured {
+.ms-tier.featured {
   background: rgba(212,134,98,0.08);
 }
-.mc-tier-badge {
+.ms-tier-badge {
   position: absolute;
   top: 1rem; right: 1rem;
-  background: var(--rose);
-  color: var(--white);
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.6rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.44rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
-.mc-tier-name {
+.ms-tier-badge.beta { background: var(--rose); color: var(--white); }
+.ms-tier-badge.popular { background: var(--copper); color: var(--white); }
+
+.ms-tier-name {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(251,245,255,0.35);
+  color: rgba(251,245,255,0.82);
   margin-bottom: 0.35rem;
 }
-.mc-tier-title {
+.ms-tier-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--bg-open);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
-.mc-tier-price {
+.ms-tier-price {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.82rem;
-  color: rgba(251,245,255,0.35);
+  color: rgba(251,245,255,0.82);
   margin-bottom: 1.25rem;
+  line-height: 1.5;
 }
-.mc-tier-features {
+.ms-tier-price .strike {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.ms-tier-price .beta-price {
+  color: var(--copper);
+  font-weight: 600;
+}
+
+.ms-tier-features {
   list-style: none; padding: 0; margin: 0;
   flex: 1;
 }
-.mc-tier-features li {
+.ms-tier-features li {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.78rem;
-  color: rgba(251,245,255,0.5);
+  color: rgba(251,245,255,0.88);
   padding: 0.35rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   display: flex;
@@ -758,103 +1099,327 @@ body {
   align-items: flex-start;
   line-height: 1.45;
 }
-.mc-tier-features li::before { content: '→'; color: var(--copper); flex-shrink: 0; }
-.mc-tier-features li:last-child { border-bottom: none; }
-.mc-tier-btn {
+.ms-tier-features li::before { content: '\2192'; color: var(--copper); flex-shrink: 0; }
+.ms-tier-features li:last-child { border-bottom: none; }
+
+.ms-tier-btn {
   display: block;
   text-align: center;
   margin-top: 1.25rem;
   padding: 0.65rem 1.25rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.70rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.15s;
 }
-.mc-tier-btn.outline {
+.ms-tier-btn.outline {
   border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(251,245,255,0.5);
+  color: rgba(251,245,255,0.88);
 }
-.mc-tier-btn.outline:hover { border-color: var(--copper); color: var(--copper); }
-.mc-tier-btn.filled {
+.ms-tier-btn.outline:hover { border-color: var(--copper); color: var(--copper); }
+.ms-tier-btn.filled {
   background: var(--copper); color: var(--white); border: none;
 }
-.mc-tier-btn.filled:hover { background: var(--copper-light); color: var(--espresso); }
-.mc-tier-btn.featured-btn {
+.ms-tier-btn.filled:hover { background: var(--copper-light); color: var(--espresso); }
+.ms-tier-btn.gold-btn {
   background: var(--gold-light); color: var(--espresso); border: 1px solid var(--gold);
 }
-.mc-tier-btn.featured-btn:hover { background: var(--copper-light); }
+.ms-tier-btn.gold-btn:hover { background: var(--copper-light); }
 
-/* ─── Diosa Ara strip ─── */
-.da-strip {
-  background: var(--espresso-mid);
-  padding: 2.5rem 2rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+.ms-note {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(251,245,255,0.88);
+  font-style: italic;
 }
-.da-strip-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
-}
-.da-text p {
-  font-size: 0.85rem; line-height: 1.7;
-  color: rgba(251,245,255,0.35);
-}
-.da-text p strong { color: rgba(251,245,255,0.6); font-weight: 500; }
-.da-text a { color: var(--copper); text-decoration: none; transition: color 0.15s; }
-.da-text a:hover { color: var(--copper-light); }
+
 
 /* ─────────────────────────────────────────────
-   FOOTER — Unified LC Footer (Locked March 26, 2026)
+   SECTION 7: PACKS & PLAYBOOKS PREVIEW
 ───────────────────────────────────────────── */
-.lc-footer { background: var(--espresso); border-top: 3px solid var(--copper); color: rgba(251,245,255,0.5); }
+.packs-section {
+  padding: 5rem 2rem;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--blush-light);
+}
+.packs-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.packs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.pk-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--forest);
+  display: block;
+  margin-bottom: 1rem;
+}
+.pk-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  color: var(--espresso);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.pk-deck {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.packs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--blush-light);
+  border: 1px solid var(--blush-light);
+  margin-bottom: 2.5rem;
+}
+.pack-card {
+  background: var(--white);
+  padding: 2rem 1.75rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.pack-card:hover { background: var(--bg-open); }
+.pack-card-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+}
+.pack-card-icon.copper-bg { background: rgba(212,134,98,0.12); }
+.pack-card-icon.rose-bg { background: rgba(231,129,127,0.12); }
+.pack-card-icon.teal-bg { background: rgba(29,107,120,0.12); }
+.pack-card-icon.forest-bg { background: rgba(46,82,64,0.12); }
+.pack-card-icon.gold-bg { background: rgba(158,125,10,0.12); }
+.pack-card-icon.blue-bg { background: rgba(91,143,168,0.12); }
+
+.pack-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+.pack-card-count {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 0.85rem;
+}
+
+.packs-cta-row {
+  text-align: center;
+}
+.packs-cta {
+  display: inline-block;
+  background: var(--forest);
+  color: var(--white);
+  padding: 0.75rem 2.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.packs-cta:hover { background: #3a6a52; }
+
+
+/* ─────────────────────────────────────────────
+   DIOSA ARA SECTION
+───────────────────────────────────────────── */
+.da-section {
+  background: var(--espresso-mid);
+  padding: 5rem 2rem;
+  border-top: 3px solid var(--copper);
+}
+.da-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.da-section-text {}
+.da-section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
+  display: block;
+  margin-bottom: 1rem;
+}
+.da-section-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 300;
+  color: var(--bg-open);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+.da-section-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: rgba(251,245,255,0.88);
+  margin-bottom: 1rem;
+}
+.da-section-body strong { color: rgba(251,245,255,0.85); font-weight: 500; }
+.da-section-cta {
+  display: inline-block;
+  background: var(--copper);
+  color: var(--white);
+  padding: 0.75rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s;
+  margin-top: 1rem;
+}
+.da-section-cta:hover { background: var(--copper-light); color: var(--espresso); }
+
+.da-pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+.da-pillar {
+  background: rgba(255,255,255,0.03);
+  padding: 1.5rem 1.5rem;
+  transition: background 0.2s;
+}
+.da-pillar:hover { background: rgba(255,255,255,0.06); }
+.da-pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--bg-open);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+.da-pillar-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(251,245,255,0.82);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .da-section-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ─────────────────────────────────────────────
+   SECTION 8: FOOTER — Unified LC Footer (Locked)
+───────────────────────────────────────────── */
+.lc-footer { background: var(--espresso); border-top: 3px solid var(--copper); color: rgba(251,245,255,0.88); }
 .lc-footer-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 2rem; }
 .lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
-.lc-footer-brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.35rem; }
+.lc-footer-brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.35rem; }
 .lc-footer-brand-mark em { font-style: normal; color: var(--copper); }
-.lc-footer-brand-org { font-size: 0.55rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.3); margin-bottom: 1rem; }
+.lc-footer-brand-org { font-size: 0.70rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.88); margin-bottom: 1rem; }
 .lc-footer-brand-org a { color: inherit; text-decoration: none; }
-.lc-footer-brand-desc { font-size: 0.78rem; line-height: 1.65; color: rgba(251,245,255,0.35); }
-.lc-footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
+.lc-footer-brand-desc { font-size: 0.78rem; line-height: 1.65; color: rgba(251,245,255,0.82); }
+.lc-footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.70rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
 .lc-footer-col ul { list-style: none; padding: 0; }
 .lc-footer-col li { margin-bottom: 0.5rem; }
-.lc-footer-col a { font-size: 0.78rem; color: rgba(251,245,255,0.4); text-decoration: none; transition: color 0.15s; }
+.lc-footer-col a { font-size: 0.78rem; color: rgba(251,245,255,0.85); text-decoration: none; transition: color 0.15s; }
 .lc-footer-col a:hover { color: var(--copper); }
-.lc-footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.68rem; color: rgba(251,245,255,0.25); }
-.lc-footer-bottom a { color: rgba(251,245,255,0.3); text-decoration: none; }
+.lc-footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: rgba(251,245,255,0.88); }
+.lc-footer-bottom a { color: rgba(251,245,255,0.88); text-decoration: none; }
 .lc-footer-bottom a:hover { color: var(--copper); }
+
 
 /* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
+@media (max-width: 1440px) {
+  .lc-nav-org { display: none; }
+  .lc-nav-links { gap: 1rem; }
+  .lc-nav-links li a { font-size: 0.75rem; letter-spacing: 0.08em; }
+}
+@media (max-width: 1024px) {
+  .lc-nav-links { display: none; }
+  .lc-nav-links.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); padding: 1rem 2rem 1.5rem; gap: 0; border-top: 1px solid rgba(255,255,255,0.06); z-index: 99; }
+  .lc-nav-links.open li a { height: auto; line-height: 2.5; }
+  .lc-nav-toggle { display: block; }
+}
 @media (max-width: 900px) {
   .hero-carousel { height: 70vh; min-height: 480px; }
   .hero-slide-headline { font-size: clamp(1.8rem, 4.5vw, 2.8rem); }
-  .featured-strip-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .river-lead-layout { grid-template-columns: 1fr; }
-  .river-sidebar { flex-direction: row; gap: 1px; }
-  .river-3col { grid-template-columns: 1fr 1fr; }
-  .mc-tiers { grid-template-columns: 1fr; }
-  .mc-tier.featured { order: -1; }
+  .ep-card { grid-template-columns: 1fr; }
+  .ep-card-img { min-height: 240px; }
+  .jr-columns { grid-template-columns: 1fr; }
+  .intel-cards { grid-template-columns: 1fr 1fr; }
+  .community-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ms-tiers { grid-template-columns: 1fr 1fr; }
+  .ms-tier.featured { order: -1; }
+  .packs-grid { grid-template-columns: 1fr 1fr; }
   .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .lc-nav-links { display: none; }
-  .lc-nav-toggle { display: block; }
   .masthead-tagline { display: none; }
+  .testimonial-card { min-width: 280px; }
+  .logo-banner-inner { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+  .logo-banner-item { font-size: 0.9rem; }
 }
 @media (max-width: 640px) {
-  .hero-carousel { height: 65vh; min-height: 420px; }
-  .hero-slide-content { padding: 0 1.25rem 3rem; }
+  .hero-carousel { height: 75vh; min-height: 480px; }
+  .hero-slide-content { padding: 0 1.25rem; }
   .hero-slide-headline { font-size: clamp(1.6rem, 5vw, 2.2rem); max-width: 100%; }
-  .hero-slide-deck { font-size: 0.82rem; }
+  .hero-slide-body { font-size: 0.85rem; }
   .hero-masthead-inner { padding: 0.85rem 1.25rem; }
   .masthead-stats { gap: 1.5rem; }
-  .river-section { padding: 3rem 1.25rem; }
-  .river-3col { grid-template-columns: 1fr; }
-  .river-sidebar { flex-direction: column; }
-  .fs-cards { grid-template-columns: 1fr; }
+  .editors-pick { padding: 3rem 1.25rem; }
+  .journal-rivers { padding: 3rem 1.25rem; }
+  .intel-showcase { padding: 3rem 1.25rem; }
+  .intel-cards { grid-template-columns: 1fr; }
+  .what-is-lc { padding: 3rem 1.25rem; }
+  .what-is-lc-headline { font-size: 1.4rem; }
+  .testimonials { padding: 2.5rem 0; }
+  .testimonials-inner { padding: 0 1.25rem; }
+  .testimonial-card { min-width: 260px; max-width: 300px; }
+  .logo-banner-inner { gap: 1rem; }
+  .logo-banner-item { font-size: 0.82rem; }
+  .logo-banner-divider { height: 18px; }
+  .img-placeholder { height: 220px !important; margin: 0 1.25rem !important; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .community-section { padding: 3rem 1.25rem; }
+  .membership-section { padding: 3rem 1.25rem; }
+  .ms-tiers { grid-template-columns: 1fr; }
+  .packs-section { padding: 3rem 1.25rem; }
+  .packs-grid { grid-template-columns: 1fr; }
   .lc-footer-top { grid-template-columns: 1fr; }
   .lc-footer-inner { padding: 2rem 1.25rem 1.5rem; }
+  .intel-cta-row { flex-direction: column; gap: 1rem; }
 }
 
 /* ─────────────────────────────────────────────
@@ -864,108 +1429,93 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero-slide.active .hero-slide-journal  { animation: fadeUp 0.6s 0.2s ease both; }
+.hero-slide.active .hero-slide-label    { animation: fadeUp 0.6s 0.2s ease both; }
 .hero-slide.active .hero-slide-headline { animation: fadeUp 0.6s 0.35s ease both; }
-.hero-slide.active .hero-slide-deck     { animation: fadeUp 0.6s 0.5s ease both; }
+.hero-slide.active .hero-slide-body     { animation: fadeUp 0.6s 0.5s ease both; }
 .hero-slide.active .hero-slide-cta      { animation: fadeUp 0.6s 0.65s ease both; }
 
-/* Scroll reveal for sections */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-</style>
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:2px;}a:focus-visible{text-decoration:underline;}</style>
 </head>
 <body>
 
-<!-- ══ NAV — Unified LC Nav ══ -->
+<!-- ══════════════════════════════════════════════
+     NAV — Canonical LC Nav (Locked March 26, 2026)
+     ══════════════════════════════════════════════ -->
 <nav class="lc-nav">
   <div class="lc-nav-inner">
-    <a href="/" class="lc-nav-brand">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
       <div class="lc-nav-mark"><em>Labora</em> Collective</div>
       <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
     </a>
     <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="lc-nav-links">
       <li><a href="/the-signal/">The Signal</a></li>
-      <li><a href="/womens-health/">Women's Health</a></li>
-      <li><a href="/in-her-name/">In Her Name</a></li>
-      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/#journals">Journals</a></li>
       <li><a href="/intelligence/">Intelligence</a></li>
       <li><a href="/viva-voce/">Viva Voce</a></li>
       <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
+<main>
 
 
 <!-- ══════════════════════════════════════════════
-     HERO CAROUSEL — Sliding Hero with Anchor Images
+     SECTION 1: HERO CAROUSEL — 4 Mission Slides
+     Approved copy March 28, 2026. Do not edit without YC approval.
      ══════════════════════════════════════════════ -->
-<section class="hero-carousel" aria-label="Featured stories">
+<section class="hero-carousel" aria-label="Our mission">
 
-  <!-- SLIDE 1 — Congenital Syphilis (Signal OB) -->
+  <!-- SLIDE 1 — The Thesis -->
   <div class="hero-slide active" data-slide="0">
-    <div class="hero-slide-img" style="background-image: url('/assets/images/articles/syphilis-crisis-hero.jpg'); background-color: #1a1410;"></div>
     <div class="hero-slide-content">
-      <span class="hero-slide-journal copper">Signal Monday · OB Intelligence</span>
-      <h2 class="hero-slide-headline">Why We Don't Know What We're Doing — <em>And Who's Responsible</em></h2>
-      <p class="hero-slide-deck">Congenital syphilis cases have tripled in five years. Screening protocols exist. They aren't being followed. We trace the failure from CDC to county health departments.</p>
-      <a href="/newsletters/ob-signal/essays/congenital-syphilis-crisis-20260310.html" class="hero-slide-cta">Read the Investigation →</a>
+      <span class="hero-slide-label copper">The Labora Collective</span>
+      <h1 class="hero-slide-headline">The Organizing Infrastructure for Women's Health</h1>
+      <p class="hero-slide-body">When the government disinvests, when society looks away, when investors aren't interested — women coordinate. Women invest in ourselves. The Labora Collective is where that coordination happens. The Bloomberg of maternal health: concentrating eyeballs, creating shared language, building the information infrastructure that makes an entire field function.</p>
+      <a href="/join" class="hero-slide-cta copper">Join the Collective</a>
     </div>
   </div>
 
-  <!-- SLIDE 2 — Executive Summary (Featured Intel) -->
+  <!-- SLIDE 2 — For Patients -->
   <div class="hero-slide" data-slide="1">
-    <div class="hero-slide-img" style="background-image: url('/assets/images/articles/crisis-executive-hero.jpg'); background-color: #1a1410;"></div>
     <div class="hero-slide-content">
-      <span class="hero-slide-journal gold">Featured Intelligence · Special Report</span>
-      <h2 class="hero-slide-headline">America's Women &amp; Children: <em>A Crisis in Real Time</em></h2>
-      <p class="hero-slide-deck">Our flagship 26-domain intelligence report — documenting the systematic dismantling of women's health infrastructure with live interactive figures and verified primary sources.</p>
-      <a href="/intelligence/labora-rounds/special-reports/executive-summary.html" class="hero-slide-cta">Read the Executive Summary →</a>
+      <span class="hero-slide-label rose">For Patients</span>
+      <h2 class="hero-slide-headline">Information That Is Always in Your Best Interest</h2>
+      <p class="hero-slide-body">When other organizations hedge because of politics, we don't. That's our guarantee. Reliable resources, trustworthy people, and clinical truth — even at our own risk. You deserve a space where your health comes first, not last.</p>
+      <a href="/start" class="hero-slide-cta rose">Start Here</a>
     </div>
   </div>
 
-  <!-- SLIDE 3 — HRT / Menopause (Signal GYN/RJ) -->
+  <!-- SLIDE 3 — For Providers -->
   <div class="hero-slide" data-slide="2">
-    <div class="hero-slide-img" style="background-image: url('/assets/images/articles/hrt-menopause-hero.jpg'); background-color: #1a1410;"></div>
     <div class="hero-slide-content">
-      <span class="hero-slide-journal rose">Signal Wednesday · GYN &amp; Reproductive Justice</span>
-      <h2 class="hero-slide-headline">23 Years of Undertreated Suffering. <em>The Black Box Warning Is Gone.</em></h2>
-      <p class="hero-slide-deck">The FDA's black box warning on hormone replacement therapy shaped — and damaged — a generation of women's care. Now it's been removed. What changes, and what doesn't.</p>
-      <a href="/newsletters/gyn-signal/essays/hrt-undertreated-menopause-20260311.html" class="hero-slide-cta">Read the Full Essay →</a>
+      <span class="hero-slide-label teal">For Providers</span>
+      <h2 class="hero-slide-headline">Systems to Keep Patients Safe and Help You Win</h2>
+      <p class="hero-slide-body">Behind the Labora Collective is Diosa Ara — an obstetrical emergency infrastructure company designing real-time accountability systems. So when a pregnant woman walks in during crisis, her team is watching, advocating, and ensuring standards of care are met in the moment.</p>
+      <a href="/providers" class="hero-slide-cta teal">Provider Resources</a>
     </div>
   </div>
 
-  <!-- SLIDE 4 — ICE Enforcement (Signal OB) -->
+  <!-- SLIDE 4 — For Institutions -->
   <div class="hero-slide" data-slide="3">
-    <div class="hero-slide-img" style="background-image: url('/assets/images/articles/ice-hospital-hero.jpg'); background-color: #1a1410;"></div>
     <div class="hero-slide-content">
-      <span class="hero-slide-journal copper">Signal Monday · OB Intelligence</span>
-      <h2 class="hero-slide-headline">The Hospital Was Supposed to Be Safe. <em>That Is Being Taken From Us.</em></h2>
-      <p class="hero-slide-deck">ICE enforcement operations near hospitals are changing who shows up for prenatal care. The clinical consequences are measurable and they are happening now.</p>
-      <a href="/newsletters/ob-signal/essays/ice-hospital-enforcement-20260310.html" class="hero-slide-cta">Read the Investigation →</a>
-    </div>
-  </div>
-
-  <!-- SLIDE 5 — Louisiana Mifepristone (Signal GYN/RJ) -->
-  <div class="hero-slide" data-slide="4">
-    <div class="hero-slide-img" style="background-image: url('/assets/images/articles/mifepristone-louisiana-hero.jpg'); background-color: #1a1410;"></div>
-    <div class="hero-slide-content">
-      <span class="hero-slide-journal rose">Signal Wednesday · Reproductive Justice</span>
-      <h2 class="hero-slide-headline">The Louisiana Mifepristone Case: <em>A Nationwide Threat in State Clothing</em></h2>
-      <p class="hero-slide-deck">A single state court case could functionally end medication abortion access in America. This is how it works, and what is at stake.</p>
-      <a href="/newsletters/gyn-signal/essays/louisiana-mifepristone-case-20260311.html" class="hero-slide-cta">Read the Analysis →</a>
+      <span class="hero-slide-label gold">For Institutions</span>
+      <h2 class="hero-slide-headline">The Blind Spots You've Been Ignoring</h2>
+      <p class="hero-slide-body">Power asymmetry is a clinical risk factor. That truth is killing women. We bring institutions, physicians, doulas, and patients to sit side by side — because the blind spots you continue to ignore put you in your own peril. It's time.</p>
+      <a href="/intelligence" class="hero-slide-cta gold">Intelligence Reports</a>
     </div>
   </div>
 
   <!-- Indicators -->
   <div class="hero-indicators">
-    <button class="hero-dot active" data-goto="0" aria-label="Slide 1"></button>
-    <button class="hero-dot" data-goto="1" aria-label="Slide 2"></button>
-    <button class="hero-dot" data-goto="2" aria-label="Slide 3"></button>
-    <button class="hero-dot" data-goto="3" aria-label="Slide 4"></button>
-    <button class="hero-dot" data-goto="4" aria-label="Slide 5"></button>
-    <button class="hero-pause" aria-label="Pause slideshow">❚❚</button>
+    <button class="hero-dot active" data-goto="0" aria-label="Slide 1: Our Thesis"></button>
+    <button class="hero-dot" data-goto="1" aria-label="Slide 2: For Patients"></button>
+    <button class="hero-dot" data-goto="2" aria-label="Slide 3: For Providers"></button>
+    <button class="hero-dot" data-goto="3" aria-label="Slide 4: For Institutions"></button>
+    <button class="hero-pause" aria-label="Pause slideshow">&#10074;&#10074;</button>
   </div>
 
 </section>
@@ -973,240 +1523,338 @@ body {
 <!-- Masthead bar -->
 <div class="hero-masthead">
   <div class="hero-masthead-inner">
-    <span class="masthead-tagline">"Rigorous enough for a department chair. Legible enough for a campaign staffer. Urgent enough for a patient."</span>
+    <span class="masthead-tagline">"The Bloomberg of maternal health — concentrating eyeballs, creating shared language, building information infrastructure."</span>
     <div class="masthead-stats">
       <div class="masthead-stat">
-        <span class="masthead-stat-num">26</span>
+        <span class="masthead-stat-num">3</span>
+        <span class="masthead-stat-label">Journals &middot; 15+ Series</span>
+      </div>
+      <div class="masthead-stat">
+        <span class="masthead-stat-num">31</span>
         <span class="masthead-stat-label">Intelligence Domains</span>
       </div>
       <div class="masthead-stat">
-        <span class="masthead-stat-num">2×</span>
-        <span class="masthead-stat-label">Weekly Dispatches</span>
-      </div>
-      <div class="masthead-stat">
-        <span class="masthead-stat-num">90%</span>
-        <span class="masthead-stat-label">Outside the Exam Room</span>
+        <span class="masthead-stat-num">500+</span>
+        <span class="masthead-stat-label">Playbooks &amp; Packs Planned</span>
       </div>
     </div>
-    <a href="/join" class="masthead-join">Join Now →</a>
+    <a href="/join" class="masthead-join">Join Now &rarr;</a>
   </div>
 </div>
 
 
 <!-- ══════════════════════════════════════════════
-     EDITORIAL RIVER 1 — The Signal (OB Monday)
+     LOGO BANNER — Brand Identity Strip
      ══════════════════════════════════════════════ -->
-<section class="river-section" style="border-top: none;">
-  <div class="river-inner reveal">
-    <div class="river-header">
-      <div class="river-header-left">
-        <span class="river-label" style="color: var(--copper);">Signal Monday · OB Intelligence</span>
-        <h2 class="river-title">Yemaya's Circle of Care</h2>
+<div class="logo-banner">
+  <div class="logo-banner-inner">
+    <span class="logo-banner-item"><em>Labora</em> Collective</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">Women's Health</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">In Her Name</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">The Blueprint</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item"><em>Diosa</em> Ara</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1B: WHAT IS THE LABORA COLLECTIVE
+     ══════════════════════════════════════════════ -->
+<section class="what-is-lc">
+  <div class="what-is-lc-inner reveal">
+    <span class="what-is-lc-badge">Why the Labora Collective?</span>
+    <h2 class="what-is-lc-headline">Women's health has no Bloomberg. No Reuters. No infrastructure.<br>We're building it.</h2>
+    <p class="what-is-lc-body">
+      Every other industry has shared information systems, organized intelligence, and coordinated infrastructure. Women's health has none. When the government disinvests and society looks away &mdash; women are left to coordinate alone. Until now.
+    </p>
+    <a href="/about" class="what-is-lc-cta">Learn What We're Building &rarr;</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     VISUAL: Featured Image Banner
+     Replace with hero photography when available.
+     ══════════════════════════════════════════════ -->
+<div style="height: 320px; max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: url('/assets/images/branding/firefly-plaster-warm.jpg') center/cover no-repeat; border-radius: 4px; box-shadow: 0 2px 16px rgba(62,39,26,0.10);">
+  <img src="/assets/images/lc-logo.png" alt="Labora Collective" style="max-height: 220px; max-width: 70%; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(62,39,26,0.18));">
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1C: TESTIMONIALS
+     ══════════════════════════════════════════════ -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <h2 class="testimonials-headline"><em>In Their Own Words</em></h2>
+      <div class="testimonials-nav">
+        <button onclick="scrollTestimonials(-1)" aria-label="Previous">&larr;</button>
+        <button onclick="scrollTestimonials(1)" aria-label="Next">&rarr;</button>
       </div>
-      <a href="/newsletters/ob-signal/" class="river-see-all" style="color: var(--copper); border-color: rgba(212,134,98,0.3);">All OB Signal Issues →</a>
+    </div>
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">I finally found a place where someone is telling me the truth about what's happening in maternal health &mdash; not the watered-down version, not the political version. The actual clinical truth.</p>
+          <div class="testimonial-attr">&mdash; Patient &amp; Community Member <span>Diosa Circle</span></div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">The intelligence reports alone are worth it. I've been practicing OB for 15 years and I've never seen anyone organize the data this way. It changes how I think about risk.</p>
+          <div class="testimonial-attr">&mdash; OB/GYN Physician <span>Diosa Insiders</span></div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">As a doula, I've always felt like I was operating on the margins of the system. This is the first time someone built something where I'm sitting at the same table as the physicians and the institutions.</p>
+          <div class="testimonial-attr">&mdash; Certified Doula <span>Diosa Essentials</span></div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">What Dr. Connor is building is what we should have had decades ago. An actual infrastructure &mdash; not just another newsletter, not just another advocacy group. Infrastructure.</p>
+          <div class="testimonial-attr">&mdash; Maternal Health Researcher <span>Diosa Insiders</span></div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">I came for the playbooks because I was terrified of my first pregnancy. I stayed because I realized this community actually cares about me, not just my subscription.</p>
+          <div class="testimonial-attr">&mdash; First-Time Mother <span>Diosa Essentials</span></div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">The way you break down what's happening in policy and connect it directly to clinical outcomes &mdash; nobody else is doing this. I share your work with my entire department.</p>
+          <div class="testimonial-attr">&mdash; Hospital Administrator <span>Labora Luminaries</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2: EDITOR'S PICK
+     Manually updated weekly.
+     EDITOR'S PICK: Replace href, image src, tag, headline, excerpt below.
+     ══════════════════════════════════════════════ -->
+<section class="editors-pick">
+  <div class="editors-pick-inner reveal">
+    <div class="ep-header">
+      <span class="ep-badge">Editor's Pick</span>
+      <div class="ep-header-line"></div>
+    </div>
+    <!-- EDITOR'S PICK: PRAMS article slotted March 28, 2026 -->
+    <a href="/articles/prams-funding-surveillance.html" class="ep-card">
+      <div class="ep-card-img" style="min-height: 320px; display: flex; align-items: center; justify-content: center; background: var(--espresso-mid);">
+        <!-- PLACEHOLDER: Replace with editorial photography for the PRAMS article -->
+        <span style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(251,245,255,0.85);">Editorial Image — Coming Soon</span>
+      </div>
+      <div class="ep-card-content">
+        <span class="ep-card-tag">OB Essay &middot; Maternal Surveillance Infrastructure</span>
+        <h2 class="ep-card-headline">PRAMS Funding Expires in April. Here&rsquo;s What We Lose.</h2>
+        <p class="ep-card-excerpt">The Pregnancy Risk Assessment Monitoring System has been collecting state-level data on maternal experiences before, during, and after pregnancy since 1987. It is the only surveillance system of its kind in the United States. Federal funding expires April 2026.</p>
+        <span class="ep-card-cta">Read the Full Story &rarr;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3: JOURNAL RIVERS — 3 Columns
+     Women's Health (copper) | In Her Name (rose) | The Blueprint (teal)
+     ══════════════════════════════════════════════ -->
+<section class="journal-rivers" id="journals">
+  <div class="journal-rivers-inner reveal">
+    <div class="jr-header">
+      <div class="jr-header-left">
+        <span class="jr-label">Our Publications</span>
+        <h2 class="jr-title">Three journals. One complete picture.</h2>
+      </div>
     </div>
 
-    <div class="river-lead-layout">
-      <!-- Lead story -->
-      <a href="/newsletters/ob-signal/essays/congenital-syphilis-crisis-20260310.html" class="river-lead-card">
-        <div class="rlc-img" style="background-image: url('/assets/images/articles/syphilis-crisis-thumb.jpg'); background-color: #e8d5c8;"></div>
-        <span class="rlc-tag" style="color: var(--copper);">Lead Story · Mar 10</span>
-        <h3 class="rlc-headline">Why We Don't Know What We're Doing — And Who's Responsible</h3>
-        <p class="rlc-excerpt">Congenital syphilis cases have tripled in five years. Screening protocols exist. They aren't being followed. We trace the failure from CDC to county health departments — and count the babies in between.</p>
-        <span class="rlc-meta">Congenital Syphilis Crisis · 8 min read</span>
-      </a>
+    <div class="jr-columns">
 
-      <!-- Sidebar stories -->
-      <div class="river-sidebar">
-        <a href="/newsletters/ob-signal/essays/ice-hospital-enforcement-20260310.html" class="river-sidebar-card">
-          <div class="rsc-accent" style="background: var(--copper);"></div>
-          <h4 class="rsc-headline">The Hospital Was Supposed to Be Safe. That Is Being Taken From Us.</h4>
-          <span class="rsc-meta">ICE Enforcement & Maternal Care · 7 min read</span>
+      <!-- ─── Women's Health (Copper) ─── -->
+      <div class="jr-column">
+        <div class="jr-col-accent" style="background: var(--copper);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: var(--copper-text);">Women's Health</span>
+          <a href="/womens-health/" class="jr-col-link" style="color: #7A4D2E; border-color: rgba(122,77,46,0.3);">All &rarr;</a>
+        </div>
+        <!-- WOMEN'S HEALTH ARTICLES: Replace href, headline, meta for each article -->
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- WH ARTICLE 1 HEADLINE -->Clinical Education &amp; Empowered Care</h3>
+          <span class="jr-article-meta"><!-- WH ARTICLE 1 META -->Yemaya's Circle of Care</span>
         </a>
-        <a href="/newsletters/ob-signal/essays/prams-funding-surveillance-20260310.html" class="river-sidebar-card">
-          <div class="rsc-accent" style="background: var(--copper);"></div>
-          <h4 class="rsc-headline">PRAMS Funding Expires in April. Here's What We Lose.</h4>
-          <span class="rsc-meta">Maternal Surveillance & Data · 6 min read</span>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- WH ARTICLE 2 HEADLINE -->Physiological Health, Evidence You Need</h3>
+          <span class="jr-article-meta"><!-- WH ARTICLE 2 META -->EmpowerHER</span>
+        </a>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- WH ARTICLE 3 HEADLINE -->Pleasure, Power &amp; the Body You Own</h3>
+          <span class="jr-article-meta"><!-- WH ARTICLE 3 META -->Pleasure &amp; Power</span>
         </a>
       </div>
-    </div>
-  </div>
-</section>
 
-
-<!-- ══════════════════════════════════════════════
-     EDITORIAL RIVER 2 — The Signal (GYN/RJ Wednesday)
-     ══════════════════════════════════════════════ -->
-<section class="river-section" style="background: var(--white); border-top: 1px solid var(--blush-light);">
-  <div class="river-inner reveal">
-    <div class="river-header">
-      <div class="river-header-left">
-        <span class="river-label" style="color: var(--rose);">Signal Wednesday · GYN &amp; Reproductive Justice</span>
-        <h2 class="river-title">Her Health Matters</h2>
-      </div>
-      <a href="/newsletters/gyn-signal/" class="river-see-all" style="color: var(--rose); border-color: rgba(231,129,127,0.3);">All GYN Signal Issues →</a>
-    </div>
-
-    <div class="river-3col">
-      <a href="/newsletters/gyn-signal/essays/hrt-undertreated-menopause-20260311.html" class="river-article">
-        <div class="ra-img" style="background-image: url('/assets/images/articles/hrt-menopause-thumb.jpg'); background-color: #f0e0dc;"></div>
-        <span class="ra-tag" style="color: var(--rose);">Menopause & HRT</span>
-        <h3 class="ra-headline">23 Years of Undertreated Suffering. The Black Box Warning Is Gone.</h3>
-        <p class="ra-excerpt">The FDA's black box warning on HRT damaged a generation of women's care. Now it's removed. What changes.</p>
-        <span class="ra-meta">Mar 11 · 9 min read</span>
-      </a>
-      <a href="/newsletters/gyn-signal/essays/louisiana-mifepristone-case-20260311.html" class="river-article">
-        <div class="ra-img" style="background-image: url('/assets/images/articles/mifepristone-thumb.jpg'); background-color: #f0e0dc;"></div>
-        <span class="ra-tag" style="color: var(--rose);">Reproductive Rights</span>
-        <h3 class="ra-headline">The Louisiana Mifepristone Case: A Nationwide Threat in State Clothing</h3>
-        <p class="ra-excerpt">A single state court case could functionally end medication abortion access in America.</p>
-        <span class="ra-meta">Mar 11 · 8 min read</span>
-      </a>
-      <a href="/newsletters/gyn-signal/essays/pharmacy-refusals-federal-backstop-20260311.html" class="river-article">
-        <div class="ra-img" style="background-image: url('/assets/images/articles/pharmacy-refusals-thumb.jpg'); background-color: #f0e0dc;"></div>
-        <span class="ra-tag" style="color: var(--rose);">Access & Rights</span>
-        <h3 class="ra-headline">The Federal Backstop on Pharmacy Refusals Is Gone. Here's What's Left.</h3>
-        <p class="ra-excerpt">Religious refusal protections have been expanded. Legal protections for patients have been withdrawn.</p>
-        <span class="ra-meta">Mar 11 · 7 min read</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════
-     FEATURED INTELLIGENCE — Flagship Report
-     ══════════════════════════════════════════════ -->
-<section class="featured-strip">
-  <div class="featured-strip-inner reveal">
-    <div class="fs-content">
-      <span class="fs-label">Featured Intelligence · Special Report</span>
-      <h2 class="fs-headline">America's Women &amp; Children:<br>A Crisis in Real Time</h2>
-      <p class="fs-deck">Our flagship special report — built on a 26-domain research protocol with live interactive figures documenting the systematic dismantling of women's health infrastructure in America.</p>
-      <a href="/intelligence/labora-rounds/special-reports/executive-summary.html" class="fs-cta">Read the Executive Summary →</a>
-    </div>
-    <div class="fs-cards">
-      <a href="/intelligence/labora-rounds/special-reports/data-overview.html" class="fs-card">
-        <span class="fs-card-badge">Infographic</span>
-        <h4 class="fs-card-title">Two-Page Data Overview</h4>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/interactive/maternal-mortality-trajectory.html" class="fs-card">
-        <span class="fs-card-badge interactive">Interactive</span>
-        <h4 class="fs-card-title">Maternal Mortality Trajectory</h4>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/interactive/federal-dismantlement-timeline.html" class="fs-card">
-        <span class="fs-card-badge interactive">Interactive</span>
-        <h4 class="fs-card-title">Federal Dismantlement Timeline</h4>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/interactive/state-scorecard-map.html" class="fs-card">
-        <span class="fs-card-badge interactive">Interactive</span>
-        <h4 class="fs-card-title">State Scorecard Map</h4>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════
-     EDITORIAL RIVER 3 — Intelligence / Labora Rounds
-     ══════════════════════════════════════════════ -->
-<section class="river-section dark">
-  <div class="river-inner reveal">
-    <div class="river-header">
-      <div class="river-header-left">
-        <span class="river-label" style="color: var(--gold);">Intelligence · Labora Rounds</span>
-        <h2 class="river-title">26-Domain Weekly Intelligence</h2>
-      </div>
-      <a href="/intelligence/labora-rounds/special-reports/" class="river-see-all" style="color: var(--gold); border-color: rgba(158,125,10,0.3);">All Reports →</a>
-    </div>
-
-    <div class="river-3col">
-      <a href="/intelligence/labora-rounds/special-reports/domain-01-medical-clinical.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 01 · Clinical</span>
-        <h3 class="ra-headline">Medical &amp; Clinical Intelligence</h3>
-        <p class="ra-excerpt">Clinical trial findings, FDA actions, guideline updates, and practice-changing evidence across women's health specialties.</p>
-        <span class="ra-meta">Special Report · Updated Mar 2026</span>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/domain-02-political-legal.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 02 · Policy</span>
-        <h3 class="ra-headline">Political &amp; Legal Analysis</h3>
-        <p class="ra-excerpt">Legislative tracking, court decisions, executive actions, and regulatory changes affecting women's health care access.</p>
-        <span class="ra-meta">Special Report · Updated Mar 2026</span>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/domain-09-trump-admin.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 09 · Administration</span>
-        <h3 class="ra-headline">Trump Administration Tracking</h3>
-        <p class="ra-excerpt">Executive orders, agency actions, budget proposals, and personnel changes with direct impact on women's health infrastructure.</p>
-        <span class="ra-meta">Special Report · Updated Mar 2026</span>
-      </a>
-    </div>
-
-    <!-- Second row — more domains -->
-    <div class="river-3col" style="margin-top: 1px;">
-      <a href="/intelligence/labora-rounds/special-reports/domain-03-economic.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 03 · Economic</span>
-        <h3 class="ra-headline">Economic Analysis</h3>
-        <span class="ra-meta">Special Report</span>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/domain-10-immigration-rj.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 10 · Immigration</span>
-        <h3 class="ra-headline">Immigration &amp; Reproductive Justice</h3>
-        <span class="ra-meta">Special Report</span>
-      </a>
-      <a href="/intelligence/labora-rounds/special-reports/domain-11-clinical-practice.html" class="river-article">
-        <span class="ra-tag" style="color: var(--gold);">Domain 11 · Practice</span>
-        <h3 class="ra-headline">Clinical Practice Intelligence</h3>
-        <span class="ra-meta">Special Report</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════
-     EDITORIAL RIVER 4 — Three Journals
-     ══════════════════════════════════════════════ -->
-<section class="river-section">
-  <div class="river-inner reveal">
-    <div class="river-header" style="border-bottom: none; margin-bottom: 1.5rem;">
-      <div class="river-header-left">
-        <span class="river-label" style="color: var(--copper);">Our Publications</span>
-        <h2 class="river-title">Three journals. One complete picture.</h2>
-      </div>
-    </div>
-
-    <div class="river-3col">
-      <!-- Women's Health -->
-      <div class="river-article" style="cursor: default;">
-        <div style="height: 3px; width: 48px; background: var(--copper); margin-bottom: 1.25rem;"></div>
-        <span class="ra-tag" style="color: var(--copper);">Women's Health Journal</span>
-        <h3 class="ra-headline" style="font-size: 1.35rem;">Clinical Education &amp; Empowered Care</h3>
-        <p class="ra-excerpt">Physiological health, evidence you need to navigate your body. Home of Yemaya's Circle of Care, Her Health Matters, EmpowerHER, Pleasure &amp; Power, and Roots &amp; Wings.</p>
-        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--blush-light);">
-          <a href="/womens-health/" style="font-family:'DM Sans',sans-serif; font-size:0.56rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); text-decoration:none; border-bottom: 1px solid rgba(212,134,98,0.25); padding-bottom: 2px;">Explore Journal →</a>
+      <!-- ─── In Her Name (Rose) ─── -->
+      <div class="jr-column">
+        <div class="jr-col-accent" style="background: var(--rose);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: #A34B4A;">In Her Name</span>
+          <a href="/in-her-name/" class="jr-col-link" style="color: #7A3635; border-color: rgba(122,54,53,0.3);">All &rarr;</a>
         </div>
+        <!-- IN HER NAME ARTICLES: Replace href, headline, meta for each article -->
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- IHN ARTICLE 1 HEADLINE -->Political, Investigative &amp; Systems Reporting</h3>
+          <span class="jr-article-meta"><!-- IHN ARTICLE 1 META -->The Cost of Control</span>
+        </a>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- IHN ARTICLE 2 HEADLINE -->The Forces Shaping Women's Health From the Outside</h3>
+          <span class="jr-article-meta"><!-- IHN ARTICLE 2 META -->Brought to You by Racism</span>
+        </a>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- IHN ARTICLE 3 HEADLINE -->What You're Entitled to, What They Won't Tell You</h3>
+          <span class="jr-article-meta"><!-- IHN ARTICLE 3 META -->Know Your Rights</span>
+        </a>
       </div>
 
-      <!-- In Her Name -->
-      <div class="river-article" style="cursor: default;">
-        <div style="height: 3px; width: 48px; background: var(--rose); margin-bottom: 1.25rem;"></div>
-        <span class="ra-tag" style="color: var(--rose);">In Her Name</span>
-        <h3 class="ra-headline" style="font-size: 1.35rem;">Political, Investigative &amp; Systems Reporting</h3>
-        <p class="ra-excerpt">The forces shaping women's health from the outside in, documented without euphemism. Home of The Cost of Control, Brought to You by Racism, Know Your Rights, and The Dossier.</p>
-        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--blush-light);">
-          <a href="/in-her-name/" style="font-family:'DM Sans',sans-serif; font-size:0.56rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--rose); text-decoration:none; border-bottom: 1px solid rgba(231,129,127,0.25); padding-bottom: 2px;">Explore Journal →</a>
+      <!-- ─── The Blueprint (Teal) ─── -->
+      <div class="jr-column">
+        <div class="jr-col-accent" style="background: var(--teal);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: var(--teal);">The Blueprint</span>
+          <a href="/blueprint/" class="jr-col-link" style="color: #14616C; border-color: rgba(20,97,108,0.3);">All &rarr;</a>
         </div>
+        <!-- BLUEPRINT ARTICLES: Replace href, headline, meta for each article -->
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- BP ARTICLE 1 HEADLINE -->Research, Implementation &amp; Infrastructure</h3>
+          <span class="jr-article-meta"><!-- BP ARTICLE 1 META -->Doula's Corner</span>
+        </a>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- BP ARTICLE 2 HEADLINE -->Intelligence That Becomes Actionable Guidance</h3>
+          <span class="jr-article-meta"><!-- BP ARTICLE 2 META -->Birthworker Brief</span>
+        </a>
+        <a href="#" class="jr-article">
+          <h3 class="jr-article-headline"><!-- BP ARTICLE 3 HEADLINE -->From the Founder's Desk to Your Practice</h3>
+          <span class="jr-article-meta"><!-- BP ARTICLE 3 META -->Founder's Notes</span>
+        </a>
       </div>
 
-      <!-- The Blueprint -->
-      <div class="river-article" style="cursor: default;">
-        <div style="height: 3px; width: 48px; background: var(--teal); margin-bottom: 1.25rem;"></div>
-        <span class="ra-tag" style="color: var(--teal);">The Blueprint</span>
-        <h3 class="ra-headline" style="font-size: 1.35rem;">Research, Implementation &amp; Infrastructure</h3>
-        <p class="ra-excerpt">Where clinical intelligence becomes actionable guidance for providers, birthworkers, and advocates. Home of Doula's Corner, Birthworker Brief, Founder's Notes, and Field Notes.</p>
-        <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--blush-light);">
-          <a href="/blueprint/" style="font-family:'DM Sans',sans-serif; font-size:0.56rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom: 1px solid rgba(29,107,120,0.25); padding-bottom: 2px;">Explore Journal →</a>
-        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4: INTELLIGENCE SHOWCASE
+     31 domains. Real-time accountability.
+     ══════════════════════════════════════════════ -->
+<section class="intel-showcase">
+  <div class="intel-showcase-inner reveal">
+    <div class="intel-header">
+      <span class="intel-label">Intelligence &middot; Labora Rounds</span>
+      <h2 class="intel-headline">31 domains. Real-time accountability.</h2>
+      <p class="intel-deck">Our physician-led research protocol monitors women's health infrastructure across 31 intelligence domains — clinical, political, economic, legal, and beyond. This is what a functioning early warning system looks like.</p>
+    </div>
+
+    <div class="intel-cards">
+      <!-- INTELLIGENCE CARDS: Replace href, domain, title, meta as real reports are published -->
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain gold-badge">Domain 01 &middot; Clinical</span>
+        <h3 class="intel-card-title">Medical &amp; Clinical Intelligence</h3>
+        <span class="intel-card-meta">Guideline updates &middot; FDA actions &middot; Trials</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain gold-badge">Domain 02 &middot; Policy</span>
+        <h3 class="intel-card-title">Political &amp; Legal Analysis</h3>
+        <span class="intel-card-meta">Legislation &middot; Court decisions &middot; Executive orders</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain blue-badge">Domain 03 &middot; Economic</span>
+        <h3 class="intel-card-title">Economic Analysis</h3>
+        <span class="intel-card-meta">Funding &middot; Market forces &middot; Insurance</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain blue-badge">Domain 09 &middot; Admin</span>
+        <h3 class="intel-card-title">Federal Administration Tracking</h3>
+        <span class="intel-card-meta">Agency actions &middot; Budget &middot; Personnel</span>
+      </a>
+    </div>
+
+    <!-- Second row -->
+    <div class="intel-cards" style="margin-top: 1px;">
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain gold-badge">Domain 10 &middot; Immigration</span>
+        <h3 class="intel-card-title">Immigration &amp; Reproductive Justice</h3>
+        <span class="intel-card-meta">Access barriers &middot; ICE impact &middot; Sanctuary</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain blue-badge">Domain 11 &middot; Practice</span>
+        <h3 class="intel-card-title">Clinical Practice Intelligence</h3>
+        <span class="intel-card-meta">Workforce &middot; Burnout &middot; Scope of practice</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain gold-badge">Domain 15 &middot; Maternal</span>
+        <h3 class="intel-card-title">Maternal Mortality &amp; Morbidity</h3>
+        <span class="intel-card-meta">Surveillance &middot; Prevention &middot; Accountability</span>
+      </a>
+      <a href="/intelligence/" class="intel-card">
+        <span class="intel-card-domain blue-badge">Domain 22 &middot; Tech</span>
+        <h3 class="intel-card-title">Health Technology &amp; Data</h3>
+        <span class="intel-card-meta">FemTech &middot; AI &middot; Privacy &middot; Digital access</span>
+      </a>
+    </div>
+
+    <div class="intel-cta-row" style="margin-top: 2.5rem;">
+      <a href="/intelligence/" class="intel-cta">Explore All 31 Domains &rarr;</a>
+      <span class="intel-stat"><strong>4,884</strong> data points tracked &middot; <strong>516</strong> signal cards &middot; <strong>14</strong> intelligence reports</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5: COMMUNITY & IDENTITY
+     Who we are. Medical community powered by Diosa Ara.
+     ══════════════════════════════════════════════ -->
+<section class="community-section">
+  <div class="community-inner reveal">
+    <div class="community-text">
+      <span class="community-label">Community &amp; Marketplace</span>
+      <h2 class="community-headline">More than a publication.</h2>
+      <p class="community-body">The Labora Collective is a <strong>community, marketplace, and intelligence platform</strong> — where patients, providers, doulas, midwives, lactation consultants, and institutions sit side by side. Independent practitioners: this marketplace is being built for you.</p>
+      <a href="/community" class="community-cta">Learn More &rarr;</a>
+
+      <div class="founder-quote">
+        <p class="fq-text">"This community exists to make the systems visible — and to build the infrastructure that replaces what's broken."</p>
+        <p class="fq-attr"><strong>Dr. Yamicia Connor, MD, MBA</strong> &mdash; Founder &middot; OB/GYN Physician</p>
+      </div>
+    </div>
+
+    <div class="community-cards">
+      <div class="community-card">
+        <div class="cc-accent" style="background: var(--forest);"></div>
+        <h3 class="cc-title">For Independent Providers</h3>
+        <p class="cc-desc">Doulas, lactation consultants, midwives, birthworkers — list your practice, find your audience.</p>
+      </div>
+      <div class="community-card">
+        <div class="cc-accent" style="background: var(--teal);"></div>
+        <h3 class="cc-title">Doula's Corner</h3>
+        <p class="cc-desc">Clinical intelligence translated for community-based care.</p>
+      </div>
+      <div class="community-card">
+        <div class="cc-accent" style="background: var(--copper);"></div>
+        <h3 class="cc-title">Viva Voce</h3>
+        <p class="cc-desc">Dr. Connor's unfiltered clinical commentary.</p>
+      </div>
+      <div class="community-card">
+        <div class="cc-accent" style="background: var(--rose);"></div>
+        <h3 class="cc-title">The Signal</h3>
+        <p class="cc-desc">Free twice-weekly intelligence dispatches.</p>
       </div>
     </div>
   </div>
@@ -1214,96 +1862,173 @@ body {
 
 
 <!-- ══════════════════════════════════════════════
-     FOUNDER PULL-QUOTE
+     SECTION 6: MEMBERSHIP TIERS — 4 Tiers
+     Pricing LOCKED March 28, 2026 (Option B: 50% beta discount)
+     Do not change pricing without YC approval.
      ══════════════════════════════════════════════ -->
-<section class="founder-pull">
-  <div class="founder-pull-inner reveal">
-    <div class="fp-portrait">
-      <img src="/assets/images/dr-connor-portrait.jpg" alt="Dr. Yamicia Connor" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'portrait-placeholder\'>YC</span>';">
+<section class="membership-section">
+  <div class="membership-inner reveal">
+    <div class="membership-header">
+      <span class="ms-label">Membership</span>
+      <h2 class="ms-headline">Intelligence that moves with the crisis.</h2>
+      <p class="ms-deck">Join a physician-led community, marketplace, and intelligence platform — built for patients, providers, doulas, and the institutions that serve them.</p>
     </div>
-    <p class="fp-quote">"What happens to women's health happens <em>inside systems</em> most people never see. This publication exists to make those systems visible — clinically, politically, economically — so that the people who can change them have the evidence to act."</p>
-    <p class="fp-attribution"><strong>Dr. Yamicia Connor, MD, MBA</strong><br>Founder, Labora Collective · OB/GYN Physician</p>
-  </div>
-</section>
 
+    <div class="ms-tiers">
 
-<!-- ══════════════════════════════════════════════
-     MEMBERSHIP CTA
-     ══════════════════════════════════════════════ -->
-<section class="membership-cta">
-  <div class="membership-cta-inner reveal">
-    <span class="mc-label">Membership</span>
-    <h2 class="mc-headline">Intelligence that moves with the crisis.</h2>
-    <p class="mc-deck">Join Labora Collective for physician-led intelligence on women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
-
-    <div class="mc-tiers">
-      <!-- Free -->
-      <div class="mc-tier">
-        <span class="mc-tier-name">Free</span>
-        <h3 class="mc-tier-title">The Signal</h3>
-        <span class="mc-tier-price">$0 / forever</span>
-        <ul class="mc-tier-features">
-          <li>Weekly Signal dispatches (OB Monday + GYN/RJ Wednesday)</li>
-          <li>Access to selected essays and investigations</li>
+      <!-- TIER 1: Diosa Circle (Free) -->
+      <div class="ms-tier">
+        <span class="ms-tier-name">Free</span>
+        <h3 class="ms-tier-title">Diosa Circle</h3>
+        <span class="ms-tier-price">$0 / forever</span>
+        <ul class="ms-tier-features">
+          <li>The Signal — twice-weekly dispatches</li>
+          <li>Selected free articles &amp; essays</li>
           <li>Monthly Labora Digest</li>
+          <li>Event invitations &amp; community previews</li>
         </ul>
-        <a href="/join?tier=free" class="mc-tier-btn outline">Subscribe Free →</a>
+        <a href="/join?tier=circle" class="ms-tier-btn outline">Subscribe Free &rarr;</a>
       </div>
 
-      <!-- Diosa Insider -->
-      <div class="mc-tier featured">
-        <span class="mc-tier-badge">Beta Pricing</span>
-        <span class="mc-tier-name">Diosa Insider</span>
-        <h3 class="mc-tier-title">Full Access</h3>
-        <span class="mc-tier-price">$15 / month</span>
-        <ul class="mc-tier-features">
-          <li>Everything in Free</li>
-          <li>Full archive of all three journals</li>
+      <!-- TIER 2: Diosa Essentials ($15/mo beta) -->
+      <div class="ms-tier featured">
+        <span class="ms-tier-badge beta">Beta Price (50% Off)</span>
+        <span class="ms-tier-name">Essentials</span>
+        <h3 class="ms-tier-title">Diosa Essentials</h3>
+        <span class="ms-tier-price"><span class="strike">$30/mo</span> &rarr; <span class="beta-price">$15/mo</span></span>
+        <ul class="ms-tier-features">
+          <li>Everything in Diosa Circle</li>
+          <li>Full journal access — all three publications</li>
+          <li>Complete archive of published content</li>
+          <li>Community membership &amp; discussion</li>
+        </ul>
+        <a href="/join?tier=essentials" class="ms-tier-btn filled">Join Now &rarr;</a>
+      </div>
+
+      <!-- TIER 3: Diosa Insiders ($27.50/mo beta) -->
+      <div class="ms-tier">
+        <span class="ms-tier-badge beta">Beta Price (50% Off)</span>
+        <span class="ms-tier-name">Professional</span>
+        <h3 class="ms-tier-title">Diosa Insiders</h3>
+        <span class="ms-tier-price"><span class="strike">$55/mo</span> &rarr; <span class="beta-price">$27.50/mo</span></span>
+        <ul class="ms-tier-features">
+          <li>Everything in Essentials</li>
           <li>Intelligence Reports &amp; Special Reports</li>
-          <li>Viva Voce — Dr. Connor's premium voice product</li>
+          <li>Professional resources &amp; licensing rights</li>
+          <li>Packs &amp; Playbooks access</li>
+          <li>Viva Voce — premium voice product</li>
         </ul>
-        <a href="/join?tier=professional" class="mc-tier-btn filled">Join Now →</a>
+        <a href="/join?tier=insiders" class="ms-tier-btn filled">Join Now &rarr;</a>
       </div>
 
-      <!-- Labora Luminary -->
-      <div class="mc-tier">
-        <span class="mc-tier-name">Labora Luminary</span>
-        <h3 class="mc-tier-title">Senior Member</h3>
-        <span class="mc-tier-price">$1,500 / year</span>
-        <ul class="mc-tier-features">
-          <li>Everything in Diosa Insider</li>
-          <li>Playbooks &amp; Implementation Packs</li>
-          <li>Multi-seat team access</li>
-          <li>Priority support</li>
+      <!-- TIER 4: Labora Luminaries ($150/mo) -->
+      <div class="ms-tier">
+        <span class="ms-tier-name">Co-Investment</span>
+        <h3 class="ms-tier-title">Labora Luminaries</h3>
+        <span class="ms-tier-price"><span class="beta-price">$150/mo</span> ($1,500/yr)</span>
+        <ul class="ms-tier-features">
+          <li>Everything in Diosa Insiders</li>
+          <li>Strategy sessions with Dr. Connor</li>
+          <li>Governance &amp; advisory participation</li>
+          <li>Annual Labora Summit invitation</li>
+          <li>Co-investment in women's health infrastructure</li>
         </ul>
-        <a href="/join?tier=institutional" class="mc-tier-btn featured-btn">Contact Us →</a>
+        <a href="/join?tier=luminaries" class="ms-tier-btn gold-btn">Apply &rarr;</a>
       </div>
+
+    </div>
+
+    <p class="ms-note">"Patients should feel welcome at the Professional tier too. The distinction is about what you need the resources for, not who you are."</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7: PACKS & PLAYBOOKS PREVIEW
+     96 Packs. 527 Playbooks.
+     ══════════════════════════════════════════════ -->
+<section class="packs-section">
+  <div class="packs-inner reveal">
+    <div class="packs-header">
+      <span class="pk-label">Packs &amp; Playbooks</span>
+      <h2 class="pk-headline">Hundreds of playbooks and packs — planned and in development.</h2>
+      <p class="pk-deck">Domain-specific resource bundles built by a physician for the people who need them — clinical guidance, patient playbooks, provider tools, and crisis protocols organized by the situations you're actually in.</p>
+    </div>
+
+    <div class="packs-grid">
+      <!-- PACK CARDS: Replace with real pack data from Airtable as available -->
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon copper-bg">&#9881;</div>
+        <h3 class="pack-card-title">Maternal Emergency Response</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->12 playbooks</span>
+      </a>
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon rose-bg">&#9829;</div>
+        <h3 class="pack-card-title">Reproductive Rights Navigation</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->9 playbooks</span>
+      </a>
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon teal-bg">&#9734;</div>
+        <h3 class="pack-card-title">Birthworker &amp; Doula Toolkit</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->15 playbooks</span>
+      </a>
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon gold-bg">&#9670;</div>
+        <h3 class="pack-card-title">Postpartum Recovery &amp; Mental Health</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->11 playbooks</span>
+      </a>
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon forest-bg">&#9650;</div>
+        <h3 class="pack-card-title">Insurance &amp; Financial Navigation</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->8 playbooks</span>
+      </a>
+      <a href="/packs/" class="pack-card">
+        <div class="pack-card-icon blue-bg">&#9673;</div>
+        <h3 class="pack-card-title">Menopause &amp; Hormonal Health</h3>
+        <span class="pack-card-count"><!-- PACK COUNT -->7 playbooks</span>
+      </a>
+    </div>
+
+    <div class="packs-cta-row">
+      <a href="/packs/" class="packs-cta">Browse All Packs &rarr;</a>
     </div>
   </div>
 </section>
 
 
-<!-- ══ DA STRIP ══ -->
-<section class="da-strip">
-  <div class="da-strip-inner">
-    <div class="da-text">
-      <p><strong>Labora Collective</strong> is an initiative of <a href="https://diosara.com">Diosa Ara</a> — physician-founded, evidence-led, built for the women who are most affected and the people who serve them.</p>
+<!-- ══════════════════════════════════════════════
+     DIOSA ARA — The Company Behind the Collective
+     ══════════════════════════════════════════════ -->
+<section class="da-section">
+  <div class="da-section-inner reveal">
+    <div class="da-section-text">
+      <span class="da-section-label">Powered by Diosa Ara</span>
+      <h2 class="da-section-headline">What is Diosa Ara?</h2>
+      <p class="da-section-body">The obstetrical emergency infrastructure company behind the Collective. Physician-founded. Designing real-time accountability systems so that when a pregnant woman walks in during crisis, her team is watching — in the moment, not after the fact.</p>
+      <a href="https://diosara.com" class="da-section-cta">Learn More &rarr;</a>
+    </div>
+    <div style="min-height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.04);">
+      <img src="/assets/images/branding/diosa-ara/DA_logo_main_transparent.png" alt="Diosa Ara" style="max-height: 160px; max-width: 80%; object-fit: contain;">
     </div>
   </div>
 </section>
 
 
-<!-- ══ FOOTER — Unified LC Footer ══ -->
+<!-- ══════════════════════════════════════════════
+     SECTION 8: FOOTER — Canonical LC Footer (Locked March 26, 2026)
+     Do not redesign. Copy from DECISIONS_LOCKED.md.
+     ══════════════════════════════════════════════ -->
+</main>
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
       <div class="lc-footer-brand">
         <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
         <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
-        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health — clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women’s health — for patients, providers, doulas, and the institutions that serve them.</p>
       </div>
       <div class="lc-footer-col">
-        <h5>Journals</h5>
+        <h3>Journals</h3>
         <ul>
           <li><a href="/womens-health/">Women's Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
@@ -1311,7 +2036,7 @@ body {
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Products</h5>
+        <h3>Products</h3>
         <ul>
           <li><a href="/the-signal/">The Signal</a></li>
           <li><a href="/viva-voce/">Viva Voce</a></li>
@@ -1319,15 +2044,15 @@ body {
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Intelligence</h5>
+        <h3>Intelligence</h3>
         <ul>
           <li><a href="/intelligence/">Labora Rounds</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
-          <li><a href="/intelligence/labora-rounds/special-reports/executive-summary.html">Weekly Intelligence</a></li>
+          <li><a href="/intelligence/special-reports/">Special Reports</a></li>
+          <li><a href="/intelligence/weekly/">Weekly Intelligence</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Organization</h5>
+        <h3>Organization</h3>
         <ul>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
           <li><a href="/join">Membership</a></li>
@@ -1345,11 +2070,11 @@ body {
 
 
 <!-- ══════════════════════════════════════════════
-     SCRIPTS — Carousel + Scroll Reveal
+     SCRIPTS — Carousel + Scroll Reveal + Mobile Nav
      ══════════════════════════════════════════════ -->
 <script>
 (function() {
-  // ─── Hero Carousel ───
+  // ─── Hero Carousel (4 mission slides) ───
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
   const pauseBtn = document.querySelector('.hero-pause');
@@ -1370,7 +2095,7 @@ body {
   }
 
   function startAutoplay() {
-    interval = setInterval(next, 6000);
+    interval = setInterval(next, 7000);
   }
 
   function stopAutoplay() {
@@ -1378,8 +2103,8 @@ body {
   }
 
   // Dot navigation
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
       stopAutoplay();
       goTo(parseInt(dot.dataset.goto));
       if (!paused) startAutoplay();
@@ -1387,30 +2112,30 @@ body {
   });
 
   // Pause/Play
-  pauseBtn.addEventListener('click', () => {
+  pauseBtn.addEventListener('click', function() {
     if (paused) {
       startAutoplay();
-      pauseBtn.textContent = '❚❚';
+      pauseBtn.innerHTML = '&#10074;&#10074;';
       paused = false;
     } else {
       stopAutoplay();
-      pauseBtn.textContent = '▶';
+      pauseBtn.innerHTML = '&#9654;';
       paused = true;
     }
   });
 
   // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft') { stopAutoplay(); goTo((current - 1 + slides.length) % slides.length); if (!paused) startAutoplay(); }
     if (e.key === 'ArrowRight') { stopAutoplay(); next(); if (!paused) startAutoplay(); }
   });
 
   // Touch swipe
-  let touchStartX = 0;
-  const carousel = document.querySelector('.hero-carousel');
-  carousel.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-  carousel.addEventListener('touchend', (e) => {
-    const diff = e.changedTouches[0].screenX - touchStartX;
+  var touchStartX = 0;
+  var carousel = document.querySelector('.hero-carousel');
+  carousel.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  carousel.addEventListener('touchend', function(e) {
+    var diff = e.changedTouches[0].screenX - touchStartX;
     if (Math.abs(diff) > 50) {
       stopAutoplay();
       if (diff > 0) goTo((current - 1 + slides.length) % slides.length);
@@ -1422,9 +2147,9 @@ body {
   startAutoplay();
 
   // ─── Scroll Reveal ───
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
@@ -1432,7 +2157,53 @@ body {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  reveals.forEach(el => observer.observe(el));
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  // ─── Mobile Nav Toggle ───
+  var navToggle = document.querySelector('.lc-nav-toggle');
+  var navLinks = document.querySelector('.lc-nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      var isOpen = navLinks.style.display === 'flex';
+      navLinks.style.display = isOpen ? 'none' : 'flex';
+      navLinks.style.flexDirection = isOpen ? '' : 'column';
+      navLinks.style.position = isOpen ? '' : 'absolute';
+      navLinks.style.top = isOpen ? '' : '56px';
+      navLinks.style.left = isOpen ? '' : '0';
+      navLinks.style.right = isOpen ? '' : '0';
+      navLinks.style.background = isOpen ? '' : 'var(--espresso)';
+      navLinks.style.padding = isOpen ? '' : '1rem 2rem';
+      navLinks.style.gap = isOpen ? '' : '0';
+      navLinks.style.zIndex = isOpen ? '' : '99';
+      var links = navLinks.querySelectorAll('a');
+      links.forEach(function(link) {
+        link.style.height = isOpen ? '' : 'auto';
+        link.style.lineHeight = isOpen ? '' : '2.5';
+      });
+    });
+  }
+
+  // ─── Testimonials Scroller ───
+  var tTrack = document.getElementById('testimonialsTrack');
+  var tCards = tTrack ? tTrack.querySelectorAll('.testimonial-card') : [];
+  var tPos = 0;
+  window.scrollTestimonials = function(dir) {
+    if (!tTrack || tCards.length === 0) return;
+    var cardW = tCards[0].offsetWidth + 24; // card width + gap
+    var visibleW = tTrack.parentElement.offsetWidth;
+    var maxScroll = tTrack.scrollWidth - visibleW;
+    tPos = Math.max(0, Math.min(tPos + (dir * cardW), maxScroll));
+    tTrack.style.transform = 'translateX(-' + tPos + 'px)';
+  };
+  // Touch swipe for testimonials
+  if (tTrack) {
+    var tTouchStart = 0;
+    tTrack.addEventListener('touchstart', function(e) { tTouchStart = e.changedTouches[0].screenX; }, { passive: true });
+    tTrack.addEventListener('touchend', function(e) {
+      var diff = e.changedTouches[0].screenX - tTouchStart;
+      if (Math.abs(diff) > 40) { scrollTestimonials(diff > 0 ? -1 : 1); }
+    }, { passive: true });
+  }
 })();
 </script>
 

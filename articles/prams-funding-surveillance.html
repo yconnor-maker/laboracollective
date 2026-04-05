@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light only">
+  <title>PRAMS Funding Expires in April. Here's What We Lose. — Labora Collective</title>
+  <meta name="description" content="The Pregnancy Risk Assessment Monitoring System has tracked maternal health data since 1987. Federal funding expires April 2026. Here's what's at stake.">
+  <meta property="og:title" content="PRAMS Funding Expires in April. Here's What We Lose.">
+  <meta property="og:description" content="The only population-based surveillance system for maternal experiences in the U.S. is about to lose its funding. What that means for every provider and patient.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://laboracollective.com/articles/prams-funding-surveillance.html">
+  <meta property="og:image" content="/assets/images/articles/prams-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="PRAMS, maternal health surveillance, CDC funding, reproductive health, maternal mortality, pregnancy data, public health infrastructure">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    /* ════════════════════════════════════════════════════════════
+       LABORA COLLECTIVE — OB Essay
+       PRAMS Funding Expires in April. Here's What We Lose.
+       Built from LC-Official-Template-Essay-2026-03-26
+       + works-cited from Intelligence Report template
+       Generated March 28, 2026
+       ════════════════════════════════════════════════════════════ */
+
+    /* ══ DESIGN TOKENS ══ */
+    :root {
+      --espresso:       #362511;
+      --espresso-mid:   #4A3218;
+      --body-text:      #2C1A0E;
+      --muted:          #6B5648;
+      --copper:         #D48662;
+  --copper-text:     #7A4D2E;
+      --copper-light:   #E8A882;
+      --blush:          #EABAB0;
+      --blush-light:    #F5DDD9;
+      --rose:           #E7817F;
+      --rose-light:     #FAEAEA;
+      --teal:           #1D6B78;
+      --teal-light:     #E0F2F4;
+      --forest:         #2E5240;
+      --forest-light:   #E4EFE8;
+      --gold:           #9E7D0A;
+      --gold-light:     #F5EDCC;
+      --bg-warm:        #F7F3EE;
+      --bg-open:        #FBF5FF;
+      --white:          #FFFFFF;
+      /* OB Essay = copper accent */
+      --accent:         var(--copper);
+      --accent-light:   var(--blush-light);
+      --font-display:   'Cormorant Garamond', Georgia, serif;
+      --font-body:      'EB Garamond', Georgia, serif;
+      --font-ui:        'DM Sans', Arial, Helvetica, sans-serif;
+    }
+
+    /* ══ BASE RESET ══ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; color-scheme: light only; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-open);
+      color: var(--body-text);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--espresso); }
+    img { max-width: 100%; height: auto; }
+
+    /* ══ HEADER — uses var(--accent) throughout ══ */
+    .lc-header { background: var(--espresso); border-bottom: 3px solid var(--accent); }
+    .lc-header-inner { max-width: 700px; margin: 0 auto; padding: 2.5rem 2rem 2rem; }
+    .lc-logo { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 2rem; }
+    .lc-mark { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; }
+    .lc-wordmark { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(251,245,255,0.85); line-height: 1.5; }
+    .lc-pub-tag { display: inline-block; background: var(--accent); padding: 0.3rem 0.9rem; margin-bottom: 1.25rem; }
+    .lc-pub-tag span { font-family: var(--font-ui); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
+    .lc-pub-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; line-height: 1.05; color: var(--bg-open); margin-bottom: 0.5rem; }
+    .lc-pub-subtitle { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--accent-light); margin-bottom: 1.5rem; }
+    .lc-accent-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 4px; margin-top: 1.5rem; }
+    .lc-accent-bar div:nth-child(1) { background: var(--espresso-mid); }
+    .lc-accent-bar div:nth-child(2) { background: var(--accent); }
+    .lc-accent-bar div:nth-child(3) { background: var(--accent-light); }
+    .lc-issue-meta { display: flex; align-items: center; gap: 1.5rem; padding: 0.75rem 0 0; flex-wrap: wrap; }
+    .lc-issue-meta span { font-family: var(--font-ui); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251,245,255,0.82); }
+    .lc-issue-meta .dot { color: var(--accent); }
+
+    /* ══ SITE NAV — unified, full-width, sticky ══ */
+    .lc-nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
+    .lc-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .lc-nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; flex-shrink: 0; }
+    .lc-nav-mark { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--bg-open); letter-spacing: -0.01em; line-height: 1; }
+    .lc-nav-mark em { font-style: normal; color: var(--copper); }
+    .lc-nav-org { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,245,255,0.82); line-height: 1.3; border-left: 1px solid rgba(251,245,255,0.1); padding-left: 0.65rem; }
+    .lc-nav-org a { color: rgba(251,245,255,0.82); text-decoration: none; transition: color 0.15s; }
+    .lc-nav-org a:hover { color: var(--copper); }
+    .lc-nav-links { display: flex; align-items: center; gap: 0; list-style: none; margin: 0; padding: 0; }
+    .lc-nav-links li a { display: block; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.88); text-decoration: none; padding: 0 0.85rem; height: 56px; line-height: 56px; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .lc-nav-links li a:hover { color: var(--copper); }
+    .lc-nav-links li a.lc-nav-active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+    .lc-nav-cta { display: inline-block; background: var(--copper); color: var(--white); padding: 0.4rem 1.1rem; font-family: var(--font-ui); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.15s; margin-left: 0.5rem; }
+    .lc-nav-cta:hover { background: var(--copper-light); color: var(--espresso); }
+    .lc-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
+    .lc-nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(251,245,255,0.88); transition: transform 0.2s, opacity 0.2s; }
+
+    /* ══ BODY ══ */
+    .lc-body { max-width: 700px; margin: 0 auto; padding: 0 2rem 6rem; }
+    .lc-body p { font-size: 0.98rem; line-height: 1.8; color: var(--body-text); margin-bottom: 0.85rem; }
+    .lc-body h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 400; line-height: 1.2; color: var(--espresso); margin-bottom: 1rem; }
+    .lc-body h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: var(--espresso); margin: 0.5rem 0 1rem; }
+
+    /* ══ SECTION LABEL ══ */
+    .lc-section-label {
+      font-family: var(--font-ui); font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--accent); display: block; margin-bottom: 1rem;
+    }
+
+    /* ══ ESSAY SPECIFIC ══ */
+    .lc-essay-pullquote {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 0 1rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .lc-essay-author {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ══ CALLOUT ══ */
+    .lc-callout { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 1rem 1.25rem; margin: 1.25rem 0; }
+    .lc-callout .lc-callout-label {
+      font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); display: block; margin-bottom: 0.5rem;
+    }
+    .lc-callout p { font-size: 0.9rem; margin-bottom: 0; line-height: 1.65; }
+
+    /* ══ BREAKING / UPDATE CALLOUT ══ */
+    .lc-update-callout {
+      background: var(--rose-light);
+      border-left: 4px solid var(--rose);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .lc-update-callout .lc-callout-label { color: var(--rose); }
+    .lc-update-callout p { font-size: 0.9rem; line-height: 1.65; margin-bottom: 0.5rem; }
+    .lc-update-callout p:last-child { margin-bottom: 0; }
+
+    /* ══ VISUAL / DATA BOX (from Intelligence Report) ══ */
+    .vb {
+      background: var(--white);
+      padding: 2.25rem;
+      margin: 2.5rem 0;
+      border-top: 3px solid var(--accent);
+      border-radius: 0 0 6px 6px;
+    }
+    .vb .vt {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--espresso);
+      margin-bottom: 0.35rem;
+    }
+    .vb .vs {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+    .vb p { font-size: 0.93rem; line-height: 1.65; margin-bottom: 0.5rem; }
+    .vb .vc {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      color: var(--body-text);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--blush);
+      line-height: 1.55;
+    }
+
+    /* ══ IMAGE PLACEHOLDER ══ */
+    .img-placeholder {
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg-open) 50%, var(--accent-light) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-family: var(--font-ui);
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      position: relative; overflow: hidden;
+    }
+    .img-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      border: 2px dashed var(--blush);
+      opacity: 0.4; margin: 8px;
+    }
+    .img-placeholder .ph-desc {
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+      max-width: 420px;
+      margin-top: 0.5rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* ══ VIDEO SECTION ══ */
+    .lc-video-section { margin: 2.5rem 0; padding-top: 1.5rem; border-top: 1px solid var(--accent-light); }
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ══ WORKS CITED (from Intelligence Report template) ══ */
+    .works-cited {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--accent);
+    }
+    .works-cited h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--espresso);
+      margin-bottom: 1rem;
+    }
+    .works-cited p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--body-text);
+      margin-bottom: 0.35rem;
+    }
+    .works-cited a {
+      color: var(--copper);
+      word-break: break-all;
+      text-decoration: none;
+    }
+    .works-cited a:hover {
+      text-decoration: underline;
+    }
+
+    /* ══ GO DEEPER ══ */
+    .lc-go-deeper { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--accent-light); }
+    .lc-go-deeper-label { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.6rem; }
+    .lc-go-deeper a { display: block; font-family: var(--font-ui); font-size: 0.72rem; letter-spacing: 0.05em; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); padding: 0.45rem 0; }
+    .lc-go-deeper a:hover { color: var(--espresso); }
+    .lc-go-deeper .gd-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; display: block; letter-spacing: 0; }
+
+    /* ══ AUTHOR BIO ══ */
+    .lc-author-bio {
+      background: var(--bg-warm);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .lc-author-bio-img {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-ui);
+      font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .lc-author-bio-text h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--espresso); margin-bottom: 0.25rem;
+    }
+    .lc-author-bio-text p {
+      font-size: 0.82rem; color: var(--muted); line-height: 1.65;
+    }
+
+    /* ══ DARK BLOCK / CTA ══ */
+    .lc-dark-block { background: var(--espresso); padding: 2.5rem; margin: 2.5rem 0; }
+    .lc-dark-block .lc-section-label { color: var(--accent); margin-bottom: 1.25rem; }
+    .lc-dark-block p { color: rgba(251,245,255,0.88); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1rem; }
+
+    .lc-cta-block { background: var(--espresso); padding: 3.5rem 2rem; text-align: center; }
+    .lc-cta-block p { font-family: var(--font-ui); font-size: 0.95rem; color: rgba(251,245,255,0.85); margin-bottom: 1.5rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .lc-cta-btn { display: inline-block; background: var(--gold-light); color: var(--espresso); padding: 0.85rem 2.5rem; font-family: var(--font-ui); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gold); transition: background 0.15s; }
+    .lc-cta-btn:hover { background: var(--copper-light); }
+
+    /* ══ FOOTER — unified, full-width ══ */
+    .lc-footer { background: var(--espresso); border-top: 3px solid var(--copper); padding: 3.5rem 2rem 2rem; }
+    .lc-footer-inner { max-width: 1100px; margin: 0 auto; }
+    .lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
+    .lc-footer-brand-mark { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.3rem; }
+    .lc-footer-brand-mark em { font-style: normal; color: var(--copper); }
+    .lc-footer-brand-org { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(251,245,255,0.82); margin-bottom: 1rem; }
+    .lc-footer-brand-org a { color: rgba(251,245,255,0.82); text-decoration: none; transition: color 0.15s; }
+    .lc-footer-brand-org a:hover { color: var(--copper); }
+    .lc-footer-brand-desc { font-size: 0.82rem; line-height: 1.72; color: rgba(251,245,255,0.82); }
+    .lc-footer-col h5 { font-family: var(--font-ui); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,245,255,0.22); margin-bottom: 1rem; }
+    .lc-footer-col ul { list-style: none; padding: 0; }
+    .lc-footer-col ul li { padding: 0.3rem 0; }
+    .lc-footer-col ul li a { font-family: var(--font-ui); font-size: 0.88rem; color: rgba(251,245,255,0.82); text-decoration: none; transition: color 0.15s; }
+    .lc-footer-col ul li a:hover { color: var(--copper); }
+    .lc-footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .lc-footer-bottom p { font-family: var(--font-ui); font-size: 0.64rem; color: rgba(251,245,255,0.82); letter-spacing: 0.08em; text-transform: uppercase; }
+    .lc-footer-bottom a { color: rgba(251,245,255,0.82); text-decoration: none; transition: color 0.15s; }
+    .lc-footer-bottom a:hover { color: var(--copper); }
+
+    /* In-text citation links */
+    .cite { font-size: 0.78rem; color: var(--accent); vertical-align: super; text-decoration: none; font-weight: 600; }
+    .cite:hover { color: var(--espresso); }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 900px) {
+      .lc-nav-toggle { display: flex; }
+      .lc-nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); flex-direction: column; padding: 1.5rem 2rem; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+      .lc-nav-links.open { display: flex; }
+      .lc-nav-links li a { height: auto; line-height: 1; padding: 0.8rem 0; border-bottom: none; font-size: 0.7rem; }
+      .lc-nav-cta { margin: 0.8rem 0 0 0; text-align: center; display: block; }
+      .lc-nav-org { display: none; }
+      .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .lc-author-bio { flex-direction: column; align-items: center; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      .lc-header-inner, .lc-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .lc-dark-block, .lc-cta-block { padding: 1.75rem 1.25rem; }
+      .lc-footer-top { grid-template-columns: 1fr; }
+    }
+
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:2px;}a:focus-visible{text-decoration:underline;}</style>
+</head>
+<body>
+
+<!-- ═══ ESSAY HEADER ═══ -->
+<header class="lc-header">
+  <div class="lc-header-inner">
+    <div class="lc-logo">
+      <div class="lc-mark">LC</div>
+      <div class="lc-wordmark">Labora<br>Collective</div>
+    </div>
+    <div class="lc-pub-tag">
+      <span>OB Essay &nbsp;&middot;&nbsp; Maternal Surveillance Infrastructure</span>
+    </div>
+    <h1 class="lc-pub-title">PRAMS Funding Expires in April. Here&rsquo;s What We Lose.</h1>
+    <p class="lc-pub-subtitle">The only population-based maternal surveillance system in the world is about to lose its federal funding.</p>
+    <div class="lc-accent-bar"><div></div><div></div><div></div></div>
+    <div class="lc-issue-meta">
+      <span>OB Essay</span>
+      <span class="dot">&middot;</span>
+      <span>March 10, 2026</span>
+      <span class="dot">&middot;</span>
+      <span>A Diosa Ara Initiative</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ SITE NAVIGATION ═══ -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/" class="lc-nav-active">The Signal</a></li>
+      <li><a href="/#journals">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ═══ ANCHOR IMAGE ═══ -->
+<div class="img-placeholder" style="height: 400px; max-width: 100%;">
+  <!-- REPLACE: Hero image — editorial photograph: data infrastructure, maternal health surveillance, clinical setting with data overlay. Tone: serious, institutional, stakes-driven. -->
+  <span>Anchor Image</span>
+  <span class="ph-desc">Maternal surveillance infrastructure &mdash; editorial photography or data-driven visualization</span>
+</div>
+
+
+<!-- ═══ ESSAY BODY ═══ -->
+<main class="lc-body">
+  <div style="padding-top: 3rem;">
+    <span class="lc-essay-author">By Dr. Yamicia Connor, MD, PhD, MPH &middot; March 10, 2026</span>
+
+    <p>The Pregnancy Risk Assessment Monitoring System has been collecting state-level data on maternal experiences before, during, and after pregnancy since 1987.<a href="#ref-1" class="cite">[1]</a> It is the only population-based surveillance system of its kind in the United States &mdash; or, for that matter, in the world.<a href="#ref-2" class="cite">[2]</a> Federal funding expires April 30, 2026.<a href="#ref-3" class="cite">[3]</a></p>
+
+    <div class="lc-essay-pullquote">
+      It took decades to build the evidence base behind maternal care guidelines. It is being dismantled in months.
+    </div>
+
+    <p>This is not bureaucratic overhead. This is the evidence base. The clinical practice guidelines you follow, the risk estimates you use when counseling patients, the disparity data that motivates policy change &mdash; these come from population surveillance systems like PRAMS. When you use a protocol for preeclampsia management, it was built on data these systems generated. When you cite Black maternal mortality rates to advocate for policy change, those numbers come from infrastructure like this.</p>
+
+    <p>Without PRAMS, maternal mortality review committees lose the population-level context they need to investigate deaths meaningfully. Quality improvement initiatives lose their baseline. Researchers cannot identify emerging complications before they become crises. The improvement cycle depends on data that is now expiring.</p>
+
+    <!-- DATA VISUALIZATION OPPORTUNITY -->
+    <div class="vb">
+      <div class="vt">PRAMS Coverage: Growth and Dismantlement</div>
+      <div class="vs">1987&ndash;2026 &middot; CDC / PRAMS Program Data</div>
+      <!-- REPLACE: Create timeline infographic -->
+      <p>PRAMS expanded from 6 states in 1987 to 51 jurisdictions covering approximately 83% of all U.S. births. In January 2025, data collection was suspended for the first time in three decades. In April 2025, the entire PRAMS team was placed on administrative leave. Federal grants expire April 30, 2026.</p>
+      <div class="vc">Source: CDC PRAMS Program; AJPH Vol. 108 No. 10, 2018; Commonwealth Fund, January 2026</div>
+    </div>
+
+    <h2>What Has Already Been Lost</h2>
+
+    <p>Two of three branches of the CDC&rsquo;s Division of Reproductive Health were eliminated in 2025 layoffs<a href="#ref-4" class="cite">[4]</a> &mdash; including the Women&rsquo;s Health and Fertility Branch, which was responsible for federal contraceptive safety guidelines, the CDC&rsquo;s contraception app, and the Assisted Reproductive Technology surveillance team.<a href="#ref-5" class="cite">[5]</a> Only the Maternal and Infant Health branch survived.</p>
+
+    <!-- UPDATE CALLOUT -->
+    <div class="lc-update-callout">
+      <span class="lc-callout-label">Since This Essay Was Written</span>
+      <p>PRAMS data collection was suspended in January 2025 &mdash; for the first time in three decades &mdash; while states were mid-survey for 2024 births. On April 1, 2025, the entire CDC PRAMS team received reduction-in-force notices.<a href="#ref-6" class="cite">[6]</a> Mississippi suspended PRAMS operations in September 2025. As of March 2026, the CDC has filed a Federal Register notice seeking a three-year extension of data collection authority &mdash; but funding renewal remains uncertain.<a href="#ref-8" class="cite">[8]</a></p>
+    </div>
+
+    <p>PRAMS expiration doesn&rsquo;t happen in isolation. It is the last piece of a surveillance infrastructure that has already been significantly dismantled. We are operating on the last clean data this system will produce for years, possibly longer.</p>
+
+    <div class="lc-essay-pullquote">
+      The disparity in what we know about maternal outcomes will map directly onto the disparity in maternal outcomes themselves.
+    </div>
+
+    <p>The asymmetry of what we&rsquo;re losing is worth stating plainly. It took decades to build the evidence base behind maternal care guidelines. It is being dismantled in months. And the consequences will not arrive suddenly &mdash; they will arrive slowly, as guidelines become outdated, as disparity patterns become invisible, as complications that should have been preventable aren&rsquo;t prevented because no one had the data to see them coming.</p>
+
+    <p>The states that cannot replace PRAMS funding independently &mdash; which is most of them &mdash; will be flying blind.<a href="#ref-7" class="cite">[7]</a> The states with resources to maintain some version of maternal surveillance will have data. The states without those resources will not. The disparity in what we know about maternal outcomes will map directly onto the disparity in maternal outcomes themselves.</p>
+
+    <!-- DATA VISUALIZATION OPPORTUNITY -->
+    <div class="vb">
+      <div class="vt">Surveillance Inequality</div>
+      <div class="vs">State-level PRAMS operational status &middot; 2025&ndash;2026</div>
+      <!-- REPLACE: U.S. state map showing PRAMS operational status overlaid with maternal mortality rates -->
+      <p>States with the fewest resources &mdash; often those with the highest maternal and infant mortality rates &mdash; are first to lose surveillance capacity. California maintains independent maternal surveillance; Mississippi has already suspended PRAMS operations.</p>
+      <div class="vc">Source: AcademyHealth, April 2025; Commonwealth Fund, January 2026</div>
+    </div>
+
+    <div class="lc-callout">
+      <span class="lc-callout-label">What This Means for You</span>
+      <p>Enhance your own clinical documentation now &mdash; diagnoses, severity, interventions, timing, barriers, outcomes, through one year postpartum. Your records may be the only remaining data source for understanding maternal complications in your community. If you are a provider with Congressional relationships, use them before April. If you are a patient: the loss of PRAMS affects your care directly, because the guidelines your provider follows are built on the data PRAMS collects.</p>
+    </div>
+
+
+    <!-- ═══ WATCH ═══ -->
+    <div class="lc-video-section">
+      <span class="lc-section-label">Watch</span>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/yjv2LZyEDeg" title="PRAMS and Maternal Health Surveillance" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+
+    <!-- ═══ WORKS CITED ═══ -->
+    <div class="works-cited">
+      <h3>Maternal Surveillance Infrastructure &mdash; Sources Cited</h3>
+      <p>[1] CDC / Shulman, H.B. et al. &ldquo;The Pregnancy Risk Assessment Monitoring System (PRAMS): Overview of Design and Methodology.&rdquo; <em>American Journal of Public Health</em>, Vol. 108 No. 10, 2018. <a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304563" target="_blank">ajph.aphapublications.org</a></p>
+      <p>[2] Shulman, H.B. et al. &ldquo;PRAMS: Overview of Design and Methodology.&rdquo; <em>PMC</em>, 2018. PRAMS described as &ldquo;the only ongoing population-based surveillance system of maternal behaviours and experiences&rdquo; worldwide. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6137777/" target="_blank">pmc.ncbi.nlm.nih.gov</a></p>
+      <p>[3] Commonwealth Fund. &ldquo;What Is PRAMS, and Why Is It at Risk?&rdquo; January 2026. CDC grants expire April 30, 2026. <a href="https://www.commonwealthfund.org/publications/explainer/2026/jan/what-is-prams-and-why-is-it-at-risk" target="_blank">commonwealthfund.org</a></p>
+      <p>[4] STAT News. &ldquo;At CDC, Trump administration&rsquo;s job cuts wipe out wide array of specialists.&rdquo; April 1, 2025. <a href="https://www.statnews.com/2025/04/01/cdc-rif-2400-layoffs-rfk-jr-hhs-reorganization-rapid-response-capability-weakened/" target="_blank">statnews.com</a></p>
+      <p>[5] NPR. &ldquo;After CDC cuts, doctors fear women will lose access to contraception research.&rdquo; May 28, 2025. Women&rsquo;s Health and Fertility Branch eliminated April 1, 2025. <a href="https://www.npr.org/sections/shots-health-news/2025/05/28/nx-s1-5413362/after-cdc-cuts-doctors-fear-women-will-lose-access-to-contraception-research" target="_blank">npr.org</a></p>
+      <p>[6] STAT News. &ldquo;PRAMS maternal mortality database in limbo as CDC staff placed on leave.&rdquo; April 1, 2025. Entire PRAMS team received reduction-in-force notices. <a href="https://www.statnews.com/2025/04/01/prams-maternal-mortality-cdc-layoffs/" target="_blank">statnews.com</a></p>
+      <p>[7] AcademyHealth. &ldquo;Attacks on Data Accessibility Turn to Maternal Health: How States Can Help.&rdquo; April 2025. <a href="https://academyhealth.org/blog/2025-04/attacks-data-accessibility-turn-maternal-health-how-states-can-help" target="_blank">academyhealth.org</a></p>
+      <p>[8] Federal Register. &ldquo;Agency Forms Undergoing Paperwork Reduction Act Review.&rdquo; March 9, 2026. CDC seeking 3-year extension of PRAMS data collection authority. <a href="https://www.federalregister.gov/documents/2026/03/09/2026-04565/agency-forms-undergoing-paperwork-reduction-act-review" target="_blank">federalregister.gov</a></p>
+    </div>
+
+
+    <!-- ═══ GO DEEPER ═══ -->
+    <div class="lc-go-deeper">
+      <span class="lc-go-deeper-label">Go Deeper</span>
+      <a href="https://www.commonwealthfund.org/publications/explainer/2026/jan/what-is-prams-and-why-is-it-at-risk" target="_blank">
+        What Is PRAMS, and Why Is It at Risk?
+        <span class="gd-desc">Commonwealth Fund explainer on the program&rsquo;s history, value, and current threat.</span>
+      </a>
+      <a href="https://hsph.harvard.edu/news/with-federal-maternal-health-database-in-limbo-a-risk-to-mother-and-infant-health/" target="_blank">
+        With Federal Maternal Health Database in Limbo
+        <span class="gd-desc">Harvard T.H. Chan School &mdash; why losing PRAMS puts mothers and infants at risk.</span>
+      </a>
+      <a href="https://academyhealth.org/blog/2025-04/attacks-data-accessibility-turn-maternal-health-how-states-can-help" target="_blank">
+        How States Can Help
+        <span class="gd-desc">AcademyHealth on state-level responses to the federal data gap.</span>
+      </a>
+      <a href="https://amchp.org/2026/01/16/amchp-submits-comments-to-cdc-in-support-of-pregnancy-risk-assessment-monitoring-system-prams/" target="_blank">
+        AMCHP Comments in Support of PRAMS
+        <span class="gd-desc">Association of Maternal &amp; Child Health Programs advocacy for continuation.</span>
+      </a>
+      <a href="https://www.cbpp.org/research/poverty-and-inequality/federal-data-are-disappearing-as-statistical-agencies-face-budget" target="_blank">
+        Federal Data Are Disappearing
+        <span class="gd-desc">Center on Budget and Policy Priorities on the broader data infrastructure crisis.</span>
+      </a>
+    </div>
+
+
+    <!-- ═══ AUTHOR BIO ═══ -->
+    <div class="lc-author-bio">
+      <div class="lc-author-bio-img">
+        <!-- REPLACE: Add author headshot -->
+        Photo
+      </div>
+      <div class="lc-author-bio-text">
+        <h4>Dr. Yamicia Connor, MD, PhD, MPH</h4>
+        <p>Physician, researcher, and founder of Diosa Ara &mdash; an obstetrical emergency infrastructure organization. Dr. Connor leads the Labora Collective, building the organizing infrastructure for women&rsquo;s health.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ═══ CTA BLOCK ═══ -->
+<div class="lc-cta-block">
+  <p>The Labora Collective is building the organizing infrastructure for women&rsquo;s health &mdash; intelligence, community, and coordinated action for patients, providers, doulas, and the institutions that serve them.</p>
+  <a href="/join" class="lc-cta-btn">Join the Collective &rarr;</a>
+</div>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women’s health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col">
+        <h3>Journals</h3>
+        <ul>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/monthly-digest/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h3>Intelligence</h3>
+        <ul>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
+          <li><a href="/intelligence/labora-rounds/special-reports/">Special Reports</a></li>
+          <li><a href="/intelligence/labora-rounds/weekly/">Weekly Updates</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h3>Organization</h3>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join">Membership</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/start-here">Start Here</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+const hamburger = document.querySelector('.lc-nav-toggle');
+const navLinks = document.querySelector('.lc-nav-links');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('open');
+  });
+}
+</script>
+
+</body>
+</html>
