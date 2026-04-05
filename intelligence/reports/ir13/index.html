@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Invisible Patient — Immigration, Enforcement &amp; Reproductive Justice | Intelligence Report 13 | Labora Collective</title>
+<meta name="description" content="Immigration enforcement is a clinical barrier to reproductive healthcare. Intelligence Report 13 documents the maternal health consequences and provides practice protocols for providers serving immigrant communities.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   LABORA COLLECTIVE — Intelligence Report (Piece-Level)
+   LC Design System v2 · Gold accent (#9E7D0A)
+   Template: Intelligence Report · IR13
+   ============================================================ */
+
+:root {
+  --espresso:#362511;--espresso-mid:#4A3218;--body-text:#2C1A0E;
+  --muted:#8A7060;--copper:#D48662;--copper-light:#E8A882;
+  --blush:#EABAB0;--blush-light:#F5DDD9;
+  --rose:#E7817F;--rose-light:#FAEAEA;
+  --teal:#1D6B78;--teal-light:#E0F2F4;
+  --forest:#2E5240;--forest-light:#E4EFE8;
+  --gold:#9E7D0A;--gold-light:#F5EDCC;
+  --bg-warm:#F7F3EE;--bg-open:#FBF5FF;--white:#FFFFFF;
+  --blue:#5B8FA8;--blue-light:#E8F1F5;
+  --crisis-red:#e05858;--stable-green:#6B8F71;--alert-amber:#D4960A;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:light only}
+body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:var(--body-text);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+/* ─── NAV (Locked — LC Design System v2) ─── */
+.lc-nav{background:var(--espresso);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100}
+.lc-nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.lc-nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex-shrink:0}
+.lc-nav-mark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--bg-open)}
+.lc-nav-mark em{font-style:normal;color:var(--copper)}
+.lc-nav-org{font-size:.5rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,245,255,0.28);border-left:1px solid rgba(251,245,255,0.1);padding-left:.65rem}
+.lc-nav-org a{color:inherit;text-decoration:none}
+.lc-nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.lc-nav-links li a{font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,245,255,0.45);text-decoration:none;transition:color .15s;height:56px;line-height:56px;display:inline-block;border-bottom:2px solid transparent}
+.lc-nav-links li a:hover{color:var(--copper)}
+.lc-nav-links li a.active-nav{color:var(--copper);border-bottom-color:var(--copper)}
+.lc-nav-cta{background:var(--copper);color:var(--white)!important;padding:.4rem 1.1rem!important;font-size:.58rem!important;font-weight:700;letter-spacing:.18em;border:none!important;height:auto!important;line-height:1.4!important}
+.lc-nav-cta:hover{background:var(--copper-light);color:var(--espresso)!important}
+.lc-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.lc-nav-toggle span{display:block;width:18px;height:2px;background:rgba(251,245,255,0.5);margin:4px 0;transition:.3s}
+
+/* ─── REPORT HEADER ─── */
+.report-header{
+  background:var(--espresso);
+  border-bottom:4px solid var(--gold);
+  padding:4rem 2rem 3.5rem;
+}
+.report-header-inner{max-width:860px;margin:0 auto}
+.rh-breadcrumb{font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,245,255,0.3);margin-bottom:2rem}
+.rh-breadcrumb a{color:rgba(251,245,255,0.4);text-decoration:none;transition:color .15s}
+.rh-breadcrumb a:hover{color:var(--copper)}
+.rh-breadcrumb .sep{margin:0 .5rem;color:rgba(251,245,255,0.15)}
+
+.rh-overline{
+  font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:700;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:.75rem;
+}
+.rh-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,5vw,3.4rem);font-weight:300;line-height:1.08;
+  color:var(--bg-open);max-width:700px;margin-bottom:1rem;
+}
+.rh-title em{font-style:italic;color:var(--gold-light)}
+.rh-deck{
+  font-family:'DM Sans',sans-serif;font-size:.95rem;line-height:1.7;
+  color:rgba(251,245,255,0.4);max-width:620px;margin-bottom:2rem;
+}
+.rh-meta{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(251,245,255,0.35)}
+.rh-meta .dot{margin:0 .5rem;opacity:.4}
+.rh-rule{height:1px;margin:1.5rem 0;background:linear-gradient(to right,var(--gold),transparent)}
+
+/* ─── ANCHOR IMAGE PLACEHOLDER ─── */
+.anchor-image{
+  max-width:1100px;margin:0 auto;
+  background:var(--espresso-mid);
+  min-height:400px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;
+  position:relative;overflow:hidden;
+}
+.anchor-image .placeholder-label{
+  font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);opacity:.7;
+}
+.anchor-image .placeholder-desc{
+  font-family:'DM Sans',sans-serif;font-size:.82rem;
+  color:rgba(251,245,255,0.35);max-width:400px;text-align:center;line-height:1.6;
+}
+.anchor-image .placeholder-prompt{
+  font-family:'DM Sans',sans-serif;font-size:.72rem;
+  color:rgba(251,245,255,0.2);max-width:500px;text-align:center;line-height:1.5;
+  margin-top:.5rem;padding:1rem;border:1px dashed rgba(251,245,255,0.1);border-radius:4px;
+}
+
+/* ─── ARTICLE BODY ─── */
+.article-body{max-width:860px;margin:0 auto;padding:0 2rem 4rem}
+
+/* Signal Block */
+.sblock{background:var(--blush-light);border-left:4px solid var(--rose);padding:2.5rem;margin:3rem 0;border-radius:0 6px 6px 0}
+.blabel{font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:1.25rem}
+.stext{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--espresso);line-height:1.45;margin-bottom:1.5rem}
+.stext strong{font-style:normal;font-weight:600}
+.contra{font-size:.95rem;padding:.85rem 1.1rem;margin-bottom:1.5rem;background:rgba(231,129,127,0.1);border-left:2px solid var(--rose);border-radius:0 4px 4px 0}
+.impl{list-style:none}
+.impl li{font-size:.93rem;padding:.5rem 0 .5rem 1.5rem;position:relative;border-bottom:1px solid rgba(231,129,127,0.15)}
+.impl li:last-child{border-bottom:none}
+.impl li::before{content:'\2192';position:absolute;left:0;color:var(--rose)}
+
+/* Section Labels & Headings */
+.slabel{font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin:3.5rem 0 1rem}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:400;line-height:1.2;color:var(--espresso);margin-bottom:1.25rem}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--espresso);margin:2.5rem 0 .75rem}
+p{margin-bottom:1.25rem;font-size:1rem;line-height:1.8}
+.lead{font-size:1.12rem}
+
+/* Pull Quote */
+.pq{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,1.85rem);font-weight:300;font-style:italic;color:var(--rose);line-height:1.35;padding:2rem 0;margin:2.5rem 0;border-top:2px solid var(--gold);border-bottom:1px solid var(--blush)}
+
+/* Callout Boxes */
+.cb{padding:1.4rem 1.7rem;margin:2rem 0;border-left:4px solid;background:var(--white);border-radius:0 6px 6px 0}
+.cbl{font-family:'DM Sans',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.65rem;display:block}
+.cb p{margin-bottom:0;font-size:.93rem;line-height:1.65}
+.cc{border-color:var(--rose)}.cc .cbl{color:var(--rose)}
+.ca{border-color:var(--copper)}.ca .cbl{color:var(--copper)}
+
+/* Visual / Data Boxes */
+.vb{background:var(--white);padding:2.25rem;margin:2.5rem 0;border-top:3px solid var(--gold);border-radius:0 0 6px 6px}
+.vt{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--espresso);margin-bottom:.35rem}
+.vs{font-family:'DM Sans',sans-serif;font-size:.62rem;color:var(--muted);letter-spacing:.05em;margin-bottom:1.5rem}
+.vc{font-family:'DM Sans',sans-serif;font-size:.75rem;color:var(--body-text);margin-top:1rem;padding-top:1rem;border-top:1px solid var(--blush);line-height:1.55}
+
+/* Timeline */
+.tl{margin:1.5rem 0}
+.ti{display:flex;gap:1rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--blush)}
+.ti:last-child{border-bottom:none}
+.td{font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:.2rem;min-width:80px}
+.tc{font-size:.9rem;line-height:1.5;color:var(--body-text)}
+.tc strong{display:block;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:700;color:var(--espresso);margin-bottom:.2rem}
+
+/* Stats Row */
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+.sb{background:var(--white);padding:1.25rem;text-align:center;border-top:3px solid var(--gold);border-radius:0 0 6px 6px}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--rose);line-height:1;margin-bottom:.4rem}
+.sl{font-family:'DM Sans',sans-serif;font-size:.62rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;line-height:1.45}
+
+/* Forward Look */
+.fw{background:var(--espresso);padding:3rem 2.5rem;margin:3.5rem 0;border-radius:6px}
+.fw .slabel{color:var(--gold);margin-top:0}
+.fw h2{color:var(--bg-open)}
+.fi{padding:1.25rem 0;border-bottom:1px solid rgba(251,245,255,0.1)}
+.fi:last-child{border-bottom:none}
+.ft{font-family:'DM Sans',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block}
+.fi p{color:rgba(251,245,255,0.8);font-size:.95rem;margin-bottom:0}
+
+/* Action Grid */
+.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:2rem 0}
+.ag{background:var(--white);padding:1.5rem;border-top:3px solid var(--gold);border-radius:0 0 6px 6px}
+.ag-label{font-family:'DM Sans',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.ag ul{list-style:none;padding:0}
+.ag li{font-size:.85rem;line-height:1.55;padding:.4rem 0 .4rem 1.1rem;position:relative;border-bottom:1px solid var(--blush-light);color:var(--body-text)}
+.ag li:last-child{border-bottom:none}
+.ag li::before{content:'\2192';position:absolute;left:0;color:var(--gold);font-size:.8rem}
+
+/* Inline Image Placeholders */
+.img-placeholder{
+  background:var(--espresso-mid);border-radius:6px;
+  min-height:260px;margin:2.5rem 0;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;
+  padding:2rem;
+}
+.img-placeholder .ph-label{
+  font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.7;
+}
+.img-placeholder .ph-desc{
+  font-family:'DM Sans',sans-serif;font-size:.78rem;
+  color:rgba(251,245,255,0.4);text-align:center;line-height:1.5;max-width:420px;
+}
+
+/* Works Cited */
+.works-cited{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--gold)}
+.works-cited p{font-size:.85rem;line-height:1.8;color:var(--body-text)}
+.works-cited a{color:var(--copper);word-break:break-all;text-decoration:none}
+.works-cited a:hover{text-decoration:underline}
+
+/* ─── CTA BLOCK ─── */
+.cta-block{background:var(--espresso);padding:3rem 2rem;text-align:center}
+.cta-block p{font-family:'DM Sans',sans-serif;font-size:.92rem;color:rgba(251,245,255,0.7);margin-bottom:1.25rem;line-height:1.6}
+.cta-block .sub{opacity:.55;font-size:.83rem}
+.cta-btn{
+  display:inline-block;background:var(--gold-light);color:var(--espresso);
+  padding:.8rem 2.25rem;font-family:'DM Sans',sans-serif;font-size:.68rem;
+  font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;
+  border:1px solid var(--gold);transition:all .2s;
+}
+.cta-btn:hover{background:var(--gold);color:var(--white)}
+
+/* ─── ATTRIBUTION ─── */
+.attribution{background:var(--bg-warm);padding:2.75rem 2rem 2.25rem;text-align:center}
+.attr-logos{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:.75rem}
+.attr-logos .dot{width:4px;height:4px;border-radius:50%;background:var(--blush);flex-shrink:0}
+.attr-sub{font-family:'DM Sans',sans-serif;font-size:.56rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.attr-rule{height:1px;background:var(--blush-light);margin:1.5rem 0}
+.attr-grid{display:grid;grid-template-columns:1fr 1px 1fr;max-width:580px;margin:0 auto;text-align:left}
+.attr-grid p{font-family:'DM Sans',sans-serif;font-size:.76rem;line-height:1.65;color:var(--muted)}
+.attr-grid strong{color:var(--body-text);font-weight:500}
+.attr-links{display:flex;align-items:center;justify-content:center;gap:1.25rem}
+.attr-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;color:var(--copper);text-decoration:none;letter-spacing:.05em}
+.attr-links a:hover{text-decoration:underline}
+
+/* ─── FOOTER (Locked — LC Design System v2) ─── */
+.lc-footer{background:var(--espresso);border-top:3px solid var(--copper);color:rgba(251,245,255,0.5)}
+.lc-footer-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem}
+.lc-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.lc-footer-brand-mark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--bg-open);margin-bottom:.35rem}
+.lc-footer-brand-mark em{font-style:normal;color:var(--copper)}
+.lc-footer-brand-org{font-size:.55rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,245,255,0.3);margin-bottom:1rem}
+.lc-footer-brand-org a{color:inherit;text-decoration:none}
+.lc-footer-brand-desc{font-size:.78rem;line-height:1.65;color:rgba(251,245,255,0.35)}
+.lc-footer-col h5{font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem}
+.lc-footer-col ul{list-style:none;padding:0}
+.lc-footer-col li{margin-bottom:.5rem}
+.lc-footer-col a{font-size:.78rem;color:rgba(251,245,255,0.4);text-decoration:none;transition:color .15s}
+.lc-footer-col a:hover{color:var(--copper)}
+.lc-footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:rgba(251,245,255,0.25)}
+.lc-footer-bottom a{color:rgba(251,245,255,0.3);text-decoration:none}
+.lc-footer-bottom a:hover{color:var(--copper)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .action-grid{grid-template-columns:1fr}
+  .sr{grid-template-columns:1fr}
+  .lc-footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .lc-nav-links{display:none}
+  .lc-nav-toggle{display:block}
+}
+@media(max-width:640px){
+  .report-header{padding:3rem 1.25rem 2.5rem}
+  .article-body{padding:0 1.25rem 3rem}
+  .sblock{padding:1.75rem 1.25rem}
+  .fw{padding:2rem 1.25rem}
+  .lc-footer-top{grid-template-columns:1fr}
+  .anchor-image{min-height:250px}
+  .img-placeholder{min-height:180px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV (Locked — LC Design System v2) ══ -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/womens-health/">Women's Health</a></li>
+      <li><a href="/in-her-name/">In Her Name</a></li>
+      <li><a href="/blueprint/">The Blueprint</a></li>
+      <li><a href="/intelligence/" class="active-nav">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ REPORT HEADER ══ -->
+<section class="report-header">
+  <div class="report-header-inner">
+    <div class="rh-breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <a href="/intelligence/">Intelligence</a><span class="sep">/</span>
+      <a href="/intelligence/research/">Research</a><span class="sep">/</span>
+      IR-13
+    </div>
+    <span class="rh-overline">Intelligence Report 13 &mdash; Immigration &amp; Reproductive Justice</span>
+    <h1 class="rh-title">Fear Is a Clinical Barrier.<br><em>Enforcement Created It. Care Has to Navigate It.</em></h1>
+    <div class="rh-rule"></div>
+    <p class="rh-deck">Immigration enforcement has become a measurable clinical barrier to reproductive healthcare. This intelligence report documents the maternal health consequences and provides practice-ready protocols for providers serving immigrant communities.</p>
+    <div class="rh-meta">
+      Intelligence Report<span class="dot">&middot;</span>Mid-2025 through Early 2026<span class="dot">&middot;</span>Labora Rounds<span class="dot">&middot;</span>18 Sources
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANCHOR IMAGE — PLACEHOLDER FOR MIDJOURNEY ══ -->
+<div class="anchor-image">
+  <div class="placeholder-label">Anchor Image &mdash; Visual Placeholder</div>
+  <div class="placeholder-desc">MidJourney image to be generated by YC. Recommended: evocative, editorial-quality image reflecting the intersection of immigration and maternal healthcare.</div>
+  <div class="placeholder-prompt">
+    <strong style="color:var(--gold);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;">Suggested MJ Prompt:</strong><br>
+    A pregnant woman standing alone in a clinical hallway, warm amber light from one direction, cold institutional light from the other, the shadow of a chain-link fence falling across the floor — editorial photography, cinematic lighting, shallow depth of field, muted earth tones with copper accents --ar 21:9 --v 6.1
+  </div>
+</div>
+
+<!-- ══ ARTICLE BODY ══ -->
+<div class="article-body">
+
+  <!-- SIGNAL BLOCK -->
+  <div class="sblock">
+    <div class="blabel">Signal &middot; Contradiction &middot; Immediate Implications</div>
+    <div class="stext">
+      <strong>The Signal:</strong> The formal abandonment of the DHS sensitive location policy — which had prohibited ICE enforcement near hospitals, clinics, and healthcare facilities — combined with heightened enforcement operations and the reinstatement of modified family separation practices has produced a measurable healthcare avoidance effect in immigrant communities. Prenatal care initiation among undocumented patients has declined. Emergency department presentations for obstetric emergencies have increased in enforcement-heavy regions. The enforcement climate is producing worse maternal outcomes in real time.
+    </div>
+    <div class="contra">
+      <strong>The Contradiction:</strong> The United States continues to affirm emergency medical care obligations under EMTALA — including for undocumented patients — while creating an enforcement environment where patients cannot safely access non-emergency care. The result is a policy structure that guarantees the most expensive, highest-risk care (emergency delivery, ICU-level complications) while blocking access to the low-cost, high-impact care (prenatal visits, contraception, preventive screening) that prevents emergencies from occurring. This is not a contradiction by accident. It is the predictable outcome of enforcement-first policy applied to a population that still has legally protected emergency rights.
+    </div>
+    <div class="blabel" style="margin-top:1.25rem;">What This Means Right Now</div>
+    <ul class="impl">
+      <li>You need a facility protocol for ICE enforcement interaction before you receive one. The sensitive location protection is gone. Know what your staff are authorized to say and do if ICE presents at your facility. Know your state's specific requirements. Know whether your state has a sanctuary policy that provides additional protection. Do this this week.</li>
+      <li>Your intake process needs a private, explicit communication to undocumented patients about their rights — EMTALA emergency care protections, your practice's data sharing policies, and what your staff will and will not do in response to law enforcement inquiries. This communication needs to happen before patients decide whether to keep their appointments, not after they've already avoided care for three months.</li>
+      <li>Prenatal patients who have delayed care due to enforcement fear present with compounded risk profiles: later gestational age at first contact, unmanaged chronic conditions, unscreened infections, inadequately addressed mental health burden from enforcement-related trauma. Adjust your clinical protocols for these presentations — they require more intensive initial assessment than a patient presenting at 8 weeks with regular prenatal history.</li>
+    </ul>
+  </div>
+
+  <!-- ── INFOGRAPHIC PLACEHOLDER 1 ── -->
+  <div class="img-placeholder">
+    <div class="ph-label">Infographic Placeholder &mdash; Enforcement Timeline Visual</div>
+    <div class="ph-desc">Horizontal timeline graphic showing the four enforcement policy moves (Jan 2025 — Early 2026) and their compounding effect on healthcare access. Gold/espresso palette.</div>
+  </div>
+
+  <span class="slabel">Opening</span>
+  <h2>Reproductive Justice Requires Immigration Justice. Here Is the Clinical Proof.</h2>
+
+  <p class="lead">For midwives and birth workers, this period means that the reproductive justice framework — the understanding that reproductive autonomy requires the social conditions necessary to exercise it — has a concrete, measurable, clinical expression in the lives of your immigrant patients. The right to carry a pregnancy to term safely requires the ability to seek prenatal care without fear of arrest. When that condition is removed, the right is theoretical. The maternal outcomes data is tracking the theory's practical failure in real time.</p>
+
+  <p>Reproductive justice is not a political framework applied to immigration issues. It is the accurate description of what immigration enforcement does to reproductive health. When an undocumented pregnant person avoids prenatal care because the clinic is in a neighborhood with active ICE operations, she is exercising her legal right to carry a pregnancy and losing the clinical support that determines whether that pregnancy ends safely. The enforcement regime is not violating her legal right to the pregnancy. It is making the safe exercise of that right impossible. This is reproductive oppression, precisely as defined by the reproductive justice framework developed by Black women scholars and practitioners in the 1990s. It is also a preventable cause of maternal mortality, precisely as defined by clinical epidemiology.</p>
+
+  <p>The clinical challenge of this period is not primarily technical. You know how to provide prenatal care. The challenge is that the policy environment has inserted enforcement fear between your patients and your care in ways that require specific, intentional practice responses — communication protocols, facility policies, staff training, and referral relationships — to bridge. This report is designed to give you the intelligence and the tools to build that bridge.</p>
+
+  <span class="slabel">Federal &amp; Global Context</span>
+  <h2>The Enforcement Architecture and Its Healthcare Consequences</h2>
+
+  <p class="lead">The immigration enforcement landscape of this period is defined by four simultaneous policy moves that compound each other's effects on immigrant healthcare access.</p>
+
+  <p>The formal abandonment of the DHS sensitive location policy is the most immediately significant for clinical practice. The policy had been imperfect — enforcement near healthcare facilities had occurred even under the policy — but its formal abandonment removes a legal and procedural constraint on ICE operations and signals an enforcement posture that immigrant communities have registered clearly. The behavioral response is not irrational. If enforcement can now occur at your clinic, the calculus for an undocumented patient about whether to keep a prenatal appointment has changed. Your practice response needs to account for that changed calculus, not pretend it hasn't changed.</p>
+
+  <p>The modified family separation policy — which applies in detention contexts to adults with criminal records — creates fear that extends far beyond the legal target population. Immigrant community networks communicate enforcement information rapidly and often imprecisely. The realistic fear that a detention encounter could result in separation from children, regardless of the legal specifics, is a powerful deterrent to any interaction with the healthcare system that involves documentation, registration, or the possibility of law enforcement contact. Your patients' fear is not based on misunderstanding. It is a rational response to a real enforcement environment.</p>
+
+  <p>Birthright citizenship challenges — multiple state-level efforts to deny automatic citizenship to children born to undocumented parents — represent a longer-term threat with immediate clinical implications. Pregnant undocumented patients in states where these challenges are active face additional uncertainty about their children's legal status, adding to the burden of care-seeking. The legal challenges are mostly in litigation and have not yet produced implemented policy changes, but the communication of the threat affects behavior before the policy takes effect.</p>
+
+  <p>Asylum restrictions for survivors of gender-based violence represent the intersection of immigration and reproductive justice that is most directly relevant to a specific patient population: women fleeing intimate partner violence, forced marriage, sexual exploitation, or reproductive coercion in their countries of origin. The contraction of gender-based violence asylum categories under the current administration has left these patients with fewer legal pathways, increasing their undocumented status and the associated healthcare access barriers.</p>
+
+  <div class="vb">
+    <div class="vt">Immigration Enforcement Timeline: Healthcare Impact</div>
+    <div class="vs">DHS records, EMTALA guidance, clinic utilization data | Mid-2025 through Early 2026</div>
+    <div class="tl">
+      <div class="ti">
+        <div class="td">Jan 2025</div>
+        <div class="tc"><strong>Sensitive Location Policy Abandoned</strong>DHS formally ends protection of hospitals, clinics, and healthcare facilities from ICE enforcement. Immediate behavioral response: prenatal care appointments in enforcement-heavy regions begin declining.</div>
+      </div>
+      <div class="ti">
+        <div class="td">Early 2025</div>
+        <div class="tc"><strong>Modified Family Separation Reinstated</strong>Applies to detained adults with criminal records. Fear of separation extends beyond legal target population. Healthcare avoidance driven by custody fear, not just deportation fear.</div>
+      </div>
+      <div class="ti">
+        <div class="td">2025</div>
+        <div class="tc"><strong>Asylum Gender-Based Violence Restrictions</strong>Gender-based violence asylum categories narrowed. Women fleeing reproductive coercion, IPV, forced marriage face reduced legal pathways. Undocumented status increases for this population.</div>
+      </div>
+      <div class="ti">
+        <div class="td">2025</div>
+        <div class="tc"><strong>Birthright Citizenship Legal Challenges</strong>Multiple state-level challenges active. Federal courts blocking implementation. Fear communicated in immigrant communities regardless of legal status. Pregnant patients face additional uncertainty about child's citizenship.</div>
+      </div>
+      <div class="ti">
+        <div class="td">2025–26</div>
+        <div class="tc"><strong>Healthcare Avoidance Documented</strong>Prenatal care first-trimester initiation rates declining in enforcement-heavy regions. Emergency obstetric presentations increasing as preventive care is avoided. Maternal outcome data tracking in real time.</div>
+      </div>
+      <div class="ti">
+        <div class="td">Ongoing</div>
+        <div class="tc"><strong>Detention Healthcare — Documented Inadequacy</strong>ACLU and advocacy organization reports document denial of prenatal vitamins, delayed OB consultation, inadequate miscarriage management in ICE detention facilities. Federal court oversight limited.</div>
+      </div>
+    </div>
+    <div class="vc">The healthcare avoidance effect of enforcement escalation is not speculative. It is documented in clinic utilization data in enforcement-heavy regions. The patients who delay prenatal care present later with higher-risk profiles. The patients who avoid it entirely present in emergency departments for obstetric emergencies that were preventable with routine prenatal care. Enforcement creates maternal mortality risk. This is the clinical statement of the reproductive justice analysis.</div>
+  </div>
+
+  <!-- ── INFOGRAPHIC PLACEHOLDER 2 ── -->
+  <div class="img-placeholder">
+    <div class="ph-label">Data Visualization Placeholder &mdash; Sanctuary vs. Enforcement Map</div>
+    <div class="ph-desc">Choropleth map of the US showing 17 sanctuary states (gold/green) vs. enforcement-heavy states (rose/red), overlaid with FQHC density dots and maternal mortality heat markers.</div>
+  </div>
+
+  <span class="slabel">Innovation &amp; Equity Front</span>
+  <h2>Community Health Infrastructure in the Enforcement Climate</h2>
+
+  <p class="lead">The response to the enforcement climate among community health organizations, legal services providers, and reproductive justice organizations has been creative, courageous, and operating under resource constraints that limit its reach. Understanding what is available — and where its limits are — is essential for building your referral relationships.</p>
+
+  <h3>Federally Qualified Health Centers: The Primary Access Point</h3>
+
+  <p>FQHCs remain the most important clinical access point for undocumented patients. As federal grant recipients under HRSA, they are legally required to serve all patients regardless of immigration status, ability to pay, or documentation. They offer sliding-scale fees. They are legally prohibited from inquiring about immigration status as a condition of care. In many immigrant communities, they are the only clinical setting where patients will present for non-emergency care in the current enforcement climate. Build your FQHC referral relationships now — know specifically which FQHCs in your region have OB/GYN capacity, which have certified nurse-midwives on staff, and what their sliding scale structure looks like. A warm handoff to a specific provider at a specific FQHC is categorically more effective than handing a patient a phone number.</p>
+
+  <p>Know-your-rights education — conducted by immigrant rights organizations, legal services providers, and community health workers — is the primary intervention for addressing enforcement fear as a healthcare barrier. Organizations like the National Immigration Law Center, ACLU Immigrants' Rights Project, and local legal aid societies provide materials that are clinically relevant: what patients' rights are if ICE presents at a healthcare facility, what information they are not required to provide, what EMTALA protections mean in practice. These materials, distributed proactively through your practice, address the fear barrier before it becomes a care-avoidance decision.</p>
+
+  <h3>Detention Healthcare: The Other Clinical Reality</h3>
+
+  <p>Patients in ICE detention are a clinical population your practice may not directly serve but whose reality is relevant to your advocacy. Documented reports from the ACLU, Human Rights Watch, and Physicians for Human Rights during this period describe: denial of prenatal vitamins to detained pregnant people, delays of weeks in OB consultation for complications, inadequate management of miscarriage in detention settings, and coercive pressure on detained pregnant people regarding their pregnancies. Federal court oversight of ICE detention healthcare is limited. The primary accountability mechanism is advocacy organization documentation and congressional oversight — which has been minimal in this period.</p>
+
+  <div class="sr">
+    <div class="sb">
+      <div class="sn">17</div>
+      <div class="sl">States with sanctuary policies limiting ICE cooperation — primary safe access geography</div>
+    </div>
+    <div class="sb">
+      <div class="sn">50+</div>
+      <div class="sl">Countries where Global Gag Rule has disrupted US-funded reproductive health services</div>
+    </div>
+    <div class="sb">
+      <div class="sn">1,400+</div>
+      <div class="sl">FQHCs nationally required to serve all patients regardless of immigration status</div>
+    </div>
+  </div>
+
+  <span class="slabel">State Countercurrents</span>
+  <h2>Sanctuary States, Enforcement States, and the Geography of Access</h2>
+
+  <p><strong>Sanctuary States — Expanded Protection:</strong> The 17 states with active sanctuary policies — prohibiting or limiting state and local law enforcement cooperation with ICE — provide measurable healthcare access protection. California's HEAL Act prohibits ICE enforcement at healthcare facilities as a matter of state law, providing a legal protection that the abandoned federal sensitive location policy no longer provides. Illinois, New York, Massachusetts, and Washington have similar state-level protections with varying scope. If you practice in a sanctuary state, know exactly what your state's sanctuary policy covers and communicate it clearly to patients. It is a material clinical protection.</p>
+
+  <p><strong>Enforcement States — Compounding Barriers:</strong> Florida's SB 1718, Texas's cooperation with federal enforcement operations, and similar state-level enforcement expansion in Georgia, Alabama, and Mississippi compound the federal enforcement climate with state resources and cooperation. In these states, the healthcare avoidance effect is most acute, the FQHC network is thinnest relative to need, and the legal protection for undocumented patients seeking care is most limited. Providers practicing in these states face the highest clinical burden from enforcement-related care avoidance and the fewest institutional resources to address it.</p>
+
+  <p><strong>Access Geography:</strong> The intersection of enforcement climate, FQHC density, state sanctuary policy, and Medicaid eligibility rules for immigrants produces a healthcare access map that is not random. The states with the highest undocumented population, the most active enforcement operations, and the least clinical infrastructure for immigrant patients — Texas, Florida, Georgia — are also the states with the highest maternal mortality rates overall. The correlation is not causal in a simple sense, but it is not coincidental. Enforcement-driven care avoidance compounds existing maternal health inequity in the communities and geographies where that inequity is already most severe.</p>
+
+  <div class="pq">"The right to carry a pregnancy safely requires the ability to seek prenatal care without fear of arrest. This is not a political statement. It is a clinical precondition for maternal health. When enforcement removes that precondition, maternal outcomes deteriorate. The data proves it."</div>
+
+  <!-- ── INFOGRAPHIC PLACEHOLDER 3 ── -->
+  <div class="img-placeholder">
+    <div class="ph-label">Data Visualization Placeholder &mdash; Clinical Pathway Diagram</div>
+    <div class="ph-desc">Flowchart showing two patient pathways: (1) patient WITH access &rarr; first-trimester prenatal care &rarr; managed risk &rarr; healthy outcome vs. (2) patient WITH enforcement fear &rarr; avoided care &rarr; late presentation &rarr; emergency complications. Visual makes the clinical cost of enforcement concrete.</div>
+  </div>
+
+  <span class="slabel">Clinical Reality</span>
+  <h2>Providing Care to Immigrant Patients in an Enforcement Climate</h2>
+
+  <p class="lead">Providing equitable reproductive care to undocumented patients in the current enforcement climate requires specific, intentional practice responses that go beyond standard clinical protocols. Here is what each response looks like in practice.</p>
+
+  <p><strong>Provider Impact:</strong> You are providing care in a legal environment where your clinical documentation could, in some circumstances, become evidence in an immigration proceeding. Your data practices — what you document, how long you retain it, whether your EHR is accessible to law enforcement under your state's laws — have privacy implications for undocumented patients that they need to understand and that you need to have reviewed with a healthcare attorney. This is not a reason to withhold clinical care. It is a reason to be clear, intentional, and transparent with patients about your data practices and their rights.</p>
+
+  <p><strong>Patient Access:</strong> The most effective clinical intervention for enforcement-driven care avoidance is proactive, explicit communication. Patients who know your practice's data policy, who have been told directly that you will not ask about immigration status and will not share records with ICE without a court order, and who have been given know-your-rights information are more likely to maintain care. This communication needs to happen at the first encounter, through interpreter services when needed, in written form that patients can take home and review. Do not assume that a patient's physical presence at your clinic means she is not one appointment away from disappearing from care due to enforcement fear.</p>
+
+  <p><strong>Risk Management:</strong> Three specific data protection practices apply to undocumented patients. First: do not document immigration status in the medical record. It is not clinically relevant and it creates a record that could harm the patient. Second: review your EHR vendor's policy on law enforcement data requests and ensure your response protocol is current and staff-trained. Third: know your state's specific legal requirements for responding to law enforcement records requests, including whether a warrant is required, whether your state's sanctuary policy provides any protection for healthcare records, and what patient notification obligations you have.</p>
+
+  <p><strong>Referral Pathways:</strong> Build four referral relationships before you need them. First: the FQHC closest to your practice with OB/GYN capacity — know a specific provider by name, not just the institution. Second: the immigration legal services organization in your region — for patients navigating asylum, deportation proceedings, or citizenship questions that intersect with their pregnancy care. Third: the domestic violence organization in your region with immigration-specific services — for survivors of IPV who have immigration complications. Fourth: the interpreter services available in your practice area — language access is not optional for informed consent, and is the first barrier many immigrant patients encounter before enforcement fear even enters the picture.</p>
+
+  <div class="cb cc">
+    <span class="cbl">Urgent — ICE at Your Facility: What to Do</span>
+    <p>Develop this protocol before you need it. Key elements: (1) Designate a single staff member authorized to speak with law enforcement. (2) No patient information shared without a judicial warrant — administrative ICE warrants do not require compliance. (3) Do not consent to a search without a judicial warrant. (4) Alert patients to enforcement presence if possible and safe to do so. (5) Document the interaction. Contact your state medical society for state-specific legal guidance. Contact the ACLU Immigrants' Rights Project if you believe your or a patient's rights were violated. Share the Know Your Rights for Patients card from the National Immigration Law Center with all patient-facing staff.</p>
+  </div>
+
+  <div class="cb ca">
+    <span class="cbl">For Your Practice — Patient Communication Protocol</span>
+    <p>At first encounter with any patient where immigration status may be relevant: (1) Explain clearly that you do not ask about immigration status and that it does not affect care. (2) Explain your data sharing policy — specifically that medical records are not shared with ICE without a court order. (3) Provide written know-your-rights information in the patient's primary language. (4) Connect patients to FQHC services and legal aid if they have questions about their rights. This communication takes 3 minutes and is the most effective clinical intervention for enforcement-driven care avoidance available to you.</p>
+  </div>
+
+  <span class="slabel">Key Findings &amp; Practice Implications</span>
+  <h2>Reproductive Justice Is the Framework. Practical Protocols Are the Tools.</h2>
+
+  <p>The reproductive justice analysis of immigration and healthcare is not abstract. It produces a specific clinical finding: enforcement-driven care avoidance is a measurable, preventable cause of worse maternal outcomes in immigrant communities. The policies producing that avoidance — sensitive location policy abandonment, heightened enforcement operations, family separation fear, birthright citizenship challenges — are political decisions with clinical consequences. Naming those consequences clearly is not political advocacy. It is accurate clinical description.</p>
+
+  <p>The practical implication is that eliminating enforcement fear as a barrier to care requires intentional practice design. The communication protocols, data protection practices, FQHC referral relationships, and legal services connections described in this report are not supplements to clinical care. They are the preconditions for clinical care being accessible to the patients who need it most. Building them into your practice infrastructure — before a patient disappears from care, before ICE presents at your facility — is the clinical decision that determines whether your practice actually serves the community you intend to serve.</p>
+
+  <div class="fw">
+    <span class="slabel">Forward Look — Next 90 Days</span>
+    <h2>What Comes Next. What Requires Action Now.</h2>
+    <div class="fi">
+      <span class="ft">&#9889; Urgent</span>
+      <p><strong>ICE Facility Protocol — This Week:</strong> The sensitive location protection is gone. Develop your response protocol now. Designate a staff lead. Brief all patient-facing staff. Know your state's law. Know whether you have a warrant requirement for records disclosure. This cannot wait.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Action Required</span>
+      <p><strong>Patient Communication Protocol — This Month:</strong> Develop and implement your patient communication protocol for immigrant patients at first encounter. Translate into top 3 languages in your patient population. Brief staff on consistent delivery. The communication is the intervention.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Action Required</span>
+      <p><strong>Build FQHC Referral Relationship — Name and Number:</strong> Identify the FQHC closest to your practice with OB/GYN capacity. Get a specific provider contact, not just the institution. Establish a warm referral pathway. A named referral to a known provider is dramatically more likely to result in continued care than an institutional referral to an unknown system.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Plan For</span>
+      <p><strong>Birthright Citizenship — Ongoing Litigation:</strong> Multiple state and federal legal challenges to birthright citizenship are in active litigation. Outcomes could change the counseling and documentation needs for pregnant undocumented patients. Monitor through immigration legal services organizations in your region and NILC updates. Know before your patients ask.</p>
+    </div>
+    <div class="fi">
+      <span class="ft">Plan For</span>
+      <p><strong>Advocate for Detention Healthcare Standards:</strong> ICE detention healthcare standards are subject to federal oversight advocacy. ACOG and ACNM have issued position statements on detention reproductive healthcare standards. Add your institutional voice to the advocacy record. Detained pregnant people are a clinical population whose care failures become your emergency department presentations.</p>
+    </div>
+  </div>
+
+  <span class="slabel">Recommended Actions</span>
+  <h2>What to Do, By Role</h2>
+
+  <div class="action-grid">
+    <div class="ag">
+      <span class="ag-label">All Birth Workers</span>
+      <ul>
+        <li>Know your facility's ICE response protocol — or build one</li>
+        <li>Distribute know-your-rights information to all immigrant patients proactively</li>
+        <li>Build FQHC referral relationship with named provider contact</li>
+        <li>Advocate for detention reproductive healthcare standards through professional associations</li>
+        <li>Learn the basics of your state's sanctuary policy coverage</li>
+      </ul>
+    </div>
+    <div class="ag">
+      <span class="ag-label">Clinical Providers (CNMs, OBs)</span>
+      <ul>
+        <li>Develop and brief staff on ICE facility response protocol this week</li>
+        <li>Review EHR data retention and law enforcement response policies</li>
+        <li>Implement patient communication protocol for immigrant patients at first encounter</li>
+        <li>Adjust initial assessment protocol for late-presenting patients with enforcement-related care gaps</li>
+        <li>Build immigration legal services referral relationship for obstetric patients</li>
+      </ul>
+    </div>
+    <div class="ag">
+      <span class="ag-label">Community-Based Workers (Doulas, CHWs)</span>
+      <ul>
+        <li>Be the trusted messenger for know-your-rights information in immigrant communities</li>
+        <li>Know which FQHCs in your area have OB capacity and how sliding scale works</li>
+        <li>Help clients understand EMTALA emergency care protections</li>
+        <li>Connect clients to immigration legal services when needed</li>
+        <li>Build coalitions between reproductive justice and immigrant rights organizations</li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="slabel">The Frame Going Forward</span>
+  <h2>Immigration Justice Is Reproductive Justice. The Clinical Data Agrees.</h2>
+
+  <p>Reproductive justice demands the social conditions necessary to parent safely — and for undocumented people in an enforcement climate, the social conditions necessary to seek prenatal care are being actively removed. This is not a political argument. It is a public health finding. The maternal outcome data in enforcement-heavy regions makes the clinical case that reproductive justice advocates have been making for decades: you cannot separate reproductive health from the social, legal, and political conditions that determine whether care is accessible.</p>
+
+  <p>Your practice can be a site of resistance in the most practical sense: a place where undocumented patients receive the same quality of care as any other patient, where their data is protected, where their rights are communicated clearly, and where the enforcement climate does not determine whether they live or die in childbirth. That is reproductive justice in clinical form. It is within your reach.</p>
+
+  <p><em>The most radical thing you can do in this moment is to refuse to let enforcement fear become a clinical outcome. Build the protocols. Make the referrals. Communicate clearly. Care is the resistance.</em></p>
+
+  <!-- ── CLOSING IMAGE PLACEHOLDER ── -->
+  <div class="img-placeholder">
+    <div class="ph-label">Closing Image &mdash; Visual Placeholder</div>
+    <div class="ph-desc">MidJourney image: hands of different skin tones holding a newborn, warm copper light, clinical setting softened with humanity — editorial, intimate, hopeful.</div>
+  </div>
+
+  <!-- WORKS CITED -->
+  <div class="works-cited">
+    <span class="slabel">Works Cited</span>
+    <h2>Sources</h2>
+    <p><sup>1</sup> NILC. "Factsheet: Trump's Rescission of Protected Areas Policies." National Immigration Law Center, 2025. <a href="https://www.nilc.org/resources/factsheet-trumps-rescission-of-protected-areas-policies-undermines-safety-for-all/">nilc.org</a></p>
+    <p><sup>2</sup> "U.S. Public Opinion About Immigration Enforcement in Sensitive Locations." PMC, 2025. PMID: PMC12882844. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12882844/">pmc.ncbi.nlm.nih.gov</a></p>
+    <p><sup>3</sup> Georgetown CCF. "Prenatal Care: The Silent Maternal Health Emergency Hidden in New CDC Data." March 2026. <a href="https://ccf.georgetown.edu/2026/03/10/prenatal-care-the-silent-maternal-health-emergency-hidden-in-new-cdc-data/">ccf.georgetown.edu</a></p>
+    <p><sup>4</sup> NCIT. "New Data Signals a Troubling Trend in Prenatal Care Access." 2026. <a href="https://ncit.org/prenatal-care-access-decline-us-cdc-data/">ncit.org</a></p>
+    <p><sup>5</sup> NY Senate. "Senate Acts to Protect Access to Reproductive Healthcare, Strengthen Privacy and IVF Coverage." 2026. <a href="https://www.nysenate.gov/newsroom/press-releases/2026/senate-acts-protect-access-reproductive-healthcare-strengthen-privacy">nysenate.gov</a></p>
+    <p><sup>6</sup> CLASP. "Protecting Sensitive Locations Act of 2025." 2025. <a href="https://www.clasp.org/publications/fact-sheet/protecting-sensitive-locations-act-of-2025/">clasp.org</a></p>
+    <p><sup>7</sup> AJMC. "ICE Presence in Minnesota Health Care Settings Threatens Access to Essential Medical Care." 2026. <a href="https://www.ajmc.com/view/ice-presence-in-minnesota-health-care-settings-threatens-access-to-essential-medical-care">ajmc.com</a></p>
+    <p><sup>8</sup> New America. "Impact of Increased ICE Activity: Results." 2025. <a href="https://www.newamerica.org/insights/impact-of-increased-ice-activity/results/">newamerica.org</a></p>
+    <p><sup>9</sup> KFF. "Immigrant Health — Research and Data." 2025. <a href="https://www.kff.org/topic/immigrant-health/">kff.org</a></p>
+    <p><sup>10</sup> 19th News. "DHS Released Numbers Around Pregnant and Postpartum People in Detention." March 2026. <a href="https://19thnews.org/2026/03/ice-deporting-pregnant-postpartum-immigrants-data/">19thnews.org</a></p>
+    <p><sup>11</sup> DHS Docket No. USCIS-2025-0304. "Public Charge Ground of Inadmissibility." Reproductive Rights, 2026. <a href="https://reproductiverights.org/wp-content/uploads/2026/03/DHS-Comment-Public-Charge.pdf">reproductiverights.org</a></p>
+    <p><sup>12</sup> Georgetown CCF. "Public Charge Changes Will Have Far-Reaching Consequences." 2025. <a href="https://ccf.georgetown.edu/2025/11/21/public-charge-changes-will-have-far-reaching-consequences-for-children-pregnant-women-and-families-and-sow-fear-in-immigrant-communities/">ccf.georgetown.edu</a></p>
+    <p><sup>13</sup> Children's Defense Fund. "National Comment on Public Charge NPRM." December 2025. <a href="https://www.childrensdefense.org/wp-content/uploads/2025/12/CDF_National_Public-Charge-NPRM_National-Comment_Dec-2025-FINAL-12.18.25.pdf">childrensdefense.org</a></p>
+    <p><sup>14</sup> Georgetown CCF. "Maternal and Infant Health in State Rural Health Transformation Proposals." March 2026. <a href="https://ccf.georgetown.edu/2026/03/20/maternal-and-infant-health-in-state-rural-health-transformation-proposals-set-promising-priorities-in-an-uncertain-landscape/">ccf.georgetown.edu</a></p>
+    <p><sup>15</sup> Rep. Don Beyer. "Bicameral Delegation Reintroduces the Protecting Sensitive Locations Act." 119th Congress. <a href="https://beyer.house.gov/news/documentsingle.aspx?DocumentID=6367">beyer.house.gov</a></p>
+    <p><sup>16</sup> Sen. Michael Bennet. "Bennet Condemns Cruel DHS Policies on Senate Floor." January 2026. <a href="https://www.bennet.senate.gov/2026/01/30/bennet-condemns-cruel-dhs-policies-on-senate-floor-demands-accountability-and-reform/">bennet.senate.gov</a></p>
+    <p><sup>17</sup> Guttmacher Institute. "Family Planning Impact of the Trump Foreign Assistance Freeze." 2025. <a href="https://www.guttmacher.org/2025/01/family-planning-impact-trump-foreign-assistance-freeze">guttmacher.org</a></p>
+    <p><sup>18</sup> Human Rights Watch. "Obstetric Violence Is Gender-Based Violence. It's Time the Law Recognized It." September 2025. <a href="https://www.hrw.org/news/2025/09/16/obstetric-violence-is-gender-based-violence-its-time-the-law-recognized-it">hrw.org</a></p>
+  </div>
+
+</div>
+
+<!-- ══ CTA BLOCK ══ -->
+<div class="cta-block">
+  <p>Labora Rounds delivers ten-domain weekly intelligence — every Monday morning.<br>
+  <span class="sub">This Intelligence Report is part of the Labora Rounds research layer, available to Labora Collective members.</span></p>
+  <a href="https://laboracollective.com/join" class="cta-btn">Become a Member &rarr;</a>
+</div>
+
+<!-- ══ ATTRIBUTION ══ -->
+<div class="attribution">
+  <div class="attr-logos">
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/da_logo_main_transparent.png" alt="Diosa Ara" style="height:38px;width:auto;">
+    <div class="dot"></div>
+    <img src="https://sparkling-mooncake-75ad93.netlify.app/lc-logo-vector-brown.png" alt="Labora Collective" style="height:34px;width:auto;opacity:0.65;">
+  </div>
+  <p class="attr-sub">Intelligence Report 13 &nbsp;&middot;&nbsp; A Diosa Ara Initiative</p>
+  <div class="attr-rule"></div>
+  <div class="attr-grid">
+    <div style="padding-right:2rem;">
+      <p><strong>Labora Rounds</strong> is a publication of the <strong>Labora Collective</strong><br>Labora Collective is a <strong>Diosa Ara</strong> initiative</p>
+    </div>
+    <div style="background:var(--blush-light)"></div>
+    <div style="padding-left:2rem;">
+      <p><strong>Diosa Ara</strong> is an obstetrical emergency infrastructure organization advancing clinical decision support, escalation architecture, and evidence-based advocacy for women's health.</p>
+    </div>
+  </div>
+  <div class="attr-rule"></div>
+  <div class="attr-links">
+    <a href="https://laboracollective.com">laboracollective.com</a>
+    <span style="color:var(--blush);font-size:.5rem;">&middot;</span>
+    <a href="https://diosara.com">diosara.com</a>
+  </div>
+</div>
+
+<!-- ══ FOOTER (Locked — LC Design System v2) ══ -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div>
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <div class="lc-footer-brand-desc">Clinical intelligence, research synthesis, and evidence-based advocacy for women's and children's health. Built by physicians. Powered by data. Centered on equity.</div>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Publications</h5>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/intelligence/">Overview</a></li>
+          <li><a href="/intelligence/clinical/">Clinical</a></li>
+          <li><a href="/intelligence/research/">Research</a></li>
+          <li><a href="/intelligence/policy/">Policy</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/playbooks/">Playbooks</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://laboracollective.substack.com">Substack</a></li>
+          <li><a href="https://linkedin.com/in/yamiciaconnor">LinkedIn</a></li>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-footer-bottom">
+      <span>&copy; 2026 Labora Collective. A Diosa Ara Initiative. All rights reserved.</span>
+      <span>This report is for informational and educational purposes. <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
