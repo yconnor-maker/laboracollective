@@ -685,15 +685,17 @@ body {
   flex-direction: column;
 }
 .jr-col-logo {
-  height: 52px;
-  object-fit: contain;
-  margin-bottom: 0.75rem;
-  opacity: 0.88;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: calc(100% + 3.5rem);
+  margin: -2rem -1.75rem 1.25rem;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 .jr-column:hover .jr-col-logo {
-  opacity: 1;
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 .jr-col-accent {
   height: 3px;
@@ -1467,6 +1469,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <li><a href="/journals/">Journals</a></li>
       <li><a href="/intelligence/">Intelligence</a></li>
       <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/products/">Products</a></li>
       <li><a href="/join" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
@@ -1690,7 +1693,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
       <!-- ─── Women's Health (Copper) ─── -->
       <div class="jr-column">
-        <img src="/assets/images/wh-icon.png" alt="Women's Health" class="jr-col-logo">
+        <img src="/assets/images/journals/wh-hero.png" alt="Women's Health" class="jr-col-logo">
         <div class="jr-col-accent" style="background: var(--copper);"></div>
         <div class="jr-col-header">
           <span class="jr-col-name" style="color: var(--copper-text);">Women's Health</span>
@@ -1712,7 +1715,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
       <!-- ─── In Her Name (Rose) ─── -->
       <div class="jr-column">
-        <img src="/assets/images/blueprint-icon.png" alt="In Her Name" class="jr-col-logo">
+        <img src="/assets/images/journals/ihn-hero.png" alt="In Her Name" class="jr-col-logo">
         <div class="jr-col-accent" style="background: var(--rose);"></div>
         <div class="jr-col-header">
           <span class="jr-col-name" style="color: #A34B4A;">In Her Name</span>
@@ -1734,7 +1737,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
       <!-- ─── The Blueprint (Teal) ─── -->
       <div class="jr-column">
-        <img src="/assets/images/ihn-icon.png" alt="The Blueprint" class="jr-col-logo">
+        <img src="/assets/images/journals/BP-hero.png" alt="The Blueprint" class="jr-col-logo">
         <div class="jr-col-accent" style="background: var(--teal);"></div>
         <div class="jr-col-header">
           <span class="jr-col-name" style="color: var(--teal);">The Blueprint</span>
