@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Labora Collective Products — Workbooks, guides, and resources for reproductive and women's health. Built by clinicians, designed for real life.">
+<title>Products — Labora Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+:root { --accent: var(--copper); --accent-light: var(--blush-light); }
+
+.products-hero { background: var(--espresso); border-bottom: 4px solid var(--copper); padding: 5rem 2rem 4rem; text-align: center; }
+.products-hero-inner { max-width: 760px; margin: 0 auto; }
+.products-overline { display: inline-block; font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.5rem; padding: .4rem 1rem; border: 1px solid rgba(212,134,98,.3); border-radius: 20px; }
+.products-hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1.25rem; line-height: 1.2; }
+.products-hero h1 em { font-style: italic; color: var(--copper); }
+.products-hero .products-deck { font-family: var(--font-body); font-size: 1.1rem; color: rgba(251,245,255,.85); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+.products-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.products-section { margin-bottom: 4rem; }
+.products-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1rem; }
+.products-section h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--espresso); margin-bottom: 1.5rem; }
+
+/* Product Cards */
+.product-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; }
+.product-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06); border-top: 4px solid var(--copper); transition: box-shadow .3s, transform .3s; display: flex; flex-direction: column; }
+.product-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,.12); transform: translateY(-4px); }
+.product-card-cover { background: var(--espresso); padding: 3rem 2rem 2rem; display: flex; align-items: center; justify-content: center; min-height: 200px; position: relative; }
+.product-card-cover-inner { text-align: center; }
+.product-card-cover-label { font-family: var(--font-ui); font-size: .65rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--copper); margin-bottom: .75rem; }
+.product-card-cover-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: var(--bg-open); line-height: 1.2; }
+.product-card-cover-sub { font-family: var(--font-body); font-size: .9rem; font-style: italic; color: rgba(251,245,255,.7); margin-top: .5rem; }
+.product-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+.product-card-tag { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .25rem .65rem; border-radius: 12px; background: rgba(212,134,98,.12); color: var(--copper-text); margin-bottom: 1rem; }
+.product-card-body p { font-family: var(--font-body); font-size: .97rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; flex: 1; }
+.product-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,.06); margin-top: auto; }
+.product-card-format { font-family: var(--font-ui); font-size: .72rem; color: var(--muted); }
+.product-card-cta { display: inline-block; background: var(--copper); color: var(--white); font-family: var(--font-ui); font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: .55rem 1.25rem; border-radius: 3px; text-decoration: none; transition: filter .2s; white-space: nowrap; }
+.product-card-cta:hover { filter: brightness(1.1); }
+
+/* Mission strip */
+.products-mission { background: var(--blush-light); border-left: 4px solid var(--copper); border-radius: 6px; padding: 2rem 2.5rem; margin-top: 1rem; }
+.products-mission p { font-family: var(--font-body); font-size: 1.05rem; color: var(--body-text); line-height: 1.8; }
+.products-mission p strong { font-weight: 600; color: var(--espresso); }
+
+@media (max-width: 768px) {
+  .products-hero h1 { font-size: 2rem; }
+  .product-card-grid { grid-template-columns: 1fr; }
+  .products-content { padding: 2.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/products/" class="active-nav">Products</a></li>
+      <li><a href="/join/" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="products-hero">
+  <div class="products-hero-inner">
+    <span class="products-overline">Labora Collective</span>
+    <h1>Resources built for <em>real life</em></h1>
+    <p class="products-deck">Workbooks, guides, and tools — physician-led, evidence-informed, and designed for the moments when the system fails you.</p>
+  </div>
+</section>
+
+<main class="products-content" role="main">
+
+  <section class="products-section">
+    <div class="products-section-label">Available Now</div>
+    <h2>Workbooks &amp; Guides</h2>
+    <div class="product-card-grid">
+
+      <div class="product-card">
+        <div class="product-card-cover">
+          <div class="product-card-cover-inner">
+            <div class="product-card-cover-label">Labora Collective Workbook</div>
+            <div class="product-card-cover-title">From Crisis<br>to Care</div>
+            <div class="product-card-cover-sub">Reproductive Health Workbook</div>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <span class="product-card-tag">Workbook &middot; 73 pages</span>
+          <p>Do you know your reproductive rights — and what to do if they're threatened? This interactive workbook gives you the knowledge, tools, and plan to navigate today's reproductive health crisis with confidence.</p>
+          <div class="product-card-footer">
+            <span class="product-card-format">PDF + EPUB &middot; Instant download</span>
+            <a href="/products/from-crisis-to-care/" class="product-card-cta">Learn more →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="products-mission">
+    <p><strong>Why we make these:</strong> Labora Collective publishes clinical intelligence for patients, providers, and advocates. Our products extend that mission into tools you can use — workbooks you can fill out, guides you can act on, resources that close the gap between what the system offers and what you actually need.</p>
+  </div>
+
+</main>
+
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Products</h5><ul><li><a href="/products/">All Products</a></li><li><a href="/products/from-crisis-to-care/">From Crisis to Care</a></li><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/reports/">Special Reports</a></li><li><a href="/intelligence/research/">Research</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Organization</h5><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join/">Membership</a></li><li><a href="/about/">About</a></li><li><a href="/start-here/">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>
