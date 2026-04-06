@@ -6,256 +6,7 @@
 <meta name="color-scheme" content="light only">
 <title>Research Intelligence — Labora Rounds · Labora Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-<style>
-
-/* ============================================================
-   LABORA COLLECTIVE — Research Intelligence Stream
-   laboracollective.com/intelligence/research/index.html
-   LC Design System v2 · Gold accent
-   Signal cards + audience tabs + Layer 2 status
-   ============================================================ */
-
-:root {
-  --espresso:#362511;--espresso-mid:#4A3218;--body-text:#2C1A0E;
-  --muted:#8A7060;--copper:#D48662;--copper-light:#E8A882;
-  --blush:#EABAB0;--blush-light:#F5DDD9;
-  --rose:#E7817F;--rose-light:#FAEAEA;
-  --teal:#1D6B78;--teal-light:#E0F2F4;
-  --forest:#2E5240;--forest-light:#E4EFE8;
-  --gold:#9E7D0A;--gold-light:#F5EDCC;
-  --bg-warm:#F7F3EE;--bg-open:#FBF5FF;--white:#FFFFFF;
-  --blue:#5B8FA8;--blue-light:#E8F1F5;
-  --crisis-red:#e05858;--stable-green:#6B8F71;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;color-scheme:light only}
-body{font-family:'DM Sans',sans-serif;background:var(--espresso);color:var(--bg-open);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
-
-/* ─── NAV (Locked) ─── */
-.lc-nav{background:var(--espresso);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100}
-.lc-nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
-.lc-nav-brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;flex-shrink:0}
-.lc-nav-mark{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--bg-open)}
-.lc-nav-mark em{font-style:normal;color:var(--copper)}
-.lc-nav-org{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,245,255,0.28);border-left:1px solid rgba(251,245,255,0.1);padding-left:.65rem}
-.lc-nav-org a{color:inherit;text-decoration:none}
-.lc-nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-.lc-nav-links li a{font-family:'DM Sans',sans-serif;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,245,255,0.45);text-decoration:none;transition:color .15s;height:56px;line-height:56px;display:inline-block;border-bottom:2px solid transparent}
-.lc-nav-links li a:hover{color:var(--copper)}
-.lc-nav-links li a.active-nav{color:var(--copper);border-bottom-color:var(--copper)}
-.lc-nav-cta{background:var(--copper);color:var(--white)!important;padding:.4rem 1.1rem!important;font-size:.58rem!important;font-weight:700;letter-spacing:.18em;border:none!important;height:auto!important;line-height:1.4!important}
-.lc-nav-cta:hover{background:var(--copper-light);color:var(--espresso)!important}
-.lc-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
-.lc-nav-toggle span{display:block;width:18px;height:2px;background:rgba(251,245,255,0.5);margin:4px 0;transition:.3s}
-
-/* ─── STREAM HEADER ─── */
-.stream-header{
-  background:var(--espresso);
-  border-bottom:4px solid var(--gold);
-  padding:4rem 2rem 3rem;
-  position:relative;
-}
-.stream-header-inner{max-width:1100px;margin:0 auto}
-
-.sh-breadcrumb{
-  font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(251,245,255,0.3);margin-bottom:1.5rem;
-}
-.sh-breadcrumb a{color:rgba(251,245,255,0.4);text-decoration:none;transition:color .15s}
-.sh-breadcrumb a:hover{color:var(--copper)}
-.sh-breadcrumb .sep{margin:0 .5rem;color:rgba(251,245,255,0.15)}
-
-.sh-overline{
-  font-family:'DM Sans',sans-serif;font-size:.52rem;font-weight:700;
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);display:block;margin-bottom:.75rem;
-}
-.sh-headline{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,4.5vw,3.2rem);font-weight:300;line-height:1.08;
-  color:var(--bg-open);max-width:680px;margin-bottom:1rem;
-}
-.sh-headline em{font-style:italic;color:var(--gold-light)}
-.sh-deck{
-  font-family:'DM Sans',sans-serif;font-size:.95rem;line-height:1.7;
-  color:rgba(251,245,255,0.4);max-width:600px;margin-bottom:2rem;
-}
-
-/* ─── AUDIENCE TABS ─── */
-.audience-tabs{
-  display:flex;gap:.5rem;flex-wrap:wrap;
-  margin-bottom:3rem;
-  padding:0 2rem;
-  max-width:1100px;margin-left:auto;margin-right:auto;
-}
-.tab-btn{
-  padding:.65rem 1.35rem;
-  border:1px solid rgba(251,245,255,0.12);
-  background:transparent;color:rgba(251,245,255,0.5);
-  cursor:pointer;font-family:'DM Sans',sans-serif;
-  font-size:.72rem;font-weight:500;letter-spacing:.04em;
-  transition:all .2s;border-radius:3px;
-}
-.tab-btn:hover{border-color:var(--gold);color:var(--gold)}
-.tab-btn.active{background:var(--gold);color:var(--white);border-color:var(--gold)}
-
-/* ─── SIGNAL CARDS ─── */
-.signals-container{
-  max-width:1100px;margin:0 auto;padding:0 2rem 4rem;
-}
-
-.signal-card{
-  background:var(--espresso-mid);
-  border:1px solid rgba(251,245,255,0.06);
-  border-left:4px solid var(--crisis-red);
-  border-radius:6px;
-  margin-bottom:2rem;
-  padding:2.25rem;
-  display:none;
-}
-.signal-card.visible{display:block;animation:fadeIn .3s ease}
-.signal-card.stable-border{border-left-color:var(--stable-green)}
-
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-.sc-header{margin-bottom:1.5rem}
-.sc-signal-num{
-  font-family:'DM Sans',sans-serif;font-size:.56rem;font-weight:600;
-  letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.5rem;display:block;
-}
-.sc-title{
-  font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:600;
-  color:var(--bg-open);line-height:1.25;
-}
-
-/* Source info */
-.sc-source{
-  background:rgba(251,245,255,0.03);border:1px solid rgba(251,245,255,0.06);
-  border-radius:4px;padding:1rem;margin-bottom:1.5rem;
-  font-size:.82rem;
-}
-.sc-source-label{color:rgba(251,245,255,0.5);font-weight:500;margin-bottom:.15rem;font-size:.72rem}
-.sc-source-text{color:var(--bg-open);margin-bottom:.35rem;line-height:1.5}
-.sc-source-text:last-child{margin-bottom:0}
-
-/* Layer 2 status */
-.sc-layer2{
-  background:rgba(224,88,88,0.05);border:1px solid rgba(224,88,88,0.25);
-  border-radius:4px;padding:1rem;margin-bottom:1.5rem;
-}
-.sc-layer2.stable{background:rgba(107,143,113,0.05);border-color:rgba(107,143,113,0.25)}
-.sc-layer2-header{
-  display:flex;align-items:center;gap:.5rem;
-  margin-bottom:.5rem;font-weight:600;font-size:.72rem;
-  text-transform:uppercase;letter-spacing:.06em;
-}
-.sc-layer2-header .dot{
-  width:8px;height:8px;border-radius:50%;
-  animation:pulse 2s infinite;
-}
-.sc-layer2-header .dot.crisis{background:var(--crisis-red);color:var(--crisis-red)}
-.sc-layer2-header .dot.stable-dot{background:var(--stable-green)}
-.sc-layer2-header.crisis-header{color:var(--crisis-red)}
-.sc-layer2-header.stable-header{color:var(--stable-green)}
-.sc-layer2-text{font-size:.88rem;line-height:1.6;color:var(--bg-open)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-
-/* Audience translation */
-.sc-audience{
-  background:rgba(251,245,255,0.03);
-  border:1px solid rgba(251,245,255,0.06);
-  border-radius:4px;padding:1.5rem;
-  margin-bottom:1.5rem;display:none;
-}
-.sc-audience.active{display:block}
-.sc-audience-label{
-  font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:600;
-  color:var(--gold);text-transform:uppercase;letter-spacing:.1em;
-  margin-bottom:.75rem;
-}
-.sc-audience-text{font-size:.92rem;line-height:1.7;color:var(--bg-open)}
-
-/* Article link */
-.sc-article-link{
-  display:inline-block;margin-top:1rem;
-  padding:.65rem 1.35rem;
-  background:transparent;border:1px solid var(--gold);
-  border-radius:3px;color:var(--gold);text-decoration:none;
-  font-family:'DM Sans',sans-serif;font-weight:600;
-  font-size:.68rem;letter-spacing:.04em;transition:all .2s;
-}
-.sc-article-link:hover{background:var(--gold);color:var(--white)}
-
-/* ─── DOMAIN SIDEBAR (desktop) ─── */
-.stream-layout{
-  max-width:1100px;margin:0 auto;padding:0 2rem;
-  display:grid;grid-template-columns:1fr 280px;gap:3rem;
-}
-.stream-main{}
-.stream-sidebar{
-  border-left:1px solid rgba(251,245,255,0.06);
-  padding-left:2rem;
-}
-.sidebar-label{
-  font-family:'DM Sans',sans-serif;font-size:.48rem;font-weight:700;
-  letter-spacing:.24em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;display:block;
-}
-.sidebar-domain{
-  display:block;padding:.55rem 0;
-  border-bottom:1px solid rgba(251,245,255,0.04);
-  text-decoration:none;transition:color .15s;
-  font-family:'DM Sans',sans-serif;font-size:.78rem;
-  color:rgba(251,245,255,0.4);
-}
-.sidebar-domain:hover{color:var(--gold)}
-.sidebar-domain .sd-num{
-  font-size:.44rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:rgba(251,245,255,0.2);
-  display:block;margin-bottom:.1rem;
-}
-.sidebar-domain.active-domain{color:var(--gold-light);font-weight:500}
-
-/* ─── FOOTER (Locked) ─── */
-.lc-footer{background:var(--espresso);border-top:3px solid var(--copper);color:rgba(251,245,255,0.5)}
-.lc-footer-inner{max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem}
-.lc-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.lc-footer-brand-mark{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--bg-open);margin-bottom:.35rem}
-.lc-footer-brand-mark em{font-style:normal;color:var(--copper)}
-.lc-footer-brand-org{font-size:.55rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,245,255,0.3);margin-bottom:1rem}
-.lc-footer-brand-org a{color:inherit;text-decoration:none}
-.lc-footer-brand-desc{font-size:.78rem;line-height:1.65;color:rgba(251,245,255,0.35)}
-.lc-footer-col h5{font-family:'DM Sans',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:1rem}
-.lc-footer-col ul{list-style:none;padding:0}
-.lc-footer-col li{margin-bottom:.5rem}
-.lc-footer-col a{font-size:.78rem;color:rgba(251,245,255,0.4);text-decoration:none;transition:color .15s}
-.lc-footer-col a:hover{color:var(--copper)}
-.lc-footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:rgba(251,245,255,0.25)}
-.lc-footer-bottom a{color:rgba(251,245,255,0.3);text-decoration:none}
-.lc-footer-bottom a:hover{color:var(--copper)}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:900px){
-  .stream-layout{grid-template-columns:1fr}
-  .stream-sidebar{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,0.06);padding-top:2rem;margin-top:1rem}
-  .audience-tabs{flex-direction:column}
-  .tab-btn{width:100%;text-align:center}
-  .lc-footer-top{grid-template-columns:1fr 1fr;gap:2rem}
-  .lc-nav-links{display:none}
-  .lc-nav-toggle{display:block}
-}
-@media(max-width:640px){
-  .stream-header{padding:3rem 1.25rem 2.5rem}
-  .audience-tabs{padding:0 1.25rem}
-  .signals-container{padding:0 1.25rem 3rem}
-  .signal-card{padding:1.5rem}
-  .lc-footer-top{grid-template-columns:1fr}
-}
-
-</style>
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
 </head>
 <body>
 
@@ -388,6 +139,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--espresso);color:var(--bg-
 </div>
 
 <!-- ══ FOOTER ══ -->
+<!-- ══ FOOTER ══ -->
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
@@ -397,7 +149,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--espresso);color:var(--bg-
         <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
-        <h5>Journals</h5>
+        <h3>Journals</h3>
         <ul>
           <li><a href="/womens-health/">Women's Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
@@ -405,7 +157,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--espresso);color:var(--bg-
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Products</h5>
+        <h3>Products</h3>
         <ul>
           <li><a href="/the-signal/">The Signal</a></li>
           <li><a href="/viva-voce/">Viva Voce</a></li>
@@ -413,15 +165,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--espresso);color:var(--bg-
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Intelligence</h5>
+        <h3>Intelligence</h3>
         <ul>
           <li><a href="/intelligence/">Labora Rounds</a></li>
-          <li><a href="/intelligence/research/">Research</a></li>
-          <li><a href="/intelligence/clinical/">Clinical</a></li>
+          <li><a href="/intelligence/research/">Special Reports</a></li>
+          <li><a href="/intelligence/">Weekly Updates</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Organization</h5>
+        <h3>Organization</h3>
         <ul>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
           <li><a href="/join/">Membership</a></li>

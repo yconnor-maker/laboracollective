@@ -5,151 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clinical Partner Kit &mdash; Doula Edition | Labora Collective</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --espresso:       #362511;
-      --espresso-mid:   #4A3218;
-      --body-text:      #2C1A0E;
-      --muted:          #8A7060;
-      --copper:         #D48662;
-      --copper-light:   #E8A882;
-      --blush:          #EABAB0;
-      --blush-light:    #F5DDD9;
-      --rose:           #C0392B;
-      --rose-mid:       #E57373;
-      --rose-light:     #FDECEA;
-      --teal:           #1D6B78;
-      --teal-light:     #E0F2F4;
-      --forest:         #2E5240;
-      --forest-light:   #E4EFE8;
-      --gold:           #9E7D0A;
-      --gold-light:     #F5EDCC;
-      --bg-warm:        #F7F3EE;
-      --bg-open:        #FBF5FF;
-      --white:          #FFFFFF;
-      --accent:         var(--teal);
-      --accent-light:   var(--teal-light);
-      --font-display:   'Cormorant Garamond', Georgia, serif;
-      --font-body:      'DM Sans', Arial, sans-serif;
-      --font-ui:        'DM Sans', Arial, sans-serif;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg-warm); color: var(--body-text); font-size: 16px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-    a { color: var(--teal); text-decoration: none; }
-    a:hover { color: var(--espresso); }
-
-    /* HEADER */
-    .lc-header { background: var(--espresso); border-bottom: 3px solid var(--teal); }
-    .lc-header-inner { max-width: 700px; margin: 0 auto; padding: 2.5rem 2rem 2rem; }
-    .lc-logo { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 2rem; }
-    .lc-mark { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--teal); letter-spacing: 0.05em; }
-    .lc-wordmark { font-family: var(--font-ui); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(251,245,255,0.4); line-height: 1.5; }
-    .lc-pub-tag { display: inline-block; background: var(--teal); padding: 0.3rem 0.9rem; margin-bottom: 1.25rem; }
-    .lc-pub-tag span { font-family: var(--font-ui); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--white); }
-    .lc-pub-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; line-height: 1.05; color: var(--bg-open); margin-bottom: 0.5rem; }
-    .lc-pub-subtitle { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--teal-light); margin-bottom: 1.5rem; }
-    .lc-accent-bar { display: grid; grid-template-columns: 1fr 1fr 1fr; height: 4px; margin-top: 1.5rem; }
-    .lc-accent-bar div:nth-child(1) { background: var(--espresso-mid); }
-    .lc-accent-bar div:nth-child(2) { background: var(--teal); }
-    .lc-accent-bar div:nth-child(3) { background: var(--teal-light); }
-    .lc-issue-meta { display: flex; gap: 1.5rem; padding: 0.75rem 0 0; flex-wrap: wrap; }
-    .lc-issue-meta span { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251,245,255,0.3); }
-    /* NAV */
-    .lc-nav { background: var(--espresso); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; }
-    .lc-nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-    .lc-nav-brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
-    .lc-nav-mark { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--bg-open); letter-spacing: -0.01em; line-height: 1; }
-    .lc-nav-mark em { font-style: normal; color: var(--teal); }
-    .lc-nav-links { display: flex; align-items: center; gap: 0; list-style: none; }
-    .lc-nav-links li a { display: block; font-family: var(--font-ui); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(251,245,255,0.45); text-decoration: none; padding: 0 0.85rem; height: 56px; line-height: 56px; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; }
-    .lc-nav-links li a:hover, .lc-nav-links li a.active { color: var(--teal); border-bottom-color: var(--teal); }
-    .lc-nav-cta { display: inline-block; background: var(--teal); color: var(--white); padding: 0.4rem 1.1rem; font-family: var(--font-ui); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-radius: 2px; margin-left: 0.5rem; }
-    .lc-nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 4px; padding: 0.5rem; }
-    .lc-nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(251,245,255,0.5); }
-
-    /* BODY LAYOUT */
-    .lc-body { max-width: 700px; margin: 0 auto; padding: 0 2rem 6rem; }
-    .lc-body p { font-size: 0.98rem; line-height: 1.8; color: var(--body-text); margin-bottom: 0.85rem; }
-    .lc-body h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 400; line-height: 1.2; color: var(--espresso); margin: 2rem 0 0.75rem; }
-    .lc-body h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: var(--espresso); margin: 0.5rem 0 0.75rem; }
-    .lc-section-label { font-family: var(--font-ui); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.75rem; }
-    .section-divider { border: none; border-top: 1px solid rgba(29,107,120,0.15); margin: 3rem 0; }
-    /* WELCOME BLOCK */
-    .lc-welcome { background: var(--espresso); padding: 2.5rem; margin: 2.5rem 0; border-left: 4px solid var(--teal); }
-    .lc-welcome .lc-section-label { color: var(--teal-light); margin-bottom: 1rem; }
-    .lc-welcome h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; color: var(--bg-open); margin: 0 0 1rem; }
-    .lc-welcome p { color: rgba(251,245,255,0.8); font-size: 0.95rem; line-height: 1.8; margin-bottom: 0.75rem; }
-    .lc-welcome .welcome-sig { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--teal-light); margin-top: 1.25rem; }
-    /* CALLOUT */
-    .lc-callout { background: var(--teal-light); border-left: 3px solid var(--teal); padding: 1rem 1.25rem; margin: 1.25rem 0; }
-    .lc-callout-label { font-family: var(--font-ui); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.5rem; }
-    .lc-callout p { font-size: 0.9rem; margin-bottom: 0; line-height: 1.65; }
-    /* RED FLAG CARDS */
-    .lc-red-flag { border: 1.5px solid var(--rose); border-radius: 2px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; position: relative; background: var(--white); }
-    .lc-red-flag-badge { position: absolute; top: -11px; left: 1.25rem; background: var(--rose); color: white; font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.2rem 0.75rem; }
-    .lc-red-flag h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--rose); margin: 0.5rem 0 0.75rem; }
-    .lc-red-flag ul { list-style: none; padding: 0; margin: 0.75rem 0; }
-    .lc-red-flag ul li { font-size: 0.9rem; padding: 0.3rem 0 0.3rem 1.25rem; border-bottom: 1px solid var(--rose-light); color: var(--body-text); position: relative; }
-    .lc-red-flag ul li:last-child { border-bottom: none; }
-    .lc-red-flag ul li::before { content: "›"; position: absolute; left: 0; color: var(--rose); font-weight: 700; }
-    .lc-red-flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
-    .lc-red-flag-col { padding: 0.875rem 1rem; border-radius: 2px; }
-    .lc-red-flag-col.urgent { background: var(--rose-light); border: 1px solid var(--rose-mid); }
-    .lc-red-flag-col.emergency { background: var(--rose); }
-    .lc-red-flag-col h4 { font-family: var(--font-ui); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; }
-    .lc-red-flag-col.urgent h4 { color: var(--rose); }
-    .lc-red-flag-col.emergency h4 { color: rgba(255,255,255,0.7); }
-    .lc-red-flag-col p { font-size: 0.85rem; line-height: 1.6; margin: 0; }
-    .lc-red-flag-col.emergency p { color: white; }
-    .lc-doula-note { background: var(--blush-light); border-left: 3px solid var(--blush); padding: 0.875rem 1.125rem; margin-top: 1rem; font-size: 0.88rem; font-style: italic; color: var(--muted); line-height: 1.65; }
-
-    /* ESCALATION STEPS */
-    .lc-step { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--teal-light); }
-    .lc-step:last-child { border-bottom: none; }
-    .lc-step-num { background: var(--teal); color: white; font-family: var(--font-ui); font-size: 0.7rem; font-weight: 700; min-width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; flex-shrink: 0; margin-top: 0.15rem; }
-    .lc-step-body { flex: 1; }
-    .lc-step-body strong { display: block; font-family: var(--font-ui); font-size: 0.82rem; font-weight: 600; color: var(--espresso); margin-bottom: 0.25rem; letter-spacing: 0.02em; }
-    .lc-step-body span { font-size: 0.9rem; color: var(--body-text); line-height: 1.65; }
-    .lc-advocacy { background: var(--espresso); padding: 1.75rem 2rem; margin: 1.5rem 0; }
-    .lc-advocacy .lc-section-label { color: var(--teal-light); margin-bottom: 1rem; }
-    .lc-advocacy p { color: rgba(251,245,255,0.8); font-size: 0.93rem; line-height: 1.75; margin-bottom: 0.6rem; }
-    .lc-advocacy p:last-child { margin-bottom: 0; }
-    /* QUESTION CARDS */
-    .lc-question { background: var(--gold-light); border-left: 3px solid var(--gold); padding: 0.875rem 1.125rem; margin: 0.75rem 0; font-size: 0.92rem; font-style: italic; color: var(--espresso); line-height: 1.65; }
-    .lc-question-label { font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.4rem; font-style: normal; }
-    .lc-question-label.client { color: var(--muted); }
-    .lc-question.client { background: var(--blush-light); border-left-color: var(--blush); }
-    /* HANDOUT */
-    .lc-handout { background: var(--bg-warm); border: 1px solid rgba(29,107,120,0.15); padding: 1.75rem 2rem; margin: 1.5rem 0; }
-    .lc-handout h3 { font-family: var(--font-display); font-size: 1.35rem; color: var(--espresso); margin-bottom: 0.75rem; }
-    .lc-handout h4 { font-family: var(--font-ui); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin: 1.25rem 0 0.5rem; }
-    .lc-handout ul { list-style: none; padding: 0; }
-    .lc-handout ul li { font-size: 0.9rem; padding: 0.4rem 0 0.4rem 1.25rem; border-bottom: 1px solid rgba(29,107,120,0.1); position: relative; }
-    .lc-handout ul li:last-child { border-bottom: none; }
-    .lc-handout ul li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-size: 0.8rem; }
-    /* INTEL BRIEF */
-    .lc-stream { border-left: 3px solid var(--teal); padding: 1.25rem 1.5rem; margin: 1.25rem 0; background: var(--white); }
-    .lc-stream.rj { border-left-color: var(--blush); }
-    .lc-stream-label { font-family: var(--font-ui); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; display: block; }
-    .lc-stream.rj .lc-stream-label { color: var(--muted); }
-    .lc-stream h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--espresso); margin-bottom: 0.5rem; }
-    /* FOOTER */
-    .lc-footer { background: var(--espresso); border-top: 3px solid var(--teal); padding: 3rem 2rem 2rem; }
-    .lc-footer-inner { max-width: 1100px; margin: 0 auto; }
-    .lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 1.5rem; }
-    .lc-footer-brand-mark { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--bg-open); margin-bottom: 0.3rem; }
-    .lc-footer-brand-mark em { font-style: normal; color: var(--teal); }
-    .lc-footer-brand-desc { font-size: 0.82rem; line-height: 1.72; color: rgba(251,245,255,0.28); margin-top: 0.75rem; }
-    .lc-footer-col h5 { font-family: var(--font-ui); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(251,245,255,0.22); margin-bottom: 1rem; }
-    .lc-footer-col ul { list-style: none; padding: 0; }
-    .lc-footer-col ul li a { font-size: 0.8rem; color: rgba(251,245,255,0.35); text-decoration: none; display: block; padding: 0.25rem 0; }
-    .lc-footer-col ul li a:hover { color: var(--teal); }
-    .lc-footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .lc-footer-bottom p { font-family: var(--font-ui); font-size: 0.56rem; color: rgba(251,245,255,0.2); letter-spacing: 0.08em; text-transform: uppercase; }
-    @media (max-width: 900px) { .lc-nav-toggle { display: flex; } .lc-nav-links { display: none; } .lc-nav-links.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--espresso); padding: 1.5rem 2rem; } .lc-footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-    @media (max-width: 640px) { .lc-body, .lc-header-inner { padding-left: 1.25rem; padding-right: 1.25rem; } .lc-red-flag-grid { grid-template-columns: 1fr; } .lc-footer-top { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="/assets/css/lc-standard.css">
 </head>
 
 <body>
@@ -447,42 +303,52 @@
   </div><!-- end lc-body content -->
 </main>
 
+<!-- ══ FOOTER ══ -->
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
-      <div>
+      <div class="lc-footer-brand">
         <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
-        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,245,255,0.25);margin-bottom:0.5rem;">A Diosa Ara Initiative</div>
-        <p class="lc-footer-brand-desc">Physician-led intelligence for women&rsquo;s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
-        <h5>Journals</h5>
+        <h3>Journals</h3>
         <ul>
-          <li><a href="/womens-health/">Women&rsquo;s Health</a></li>
+          <li><a href="/womens-health/">Women's Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
           <li><a href="/blueprint/">The Blueprint</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Intelligence</h5>
+        <h3>Products</h3>
         <ul>
-          <li><a href="/intelligence/">Labora Rounds</a></li>
-          <li><a href="/intelligence/">Weekly Updates</a></li>
           <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/">Monthly Digest</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h5>Organization</h5>
+        <h3>Intelligence</h3>
+        <ul>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
+          <li><a href="/intelligence/research/">Special Reports</a></li>
+          <li><a href="/intelligence/">Weekly Updates</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h3>Organization</h3>
         <ul>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
           <li><a href="/join/">Membership</a></li>
           <li><a href="/about/">About</a></li>
+          <li><a href="/start-here/">Start Here</a></li>
         </ul>
       </div>
     </div>
     <div class="lc-footer-bottom">
-      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy/" style="color:rgba(251,245,255,0.2);">Privacy</a></p>
-      <p><a href="https://diosara.com" style="color:rgba(251,245,255,0.2);">diosara.com</a></p>
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
 </footer>
