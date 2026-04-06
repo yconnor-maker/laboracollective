@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="From Crisis to Care — A 9-chapter interactive guide to reproductive rights, healthcare navigation, and personal safety planning. PDF + EPUB, instant download.">
+<title>From Crisis to Care — Labora Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+:root { --accent: var(--copper); --accent-light: var(--blush-light); }
+
+/* ── Hero ── */
+.wb-hero { background: var(--espresso); border-bottom: 4px solid var(--copper); padding: 5rem 2rem 5rem; }
+.wb-hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: center; }
+.wb-hero-text { }
+.wb-breadcrumb { font-family: var(--font-ui); font-size: .72rem; color: rgba(251,245,255,.5); margin-bottom: 1.5rem; }
+.wb-breadcrumb a { color: rgba(251,245,255,.5); text-decoration: none; }
+.wb-breadcrumb a:hover { color: var(--copper); }
+.wb-overline { display: inline-block; font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.25rem; padding: .35rem .9rem; border: 1px solid rgba(212,134,98,.35); border-radius: 20px; }
+.wb-hero h1 { font-family: var(--font-display); font-size: 3.2rem; font-weight: 400; color: var(--bg-open); line-height: 1.15; margin-bottom: .75rem; }
+.wb-hero h1 em { font-style: italic; color: var(--copper); }
+.wb-hero-subtitle { font-family: var(--font-ui); font-size: .8rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: rgba(251,245,255,.55); margin-bottom: 1.5rem; }
+.wb-hero-deck { font-family: var(--font-body); font-size: 1.15rem; color: rgba(251,245,255,.88); line-height: 1.75; margin-bottom: 2rem; max-width: 560px; }
+.wb-hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.wb-meta-item { font-family: var(--font-ui); font-size: .78rem; color: rgba(251,245,255,.6); display: flex; align-items: center; gap: .4rem; }
+.wb-meta-item strong { color: rgba(251,245,255,.9); font-weight: 600; }
+
+/* Buy card */
+.wb-buy-card { background: var(--white); border-radius: 10px; padding: 2.25rem; box-shadow: 0 8px 32px rgba(0,0,0,.25); position: sticky; top: 72px; }
+.wb-buy-card-cover { background: var(--espresso); border-radius: 6px; padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.75rem; }
+.wb-buy-card-cover-label { font-family: var(--font-ui); font-size: .65rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--copper); margin-bottom: .75rem; }
+.wb-buy-card-cover-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 600; color: var(--bg-open); line-height: 1.15; }
+.wb-buy-card-cover-sub { font-family: var(--font-body); font-size: .9rem; font-style: italic; color: rgba(251,245,255,.6); margin-top: .4rem; }
+.wb-buy-card h3 { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.wb-bundle-list { list-style: none; margin-bottom: 1.5rem; }
+.wb-bundle-list li { font-family: var(--font-ui); font-size: .88rem; color: var(--body-text); padding: .5rem 0; border-bottom: 1px solid rgba(0,0,0,.05); display: flex; align-items: flex-start; gap: .6rem; line-height: 1.5; }
+.wb-bundle-list li:last-child { border-bottom: none; }
+.wb-bundle-check { color: var(--copper); font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+.wb-buy-btn { display: block; background: var(--copper); color: var(--white); font-family: var(--font-ui); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; text-align: center; transition: filter .2s, transform .1s; margin-bottom: 1rem; }
+.wb-buy-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.wb-buy-delivery { font-family: var(--font-ui); font-size: .75rem; color: var(--muted); text-align: center; }
+
+/* ── Content ── */
+.wb-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: start; }
+.wb-main { }
+.wb-section { margin-bottom: 3.5rem; }
+.wb-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--copper); margin-bottom: .75rem; }
+.wb-section h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--espresso); margin-bottom: 1.25rem; line-height: 1.2; }
+.wb-section p { font-family: var(--font-body); font-size: 1.05rem; color: var(--body-text); line-height: 1.85; margin-bottom: 1.1rem; max-width: 640px; }
+
+/* What's inside list */
+.wb-inside-list { list-style: none; margin-top: .5rem; }
+.wb-inside-list li { font-family: var(--font-body); font-size: 1rem; color: var(--body-text); line-height: 1.7; padding: .85rem 0 .85rem 1.5rem; border-bottom: 1px solid rgba(0,0,0,.07); position: relative; }
+.wb-inside-list li:last-child { border-bottom: none; }
+.wb-inside-list li::before { content: ''; position: absolute; left: 0; top: 1.2rem; width: 6px; height: 6px; border-radius: 50%; background: var(--copper); }
+
+/* Signal box */
+.wb-signal { background: var(--blush-light); border-left: 4px solid var(--copper); border-radius: 6px; padding: 1.5rem 2rem; margin: 2rem 0; }
+.wb-signal-label { font-family: var(--font-ui); font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--copper-text); margin-bottom: .6rem; }
+.wb-signal p { font-family: var(--font-body); font-size: 1rem; color: var(--body-text); line-height: 1.75; margin: 0; max-width: none; }
+
+/* Sidebar sticky */
+.wb-sidebar { position: sticky; top: 72px; }
+
+/* Bottom CTA */
+.wb-bottom-cta { background: var(--espresso); border-radius: 8px; padding: 3rem; text-align: center; margin-top: 1rem; }
+.wb-bottom-cta h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1rem; }
+.wb-bottom-cta p { font-family: var(--font-body); font-size: 1rem; color: rgba(251,245,255,.82); line-height: 1.75; max-width: 480px; margin: 0 auto 1.75rem; }
+.wb-bottom-cta-btn { display: inline-block; background: var(--copper); color: var(--white); font-family: var(--font-ui); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: .9rem 2.25rem; border-radius: 4px; text-decoration: none; transition: filter .2s; }
+.wb-bottom-cta-btn:hover { filter: brightness(1.1); }
+
+@media (max-width: 900px) {
+  .wb-hero-inner, .wb-content { grid-template-columns: 1fr; gap: 2.5rem; }
+  .wb-buy-card, .wb-sidebar { position: static; }
+  .wb-hero h1 { font-size: 2.25rem; }
+  .wb-content { padding: 2.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/products/" class="active-nav">Products</a></li>
+      <li><a href="/join/" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="wb-hero">
+  <div class="wb-hero-inner">
+    <div class="wb-hero-text">
+      <div class="wb-breadcrumb"><a href="/products/">Products</a> &rsaquo; <a href="/products/">Workbooks &amp; Guides</a></div>
+      <span class="wb-overline">Labora Collective</span>
+      <h1>From Crisis<br>to <em>Care</em></h1>
+      <div class="wb-hero-subtitle">A Reproductive Health Guide for Today's Challenges</div>
+      <p class="wb-hero-deck">Do you know your reproductive rights — and what to do if they're threatened? This 9-chapter interactive guide gives you the knowledge, tools, and plan to navigate today's reproductive health crisis with confidence.</p>
+      <div class="wb-hero-meta">
+        <span class="wb-meta-item"><strong>9</strong> chapters</span>
+        <span class="wb-meta-item"><strong>PDF</strong> + EPUB</span>
+        <span class="wb-meta-item"><strong>Instant</strong> digital download</span>
+      </div>
+    </div>
+    <div class="wb-buy-card">
+      <div class="wb-buy-card-cover">
+        <div class="wb-buy-card-cover-label">Labora Collective</div>
+        <div class="wb-buy-card-cover-title">From Crisis<br>to Care</div>
+        <div class="wb-buy-card-cover-sub">Reproductive Health Guide</div>
+      </div>
+      <h3>This bundle includes</h3>
+      <ul class="wb-bundle-list">
+        <li><span class="wb-bundle-check">&#10003;</span><span><strong>Fillable PDF</strong> — type directly into the reflection sections on any device</span></li>
+        <li><span class="wb-bundle-check">&#10003;</span><span><strong>EPUB</strong> — read on your phone, tablet, or e-reader in Apple Books, Kindle, or any e-reader app</span></li>
+      </ul>
+      <!-- Replace YOUR_SHOPIFY_PRODUCT_URL with your public Shopify storefront product URL -->
+      <a href="#" class="wb-buy-btn" target="_blank" rel="noopener">Get the Workbook →</a>
+      <p class="wb-buy-delivery">Instant digital download — delivered immediately after purchase.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="wb-content">
+  <main class="wb-main" role="main">
+
+    <section class="wb-section">
+      <div class="wb-section-label">About This Guide</div>
+      <h2>Built for the moments when the system fails you</h2>
+      <p>Whether you're trying to understand what the Dobbs decision means for your state, prepare for potential healthcare barriers, or build a long-term safety plan — <em>From Crisis to Care</em> walks you through it all, step by step.</p>
+      <p>This isn't a policy brief or a news article. It's a working document — designed to be filled out, returned to, and used when it matters most.</p>
+    </section>
+
+    <div class="wb-signal">
+      <div class="wb-signal-label">Why this exists</div>
+      <p>Since <em>Dobbs v. Jackson Women's Health Organization</em> overturned <em>Roe v. Wade</em> in 2022, reproductive healthcare access has changed dramatically across the United States — and the data on who bears the greatest burden of those changes is clear. This workbook was built to close the gap between what people need to know and what they actually have access to.</p>
+    </div>
+
+    <section class="wb-section">
+      <div class="wb-section-label">What's Inside</div>
+      <h2>9 chapters of tools you can actually use</h2>
+      <img src="/assets/images/products/1.png" alt="From Crisis to Care — cover" style="width:100%;max-width:560px;border-radius:6px;margin-bottom:2rem;box-shadow:0 4px 20px rgba(0,0,0,.12);">
+      <ul class="wb-inside-list">
+        <li><strong>Chapter 1</strong> — Understanding Reproductive Rights Today</li>
+        <li><strong>Chapter 2</strong> — The Impact of Recent Legal Changes</li>
+        <li><strong>Chapter 3</strong> — Maternal Mortality in the United States: A State-by-State Analysis</li>
+        <li><strong>Chapter 4</strong> — Reproductive Justice: A Holistic Framework</li>
+        <li><strong>Chapter 5</strong> — Navigating Barriers to Reproductive Healthcare</li>
+        <li><strong>Chapter 6</strong> — The Maternal Health Equity Framework</li>
+        <li><strong>Chapter 7</strong> — Get Involved: Education and Advocacy</li>
+        <li><strong>Chapter 8</strong> — Create a Plan: Informed Decision-Making and Preparation</li>
+        <li><strong>Chapter 9</strong> — Sustaining Your Safety and Well-Being</li>
+      </ul>
+    </section>
+
+    <section class="wb-section">
+      <div class="wb-section-label">Format</div>
+      <h2>Two formats, one bundle</h2>
+      <p>The <strong>fillable PDF</strong> lets you type directly into reflection sections on any device — laptop, tablet, or phone. The <strong>EPUB</strong> is optimized for e-readers and mobile reading apps, so you can work through it wherever you are.</p>
+      <p>Both formats are delivered immediately after purchase via Shopify's secure digital delivery. No waiting, no shipping.</p>
+    </section>
+
+    <div class="wb-bottom-cta">
+      <h2>Ready to take the next step?</h2>
+      <p>Get instant access to both the fillable PDF and EPUB — delivered immediately after purchase.</p>
+      <!-- Replace YOUR_SHOPIFY_PRODUCT_URL with your public Shopify storefront product URL -->
+      <a href="#" class="wb-bottom-cta-btn" target="_blank" rel="noopener">Get the Workbook →</a>
+    </div>
+
+  </main>
+
+  <aside class="wb-sidebar">
+    <div class="wb-buy-card">
+      <div class="wb-buy-card-cover">
+        <div class="wb-buy-card-cover-label">Labora Collective</div>
+        <div class="wb-buy-card-cover-title">From Crisis<br>to Care</div>
+        <div class="wb-buy-card-cover-sub">Reproductive Health Guide</div>
+      </div>
+      <h3>This bundle includes</h3>
+      <ul class="wb-bundle-list">
+        <li><span class="wb-bundle-check">&#10003;</span><span><strong>Fillable PDF</strong> — type directly into the reflection sections on any device</span></li>
+        <li><span class="wb-bundle-check">&#10003;</span><span><strong>EPUB</strong> — read on your phone, tablet, or e-reader in Apple Books, Kindle, or any e-reader app</span></li>
+      </ul>
+      <!-- Replace YOUR_SHOPIFY_PRODUCT_URL with your public Shopify storefront product URL -->
+      <a href="#" class="wb-buy-btn" target="_blank" rel="noopener">Get the Workbook →</a>
+      <p class="wb-buy-delivery">Instant digital download — delivered immediately after purchase.</p>
+    </div>
+  </aside>
+</div>
+
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h5>Journals</h5><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Products</h5><ul><li><a href="/products/">All Products</a></li><li><a href="/products/from-crisis-to-care/">From Crisis to Care</a></li><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Intelligence</h5><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/reports/">Special Reports</a></li><li><a href="/intelligence/research/">Research</a></li></ul></div>
+      <div class="lc-footer-col"><h5>Organization</h5><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join/">Membership</a></li><li><a href="/about/">About</a></li><li><a href="/start-here/">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>
