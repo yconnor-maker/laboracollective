@@ -7,7 +7,170 @@
 <meta name="description" content="The Labora Signal — Yemaya's Circle of Care. Weekly OB and obstetrical intelligence from Labora Collective. Every Monday.">
 <title>The Labora Signal — Yemaya's Circle of Care · Every Monday</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+:root {
+  --espresso:     #362511; --espresso-mid: #4A3218;
+  --body-text:    #2C1A0E; --muted:        #8A7060;
+  --copper:       #D48662; --copper-light: #E8A882;
+  --blush:        #EABAB0; --blush-light:  #F5DDD9;
+  --rose:         #E7817F; --rose-light:   #FAEAEA;
+  --teal:         #1D6B78; --teal-light:   #E0F2F4;
+  --forest:       #2E5240; --forest-light: #E4EFE8;
+  --gold:         #9E7D0A; --gold-light:   #F5EDCC;
+  --bg-warm:      #F7F3EE; --bg-open:      #FBF5FF; --white:#FFFFFF;
+  /* Publication identity */
+  --pub-accent:   #D48662; /* copper for Monday */
+  --pub-light:    #E8A882;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; color-scheme:light only; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg-warm); color:var(--body-text); line-height:1.8; -webkit-font-smoothing:antialiased; }
+
+/* NAV */
+.lc-nav { background:var(--espresso); border-bottom:1px solid rgba(255,255,255,0.06); position:sticky; top:0; z-index:100; }
+.nav-inner { max-width:1100px; margin:0 auto; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:56px; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-breadcrumb { font-size:0.56rem; color:rgba(251,245,255,0.18); letter-spacing:0.1em; text-transform:uppercase; }
+.nav-breadcrumb a { color:rgba(251,245,255,0.25); text-decoration:none; }
+.nav-breadcrumb a:hover { color:var(--copper); }
+.nav-breadcrumb span { margin:0 0.4rem; }
+.nav-links { display:flex; align-items:center; gap:1.75rem; list-style:none; }
+.nav-links li a { font-size:0.64rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(251,245,255,0.4); text-decoration:none; transition:color 0.15s; }
+.nav-links li a:hover, .nav-links li a.active { color:var(--copper); }
+.nav-cta { display:inline-block; background:var(--copper); color:var(--white); padding:0.38rem 1.1rem; font-size:0.6rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition:background 0.15s; }
+.nav-cta:hover { background:var(--copper-light); color:var(--espresso); }
+
+/* HEADER */
+.header { background:var(--espresso); border-bottom:3px solid var(--pub-accent); }
+.header-inner { max-width:800px; margin:0 auto; padding:4rem 2rem 3.5rem; }
+.header-logo { margin-bottom:2.5rem; }
+.pub-tag { display:inline-flex; align-items:center; gap:0.65rem; margin-bottom:1.5rem; }
+.pub-pill { display:inline-block; background:var(--pub-accent); padding:0.22rem 0.7rem; }
+.pub-pill span { font-size:0.52rem; font-weight:700; letter-spacing:0.24em; text-transform:uppercase; color:var(--white); }
+.pub-day { font-size:0.56rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(251,245,255,0.22); }
+.pub-name { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.6rem); font-weight:300; line-height:1.04; color:var(--bg-open); letter-spacing:-0.01em; margin-bottom:0.4rem; }
+.pub-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-style:italic; color:var(--pub-accent); margin-bottom:1.5rem; opacity:0.8; }
+.pub-deck { font-size:0.97rem; line-height:1.8; color:rgba(251,245,255,0.45); max-width:560px; margin-bottom:2.25rem; }
+.pub-actions { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+.btn-subscribe { display:inline-block; background:var(--gold-light); color:var(--espresso); padding:0.8rem 2.25rem; font-size:0.66rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); transition:background 0.15s; }
+.btn-subscribe:hover { background:var(--copper-light); }
+.btn-latest { font-size:0.64rem; color:rgba(251,245,255,0.3); letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:1px; transition:color 0.15s; }
+.btn-latest:hover { color:var(--pub-accent); }
+
+/* WHAT'S IN EACH ISSUE */
+.anatomy { background:var(--espresso-mid); padding:3.5rem 2rem; border-bottom:1px solid rgba(255,255,255,0.05); }
+.anatomy-inner { max-width:800px; margin:0 auto; }
+.section-label { font-size:0.52rem; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; display:block; margin-bottom:0.6rem; }
+.anatomy .section-label { color:rgba(251,245,255,0.25); }
+.anatomy-hed { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; color:var(--bg-open); margin-bottom:2rem; line-height:1.15; }
+.anatomy-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,0.06); }
+.anatomy-cell { background:rgba(255,255,255,0.03); padding:1.5rem 1.25rem; }
+.anatomy-cell .cell-num { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--pub-accent); line-height:1; display:block; margin-bottom:0.35rem; opacity:0.5; }
+.anatomy-cell h4 { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:400; color:var(--bg-open); margin-bottom:0.4rem; }
+.anatomy-cell p { font-size:0.8rem; color:rgba(251,245,255,0.3); line-height:1.6; }
+
+/* SAMPLE ISSUE CTA */
+.sample { background:var(--bg-warm); padding:4rem 2rem; border-bottom:1px solid var(--blush-light); }
+.sample-inner { max-width:800px; margin:0 auto; }
+.sample .section-label { color:var(--pub-accent); }
+.sample-hed { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:300; color:var(--espresso); margin:0.4rem 0 1rem; line-height:1.15; }
+.sample-deck { font-size:0.93rem; color:var(--muted); line-height:1.75; margin-bottom:1.75rem; max-width:560px; }
+.issue-preview { background:var(--white); border:1px solid var(--blush-light); border-left:4px solid var(--pub-accent); padding:2rem; margin-bottom:1.75rem; }
+.issue-preview .preview-label { font-size:0.5rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--pub-accent); display:block; margin-bottom:0.5rem; }
+.issue-preview h3 { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:400; color:var(--espresso); margin-bottom:0.5rem; line-height:1.2; }
+.issue-preview p { font-size:0.88rem; color:var(--muted); line-height:1.65; }
+.issue-preview .read-link { display:inline-block; margin-top:1rem; font-size:0.62rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--pub-accent); text-decoration:none; border-bottom:1px solid var(--blush); padding-bottom:1px; transition:color 0.15s; }
+.issue-preview .read-link:hover { color:var(--espresso); }
+
+/* SUBSCRIBE FORM */
+.subscribe { background:var(--espresso); padding:4rem 2rem; }
+.subscribe-inner { max-width:800px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.sub-left .section-label { color:var(--pub-accent); }
+.sub-left h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,3.5vw,2.1rem); font-weight:300; color:var(--bg-open); margin:0.4rem 0 0.75rem; line-height:1.15; }
+.sub-left p { font-size:0.88rem; color:rgba(251,245,255,0.38); line-height:1.72; }
+.sub-right {}
+.sub-note { font-size:0.75rem; color:rgba(251,245,255,0.22); margin-top:0.75rem; line-height:1.5; }
+.sub-note a { color:var(--pub-accent); text-decoration:none; }
+.sub-form { display:flex; flex-direction:column; gap:0.75rem; }
+.sub-form input[type="email"] {
+  width:100%; padding:0.85rem 1rem;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  color:var(--bg-open); font-family:'DM Sans',sans-serif; font-size:0.9rem;
+  outline:none; transition:border-color 0.15s;
+}
+.sub-form input[type="email"]::placeholder { color:rgba(251,245,255,0.25); }
+.sub-form input[type="email"]:focus { border-color:var(--pub-accent); }
+.sub-form button {
+  width:100%; padding:0.85rem;
+  background:var(--pub-accent); color:var(--white); border:none; cursor:pointer;
+  font-family:'DM Sans',sans-serif; font-size:0.64rem; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase; transition:background 0.15s;
+}
+.sub-form button:hover { background:var(--pub-light); color:var(--espresso); }
+
+/* RELATED PUBS */
+.related { padding:3.5rem 2rem; background:var(--bg-warm); border-top:1px solid var(--blush-light); }
+.related-inner { max-width:800px; margin:0 auto; }
+.related .section-label { color:var(--muted); }
+.related-hed { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; color:var(--espresso); margin:0.4rem 0 1.75rem; }
+.related-cards { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--blush-light); border:1px solid var(--blush-light); }
+.rel-card { background:var(--white); padding:1.5rem; text-decoration:none; display:block; transition:background 0.15s; }
+.rel-card:hover { background:var(--bg-warm); }
+.rel-day { font-size:0.5rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-bottom:0.4rem; }
+.rel-day.rose { color:var(--rose); }
+.rel-day.gold { color:var(--gold); }
+.rel-name { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--espresso); margin-bottom:0.3rem; line-height:1.2; }
+.rel-sub { font-family:'Cormorant Garamond',serif; font-size:0.85rem; font-style:italic; color:var(--muted); margin-bottom:0.65rem; }
+.rel-desc { font-size:0.8rem; color:var(--muted); line-height:1.55; }
+
+/* ATTRIBUTION / FOOTER */
+.attribution { background:var(--bg-warm); padding:2.75rem 2rem 2.25rem; text-align:center; border-top:1px solid var(--blush-light); }
+.attribution-logos { display:flex; align-items:center; justify-content:center; gap:1.5rem; margin-bottom:0.75rem; }
+.attr-dot { width:4px; height:4px; border-radius:50%; background:var(--blush); flex-shrink:0; }
+.attr-source { font-size:0.56rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.attr-rule { height:1px; background:var(--blush-light); margin:1.5rem 0; }
+.attr-cols { display:grid; grid-template-columns:1fr 1px 1fr; text-align:left; max-width:580px; margin:0 auto; }
+.attr-divider { background:var(--blush-light); }
+.attr-col { padding:0 2rem; }
+.attr-col:first-child { padding-left:0; }
+.attr-col:last-child  { padding-right:0; }
+.attr-col p { font-size:0.76rem; line-height:1.65; color:var(--muted); }
+.attr-col p strong { color:var(--body-text); font-weight:500; }
+.attr-links { display:flex; align-items:center; justify-content:center; gap:1.25rem; margin-top:1.75rem; }
+.attr-links a { font-size:0.7rem; color:var(--copper); text-decoration:none; transition:color 0.15s; }
+.attr-links a:hover { color:var(--espresso); }
+.attr-links .dot { color:var(--blush); font-size:0.5rem; }
+.closer { background:var(--espresso); padding:0.85rem 2rem; text-align:center; }
+.closer p { font-size:0.56rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:rgba(251,245,255,0.32); }
+
+@media (max-width:720px) {
+  .anatomy-grid, .related-cards, .subscribe-inner { grid-template-columns:1fr; }
+  .nav-links { display:none; }
+  .header-inner, .anatomy, .sample, .subscribe, .related { padding-left:1.25rem; padding-right:1.25rem; }
+  .attr-cols { grid-template-columns:1fr; }
+  .attr-divider { display:none; }
+  .attr-col { padding:0.65rem 0; border-bottom:1px solid var(--blush-light); }
+  .attr-col:last-child { border-bottom:none; }
+}
+
+/* ── LC Footer ── */
+.lc-footer { background: #362511; color: rgba(251,245,255,0.65); border-top: 2px solid #D48662; margin-top: 4rem; }
+.lc-footer-inner { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem; }
+.lc-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.lc-footer-brand-mark { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #FBF5FF; margin-bottom: 0.3rem; }
+.lc-footer-brand-mark em { font-style: italic; }
+.lc-footer-brand-org { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.lc-footer-brand-org a { color: inherit; text-decoration: none; }
+.lc-footer-brand-desc { font-size: 0.75rem; line-height: 1.6; }
+.lc-footer-col h5 { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: #D48662; margin-bottom: 0.8rem; }
+.lc-footer-bottom { border-top: 1px solid rgba(251,245,255,0.08); padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.65rem; }
+.lc-footer-bottom a { color: #D48662; text-decoration: none; }
+@media (max-width: 768px) {
+  .lc-footer-top { grid-template-columns: 1fr; }
+  .lc-footer-bottom { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
 </head>
 <body>
 
@@ -168,7 +331,6 @@
 </div>
 <div class="closer"><p>Labora Collective · A Diosa Ara Initiative</p></div>
 
-<!-- ══ FOOTER ══ -->
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
@@ -178,7 +340,7 @@
         <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
-        <h3>Journals</h3>
+        <h5>Journals</h5>
         <ul>
           <li><a href="/womens-health/">Women's Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
@@ -186,7 +348,7 @@
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h3>Products</h3>
+        <h5>Products</h5>
         <ul>
           <li><a href="/the-signal/">The Signal</a></li>
           <li><a href="/viva-voce/">Viva Voce</a></li>
@@ -194,15 +356,15 @@
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h3>Intelligence</h3>
+        <h5>Intelligence</h5>
         <ul>
           <li><a href="/intelligence/">Labora Rounds</a></li>
-          <li><a href="/intelligence/research/">Special Reports</a></li>
-          <li><a href="/intelligence/">Weekly Updates</a></li>
+          <li><a href="/intelligence/research/">Research</a></li>
+          <li><a href="/intelligence/clinical/">Clinical</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
-        <h3>Organization</h3>
+        <h5>Organization</h5>
         <ul>
           <li><a href="https://diosara.com">Diosa Ara</a></li>
           <li><a href="/join/">Membership</a></li>
