@@ -191,7 +191,7 @@ body {
   background: var(--accent-color, var(--copper));
 }
 .article-header-inner {
-  max-width: 780px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2.5rem 2rem 2rem;
 }
@@ -217,28 +217,28 @@ body {
 }
 .article-header .journal-name {
   font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent-color, var(--copper));
 }
 .article-header .parent-brand {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(251,245,255,0.28);
+  color: rgba(251,245,255,0.4);
   display: block;
   margin-top: 2px;
 }
 .article-header .content-badge {
   display: inline-block;
   font-family: var(--font-ui);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 0.2rem 0.7rem;
+  padding: 0.3rem 0.8rem;
   border: 1px solid rgba(251,245,255,0.15);
   color: rgba(251,245,255,0.6);
   margin-bottom: 1rem;
@@ -261,7 +261,7 @@ body {
 }
 .article-header .byline {
   font-family: var(--font-ui);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: rgba(251,245,255,0.6);
 }
 .article-header .byline strong {
@@ -274,9 +274,41 @@ body {
    ───────────────────────────────────────────── */
 
 .article-body {
-  max-width: 720px;
+  max-width: 1100px; /* Migrated from 720px to wide track */
   margin: 0 auto;
   padding: 2.5rem 2rem 3rem;
+}
+
+/* 3-Column Article Layout */
+.article-grid {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 720px) 220px;
+  gap: 3rem;
+  align-items: start;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.article-col-left {
+  position: sticky;
+  top: 100px;
+}
+
+.article-col-right {
+  position: sticky;
+  top: 100px;
+}
+
+.article-col-center {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
 }
 .article-body h2 {
   font-family: var(--font-display);
@@ -360,7 +392,7 @@ body {
 }
 .lc-footer-brand-mark em { font-style: normal; color: var(--copper); }
 .lc-footer-brand-org {
-  font-size: 0.70rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -369,13 +401,13 @@ body {
 }
 .lc-footer-brand-org a { color: inherit; text-decoration: none; }
 .lc-footer-brand-desc {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   line-height: 1.65;
   color: rgba(251,245,255,0.82);
 }
 .lc-footer-col h3 {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.70rem;
+  font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -397,7 +429,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: rgba(251,245,255,0.88);
 }
 .lc-footer-bottom a {
@@ -452,3 +484,151 @@ body {
 .lc-nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
 .lc-nav-toggle.active span:nth-child(2) { opacity: 0; }
 .lc-nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* ─────────────────────────────────────────────
+   VISUAL: Logo Banner (Added to Standard)
+───────────────────────────────────────────── */
+.logo-banner {
+  padding: 1.5rem 2rem;
+  background: var(--espresso);
+  text-align: center;
+  border-bottom: 2px solid var(--copper);
+}
+.logo-banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.logo-banner-item {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(251,245,255,0.82);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.logo-banner-item:hover {
+  color: var(--copper);
+}
+.logo-banner-item em { font-style: normal; color: var(--copper); font-weight: 600; }
+.logo-banner-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(251,245,255,0.12);
+  flex-shrink: 0;
+}
+@media (max-width: 1024px) {
+  .logo-banner-inner { gap: 1.5rem; justify-content: center; }
+  .logo-banner-item { font-size: 0.9rem; }
+}
+@media (max-width: 600px) {
+  .logo-banner-inner { gap: 1rem; }
+  .logo-banner-item { font-size: 0.82rem; }
+  .logo-banner-divider { height: 18px; }
+}
+
+/* ─────────────────────────────────────────────
+   PHASE 2: UTILITY & APPLICATION LAYER
+   ───────────────────────────────────────────── */
+
+/* Utility Prose Layout (About, Privacy, Terms) */
+.utility-prose {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+.utility-prose h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--espresso);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+.utility-prose h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--espresso);
+}
+.utility-prose p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--body-text);
+  margin-bottom: 1.5rem;
+}
+
+/* Glassmorphic Elevated Card Form Wrapper (Beehiiv/Coda) */
+.utility-form-wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 600px;
+  margin: 4rem auto;
+}
+
+/* Applet App-Shell Structures (Packs) */
+.app-shell-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+.applet-bottom-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--espresso);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 100;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+}
+.applet-carousel-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.applet-carousel-card {
+  flex: 0 0 85%;
+  max-width: 400px;
+  scroll-snap-align: center;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+@media (max-width: 1024px) {
+  /* Hide TOC and Context Columns on Mobile to preserve "Reading App" focus */
+  .article-col-left, .article-col-right {
+    display: none;
+  }
+}
