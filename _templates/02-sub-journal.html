@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="COLUMN_DESCRIPTION">
+<title>COLUMN_NAME — JOURNAL_NAME — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Sub-Journal / Column Page ──
+   Set --accent to the parent journal's color
+*/
+:root { --accent: var(--rose); }
+
+.sl-hero { position: relative; border-bottom: 4px solid var(--accent); padding: 4rem 2rem 3rem; text-align: center; background: var(--espresso); min-height: 320px; display: flex; align-items: center; justify-content: center; }
+.sl-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+.sl-hero-emoji { font-size: 3rem; margin-bottom: 1rem; }
+.sl-overline { display: inline-block; font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.sl-hero h1 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1rem; line-height: 1.2; }
+.sl-hero .sl-deck { font-family: var(--font-body); font-size: 1.05rem; color: rgba(251,245,255,.85); line-height: 1.7; max-width: 580px; margin: 0 auto; }
+.sl-breadcrumb { font-family: var(--font-ui); font-size: .72rem; color: rgba(251,245,255,.5); margin-bottom: 1.5rem; }
+.sl-breadcrumb a { color: rgba(251,245,255,.7); text-decoration: none; }
+.sl-breadcrumb a:hover { color: var(--accent); }
+
+.sl-content { max-width: 780px; margin: 0 auto; padding: 3rem 2rem; }
+.sl-section { margin-bottom: 3rem; }
+.sl-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.sl-section h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; color: var(--espresso); margin-bottom: 1rem; }
+.sl-section p { font-family: var(--font-body); font-size: 1.05rem; color: var(--body-text); line-height: 1.8; margin-bottom: 1.25rem; }
+
+/* Article list */
+.sl-article-list { list-style: none; padding: 0; }
+.sl-article-list li { border-bottom: 1px solid rgba(54,37,17,.08); padding: 1.5rem 0; }
+.sl-article-list li:last-child { border-bottom: none; }
+.sl-article-list a { text-decoration: none; color: inherit; display: block; }
+.sl-article-list h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--espresso); margin-bottom: .5rem; transition: color .15s; }
+.sl-article-list a:hover h3 { color: var(--accent); }
+.sl-article-list .sl-article-meta { font-family: var(--font-ui); font-size: .75rem; color: var(--muted); }
+.sl-article-list .sl-article-excerpt { font-family: var(--font-body); font-size: .95rem; color: var(--muted); line-height: 1.6; margin-top: .5rem; }
+
+@media (max-width: 1024px) {
+  .sl-hero h1 { font-size: 2rem; }
+  .sl-hero { padding: 3rem 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/" class="active-nav">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="sl-hero">
+  <div class="sl-hero-inner">
+    <div class="sl-breadcrumb"><a href="/">Home</a> › <a href="/JOURNAL_SLUG/">JOURNAL_NAME</a> › COLUMN_NAME</div>
+    <div class="sl-hero-emoji">EMOJI</div>
+    <div class="sl-overline">JOURNAL_NAME</div>
+    <h1>COLUMN_NAME</h1>
+    <p class="sl-deck">One sentence describing the column's focus.</p>
+  </div>
+</section>
+
+<div class="sl-content">
+
+  <!-- COLUMN DESCRIPTION -->
+  <section class="sl-section">
+    <div class="sl-section-label">About This Column</div>
+    <p>2-3 paragraphs explaining what this column covers, who it's for, and what readers should expect.</p>
+  </section>
+
+  <!-- ARTICLES IN THIS COLUMN -->
+  <section class="sl-section">
+    <div class="sl-section-label">Latest</div>
+    <h2>Articles</h2>
+    <ul class="sl-article-list">
+      <li>
+        <a href="/JOURNAL_SLUG/COLUMN_SLUG/article-slug.html">
+          <h3>Article Title Here</h3>
+          <span class="sl-article-meta">Author Name · April 5, 2026</span>
+          <p class="sl-article-excerpt">Brief excerpt or subtitle for the article.</p>
+        </a>
+      </li>
+      <li>
+        <a href="/JOURNAL_SLUG/COLUMN_SLUG/article-slug.html">
+          <h3>Another Article Title</h3>
+          <span class="sl-article-meta">Author Name · March 28, 2026</span>
+          <p class="sl-article-excerpt">Brief excerpt or subtitle for the article.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="JOURNAL_DESCRIPTION">
+<title>JOURNAL_NAME — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Journal Landing — Page-Specific Styles ──
+   Replace --accent with the journal's accent color:
+     Women's Health: var(--rose)
+     In Her Name:    var(--teal)
+     The Blueprint:  var(--forest)
+*/
+:root { --accent: var(--rose); }
+
+/* Hero */
+.sl-hero { position: relative; border-bottom: 4px solid var(--accent); padding: 5rem 2rem 4rem; text-align: center; background: url('/assets/images/journals/JOURNAL_HERO.png') center/cover no-repeat; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+.sl-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(54,37,17,0.82) 0%, rgba(54,37,17,0.6) 50%, rgba(212,134,98,0.2) 100%); z-index: 1; }
+.sl-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+.sl-hero-logo { max-height: 60px; margin-bottom: 1.5rem; opacity: 0.85; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+.sl-overline { display: inline-block; font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; padding: .4rem 1rem; border: 1px solid rgba(212,134,98,.3); border-radius: 20px; background: rgba(54,37,17,0.4); backdrop-filter: blur(4px); }
+.sl-hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1.25rem; line-height: 1.2; text-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+.sl-hero h1 em { font-style: italic; color: var(--accent); }
+.sl-hero .sl-deck { font-family: var(--font-body); font-size: 1.1rem; color: rgba(251,245,255,.88); line-height: 1.7; max-width: 620px; margin: 0 auto; text-shadow: 0 1px 8px rgba(0,0,0,0.2); }
+
+/* Content */
+.sl-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.sl-section { margin-bottom: 4rem; }
+.sl-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.sl-section h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--espresso); margin-bottom: 1.5rem; }
+
+/* Card Grid */
+.sl-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+.sl-card { background: var(--white); border-radius: 6px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.04); border-top: 3px solid var(--accent); transition: all .3s; text-decoration: none; color: inherit; display: block; }
+.sl-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-3px); }
+.sl-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--espresso); margin-bottom: .75rem; line-height: 1.3; }
+.sl-card p { font-family: var(--font-body); font-size: .95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+.sl-card-cta { font-family: var(--font-ui); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.sl-card-tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 12px; background: rgba(212,134,98,.12); color: var(--copper); margin-bottom: .75rem; }
+
+/* Featured */
+.sl-featured { background: var(--bg-warm); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; border-left: 4px solid var(--accent); }
+.sl-featured h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--espresso); margin-bottom: 1rem; }
+.sl-featured p { font-family: var(--font-body); font-size: 1rem; color: var(--body-text); line-height: 1.8; margin-bottom: 1rem; }
+.sl-read-more { font-family: var(--font-ui); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+
+/* About */
+.sl-about { background: var(--white); border-radius: 8px; padding: 3rem; margin: 3rem 0; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+.sl-about h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--espresso); margin-bottom: 1rem; }
+.sl-about p { font-family: var(--font-body); font-size: 1rem; color: var(--body-text); line-height: 1.8; margin-bottom: 1rem; max-width: 700px; }
+.sl-cta-btn { display: inline-block; background: var(--accent); color: var(--white); font-family: var(--font-ui); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: .7rem 1.5rem; border-radius: 3px; text-decoration: none; transition: background .2s; margin-top: .5rem; }
+.sl-cta-btn:hover { filter: brightness(1.1); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sl-hero h1 { font-size: 2rem; }
+  .sl-card-grid { grid-template-columns: 1fr; }
+  .sl-hero { padding: 3rem 1.5rem 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — Do not modify -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/" class="active-nav">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="sl-hero">
+  <div class="sl-hero-inner">
+    <img src="/assets/images/journals/JOURNAL_LOGO.png" alt="JOURNAL_NAME logo" class="sl-hero-logo">
+    <div class="sl-overline">JOURNAL_NAME</div>
+    <h1>Journal <em>Tagline</em> Here</h1>
+    <p class="sl-deck">One or two sentences describing the journal's mission and audience.</p>
+  </div>
+</section>
+
+<div class="sl-content">
+
+  <!-- FEATURED ARTICLE -->
+  <section class="sl-section">
+    <div class="sl-section-label">Featured</div>
+    <div class="sl-featured">
+      <h3>Featured Article Title</h3>
+      <p>Brief excerpt from the featured article — 2-3 sentences that draw the reader in.</p>
+      <a href="/JOURNAL_SLUG/article-slug/" class="sl-read-more">Read more →</a>
+    </div>
+  </section>
+
+  <!-- COLUMNS GRID -->
+  <section class="sl-section">
+    <div class="sl-section-label">Columns</div>
+    <h2>Explore Our Columns</h2>
+    <div class="sl-card-grid">
+
+      <a href="/JOURNAL_SLUG/column-slug/" class="sl-card">
+        <div class="sl-card-tag">Column</div>
+        <h3>Column Name</h3>
+        <p>Brief description of what this column covers.</p>
+        <span class="sl-card-cta">Explore →</span>
+      </a>
+
+      <a href="/JOURNAL_SLUG/column-slug/" class="sl-card">
+        <div class="sl-card-tag">Column</div>
+        <h3>Column Name</h3>
+        <p>Brief description of what this column covers.</p>
+        <span class="sl-card-cta">Explore →</span>
+      </a>
+
+      <a href="/JOURNAL_SLUG/column-slug/" class="sl-card">
+        <div class="sl-card-tag">Column</div>
+        <h3>Column Name</h3>
+        <p>Brief description of what this column covers.</p>
+        <span class="sl-card-cta">Explore →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT THIS JOURNAL -->
+  <section class="sl-about">
+    <h2>About JOURNAL_NAME</h2>
+    <p>2-3 paragraphs explaining the journal's editorial mission, who it serves, and why it exists within the Labora Collective ecosystem.</p>
+    <a href="/write-for-us/" class="sl-cta-btn">Write for Us</a>
+  </section>
+
+</div>
+
+<!-- FOOTER — Do not modify -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>

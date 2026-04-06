@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="REPORT_DESCRIPTION">
+<title>REPORT_TITLE | Intelligence Report IR## | Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Intelligence Report — Always uses --gold accent ── */
+
+/* Report Header */
+.report-header { background: var(--espresso); color: var(--white); position: relative; }
+.report-header::before { content: ''; display: block; height: 5px; background: var(--gold); }
+.report-header-inner { max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 2rem; }
+.report-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+.report-circle { width: 44px; height: 44px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--white); flex-shrink: 0; }
+.report-stream { font-family: var(--font-ui); font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.report-stream-sub { font-size: .5rem; letter-spacing: .12em; color: rgba(251,245,255,.28); display: block; margin-top: 2px; }
+.report-badge { display: inline-block; font-family: var(--font-ui); font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; padding: .2rem .7rem; border: 1px solid rgba(251,245,255,.15); color: rgba(251,245,255,.6); margin-bottom: 1rem; }
+.report-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.15; color: var(--white); margin-bottom: .75rem; }
+.report-subtitle { font-family: var(--font-body); font-size: 1.15rem; font-style: italic; color: rgba(251,245,255,.75); line-height: 1.5; margin-bottom: 1.25rem; }
+.report-byline { font-family: var(--font-ui); font-size: .78rem; color: rgba(251,245,255,.6); }
+.report-byline strong { color: rgba(251,245,255,.88); }
+.report-number { display: inline-block; font-family: var(--font-ui); font-size: .6rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-top: .5rem; }
+
+/* Signal Box (key findings callout) */
+.signal-box { max-width: 720px; margin: 2rem auto; padding: 2rem; background: var(--gold-light); border-left: 4px solid var(--gold); border-radius: 4px; }
+.signal-box h3 { font-family: var(--font-ui); font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.signal-box ul { list-style: none; padding: 0; }
+.signal-box li { font-family: var(--font-body); font-size: 1rem; color: var(--body-text); line-height: 1.6; padding: .5rem 0; border-bottom: 1px solid rgba(158,125,10,.1); }
+.signal-box li:last-child { border-bottom: none; }
+.signal-box li::before { content: '■'; color: var(--gold); margin-right: .75rem; font-size: .6rem; vertical-align: middle; }
+
+/* Status indicators */
+.status-badge { display: inline-block; font-family: var(--font-ui); font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 12px; }
+.status-crisis { background: rgba(224,88,88,.12); color: #e05858; }
+.status-stable { background: rgba(107,143,113,.12); color: #6B8F71; }
+.status-alert { background: rgba(212,150,10,.12); color: #D4960A; }
+
+/* Bibliography with screenshots */
+.bib-entry { background: var(--white); border-radius: 6px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,.04); border-left: 3px solid var(--gold); }
+.bib-entry .bib-title { font-family: var(--font-ui); font-size: .85rem; font-weight: 600; color: var(--espresso); margin-bottom: .5rem; }
+.bib-entry .bib-source { font-family: var(--font-ui); font-size: .75rem; color: var(--muted); }
+.bib-entry .bib-source a { color: var(--copper-text); }
+.bib-entry .bib-screenshot { width: 100%; max-height: 400px; object-fit: cover; border-radius: 4px; margin-top: 1rem; border: 1px solid rgba(54,37,17,.08); }
+.bib-entry .bib-context { font-family: var(--font-body); font-size: .9rem; color: var(--muted); line-height: 1.6; margin-top: .75rem; font-style: italic; }
+
+@media (max-width: 600px) {
+  .report-header-inner { padding: 1.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/" class="active-nav">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- REPORT HEADER -->
+<header class="report-header">
+  <div class="report-header-inner">
+    <div class="report-meta">
+      <div class="report-circle">I</div>
+      <div>
+        <div class="report-stream">Intelligence</div>
+        <span class="report-stream-sub">Labora Collective</span>
+      </div>
+    </div>
+    <div class="report-badge">CLINICAL REPORT</div>
+    <h1>Report Title Goes Here</h1>
+    <p class="report-subtitle">Subtitle — one sentence summary of the report's thesis.</p>
+    <p class="report-byline"><strong>Author Name, MD</strong> · April 5, 2026</p>
+    <div class="report-number">Intelligence Report IR##</div>
+  </div>
+</header>
+
+<!-- SIGNAL BOX — Key Findings -->
+<div class="signal-box">
+  <h3>Key Findings</h3>
+  <ul>
+    <li>First key finding from the report</li>
+    <li>Second key finding from the report</li>
+    <li>Third key finding from the report</li>
+  </ul>
+</div>
+
+<!-- REPORT BODY -->
+<article class="article-body">
+
+  <h2>Section Heading</h2>
+  <p>Body text. Intelligence reports use the same article-body typography from lc-standard.css.</p>
+
+  <p>Status indicators: <span class="status-badge status-crisis">Crisis</span> <span class="status-badge status-alert">Alert</span> <span class="status-badge status-stable">Stable</span></p>
+
+  <blockquote>
+    <p>Key evidence or clinical finding highlighted as a blockquote.</p>
+  </blockquote>
+
+  <h3>Subsection Heading</h3>
+  <p>Additional analysis and evidence.</p>
+
+  <!-- BIBLIOGRAPHY -->
+  <div class="bib-section" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(54,37,17,.08);">
+    <div style="font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;">Sources & Evidence</div>
+    <div class="bib-entry">
+      <div class="bib-title">Source Title</div>
+      <div class="bib-source">Journal, Year · <a href="#">Link</a></div>
+      <img class="bib-screenshot" src="/assets/images/bib/screenshot.png" alt="Screenshot of source">
+      <p class="bib-context">Contextual note about what this source proves.</p>
+    </div>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>

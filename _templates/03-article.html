@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="ARTICLE_DESCRIPTION">
+<title>ARTICLE_TITLE — JOURNAL_NAME — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Article / Essay — Page-Specific Styles ──
+   Set --accent-color to match the parent journal:
+     Women's Health: var(--rose)    In Her Name: var(--teal)
+     The Blueprint:  var(--forest)  The Signal:  var(--copper)
+     Intelligence:   var(--gold)    Viva Voce:   var(--blue)
+*/
+
+/* Bibliography / Evidence Section */
+.bib-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(54,37,17,.08); }
+.bib-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-color, var(--copper)); margin-bottom: 1.5rem; }
+.bib-entry { background: var(--white); border-radius: 6px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,.04); border-left: 3px solid var(--accent-color, var(--copper)); }
+.bib-entry .bib-title { font-family: var(--font-ui); font-size: .85rem; font-weight: 600; color: var(--espresso); margin-bottom: .5rem; }
+.bib-entry .bib-source { font-family: var(--font-ui); font-size: .75rem; color: var(--muted); }
+.bib-entry .bib-source a { color: var(--copper-text); }
+
+/* Pull Quote */
+.pull-quote { margin: 2rem 0; padding: 2rem 2.5rem; background: rgba(212,134,98,.04); border-left: 4px solid var(--accent-color, var(--copper)); }
+.pull-quote p { font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--espresso); line-height: 1.5; }
+.pull-quote cite { display: block; margin-top: .75rem; font-family: var(--font-ui); font-size: .78rem; font-style: normal; color: var(--muted); }
+
+/* Related Articles */
+.related-section { margin-top: 3rem; padding: 2.5rem; background: var(--white); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+.related-section h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--espresso); margin-bottom: 1.5rem; }
+.related-link { display: block; padding: 1rem 0; border-bottom: 1px solid rgba(54,37,17,.06); text-decoration: none; color: inherit; }
+.related-link:last-child { border-bottom: none; }
+.related-link h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--espresso); transition: color .15s; }
+.related-link:hover h3 { color: var(--accent-color, var(--copper)); }
+.related-link .related-meta { font-family: var(--font-ui); font-size: .72rem; color: var(--muted); margin-top: .25rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/" class="active-nav">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER — 6-Layer Hybrid -->
+<header class="article-header" style="--accent-color: var(--rose);">
+  <div class="article-header-inner">
+    <div class="journal-identity">
+      <div class="journal-circle">W</div>
+      <div>
+        <div class="journal-name">Women's Health</div>
+        <span class="parent-brand">Labora Collective</span>
+      </div>
+    </div>
+    <div class="content-badge">ESSAY</div>
+    <h1>Article Title Goes Here</h1>
+    <p class="subtitle">Optional subtitle — one sentence summary of the piece.</p>
+    <p class="byline"><strong>Author Name</strong> · April 5, 2026</p>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+  <h2>Section Heading</h2>
+  <p>Body text. Use standard HTML — p, h2, h3, blockquote, ul, ol, img.</p>
+
+  <div class="pull-quote">
+    <p>"A significant pull quote from the article that captures a key insight."</p>
+    <cite>— Source Name</cite>
+  </div>
+
+  <p>More body text continues after the pull quote.</p>
+
+  <h3>Subsection Heading</h3>
+  <p>Additional content with <a href="#">linked text</a>.</p>
+
+  <!-- BIBLIOGRAPHY -->
+  <div class="bib-section">
+    <div class="bib-section-label">Sources & Evidence</div>
+    <div class="bib-entry">
+      <div class="bib-title">Source Title or Study Name</div>
+      <div class="bib-source">Journal Name, Year · <a href="#">Link</a></div>
+    </div>
+    <div class="bib-entry">
+      <div class="bib-title">Another Source</div>
+      <div class="bib-source">Publication, Year · <a href="#">Link</a></div>
+    </div>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <div class="related-section">
+    <h2>Related Reading</h2>
+    <a href="/JOURNAL_SLUG/related-article/" class="related-link">
+      <h3>Related Article Title</h3>
+      <span class="related-meta">Journal Name · Date</span>
+    </a>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>

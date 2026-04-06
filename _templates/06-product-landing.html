@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="PRODUCT_DESCRIPTION">
+<title>PRODUCT_NAME — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Product Landing (The Signal, Viva Voce, Journals Hub, Join) ──
+   Set --accent to the product's accent color
+*/
+:root { --accent: var(--copper); }
+
+.product-hero { background: var(--espresso); border-bottom: 4px solid var(--accent); padding: 5rem 2rem 4rem; text-align: center; }
+.product-hero-inner { max-width: 760px; margin: 0 auto; }
+.product-overline { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+.product-hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1.25rem; line-height: 1.2; }
+.product-hero .product-deck { font-family: var(--font-body); font-size: 1.1rem; color: rgba(251,245,255,.85); line-height: 1.7; max-width: 620px; margin: 0 auto; }
+
+.product-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+.product-section { margin-bottom: 4rem; }
+.product-section-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.product-section h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 400; color: var(--espresso); margin-bottom: 1rem; }
+.product-section p { font-family: var(--font-body); font-size: 1.05rem; color: var(--body-text); line-height: 1.8; margin-bottom: 1.25rem; max-width: 700px; }
+
+/* Feature Grid */
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.feature-card { background: var(--white); border-radius: 6px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,.04); border-top: 3px solid var(--accent); }
+.feature-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--espresso); margin-bottom: .75rem; }
+.feature-card p { font-family: var(--font-body); font-size: .95rem; color: var(--muted); line-height: 1.7; }
+
+/* CTA Section */
+.product-cta-section { background: var(--espresso); border-radius: 8px; padding: 3rem; text-align: center; margin-top: 2rem; }
+.product-cta-section h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1rem; }
+.product-cta-section p { font-family: var(--font-body); font-size: 1rem; color: rgba(251,245,255,.85); max-width: 500px; margin: 0 auto 1.5rem; line-height: 1.7; }
+.product-cta-btn { display: inline-block; background: var(--accent); color: var(--white); font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: .8rem 2rem; border-radius: 3px; text-decoration: none; transition: background .2s; }
+.product-cta-btn:hover { filter: brightness(1.1); }
+
+@media (max-width: 768px) {
+  .product-hero h1 { font-size: 2rem; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV — set active-nav on the matching link -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/" class="active-nav">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="product-hero">
+  <div class="product-hero-inner">
+    <div class="product-overline">PRODUCT_NAME</div>
+    <h1>Product Headline</h1>
+    <p class="product-deck">One or two sentences describing what this product/page offers.</p>
+  </div>
+</section>
+
+<div class="product-content">
+
+  <!-- DESCRIPTION -->
+  <section class="product-section">
+    <div class="product-section-label">What It Is</div>
+    <h2>About PRODUCT_NAME</h2>
+    <p>Description of the product, what it delivers, and who it's for.</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="product-section">
+    <div class="product-section-label">What You Get</div>
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Feature One</h3>
+        <p>Brief description of this feature.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Feature Two</h3>
+        <p>Brief description of this feature.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Feature Three</h3>
+        <p>Brief description of this feature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="product-cta-section">
+    <h2>Ready to Join?</h2>
+    <p>Call to action description.</p>
+    <a href="/join" class="product-cta-btn">Join the Collective</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>

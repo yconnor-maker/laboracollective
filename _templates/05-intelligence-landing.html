@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Labora Collective Intelligence — Research and Clinical intelligence streams covering 31 domains of women's health.">
+<title>Intelligence — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<style>
+/* ── Intelligence Landing — Gold accent only ── */
+
+.intel-hero { background: var(--espresso); border-bottom: 4px solid var(--gold); padding: 5rem 2rem 4rem; text-align: center; }
+.intel-hero-inner { max-width: 760px; margin: 0 auto; }
+.intel-overline { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.intel-hero h1 { font-family: var(--font-display); font-size: 3rem; font-weight: 400; color: var(--bg-open); margin-bottom: 1.25rem; line-height: 1.2; }
+.intel-hero .intel-deck { font-family: var(--font-body); font-size: 1.1rem; color: rgba(251,245,255,.85); line-height: 1.7; max-width: 620px; margin: 0 auto; }
+
+/* Stream Cards */
+.intel-streams { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.intel-stream-card { background: var(--white); border-radius: 8px; padding: 2.5rem; box-shadow: 0 2px 12px rgba(0,0,0,.05); border-top: 4px solid var(--gold); text-decoration: none; color: inherit; display: block; transition: all .3s; }
+.intel-stream-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.1); transform: translateY(-4px); }
+.intel-stream-card h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--espresso); margin-bottom: 1rem; }
+.intel-stream-card p { font-family: var(--font-body); font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.intel-stream-cta { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+
+/* Labora Rounds Table */
+.rounds-section { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
+.rounds-label { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.rounds-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+.rounds-table th { font-family: var(--font-ui); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 1rem 1.25rem; border-bottom: 2px solid var(--gold); background: rgba(158,125,10,.04); }
+.rounds-table td { font-family: var(--font-body); font-size: .95rem; color: var(--body-text); padding: 1rem 1.25rem; border-bottom: 1px solid rgba(54,37,17,.06); }
+.rounds-table tr:last-child td { border-bottom: none; }
+.rounds-table a { color: var(--copper-text); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 768px) {
+  .intel-streams { grid-template-columns: 1fr; }
+  .intel-hero h1 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/" class="active-nav">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="intel-hero">
+  <div class="intel-hero-inner">
+    <div class="intel-overline">Labora Intelligence</div>
+    <h1>Intelligence</h1>
+    <p class="intel-deck">Research and clinical intelligence streams covering 31 domains of women's health.</p>
+  </div>
+</section>
+
+<!-- STREAM CARDS -->
+<div class="intel-streams">
+  <a href="/intelligence/research/" class="intel-stream-card">
+    <h2>Research Intelligence</h2>
+    <p>Systematic review and analysis of emerging research across maternal health, reproductive medicine, and women's health policy.</p>
+    <span class="intel-stream-cta">View Research Stream →</span>
+  </a>
+  <a href="/intelligence/clinical/" class="intel-stream-card">
+    <h2>Clinical Intelligence</h2>
+    <p>Practice-level intelligence, case studies, and clinical decision-making frameworks for providers serving women.</p>
+    <span class="intel-stream-cta">View Clinical Stream →</span>
+  </a>
+</div>
+
+<!-- LABORA ROUNDS TABLE -->
+<div class="rounds-section">
+  <div class="rounds-label">Labora Rounds</div>
+  <table class="rounds-table">
+    <thead>
+      <tr>
+        <th>Report</th>
+        <th>Title</th>
+        <th>Stream</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>IR13</td>
+        <td><a href="/intelligence/reports/ir13/">The Invisible Patient</a></td>
+        <td>Clinical</td>
+        <td>April 2026</td>
+      </tr>
+      <!-- Add more rows as reports are published -->
+    </tbody>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led community, marketplace, and intelligence for women's health — for patients, providers, doulas, and the institutions that serve them.</p>
+      </div>
+      <div class="lc-footer-col"><h3>Journals</h3><ul><li><a href="/womens-health/">Women's Health</a></li><li><a href="/in-her-name/">In Her Name</a></li><li><a href="/blueprint/">The Blueprint</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Products</h3><ul><li><a href="/the-signal/">The Signal</a></li><li><a href="/viva-voce/">Viva Voce</a></li><li><a href="/digest/">Monthly Digest</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Intelligence</h3><ul><li><a href="/intelligence/">Labora Rounds</a></li><li><a href="/intelligence/special-reports/">Special Reports</a></li><li><a href="/intelligence/weekly/">Weekly Intelligence</a></li></ul></div>
+      <div class="lc-footer-col"><h3>Organization</h3><ul><li><a href="https://diosara.com">Diosa Ara</a></li><li><a href="/join">Membership</a></li><li><a href="/about">About</a></li><li><a href="/start-here">Start Here</a></li></ul></div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const t=document.querySelector('.lc-nav-toggle'),l=document.querySelector('.lc-nav-links');if(t&&l){t.addEventListener('click',function(){t.classList.toggle('active');l.classList.toggle('open');});}})();
+</script>
+</body>
+</html>
