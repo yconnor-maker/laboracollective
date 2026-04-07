@@ -7,105 +7,7 @@
 <meta name="description" content="Labora Collective Journals — Women's Health, In Her Name, and The Blueprint. Three journals covering clinical science, justice, and professional infrastructure.">
 <title>Journals &mdash; Labora Collective</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
-<style>
-:root {
-  --espresso:#362511; --espresso-mid:#4A3218; --body-text:#2C1A0E; --muted:#8A7060;
-  --copper:#D48662; --copper-light:#E8A882; --copper-text:#7A4D2E;
-  --blush:#EABAB0; --blush-light:#F5DDD9;
-  --rose:#E7817F; --rose-light:#FAEAEA;
-  --teal:#1D6B78; --teal-light:#E0F2F4;
-  --forest:#2E5240; --forest-light:#E4EFE8;
-  --gold:#9E7D0A; --gold-light:#F5EDCC;
-  --bg-warm:#F7F3EE; --bg-open:#FBF5FF; --white:#FFFFFF;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;color-scheme:light only;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg-warm);color:var(--body-text);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
-
-/* NAV */
-.lc-nav{background:var(--espresso);border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;z-index:100;}
-.lc-nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
-.lc-nav-brand{display:flex;align-items:center;gap:0.65rem;text-decoration:none;flex-shrink:0;}
-.lc-nav-mark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--bg-open);}
-.lc-nav-mark em{font-style:normal;color:var(--copper);}
-.lc-nav-org{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(251,245,255,0.82);border-left:1px solid rgba(251,245,255,0.1);padding-left:0.65rem;}
-.lc-nav-org a{color:inherit;text-decoration:none;}
-.lc-nav-links{display:flex;align-items:center;gap:1.2rem;list-style:none;flex-wrap:nowrap;}
-.lc-nav-links li a{font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,245,255,0.88);text-decoration:none;transition:color 0.15s;height:56px;line-height:56px;display:inline-block;border-bottom:2px solid transparent;white-space:nowrap;}
-.lc-nav-links li a:hover{color:var(--copper);}
-.lc-nav-links li a.active-nav{color:var(--copper);border-bottom-color:var(--copper);font-weight:600;}
-.lc-nav-cta{background:var(--copper)!important;color:var(--white)!important;padding:0.4rem 1.1rem!important;font-size:0.66rem!important;font-weight:700!important;letter-spacing:0.18em!important;border-radius:2px;height:auto!important;line-height:1.4!important;border:none!important;}
-.lc-nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:0.5rem;}
-.lc-nav-toggle span{display:block;width:20px;height:2px;background:rgba(251,245,255,0.88);}
-
-/* HERO */
-.journals-hero{background:var(--espresso);padding:5rem 2rem 4rem;text-align:center;border-bottom:4px solid var(--copper);}
-.journals-hero-inner{max-width:760px;margin:0 auto;}
-.journals-hero .overline{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--copper);margin-bottom:1.5rem;padding:0.4rem 1rem;border:1px solid rgba(212,134,98,0.3);border-radius:20px;background:rgba(54,37,17,0.4);}
-.journals-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:300;color:var(--bg-open);margin-bottom:1.25rem;line-height:1.1;}
-.journals-hero h1 em{font-style:italic;color:var(--copper);}
-.journals-hero p{font-size:1.05rem;color:rgba(251,245,255,0.85);line-height:1.7;max-width:600px;margin:0 auto;}
-
-/* JOURNALS GRID */
-.journals-grid{max-width:1100px;margin:0 auto;padding:4rem 2rem 5rem;}
-.journals-grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2rem;}
-.journal-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(54,37,17,0.06);transition:transform 0.3s ease,box-shadow 0.3s ease;text-decoration:none;color:var(--body-text);display:flex;flex-direction:column;}
-.journal-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(54,37,17,0.12);}
-.journal-card-icon{padding:2.5rem 2rem 1.5rem;display:flex;align-items:center;justify-content:center;background:var(--bg-open);}
-.journal-card-icon img{height:100px;object-fit:contain;}
-.journal-card-accent{height:4px;}
-.journal-card-body{padding:1.5rem 2rem 2rem;flex:1;display:flex;flex-direction:column;}
-.journal-card-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;margin-bottom:0.5rem;}
-.journal-card-tagline{font-size:0.82rem;font-style:italic;color:var(--muted);margin-bottom:1rem;}
-.journal-card-desc{font-size:0.88rem;line-height:1.7;color:var(--body-text);flex:1;}
-.journal-card-cta{display:inline-block;margin-top:1.25rem;font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:color 0.15s;}
-
-/* SECTION LABEL */
-.section-label{font-size:0.64rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--copper);display:block;margin-bottom:0.5rem;}
-
-/* SUB-JOURNALS */
-.subjournals{max-width:1100px;margin:0 auto;padding:0 2rem 5rem;}
-.subjournals h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--espresso);margin-bottom:1.5rem;}
-.subjournal-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
-.subjournal-item{background:var(--white);padding:1.25rem 1.5rem;border-left:3px solid;border-radius:0 4px 4px 0;transition:transform 0.2s;}
-.subjournal-item:hover{transform:translateX(4px);}
-.subjournal-item h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;margin-bottom:0.25rem;}
-.subjournal-item p{font-size:0.82rem;color:var(--muted);line-height:1.6;}
-
-/* FOOTER */
-.lc-footer{background:var(--espresso);border-top:3px solid var(--copper);padding:3.5rem 2rem 2rem;}
-.lc-footer-inner{max-width:1100px;margin:0 auto;}
-.lc-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:2rem;}
-.lc-footer-brand-mark{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--bg-open);margin-bottom:0.3rem;}
-.lc-footer-brand-mark em{font-style:normal;color:var(--copper);}
-.lc-footer-brand-org{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,245,255,0.82);margin-bottom:1rem;}
-.lc-footer-brand-org a{color:rgba(251,245,255,0.82);text-decoration:none;}
-.lc-footer-brand-desc{font-size:0.82rem;line-height:1.72;color:rgba(251,245,255,0.82);}
-.lc-footer-col h3{font-size:0.75rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(251,245,255,0.22);margin-bottom:1rem;}
-.lc-footer-col ul{list-style:none;}
-.lc-footer-col ul li{padding:0.3rem 0;}
-.lc-footer-col ul li a{font-size:0.88rem;color:rgba(251,245,255,0.82);text-decoration:none;transition:color 0.15s;}
-.lc-footer-col ul li a:hover{color:var(--copper);}
-.lc-footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-.lc-footer-bottom p{font-size:0.64rem;color:rgba(251,245,255,0.82);letter-spacing:0.08em;text-transform:uppercase;}
-.lc-footer-bottom a{color:rgba(251,245,255,0.82);text-decoration:none;}
-
-@media(max-width:900px){
-  .lc-nav-toggle{display:flex;}
-  .lc-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--espresso);flex-direction:column;padding:1.5rem 2rem;border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
-  .lc-nav-links.open{display:flex;}
-  .lc-nav-links li a{height:auto;line-height:1;padding:0.8rem 0;border-bottom:none;}
-  .lc-nav-cta{margin:0.8rem 0 0 0;text-align:center;display:block;}
-  .lc-nav-org{display:none;}
-  .journals-grid-cards{grid-template-columns:1fr;}
-  .lc-footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
-}
-@media(max-width:640px){
-  .lc-footer-top{grid-template-columns:1fr;}
-  .subjournal-list{grid-template-columns:1fr;}
-}
-a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:2px;}
-</style>
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
 </head>
 <body>
 
@@ -113,7 +15,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   <div class="lc-nav-inner">
     <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
       <div class="lc-nav-mark"><em>Labora</em> Collective</div>
-      <div class="lc-nav-org"><a href="https://diosara.com">A Diosa Ara<br>Initiative</a></div>
     </a>
     <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="lc-nav-links">
@@ -122,7 +23,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
       <li><a href="/intelligence/">Intelligence</a></li>
       <li><a href="/viva-voce/">Viva Voce</a></li>
       <li><a href="/products/">Products</a></li>
-      <li><a href="/join" class="lc-nav-cta">Join</a></li>
+      <li><a href="/join/" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
@@ -135,52 +36,94 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
   </div>
 </section>
 
-<section class="journals-grid">
-  <span class="section-label">Our Journals</span>
-  <div class="journals-grid-cards">
+<!-- ══════════════════════════════════════════════
+     LOGO BANNER — Brand Identity Strip (Required)
+     ══════════════════════════════════════════════ -->
+<div class="logo-banner">
+  <div class="logo-banner-inner">
+    <span class="logo-banner-item"><em>Labora</em> Collective</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">Women's Health</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">In Her Name</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">The Blueprint</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item"><em>Diosa</em> Ara</span>
+  </div>
+</div>
 
-    <!-- Women's Health -->
-    <a href="/womens-health/" class="journal-card">
-      <div class="journal-card-icon">
-        <img src="/assets/images/wh-icon.png" alt="Women's Health">
-      </div>
-      <div class="journal-card-accent" style="background: var(--copper);"></div>
-      <div class="journal-card-body">
-        <h3 class="journal-card-name" style="color: var(--copper-text);">Women's Health</h3>
-        <p class="journal-card-tagline">Empowered Care, Informed Choices</p>
-        <p class="journal-card-desc">Clinical education for patients navigating the healthcare system. Evidence-based guidance on obstetric, gynecologic, and reproductive health — written by a physician, designed for the people who need it most.</p>
-        <span class="journal-card-cta" style="color: var(--copper);">Explore Women's Health &rarr;</span>
-      </div>
-    </a>
+<section class="journal-rivers">
+  <div class="journal-rivers-inner">
+    <div class="jr-columns">
 
-    <!-- In Her Name -->
-    <a href="/in-her-name/" class="journal-card">
-      <div class="journal-card-icon">
-        <img src="/assets/images/ihn-icon.png" alt="In Her Name">
+      <!-- ─── Women's Health (Copper) ─── -->
+      <div class="jr-column">
+        <img src="/assets/images/journals/wh-hero.png" alt="Women's Health" class="jr-col-logo">
+        <div class="jr-col-accent" style="background: var(--copper);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: var(--copper-text);">Women's Health</span>
+          <a href="/womens-health/" class="jr-col-link" style="color: #7A4D2E; border-color: rgba(122,77,46,0.3);">All &rarr;</a>
+        </div>
+        <a href="/womens-health/yemayas-circle-of-care/" class="jr-article">
+          <h3 class="jr-article-headline">Clinical Education &amp; Empowered Care</h3>
+          <span class="jr-article-meta">Yemaya's Circle of Care</span>
+        </a>
+        <a href="/womens-health/empowerher-journal/" class="jr-article">
+          <h3 class="jr-article-headline">Physiological Health, Evidence You Need</h3>
+          <span class="jr-article-meta">EmpowerHER</span>
+        </a>
+        <a href="/womens-health/pleasure-and-power/" class="jr-article">
+          <h3 class="jr-article-headline">Pleasure, Power &amp; the Body You Own</h3>
+          <span class="jr-article-meta">Pleasure &amp; Power</span>
+        </a>
       </div>
-      <div class="journal-card-accent" style="background: var(--rose);"></div>
-      <div class="journal-card-body">
-        <h3 class="journal-card-name" style="color: #A34B4A;">In Her Name</h3>
-        <p class="journal-card-tagline">Justice. Narrative. Accountability.</p>
-        <p class="journal-card-desc">Investigative journalism and long-form narrative on the structural forces shaping women's health outcomes. Power, policy, and the stories that demand to be told.</p>
-        <span class="journal-card-cta" style="color: var(--rose);">Explore In Her Name &rarr;</span>
-      </div>
-    </a>
 
-    <!-- The Blueprint -->
-    <a href="/blueprint/" class="journal-card">
-      <div class="journal-card-icon">
-        <img src="/assets/images/blueprint-icon.png" alt="The Blueprint">
+      <!-- ─── In Her Name (Rose) ─── -->
+      <div class="jr-column">
+        <img src="/assets/images/journals/ihn-hero.png" alt="In Her Name" class="jr-col-logo">
+        <div class="jr-col-accent" style="background: var(--rose);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: #A34B4A;">In Her Name</span>
+          <a href="/in-her-name/" class="jr-col-link" style="color: #7A3635; border-color: rgba(122,54,53,0.3);">All &rarr;</a>
+        </div>
+        <a href="/in-her-name/cost-of-control/" class="jr-article">
+          <h3 class="jr-article-headline">Political, Investigative &amp; Systems Reporting</h3>
+          <span class="jr-article-meta">The Cost of Control</span>
+        </a>
+        <a href="/in-her-name/brought-to-you-by-racism/" class="jr-article">
+          <h3 class="jr-article-headline">The Forces Shaping Women's Health From the Outside</h3>
+          <span class="jr-article-meta">Brought to You by Racism</span>
+        </a>
+        <a href="/in-her-name/know-your-rights/" class="jr-article">
+          <h3 class="jr-article-headline">What You're Entitled to, What They Won't Tell You</h3>
+          <span class="jr-article-meta">Know Your Rights</span>
+        </a>
       </div>
-      <div class="journal-card-accent" style="background: var(--teal);"></div>
-      <div class="journal-card-body">
-        <h3 class="journal-card-name" style="color: var(--teal);">The Blueprint</h3>
-        <p class="journal-card-tagline">Build. Lead. Transform.</p>
-        <p class="journal-card-desc">For providers, doulas, midwives, and healthcare leaders building the infrastructure women deserve. Clinical protocols, business models, and the professional blueprint for change.</p>
-        <span class="journal-card-cta" style="color: var(--teal);">Explore The Blueprint &rarr;</span>
-      </div>
-    </a>
 
+      <!-- ─── The Blueprint (Teal) ─── -->
+      <div class="jr-column">
+        <img src="/assets/images/journals/BP-hero.png" alt="The Blueprint" class="jr-col-logo">
+        <div class="jr-col-accent" style="background: var(--teal);"></div>
+        <div class="jr-col-header">
+          <span class="jr-col-name" style="color: var(--teal);">The Blueprint</span>
+          <a href="/blueprint/" class="jr-col-link" style="color: #14616C; border-color: rgba(20,97,108,0.3);">All &rarr;</a>
+        </div>
+        <a href="/blueprint/doulas-corner/" class="jr-article">
+          <h3 class="jr-article-headline">Research, Implementation &amp; Infrastructure</h3>
+          <span class="jr-article-meta">Doula's Corner</span>
+        </a>
+        <a href="/blueprint/birthworker-brief/" class="jr-article">
+          <h3 class="jr-article-headline">Intelligence That Becomes Actionable Guidance</h3>
+          <span class="jr-article-meta">Birthworker Brief</span>
+        </a>
+        <a href="/blueprint/founders-notes/" class="jr-article">
+          <h3 class="jr-article-headline">From the Founder's Desk to Your Practice</h3>
+          <span class="jr-article-meta">Founder's Notes</span>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -224,12 +167,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-off
       <div class="lc-footer-brand">
         <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
         <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
-        <p class="lc-footer-brand-desc">Physician-led intelligence for women's health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women’s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
         <h5>Journals</h5>
         <ul>
-          <li><a href="/womens-health/">Women's Health</a></li>
+          <li><a href="/womens-health/">Women’s Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
           <li><a href="/blueprint/">The Blueprint</a></li>
         </ul>
