@@ -178,20 +178,17 @@
 
 <nav class="lc-nav">
   <div class="lc-nav-inner">
-    <a href="/" class="lc-nav-brand">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
       <div class="lc-nav-mark"><em>Labora</em> Collective</div>
     </a>
-    <button class="lc-nav-toggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="lc-nav-links">
       <li><a href="/the-signal/">The Signal</a></li>
-      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/journals/" class="active-nav">Journals</a></li>
       <li><a href="/intelligence/">Intelligence</a></li>
       <li><a href="/viva-voce/">Viva Voce</a></li>
       <li><a href="/products/">Products</a></li>
-      <li><a href="/join" class="lc-nav-cta">Join</a></li>
-    
+      <li><a href="/join/" class="lc-nav-cta">Join</a></li>
     </ul>
   </div>
 </nav>
@@ -450,25 +447,33 @@
 <footer class="lc-footer">
   <div class="lc-footer-inner">
     <div class="lc-footer-top">
-      <div>
+      <div class="lc-footer-brand">
         <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
-        <div style="font-family:var(--font-ui);font-size:0.6rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(251,245,255,0.25);margin-bottom:0.5rem;">A Diosa Ara Initiative</div>
-        <p class="lc-footer-brand-desc">Physician-led intelligence for women&rsquo;s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women’s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
       </div>
       <div class="lc-footer-col">
         <h5>Journals</h5>
         <ul>
-          <li><a href="/womens-health/">Women&rsquo;s Health</a></li>
+          <li><a href="/womens-health/">Women’s Health</a></li>
           <li><a href="/in-her-name/">In Her Name</a></li>
           <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/">Monthly Digest</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
         <h5>Intelligence</h5>
         <ul>
           <li><a href="/intelligence/">Labora Rounds</a></li>
-          <li><a href="/intelligence/">Weekly Updates</a></li>
-          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/intelligence/research/">Research</a></li>
+          <li><a href="/intelligence/clinical/">Clinical</a></li>
         </ul>
       </div>
       <div class="lc-footer-col">
@@ -477,12 +482,13 @@
           <li><a href="https://diosara.com">Diosa Ara</a></li>
           <li><a href="/join/">Membership</a></li>
           <li><a href="/about/">About</a></li>
+          <li><a href="/start-here/">Start Here</a></li>
         </ul>
       </div>
     </div>
     <div class="lc-footer-bottom">
-      <p>&copy; 2026 Labora Collective &nbsp;&middot;&nbsp; A Diosa Ara Initiative &nbsp;&middot;&nbsp; <a href="/privacy/" style="color:rgba(251,245,255,0.2);">Privacy</a></p>
-      <p><a href="https://diosara.com" style="color:rgba(251,245,255,0.2);">diosara.com</a></p>
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
     </div>
   </div>
 </footer>
