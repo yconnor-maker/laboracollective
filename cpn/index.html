@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="The official architecture and partnership tiers for the Clinical Partners Network.">
+<title>Clinical Partners Network — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/lc-standard.css">
+<!-- Page-specific styles ONLY — no nav, footer, or variable overrides -->
+<style>
+  
+        :root {
+            --lc-espresso: #362511;
+            --lc-coffee: #5C4326;
+            --lc-copper: #8E6D4E;
+            --lc-gold: #C8AC83;
+            --lc-rose: #FB6F92;
+            --lc-blush: #FFE4E1;
+            --lc-cream: #F7F3EE;
+            --lc-white: #FFFFFF;
+            
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'EB Garamond', serif;
+            --font-ui: 'DM Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--lc-cream);
+            color: var(--lc-espresso);
+            font-family: var(--font-body);
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background-color: var(--lc-white);
+            box-shadow: 0 4px 30px rgba(54, 37, 17, 0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-top: 8px solid var(--lc-rose);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid var(--lc-gold);
+            padding-bottom: 2rem;
+        }
+
+        .eyebrow {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--lc-copper);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--lc-espresso);
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+        }
+
+        .date-block {
+            font-family: var(--font-ui);
+            font-size: 0.9rem;
+            color: var(--lc-copper);
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--lc-coffee);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--lc-cream);
+        }
+
+        h3 {
+            font-family: var(--font-ui);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--lc-copper);
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background-color: var(--lc-cream);
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--lc-gold);
+            margin: 2rem 0;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .tier-card {
+            border: 1px solid var(--lc-gold);
+            padding: 1.5rem;
+            border-radius: 4px;
+            background: var(--lc-white);
+            text-align: center;
+        }
+
+        .tier-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--lc-espresso);
+        }
+
+        .tier-price {
+            font-family: var(--font-ui);
+            font-size: 1.2rem;
+            color: var(--lc-rose);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--lc-blush);
+        }
+
+        .tier-desc {
+            font-size: 1rem;
+            color: var(--lc-coffee);
+        }
+
+        @media (max-width: 768px) {
+            .tier-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAV — 5-Link Standard (from lc-standard.css)
+     DO NOT MODIFY nav structure. DO NOT add or remove links.
+     To mark current section active, add class="active-nav" to the matching <a>.
+     ══════════════════════════════════════════════ -->
+<nav class="lc-nav">
+  <div class="lc-nav-inner">
+    <a href="/" class="lc-nav-brand" aria-label="Labora Collective — Home">
+      <div class="lc-nav-mark"><em>Labora</em> Collective</div>
+    </a>
+    <button class="lc-nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="lc-nav-links">
+      <li><a href="/the-signal/">The Signal</a></li>
+      <li><a href="/journals/">Journals</a></li>
+      <li><a href="/intelligence/">Intelligence</a></li>
+      <li><a href="/viva-voce/">Viva Voce</a></li>
+      <li><a href="/products/">Products</a></li>
+      <li><a href="/join/" class="lc-nav-cta">Join</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════════
+     ARTICLE HEADER — 6-Layer Hybrid
+     Set --accent-color for journal branding:
+       The Signal:    --accent-color: var(--copper);
+       Women's Health: --accent-color: var(--rose);
+       In Her Name:   --accent-color: var(--teal);
+       The Blueprint: --accent-color: var(--forest);
+       Intelligence:  --accent-color: var(--gold);
+       Viva Voce:     --accent-color: var(--blue);
+     ══════════════════════════════════════════════ -->
+
+<header class="article-header" style="--accent-color: var(--teal);">
+  <div class="article-header-inner">
+    <div class="journal-identity">
+      <div class="journal-circle">C</div>
+      <div>
+        <div class="journal-name">Partnership</div>
+        <span class="parent-brand">Labora Collective</span>
+      </div>
+    </div>
+    <div class="content-badge">CLINICAL PARTNERS NETWORK</div>
+    <h1>Program Architecture</h1>
+    <p class="subtitle">The operational structure for collaboration, intelligence exchange, and open membership.</p>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════
+     LOGO BANNER — Brand Identity Strip (Required)
+     ══════════════════════════════════════════════ -->
+<div class="logo-banner">
+  <div class="logo-banner-inner">
+    <span class="logo-banner-item"><em>Labora</em> Collective</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">Women's Health</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">In Her Name</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item">The Blueprint</span>
+    <span class="logo-banner-divider"></span>
+    <span class="logo-banner-item"><em>Diosa</em> Ara</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     ARTICLE BODY — Standard content area
+     ══════════════════════════════════════════════ -->
+<article class="article-body">
+
+    <div class="header">
+        <div class="eyebrow">The Labora Collective</div>
+        <h1>Clinical Partners Network<br>Master Architecture</h1>
+        <div class="date-block">Definitive Program Governance (Reconciled V2)</div>
+    </div>
+
+    <h2>1. The 5-Tier Collaboration Structure</h2>
+    <p>The network is anchored by an invitation-only partnership model with 5 distinct levels of collaboration. Invited partners receive platform access for free in exchange for their contributions and distribution capacity.</p>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h4>Tier 1: Clinical Advisor</h4>
+            <div class="tier-desc">Credentialed clinicians and researchers. They review 1 Labora Rounds report per quarter for clinical accuracy and receive early access and full LC membership.</div>
+        </div>
+        <div class="tier-card">
+            <h4>Tier 2: Clinical Contributor</h4>
+            <div class="tier-desc">Clinicians, birth workers, and patients. They submit written pieces or voice notes for publication in LC journals, receiving editorial support and bylined publication.</div>
+        </div>
+        <div class="tier-card">
+            <h4>Tier 3: Clinical Partner</h4>
+            <div class="tier-desc">Organizations with their own audiences (e.g., doula collectives). They distribute LC content and co-host events, receiving 5 institutional seats and content licensing rights.</div>
+        </div>
+        <div class="tier-card">
+            <h4>Tier 4: Strategic Partner</h4>
+            <div class="tier-desc">Major institutions and foundations. They co-develop research and clinical frameworks, receiving co-ownership credit and custom Labora Rounds intelligence.</div>
+        </div>
+        <div class="tier-card" style="background-color: var(--lc-cream); border-color: var(--lc-copper);">
+            <h4>Tier 5: Institutional Partner</h4>
+            <div class="tier-desc">Hospital networks and large training programs. They license LC content for deployment across their systems at scale, paying enterprise licensing fees.</div>
+        </div>
+    </div>
+
+    <h2>2. The Open Membership Pathway (Paid Access)</h2>
+    <p>For non-invited professionals who wish to access the CPN network, there is a paid pathway with three access tiers:</p>
+
+    <div class="tier-grid">
+        <div class="tier-card">
+            <h4>CPN Member</h4>
+            <div class="tier-price">$97 / Year</div>
+            <div class="tier-desc">Includes full vault access, marketplace listing, and early event invitations.</div>
+        </div>
+        <div class="tier-card">
+            <h4>CPN Pro</h4>
+            <div class="tier-price">$197 / Year</div>
+            <div class="tier-desc">Adds Track 1 publication priority, clinical briefings, and inclusion in the Doula's Corner template ecosystem.</div>
+        </div>
+        <div class="tier-card">
+            <h4>CPN Organization</h4>
+            <div class="tier-price">$497 / Year</div>
+            <div class="tier-desc">The middle-ground tier for small collectives. Includes 5 shared seats and co-branding permissions for client handouts.</div>
+        </div>
+    </div>
+
+    <h2>2. Co-Created Products (The 60/40 Split)</h2>
+    <p><strong>Educational Modules are Standalone Products.</strong> They are not given away for free inside the $97/mo membership. The membership grants platform access and visibility; the educational products (CE Modules, Masterclasses, Templates) are purchased separately by the audience.</p>
+    
+    <div class="highlight-box">
+        <strong>The Revenue Share:</strong> When an Invited Partner co-authors an educational product with LC, the revenue is split <strong>60% to the Creator</strong> (who provides the clinical expertise) and <strong>40% to LC</strong> (who provides the instructional design, platform, and marketing).
+    </div>
+
+    <h2>3. The Clinical Marketplace</h2>
+    <p>The Marketplace is a frictionless booking ecosystem for clients seeking verified doulas, lactation consultants, and holistic care providers. It will launch concurrently to the entire inaugural cohort to immediately establish network density.</p>
+    <ul>
+        <li><strong>No Listing Fees:</strong> Providers are never charged simply to be listed in the directory. Visibility is included in their membership.</li>
+        <li><strong>10% Booking Commission:</strong> LC takes a flat 10% commission on any services booked through the platform. (This covers the ~2.9% Stripe processing fee and leaves ~7% as net margin to maintain the infrastructure).</li>
+        <li><strong>Incentive Alignment:</strong> By avoiding extractive listing fees, LC only makes money when the practitioner actually secures a client.</li>
+    </ul>
+
+    <h2>4. The Intelligence Engine (The Quota)</h2>
+    <p>To power the Queryable Clinical LLM and maintain the high value of the network, Invited Partners are required to submit <strong>one (1) piece of clinical intelligence per quarter</strong> to retain their free status. This intelligence is submitted via:</p>
+    <ul>
+        <li><strong>Track 1 (Column):</strong> A written case study, evidence-based protocol, or clinical deep-dive.</li>
+        <li><strong>Track 2 (Story):</strong> A dictated audio/video interview capturing frontline observations, synthesized into content by the LC editorial team.</li>
+    </ul>
+
+    <p style="margin-top: 3rem; text-align: center; font-family: var(--font-ui); font-size: 0.9rem; color: var(--lc-copper);">
+        ALL PREVIOUS ARCHITECTURE DOCUMENTS ARE HEREBY DEPRECATED.
+    </p>
+
+</div>
+
+
+</article>
+
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER — 5-Column Standard (from lc-standard.css)
+     DO NOT MODIFY footer structure or links.
+     ══════════════════════════════════════════════ -->
+<footer class="lc-footer">
+  <div class="lc-footer-inner">
+    <div class="lc-footer-top">
+      <div class="lc-footer-brand">
+        <div class="lc-footer-brand-mark"><em>Labora</em> Collective</div>
+        <div class="lc-footer-brand-org"><a href="https://diosara.com">A Diosa Ara Initiative</a></div>
+        <p class="lc-footer-brand-desc">Physician-led intelligence for women’s health &mdash; clinical, political, economic, and policy reporting for practitioners, advocates, and the women they serve.</p>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Journals</h5>
+        <ul>
+          <li><a href="/womens-health/">Women’s Health</a></li>
+          <li><a href="/in-her-name/">In Her Name</a></li>
+          <li><a href="/blueprint/">The Blueprint</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="/the-signal/">The Signal</a></li>
+          <li><a href="/viva-voce/">Viva Voce</a></li>
+          <li><a href="/newsletters/">Monthly Digest</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Intelligence</h5>
+        <ul>
+          <li><a href="/intelligence/">Labora Rounds</a></li>
+          <li><a href="/intelligence/research/">Research</a></li>
+          <li><a href="/intelligence/clinical/">Clinical</a></li>
+        </ul>
+      </div>
+      <div class="lc-footer-col">
+        <h5>Organization</h5>
+        <ul>
+          <li><a href="https://diosara.com">Diosa Ara</a></li>
+          <li><a href="/join/">Membership</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/start-here/">Start Here</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lc-footer-bottom">
+      <p>&copy; 2026 Labora Collective &middot; A Diosa Ara Initiative &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></p>
+      <p><a href="https://diosara.com">diosara.com</a></p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS — Mobile Nav Toggle (required on every page)
+     ══════════════════════════════════════════════ -->
+<script>
+(function() {
+  const toggle = document.querySelector('.lc-nav-toggle');
+  const links = document.querySelector('.lc-nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function() {
+      toggle.classList.toggle('active');
+      links.classList.toggle('open');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
