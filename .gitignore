@@ -1,3 +1,5 @@
 .DS_Store
 *.zip
 deploy-*.zip
+labora-dashboard/node_modules/
+labora-dashboard/dist/
